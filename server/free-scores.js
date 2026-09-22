@@ -24,10 +24,14 @@ export async function fetchESPNScores() {
     { sport: "baseball", league: "mlb" },
     { sport: "basketball", league: "nba" },
     { sport: "basketball", league: "wnba" },
+    { sport: "basketball", league: "nba-g-league" },
     { sport: "hockey", league: "nhl" },
     { sport: "football", league: "nfl" },
+    { sport: "football", league: "nfl-preseason" },
     { sport: "soccer", league: "eng.1" },
+    { sport: "soccer", league: "eng.2" },
     { sport: "soccer", league: "esp.1" },
+    { sport: "soccer", league: "esp.2" },
     { sport: "soccer", league: "ita.1" },
     { sport: "soccer", league: "ger.1" },
     { sport: "soccer", league: "fra.1" },
@@ -35,6 +39,16 @@ export async function fetchESPNScores() {
     { sport: "soccer", league: "mex.1" },
     { sport: "soccer", league: "arg.1" },
     { sport: "soccer", league: "bra.1" },
+    { sport: "soccer", league: "ned.1" },
+    { sport: "soccer", league: "por.1" },
+    { sport: "soccer", league: "uefa.champions" },
+    { sport: "soccer", league: "uefa.europa" },
+    { sport: "soccer", league: "tur.1" },
+    { sport: "soccer", league: "sco.1" },
+    { sport: "soccer", league: "jpn.1" },
+    { sport: "soccer", league: "aus.1" },
+    { sport: "tennis", league: "atp" },
+    { sport: "tennis", league: "wta" },
   ];
   
   const finishedGames = [];
@@ -59,13 +73,22 @@ export async function fetchESPNScores() {
         const competitors = comp.competitors || [];
         if (competitors.length < 2) continue;
         
-        const home = competitors.find(c => c.homeAway === "home");
-        const away = competitors.find(c => c.homeAway === "away");
+        const home = competitors.find(c => c.homeAway === "home") || competitors[0];
+        const away = competitors.find(c => c.homeAway === "away") || competitors[1];
         if (!home || !away) continue;
         
         const homeScore = parseInt(home.score);
         const awayScore = parseInt(away.score);
         if (isNaN(homeScore) || isNaN(awayScore)) continue;
+        
+        // Filter obscure leagues — only top leagues available on Bet9ja
+        const leagueName = (ev.leagues?.[0]?.name || comp.league?.name || league).toLowerCase();
+        const blocked = ["second-preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","u21","u19","u23","women","group-stage","second-round-qualifying","acv","hoogeveen","banks o'dee","berwick","bonnyrigg","alloa"];
+        if (blocked.some(kw => leagueName.includes(kw) || home.team?.displayName?.toLowerCase().includes(kw) || away.team?.displayName?.toLowerCase().includes(kw))) continue;
+        const homeLower = (home.team?.displayName || "").toLowerCase();
+        const awayLower = (away.team?.displayName || "").toLowerCase();
+        const isBTeam = (n) => n.endsWith(" b") || n.includes(" b ");
+        if (isBTeam(homeLower) || isBTeam(awayLower)) continue;
         
         const gameData = {
           id: `espn_${ev.id}`,
@@ -75,8 +98,9 @@ export async function fetchESPNScores() {
           awayScore,
           status: isCompleted ? "final" : "live",
           completed: isCompleted,
-          league: ev.league?.name || league,
+          league: ev.leagues?.[0]?.name || ev.league?.name || league,
           kickoff: ev.date,
+          sport,
         };
         
         if (isCompleted) finishedGames.push(gameData);
@@ -85,9 +109,9 @@ export async function fetchESPNScores() {
     } catch {}
   }
   
-  const result = { finished: finishedGames, live: liveGames, total: finishedGames.length + liveGames.length };
+  const result = { finished: finishedGames.slice(0,100), live: liveGames.slice(0,30), total: finishedGames.length + liveGames.length };
   setCached(cacheKey, result);
-  console.log(`ESPN Scores: ${finishedGames.length} finished, ${liveGames.length} live`);
+  console.log(`ESPN Scores: ${finishedGames.length} finished, ${liveGames.length} live (filtered to top leagues only)`);
   return result;
 }
 
