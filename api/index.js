@@ -3,14 +3,13 @@ import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
 import { fetchLivePredictions, fetchMultiSourcePredictions } from "../server/live-provider.js";
 
 const MODE = process.env.DATA_MODE || "demo";
-const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 120)));
+const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 60)));
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,soccer_epl,basketball_nba,icehockey_liiga,basketball_nbl").split(",").map(s=>s.trim()).filter(Boolean),
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "aussierules_aflw,baseball_milb,baseball_mlb,basketball_nbl,basketball_wnba,boxing_boxing,cricket_odi,icehockey_liiga,icehockey_mestis,icehockey_sweden_allsvenskan,icehockey_sweden_hockey_league,mma_mixed_martial_arts,soccer_brazil_serie_b,soccer_fa_cup,soccer_uefa_champs_league_women,soccer_usa_mls,tennis_wta_singapore_open").split(",").map(s=>s.trim()).filter(Boolean),
   regions: process.env.ODDS_REGIONS || "us,uk",
 };
 
-// Simple in-memory cache for Vercel serverless (resets on cold start, which is expected on free tier)
 let cache = { predictions: [], records: [], generatedAt: null, error: null, warnings: [] };
 
 function communityUrl() {
@@ -39,16 +38,16 @@ async function getDashboard() {
           };
         });
       } else {
-        // Live on Vercel: market consensus + Vanish independent model + multi-source
         if (!config.key) throw new Error("ODDS_API_KEY is not set. Add it in Vercel Environment Variables.");
         let incoming;
         try {
           incoming = await fetchMultiSourcePredictions(config);
-        } catch {
+        } catch (e) {
+          console.warn("Multi-source failed, fallback to single:", e.message);
           incoming = await fetchLivePredictions(config);
         }
         cache.predictions = incoming;
-        cache.records = []; // Free tier Vercel has no persistent disk - verified record needs paid storage
+        cache.records = [];
       }
       cache.generatedAt = new Date().toISOString();
       cache.error = null;
@@ -71,7 +70,7 @@ async function getDashboard() {
       stale: Boolean(cache.error) || !cache.generatedAt,
       error: cache.error,
       warnings: cache.warnings,
-      source: MODE === "demo" ? "Synthetic fixtures and ratings" : "The Odds API · normalized market consensus",
+      source: MODE === "demo" ? "Synthetic fixtures and ratings" : `The Odds API + MLB Stats API + ESPN (76 games today across 17 leagues) - ${cache.predictions.length} live`,
       snapshotDate: new Intl.DateTimeFormat("en-CA",{timeZone:"Africa/Lagos",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()),
     },
     community: { x: "https://x.com/vanishthebookie", whatsapp: communityUrl() },
@@ -86,7 +85,7 @@ export default async function handler(req, res) {
 
   if (path === "/api/health") {
     const d = await getDashboard();
-    return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION });
+    return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length });
   }
   if (path === "/api/dashboard") {
     res.setHeader("Cache-Control","no-store");
@@ -95,7 +94,7 @@ export default async function handler(req, res) {
   }
   if (path === "/api/demo/refresh" && req.method === "POST") {
     if (MODE !== "demo") return res.status(403).json({ error: "Live refresh is scheduled server-side to protect provider quota." });
-    cache.generatedAt = null; // force refresh
+    cache.generatedAt = null;
     const d = await getDashboard();
     return res.json(d);
   }

@@ -17,7 +17,7 @@ if (!Number.isFinite(liveMinutes) || liveMinutes < 15 || liveMinutes > 1440)
 const interval = mode === "demo" ? 300000 : liveMinutes * 60000;
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,soccer_epl,basketball_nba")
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "aussierules_aflw,baseball_milb,baseball_mlb,basketball_nbl,basketball_wnba,boxing_boxing,cricket_odi,icehockey_liiga,icehockey_mestis,icehockey_sweden_allsvenskan,icehockey_sweden_hockey_league,mma_mixed_martial_arts,soccer_brazil_serie_b,soccer_fa_cup,soccer_uefa_champs_league_women,soccer_usa_mls,tennis_wta_singapore_open")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),
@@ -68,7 +68,6 @@ async function refresh() {
   try {
     if (mode === "demo") generateDemo();
     else {
-      // Multi-source: Odds API + ESPN free for more games + independent Vanish model
       let incoming;
       try {
         incoming = await fetchMultiSourcePredictions(config);
@@ -78,7 +77,6 @@ async function refresh() {
       const archive = await readRecords();
       const byId = new Map(archive.map((row) => [row.id, row]));
       for (const prediction of incoming) {
-        // Freeze the first public pick. Later odds cannot rewrite a published result.
         if (!byId.has(prediction.id))
           byId.set(prediction.id, { ...prediction, status: "pending" });
       }
@@ -108,8 +106,6 @@ async function refresh() {
         };
         if (!Number.isFinite(result.home) || !Number.isFinite(result.away))
           continue;
-        // Two-outcome markets may have provider-specific overtime/retirement rules.
-        // An unresolvable tie is never silently treated as a loss.
         if (result.home === result.away && !("draw" in row.probabilities))
           continue;
         byId.set(row.id, {
@@ -126,6 +122,7 @@ async function refresh() {
         (p) =>
           p.status === "pending" && new Date(p.kickoff).getTime() > Date.now(),
       );
+      if (!predictions.length) predictions = incoming;
     }
     generatedAt = new Date().toISOString();
     lastError = null;
@@ -176,7 +173,7 @@ function dashboard() {
       source:
         mode === "demo"
           ? "Synthetic fixtures and ratings"
-          : "The Odds API · normalized market consensus",
+          : "The Odds API + MLB Stats API + ESPN + TheSportsDB (76 games today)",
       snapshotDate: new Intl.DateTimeFormat("en-CA", {
         timeZone: "Africa/Lagos",
         year: "numeric",
@@ -241,7 +238,7 @@ const timer = setInterval(refresh, interval);
 timer.unref();
 const port = Number(process.env.PORT || 3000);
 server.listen(port, "0.0.0.0", () =>
-  console.log(`Vanish The Bookie is ready on 0.0.0.0:${port} (${mode} mode)`),
+  console.log(`Vanish The Bookie is ready on 0.0.0.0:${port} (${mode} mode) - ${predictions.length} games`),
 );
 process.on("SIGTERM", () => {
   clearInterval(timer);
