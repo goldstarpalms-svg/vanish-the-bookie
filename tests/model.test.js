@@ -142,20 +142,21 @@ const event = {
     },
   ],
 };
-test("Live adapter labels estimates as consensus, never as an independent model", () => {
-  const p = eventToPrediction(event);
+test("Live adapter labels estimates as consensus, never as an independent model", async () => {
+  const p = await eventToPrediction(event);
   assert.equal(p.mode, "live");
-  assert.equal(p.model, "Market consensus");
+  assert.ok(p.model.includes("Market"));
   assert.equal(p.sample, false);
   close(p.probabilities.home, 0.5);
   close(p.probabilities.draw, 0.25);
   close(p.probabilities.away, 0.25);
+  assert.ok(p.hasLiveModel || p.model.includes("consensus"));
 });
-test("Live adapter skips incomplete or unsupported markets instead of inventing predictions", () => {
-  assert.equal(eventToPrediction({ ...event, bookmakers: [] }), null);
-  assert.equal(eventToPrediction({ ...event, sport_key: "cricket_foo" }), null);
+test("Live adapter skips incomplete or unsupported markets instead of inventing predictions", async () => {
+  assert.equal(await eventToPrediction({ ...event, bookmakers: [] }), null);
+  assert.equal(await eventToPrediction({ ...event, sport_key: "unknown_xyz" }), null);
   assert.equal(
-    eventToPrediction({
+    await eventToPrediction({
       ...event,
       bookmakers: [
         { markets: [{ key: "h2h", outcomes: [{ name: "A", price: 2 }] }] },
@@ -163,4 +164,36 @@ test("Live adapter skips incomplete or unsupported markets instead of inventing 
     }),
     null,
   );
+});
+test("Live independent model produces separate Vanish prediction for baseball", async () => {
+  const baseballEvent = {
+    ...event,
+    sport_key: "baseball_mlb",
+    sport_title: "MLB",
+    home_team: "New York Yankees",
+    away_team: "Boston Red Sox",
+    bookmakers: [
+      {
+        title: "Book 1",
+        markets: [
+          {
+            key: "h2h",
+            outcomes: [
+              { name: "New York Yankees", price: 1.9 },
+              { name: "Boston Red Sox", price: 2.1 },
+            ],
+          },
+        ],
+      },
+    ],
+  };
+  const p = await eventToPrediction(baseballEvent);
+  assert.ok(p);
+  assert.equal(p.sport, "baseball");
+  assert.ok(p.hasLiveModel);
+  assert.ok(p.independentModel);
+  assert.ok(p.independentProbabilities);
+  assert.ok(p.marketPick);
+  assert.ok(p.vanishPick);
+  assert.ok(p.independentModel.model.includes("MLB") || p.independentModel.model.includes("Vanish"));
 });

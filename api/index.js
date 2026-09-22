@@ -1,6 +1,6 @@
 import { demoFixtures, demoArchive } from "../server/fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
-import { fetchLivePredictions } from "../server/live-provider.js";
+import { fetchLivePredictions, fetchMultiSourcePredictions } from "../server/live-provider.js";
 
 const MODE = process.env.DATA_MODE || "demo";
 const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 120)));
@@ -39,9 +39,14 @@ async function getDashboard() {
           };
         });
       } else {
-        // Live on Vercel: market consensus, no persistent archive on free tier
+        // Live on Vercel: market consensus + Vanish independent model + multi-source
         if (!config.key) throw new Error("ODDS_API_KEY is not set. Add it in Vercel Environment Variables.");
-        const incoming = await fetchLivePredictions(config);
+        let incoming;
+        try {
+          incoming = await fetchMultiSourcePredictions(config);
+        } catch {
+          incoming = await fetchLivePredictions(config);
+        }
         cache.predictions = incoming;
         cache.records = []; // Free tier Vercel has no persistent disk - verified record needs paid storage
       }

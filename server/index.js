@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import { demoFixtures, demoArchive } from "./fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "./model.js";
-import { fetchLivePredictions, fetchLiveScores } from "./live-provider.js";
+import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions } from "./live-provider.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const mode = process.env.DATA_MODE || "demo";
@@ -68,7 +68,13 @@ async function refresh() {
   try {
     if (mode === "demo") generateDemo();
     else {
-      const incoming = await fetchLivePredictions(config);
+      // Multi-source: Odds API + ESPN free for more games + independent Vanish model
+      let incoming;
+      try {
+        incoming = await fetchMultiSourcePredictions(config);
+      } catch {
+        incoming = await fetchLivePredictions(config);
+      }
       const archive = await readRecords();
       const byId = new Map(archive.map((row) => [row.id, row]));
       for (const prediction of incoming) {

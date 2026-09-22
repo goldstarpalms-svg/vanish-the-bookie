@@ -281,8 +281,9 @@ function Modal({ children, onClose, title, wide = false }) {
 function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
   const [tab, setTab] = useState("analysis");
   const [manualCopy, setManualCopy] = useState("");
+  const hasLiveModel = p.hasLiveModel && p.independentModel;
   const copy = async () => {
-    const text = `${p.mode === "demo" ? "DEMO — synthetic fixture and model inputs. Not live betting advice.\n" : "Unvalidated market-implied estimate. Not a guaranteed outcome.\n"}Vanish The Bookie\n${p.home.name} vs ${p.away.name}\n${p.pick.label} · ${pct(p.pick.probability, 1)} model estimate\n${p.explanation.join("\n")}\n18+ | No prediction is guaranteed.`;
+    const text = `${p.mode === "demo" ? "DEMO — synthetic fixture and model inputs. Not live betting advice.\n" : "Unvalidated market-implied estimate + Vanish independent model. Not a guaranteed outcome.\n"}Vanish The Bookie\n${p.home.name} vs ${p.away.name}\n${p.league}\nMarket: ${p.marketPick ? `${p.marketPick.label} ${pct(p.marketPick.probability, 1)}` : `${p.pick.label} ${pct(p.pick.probability, 1)}`}\n${hasLiveModel ? `Vanish Model: ${p.vanishPick.label} ${pct(p.vanishPick.probability, 1)} (${p.independentModel.model})\n` : ""}${p.explanation.join("\n")}\n18+ | No prediction is guaranteed.`;
     try {
       await copyText(text);
       notify("Analysis copied, including the data disclaimer.");
@@ -301,8 +302,10 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
         <SportIcon sport={p.sport} />
         <span>{p.league}</span>
         <SmallTag tone={p.mode === "demo" ? "amber" : "green"}>
-          {p.mode === "demo" ? "Demo fixture" : "Market estimate"}
+          {p.mode === "demo" ? "Demo fixture" : hasLiveModel ? "Live + Vanish Model" : "Market estimate"}
         </SmallTag>
+        {p.isToday && <SmallTag tone="green">TODAY</SmallTag>}
+        {hasLiveModel && <SmallTag tone="green">INDEPENDENT MODEL</SmallTag>}
       </div>
       <div className="modal-match">
         <div>
@@ -317,24 +320,110 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
       </div>
       <p className="center muted small-text">
         {dayLabel(p.kickoff, today)} · {formatDate(p.kickoff, true)} ·{" "}
-        {formatTime(p.kickoff)} WAT
+        {formatTime(p.kickoff)} WAT {p.isToday && "· TODAY'S GAME"}
       </p>
-      <div className="analysis-pick">
-        <div>
-          <span className="eyebrow">MODEL LEAN</span>
-          <h3>{p.pick.label}</h3>
+      
+      {/* Dual model display for live */}
+      {hasLiveModel ? (
+        <div className="dual-model-grid">
+          <div className="model-comparison-card market">
+            <div className="model-card-header">
+              <Database size={16} />
+              <span>Market Consensus</span>
+              <SmallTag>{p.sources?.length || 0} books</SmallTag>
+            </div>
+            <div className="analysis-pick small">
+              <div>
+                <span className="eyebrow">MARKET LEAN</span>
+                <h3>{p.marketPick.label}</h3>
+              </div>
+              <div>
+                <strong>{pct(p.marketPick.probability)}</strong>
+                <span>market prob</span>
+              </div>
+            </div>
+            <div className="probabilities small">
+              {Object.entries(p.probabilities).map(([side, value]) => (
+                <ProbabilityBar
+                  key={side}
+                  label={
+                    side === "draw"
+                      ? "Draw"
+                      : side === "home"
+                        ? p.home.name
+                        : p.away.name
+                  }
+                  value={value}
+                  primary={side === p.marketPick.side}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="model-comparison-card vanish">
+            <div className="model-card-header">
+              <Activity size={16} />
+              <span>{p.independentModel.model}</span>
+              <SmallTag tone="green">VANISH</SmallTag>
+            </div>
+            <div className="analysis-pick small">
+              <div>
+                <span className="eyebrow">VANISH LEAN</span>
+                <h3>{p.vanishPick.label}</h3>
+              </div>
+              <div>
+                <strong>{pct(p.vanishPick.probability)}</strong>
+                <span>model prob</span>
+              </div>
+            </div>
+            <div className="probabilities small">
+              {Object.entries(p.independentProbabilities).map(([side, value]) => (
+                <ProbabilityBar
+                  key={side}
+                  label={
+                    side === "draw"
+                      ? "Draw"
+                      : side === "home"
+                        ? p.home.name
+                        : p.away.name
+                  }
+                  value={value}
+                  primary={side === p.vanishPick.side}
+                />
+              ))}
+            </div>
+            <div className="model-diff">
+              {Math.abs(p.probabilities.home - p.independentProbabilities.home) > 0.05 ? (
+                <span className="diff-badge">
+                  <TrendingUp size={12} />
+                  {p.independentProbabilities.home > p.probabilities.home ? "Vanish higher" : "Market higher"} by {pct(Math.abs(p.probabilities.home - p.independentProbabilities.home), 1)}
+                </span>
+              ) : (
+                <span className="diff-badge neutral">Models agree</span>
+              )}
+            </div>
+          </div>
         </div>
-        <div>
-          <strong>{pct(p.pick.probability)}</strong>
-          <span>estimated probability</span>
+      ) : (
+        <div className="analysis-pick">
+          <div>
+            <span className="eyebrow">MODEL LEAN</span>
+            <h3>{p.pick.label}</h3>
+          </div>
+          <div>
+            <strong>{pct(p.pick.probability)}</strong>
+            <span>estimated probability</span>
+          </div>
         </div>
-      </div>
+      )}
+
       <div className="inline-notice">
         <Info size={16} />
         <span>
           {p.mode === "demo"
             ? "All fixture details and inputs are synthetic. This probability is not a verified win rate."
-            : "Market-implied probabilities are not independently validated forecasts and do not establish a betting edge."}
+            : hasLiveModel
+              ? `Two views: Market consensus (${p.sources?.length || 0} bookmakers) + Vanish independent model (${p.independentModel.dataSource}). Neither is a guaranteed outcome.`
+              : "Market-implied probabilities are not independently validated forecasts and do not establish a betting edge."}
         </span>
       </div>
       <div className="modal-tabs">
@@ -350,26 +439,78 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
         >
           Model inputs <SlidersHorizontal size={13} />
         </button>
+        {hasLiveModel && (
+          <button
+            className={tab === "vanish" ? "active" : ""}
+            onClick={() => setTab("vanish")}
+          >
+            Vanish model <Activity size={13} />
+          </button>
+        )}
       </div>
       {tab === "analysis" ? (
         <div className="analysis-body">
           <h4>How the outcomes compare</h4>
-          <div className="probabilities">
-            {Object.entries(p.probabilities).map(([side, value]) => (
-              <ProbabilityBar
-                key={side}
-                label={
-                  side === "draw"
-                    ? "Draw"
-                    : side === "home"
-                      ? p.home.name
-                      : p.away.name
-                }
-                value={value}
-                primary={side === p.pick.side}
-              />
-            ))}
-          </div>
+          {hasLiveModel ? (
+            <>
+              <div className="comparison-section">
+                <h5><Database size={14} /> Market Consensus ({p.sources?.length} books)</h5>
+                <div className="probabilities">
+                  {Object.entries(p.probabilities).map(([side, value]) => (
+                    <ProbabilityBar
+                      key={side}
+                      label={
+                        side === "draw"
+                          ? "Draw"
+                          : side === "home"
+                            ? p.home.name
+                            : p.away.name
+                      }
+                      value={value}
+                      primary={side === p.marketPick.side}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="comparison-section">
+                <h5><Activity size={14} /> {p.independentModel.model}</h5>
+                <p className="small-text muted">{p.independentModel.method} · {p.independentModel.dataSource}</p>
+                <div className="probabilities">
+                  {Object.entries(p.independentProbabilities).map(([side, value]) => (
+                    <ProbabilityBar
+                      key={side}
+                      label={
+                        side === "draw"
+                          ? "Draw"
+                          : side === "home"
+                            ? p.home.name
+                            : p.away.name
+                      }
+                      value={value}
+                      primary={side === p.vanishPick.side}
+                    />
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="probabilities">
+              {Object.entries(p.probabilities).map(([side, value]) => (
+                <ProbabilityBar
+                  key={side}
+                  label={
+                    side === "draw"
+                      ? "Draw"
+                      : side === "home"
+                        ? p.home.name
+                        : p.away.name
+                  }
+                  value={value}
+                  primary={side === p.pick.side}
+                />
+              ))}
+            </div>
+          )}
           <h4>Behind this estimate</h4>
           <ul className="reason-list">
             {p.explanation.map((reason, i) => (
@@ -401,6 +542,51 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
               </div>
             </>
           )}
+        </div>
+      ) : tab === "vanish" && hasLiveModel ? (
+        <div className="analysis-body">
+          <h4>{p.independentModel.model} · Independent</h4>
+          <p className="muted">{p.independentModel.method}</p>
+          <div className="input-table">
+            {Object.entries(p.independentModel.inputs || {}).map(([k, v]) => (
+              <div key={k}>
+                <span>{k}</span>
+                <strong>{String(v)}</strong>
+              </div>
+            ))}
+          </div>
+          {p.independentModel.expected && (
+            <div className="metric-pair">
+              {Object.entries(p.independentModel.expected).map(([k, v]) => (
+                <div key={k}>
+                  <span>{k}</span>
+                  <strong>{String(v)}</strong>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="input-table">
+            <div>
+              <span>Data source</span>
+              <strong>{p.independentModel.dataSource}</strong>
+            </div>
+            <div>
+              <span>Model type</span>
+              <strong>{p.independentModel.type}</strong>
+            </div>
+          </div>
+          <ul className="reason-list">
+            {p.independentModel.explanation.map((reason, i) => (
+              <li key={i}>
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <p>{reason}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="inline-notice">
+            <FlaskConical size={16} />
+            <span>Vanish independent model uses free APIs (MLB Stats API, ESPN) + Poisson/rating models. It is not a guaranteed profitable model — needs backtesting and calibration.</span>
+          </div>
         </div>
       ) : (
         <div className="analysis-body">
@@ -460,7 +646,7 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
           Copy analysis
         </button>
         <span className="model-caption">
-          {p.model} · v{p.modelVersion}
+          {p.model} · v{p.modelVersion} {hasLiveModel && `+ ${p.independentModel.model}`}
         </span>
       </div>
     </Modal>
@@ -468,29 +654,35 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
 }
 
 function MatchCard({ p, today, saved, onSave, onOpen }) {
+  const hasLiveModel = p.hasLiveModel && p.independentModel;
+  const showDiff = hasLiveModel && p.marketPick && p.vanishPick && p.marketPick.side !== p.vanishPick.side;
   return (
-    <article className={`match-card sport-${p.sport}`}>
+    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""}`}>
       <div className="match-card-top">
         <span>
           <SportIcon sport={p.sport} />
           {p.league}
         </span>
-        <button
-          className={`icon-button save-button ${saved ? "saved" : ""}`}
-          title={saved ? "Remove saved match" : "Save match"}
-          aria-label={`${saved ? "Unsave" : "Save"} ${p.home.name} vs ${p.away.name}`}
-          aria-pressed={saved}
-          onClick={() => onSave(p.id)}
-        >
-          <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
-        </button>
+        <div className="card-top-actions">
+          {p.isToday && <SmallTag tone="green">TODAY</SmallTag>}
+          {hasLiveModel && <SmallTag tone="green">VANISH MODEL</SmallTag>}
+          <button
+            className={`icon-button save-button ${saved ? "saved" : ""}`}
+            title={saved ? "Remove saved match" : "Save match"}
+            aria-label={`${saved ? "Unsave" : "Save"} ${p.home.name} vs ${p.away.name}`}
+            aria-pressed={saved}
+            onClick={() => onSave(p.id)}
+          >
+            <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
+          </button>
+        </div>
       </div>
       <div className="match-timing">
         <Clock3 size={12} />
         <span>
           {dayLabel(p.kickoff, today)} · {formatTime(p.kickoff)} WAT
         </span>
-        <SmallTag>{p.mode === "demo" ? "DEMO" : "PRE-MATCH"}</SmallTag>
+        <SmallTag>{p.mode === "demo" ? "DEMO" : hasLiveModel ? "LIVE + MODEL" : "PRE-MATCH"}</SmallTag>
       </div>
       <div className="teams">
         <div>
@@ -503,20 +695,41 @@ function MatchCard({ p, today, saved, onSave, onOpen }) {
           <h3>{p.away.name}</h3>
         </div>
       </div>
-      <div className="pick-box">
-        <div>
-          <span className="pick-label">MODEL LEAN</span>
-          <strong>{p.pick.label}</strong>
+      {hasLiveModel ? (
+        <div className="dual-pick-box">
+          <div className="pick-row market">
+            <span><Database size={11} /> Market</span>
+            <strong>{p.marketPick.label}</strong>
+            <span className="prob">{pct(p.marketPick.probability)}</span>
+          </div>
+          <div className="pick-row vanish">
+            <span><Activity size={11} /> Vanish</span>
+            <strong>{p.vanishPick.label}</strong>
+            <span className="prob">{pct(p.vanishPick.probability)}</span>
+          </div>
+          {showDiff && (
+            <div className="model-disagreement">
+              <AlertTriangle size={12} />
+              Models disagree
+            </div>
+          )}
         </div>
-        <div className="pick-percentage">
-          <strong>{pct(p.pick.probability)}</strong>
-          <span>probability</span>
+      ) : (
+        <div className="pick-box">
+          <div>
+            <span className="pick-label">MODEL LEAN</span>
+            <strong>{p.pick.label}</strong>
+          </div>
+          <div className="pick-percentage">
+            <strong>{pct(p.pick.probability)}</strong>
+            <span>probability</span>
+          </div>
         </div>
-      </div>
+      )}
       <div className="card-foot">
         <span>
           <span className="tiny-dot" />
-          {p.model} model
+          {hasLiveModel ? `${p.independentModel.model}` : `${p.model} model`}
         </span>
         <button onClick={() => onOpen(p)}>
           Read analysis <ArrowUpRight size={16} />

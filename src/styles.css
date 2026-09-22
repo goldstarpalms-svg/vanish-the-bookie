@@ -4404,6 +4404,179 @@ option {
     font-size: 5.5px;
   }
 }
+/* LIVE MODEL UPGRADES - Multi-source + Independent Model */
+.match-card.today {
+  border-color: #4a6b2a;
+  box-shadow: 0 0 0 1px #4a6b2a33, 0 4px 20px #0003;
+}
+.match-card.has-live-model {
+  background: linear-gradient(135deg, #1a2516, #141e12);
+  border-color: #3d5a24;
+}
+.card-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dual-pick-box {
+  border: 1px solid #35422a80;
+  background: #202c1b80;
+  border-radius: 7px;
+  padding: 10px 11px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pick-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+}
+.pick-row > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8px;
+  color: #8a9a7a;
+  min-width: 55px;
+}
+.pick-row > strong {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 500;
+  color: #dae9c5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pick-row .prob {
+  font-family: var(--heading);
+  font-size: 13px;
+  color: var(--lime);
+  font-weight: 500;
+}
+.pick-row.market .prob {
+  color: #a8b995;
+}
+.pick-row.vanish .prob {
+  color: var(--lime);
+}
+.model-disagreement {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8px;
+  color: #dbc993;
+  background: #443b2029;
+  border: 1px solid #524a2f;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin-top: 2px;
+}
+.dual-model-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.model-comparison-card {
+  border: 1px solid #2c3a24;
+  border-radius: 9px;
+  padding: 16px;
+  background: #171e14;
+}
+.model-comparison-card.market {
+  border-color: #3a4a32;
+  background: #151d12;
+}
+.model-comparison-card.vanish {
+  border-color: #4a6b2a;
+  background: linear-gradient(135deg, #1e2e14, #162112);
+}
+.model-card-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #b8cba2;
+  margin-bottom: 12px;
+}
+.model-card-header .tag {
+  margin-left: auto;
+  font-size: 6px;
+}
+.analysis-pick.small {
+  padding: 12px 14px;
+  margin: 0 0 12px;
+}
+.analysis-pick.small h3 {
+  font-size: 14px;
+}
+.analysis-pick.small > div:last-child > strong {
+  font-size: 24px;
+}
+.probabilities.small {
+  margin: 10px 0;
+}
+.probabilities.small .probability-row {
+  margin-bottom: 10px;
+}
+.model-diff {
+  margin-top: 10px;
+}
+.diff-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: #24321880;
+  border: 1px solid #3b4c27;
+  color: var(--lime);
+}
+.diff-badge.neutral {
+  background: #20281d;
+  border-color: #2e3b2b;
+  color: #8a9a7a;
+}
+.comparison-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #2a3526;
+  border-radius: 8px;
+  background: #141d12;
+}
+.comparison-section h5 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #c8deb0;
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .dual-model-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dual-pick-box {
+    padding: 9px;
+  }
+  .pick-row {
+    font-size: 9px;
+  }
+  .pick-row > strong {
+    font-size: 10px;
+  }
+  .pick-row .prob {
+    font-size: 12px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *:before,
