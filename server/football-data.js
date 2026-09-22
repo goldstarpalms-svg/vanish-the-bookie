@@ -15,36 +15,42 @@ function setCached(key, data) {
   CACHE.set(key, { data, ts: Date.now() });
 }
 
-// OpenLigaDB - Free, no key, German football + more
+// OpenLigaDB - Free, no key, German football + more - FIXED for 2025/2026 season
 export async function fetchOpenLigaDB() {
   const cached = getCached("openligadb");
   if (cached) return cached;
   try {
+    const currentYear = new Date().getFullYear();
+    const years = [currentYear, currentYear - 1, 2025, 2024];
     const leagues = ["bl1", "bl2", "bl3"];
     const games = [];
-    for (const league of leagues) {
-      try {
-        const res = await fetch(`https://api.openligadb.de/getmatchdata/${league}/2024`, { signal: AbortSignal.timeout(6000) });
-        if (!res.ok) continue;
-        const data = await res.json();
-        for (const match of (data || []).slice(0, 20)) {
-          const dt = new Date(match.matchDateTimeUTC);
-          if (isNaN(dt.getTime())) continue;
-          if (dt < new Date()) continue;
-          if (dt - Date.now() > 7*24*3600000) continue;
-          if (!match.team1?.teamName || !match.team2?.teamName) continue;
-          games.push({
-            id: `openliga_${match.matchID}`,
-            sport: "football",
-            sportKey: `soccer_germany_${league}`,
-            league: `${match.leagueName || league.toUpperCase()} (OpenLigaDB)`,
-            home: match.team1.teamName,
-            away: match.team2.teamName,
-            kickoff: dt.toISOString(),
-            source: "OpenLigaDB",
-          });
-        }
-      } catch {}
+    for (const year of years) {
+      for (const league of leagues) {
+        try {
+          const res = await fetch(`https://api.openligadb.de/getmatchdata/${league}/${year}`, { signal: AbortSignal.timeout(6000) });
+          if (!res.ok) continue;
+          const data = await res.json();
+          for (const match of (data || [])) {
+            const dt = new Date(match.matchDateTimeUTC);
+            if (isNaN(dt.getTime())) continue;
+            if (dt < new Date(Date.now() - 12*3600000)) continue;
+            if (dt - Date.now() > 7*24*3600000) continue;
+            if (!match.team1?.teamName || !match.team2?.teamName) continue;
+            games.push({
+              id: `openliga_${match.matchID}`,
+              sport: "football",
+              sportKey: `soccer_germany_${league}`,
+              league: `${match.leagueName || league.toUpperCase()} (OpenLigaDB)`,
+              home: match.team1.teamName,
+              away: match.team2.teamName,
+              kickoff: dt.toISOString(),
+              source: "OpenLigaDB",
+            });
+          }
+          if (games.length > 20) break;
+        } catch {}
+      }
+      if (games.length > 0) break;
     }
     setCached("openligadb", games);
     return games;
@@ -53,7 +59,7 @@ export async function fetchOpenLigaDB() {
   }
 }
 
-// football-data.org - Free tier, needs API key (10 req/min) - NOW WITH YOUR KEY 8e31...
+// football-data.org - Free tier, needs API key (10 req/min) - WITH YOUR KEY 8e31...
 export async function fetchFootballDataOrg(apiKey) {
   if (!apiKey) {
     console.log("football-data.org: No API key, skipping");
