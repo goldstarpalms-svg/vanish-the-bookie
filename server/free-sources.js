@@ -1,6 +1,6 @@
 /**
- * Additional Free Sources - No API keys needed
- * ESPN, TheSportsDB, NHL, MLB, etc.
+ * Additional Free Sources - No API keys needed for base, optional keys for more
+ * ESPN, TheSportsDB, NHL, MLB, OpenLigaDB, football-data.org, API-Football
  */
 
 const CACHE = new Map();
@@ -31,6 +31,7 @@ export async function fetchESPNFree() {
     { sport: "soccer", league: "fra.1", name: "Ligue 1" },
     { sport: "soccer", league: "usa.1", name: "MLS" },
     { sport: "soccer", league: "bra.1", name: "Brazil Serie A" },
+    { sport: "soccer", league: "mex.1", name: "Liga MX" },
   ];
   
   const games = [];
@@ -52,8 +53,8 @@ export async function fetchESPNFree() {
       const away = comp.competitors?.find(c => c.homeAway === "away");
       if (!home || !away) continue;
       const dt = new Date(ev.date);
-      if (dt < new Date()) continue; // Only future
-      if (dt - Date.now() > 7*24*3600000) continue; // Within 7 days
+      if (dt < new Date()) continue;
+      if (dt - Date.now() > 7*24*3600000) continue;
       games.push({
         id: `espn_${ev.id}`,
         sport: sport === "baseball" ? "baseball" : sport === "basketball" ? "basketball" : sport === "hockey" ? "icehockey" : sport === "football" ? "americanfootball" : "football",
@@ -69,7 +70,7 @@ export async function fetchESPNFree() {
   return games;
 }
 
-// TheSportsDB - Free, no key, 1000s of leagues
+// TheSportsDB - Free, no key
 export async function fetchTheSportsDB() {
   const leagueIds = [
     { id: 4328, name: "EPL" },
@@ -79,6 +80,9 @@ export async function fetchTheSportsDB() {
     { id: 4334, name: "Ligue 1" },
     { id: 4346, name: "MLS" },
     { id: 4356, name: "Brazil Serie A" },
+    { id: 4338, name: "NBA" },
+    { id: 4387, name: "NFL" },
+    { id: 4391, name: "MLB" },
   ];
   
   const games = [];
@@ -101,8 +105,8 @@ export async function fetchTheSportsDB() {
       if (dt - Date.now() > 7*24*3600000) continue;
       games.push({
         id: `tsdb_${ev.idEvent}`,
-        sport: "football",
-        sportKey: `soccer_${name.toLowerCase().replace(/ /g,"_")}`,
+        sport: name === "NBA" ? "basketball" : name === "NFL" ? "americanfootball" : name === "MLB" ? "baseball" : "football",
+        sportKey: `${name === "NBA" ? "basketball" : name === "NFL" ? "americanfootball" : name === "MLB" ? "baseball" : "soccer"}_${name.toLowerCase().replace(/ /g,"_")}`,
         league: name,
         home: ev.strHomeTeam,
         away: ev.strAwayTeam,
@@ -114,15 +118,17 @@ export async function fetchTheSportsDB() {
   return games;
 }
 
-// Combined free sources
+// Combined free sources - now with football-data
 export async function fetchAllFreeSources() {
-  const [espn, tsdb] = await Promise.all([
+  const { fetchAllFootballFree } = await import("./football-data.js");
+  
+  const [espn, tsdb, football] = await Promise.all([
     fetchESPNFree().catch(()=>[]),
     fetchTheSportsDB().catch(()=>[]),
+    fetchAllFootballFree().catch(()=>[]),
   ]);
   
-  const all = [...espn, ...tsdb];
-  // Deduplicate
+  const all = [...espn, ...tsdb, ...football];
   const seen = new Set();
   const deduped = [];
   for (const g of all) {
