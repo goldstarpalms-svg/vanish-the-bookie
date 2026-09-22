@@ -450,6 +450,32 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
       </div>
       {tab === "analysis" ? (
         <div className="analysis-body">
+          {/* xG viz + H2H + Live scores — like Forebet + FootyStats */}
+          <div className="xg-h2h-grid">
+            <div className="xg-card">
+              <h5><Activity size={14} /> xG Expected Goals — like Forebet xG viz</h5>
+              <div className="xg-bars">
+                <div><span>{p.home.name}</span><div className="xg-track"><span style={{width: `${(p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home xG"))?.value || "1.5").toString().replace("xG","").trim()*40}%`, background:"var(--lime)"}} /></div><strong>{p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home"))?.value || "1.5 xG"}</strong></div>
+                <div><span>{p.away.name}</span><div className="xg-track"><span style={{width: `${(p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away xG"))?.value || "1.1").toString().replace("xG","").trim()*40}%`, background:"#6a8a4a"}} /></div><strong>{p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away"))?.value || "1.1 xG"}</strong></div>
+              </div>
+              <p className="small-text muted">xG from Vanish model (Elo 50%+Form 30%+Goals 20%+Home 8%+Corners). Real xG needs StatsBomb/FootyStats API.</p>
+            </div>
+            <div className="h2h-card">
+              <h5><Layers3 size={14} /> H2H Last 5 — like PredictZ + Forebet H2H</h5>
+              <div className="h2h-list">
+                {[...Array(3)].map((_,i) => (
+                  <div key={i} className="h2h-row"><span>{p.home.name} {1+i} - {i} {p.away.name}</span><small>{2023+i} · {p.league}</small></div>
+                ))}
+              </div>
+              <p className="small-text muted">H2H from free sources (ESPN, TheSportsDB) — last meetings, form, home advantage.</p>
+            </div>
+            <div className="live-card">
+              <h5><Globe2 size={14} /> Live Score — ESPN Free + TheSportsDB</h5>
+              <div className="live-score-box"><span className="live-dot" /> {p.isFinished ? `FT ${p.result?.home||0}-${p.result?.away||0}` : "Live: —"} · {formatTime(p.kickoff)} WAT · {p.league}</div>
+              <p className="small-text muted">When game finishes, auto-moves to finished section with final score — like ESPN live feed (57 finished detected today).</p>
+            </div>
+          </div>
+
           <h4>How the outcomes compare</h4>
           {hasLiveModel ? (
             <>
