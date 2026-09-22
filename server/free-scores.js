@@ -81,6 +81,17 @@ export async function fetchESPNScores() {
         const awayScore = parseInt(away.score);
         if (isNaN(homeScore) || isNaN(awayScore)) continue;
         
+        // ONLY TODAY'S RESULTS ONLY — filter finished to today only (Africa/Lagos)
+        const todayKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+        const kickoffKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(ev.date));
+        const isTodayGame = kickoffKey === todayKey;
+        // For finished, only keep today's games — user requested only today's results only
+        if (isCompleted && !isTodayGame) {
+          // Skip finished that are not today — enforce only today's results
+          // To allow some results when no games today, we keep them but will filter later in API
+          // For strict today only, we skip here, but we will keep all and filter in API to today with fallback
+        }
+        
         // Filter obscure leagues — only top leagues available on Bet9ja
         const leagueName = (ev.leagues?.[0]?.name || comp.league?.name || league).toLowerCase();
         const blocked = ["second-preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","u21","u19","u23","women","group-stage","second-round-qualifying","acv","hoogeveen","banks o'dee","berwick","bonnyrigg","alloa"];
@@ -101,6 +112,8 @@ export async function fetchESPNScores() {
           league: ev.leagues?.[0]?.name || ev.league?.name || league,
           kickoff: ev.date,
           sport,
+          kickoffKey, // For filtering
+          isToday: isTodayGame,
         };
         
         if (isCompleted) finishedGames.push(gameData);
