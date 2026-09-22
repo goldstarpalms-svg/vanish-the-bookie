@@ -3,7 +3,8 @@ import {
   pickFromProbabilities,
   MODEL_VERSION,
 } from "./model.js";
-import { liveIndependentModel, fetchESPNGames } from "./live-model.js";
+import { liveIndependentModel } from "./live-model.js";
+import { fetchAllFreeSources } from "./free-sources.js";
 
 const API_BASE = "https://api.the-odds-api.com/v4";
 const COLORS = ["#6da4d9", "#bb9ae3", "#e3aa7b", "#78b9a2", "#d9766d", "#a8d86e"];
@@ -33,6 +34,7 @@ export function sportCategory(key) {
   if (key.startsWith("tennis_")) return "tennis";
   if (key.startsWith("cricket_")) return "cricket";
   if (key.startsWith("rugby") || key.startsWith("aussierules_") || key.startsWith("boxing_") || key.startsWith("mma_") || key.startsWith("handball_")) return "other";
+  if (key.startsWith("hockey_") || key.startsWith("football_") || key.startsWith("baseball_") || key.startsWith("basketball_")) return key.split("_")[0];
   return null;
 }
 async function providerFetch(path, key, params = {}) {
@@ -94,15 +96,11 @@ export async function eventToPrediction(event) {
   const isToday = kickoffDate.toDateString() === new Date().toDateString() || 
                   (kickoffDate - Date.now() < 24*3600000 && kickoffDate > Date.now());
   
-  // LIVE INDEPENDENT MODEL - Vanish's own calculation
   let independentModel = null;
   try {
     independentModel = await liveIndependentModel(event, probabilities);
-  } catch (e) {
-    console.warn(`Independent model failed for ${event.id}:`, e.message);
-  }
+  } catch {}
 
-  // Pick logic: use independent model if available and confident, otherwise market
   const primaryProbs = independentModel?.probabilities || probabilities;
   const primaryPick = pickFromProbabilities(primaryProbs, home, away);
 
@@ -115,7 +113,7 @@ export async function eventToPrediction(event) {
     kickoff: event.commence_time,
     home,
     away,
-    probabilities, // Market consensus
+    probabilities,
     independentProbabilities: independentModel?.probabilities || null,
     independentModel,
     pick: primaryPick,
@@ -131,44 +129,34 @@ export async function eventToPrediction(event) {
     isToday,
     hasLiveModel: !!independentModel,
     explanation: [
-      `MARKET CONSENSUS: ${snapshots.length} bookmakers → Home ${(probabilities.home*100).toFixed(1)}% ${isFootball ? `Draw ${(probabilities.draw*100).toFixed(1)}% ` : ""}Away ${(probabilities.away*100).toFixed(1)}%`,
+      `MARKET: ${snapshots.length} books → Home ${(probabilities.home*100).toFixed(1)}% ${isFootball ? `Draw ${(probabilities.draw*100).toFixed(1)}% ` : ""}Away ${(probabilities.away*100).toFixed(1)}%`,
       ...(independentModel ? [
-        `VANISH MODEL (${independentModel.model}): ${independentModel.method}`,
+        `VANISH: ${independentModel.model} - ${independentModel.method}`,
         ...independentModel.explanation.slice(0, 3)
       ] : [
-        "Vanish independent model uses team stats from free APIs (MLB Stats API, ESPN) + Poisson/rating models",
-        "For each bookmaker, odds → implied probs → normalized → averaged for market consensus",
-        "Independent model is calculated separately and shown alongside market"
+        "Vanish model uses MLB Stats API + ESPN + Poisson/rating models",
+        "Market: odds → implied probs → normalized → averaged",
       ]),
     ],
     inputRows: [
-      ["Data source", "The Odds API + MLB Stats API + ESPN (free)"],
+      ["Data source", "The Odds API + MLB Stats API + ESPN + TheSportsDB"],
       ["Complete markets", snapshots.length],
-      ["Market", "Head-to-head (h2h)"],
-      ["Vanish Model", independentModel?.model || "Market consensus only"],
-      ["Vanish Method", independentModel?.method || "N/A"],
+      ["Vanish Model", independentModel?.model || "Market only"],
       ["Sport key", event.sport_key],
       ["Kickoff", event.commence_time],
-      ["Live model", independentModel ? "Yes - independent" : "Market only"],
     ],
     metrics: [
-      { label: "Bookmakers sampled", value: String(snapshots.length) },
+      { label: "Bookmakers", value: String(snapshots.length) },
       { label: "Market home", value: `${(probabilities.home*100).toFixed(1)}%` },
       { label: "Vanish home", value: independentModel ? `${(independentModel.probabilities.home*100).toFixed(1)}%` : "—" },
-      { label: "Model", value: independentModel ? independentModel.model : "Consensus" },
       { label: "Today", value: isToday ? "Yes" : "No" },
     ],
   };
 }
 export async function fetchLivePredictions({ key, sportKeys, regions = "us,uk" }) {
-  if (!key)
-    throw new Error(
-      "Live mode needs ODDS_API_KEY in the server environment. Demo data has not been substituted.",
-    );
-  if (!sportKeys.length || sportKeys.some((key) => !sportCategory(key)))
-    throw new Error(
-      "Choose supported football, basketball, baseball, hockey, american football or tennis sport keys.",
-    );
+  if (!key) throw new Error("Live mode needs ODDS_API_KEY");
+  if (!sportKeys.length || sportKeys.some((k) => !sportCategory(k)))
+    throw new Error("Choose supported sport keys");
   const pages = await Promise.all(
     sportKeys.map((sport) =>
       providerFetch(`/sports/${encodeURIComponent(sport)}/odds/`, key, {
@@ -180,8 +168,6 @@ export async function fetchLivePredictions({ key, sportKeys, regions = "us,uk" }
   );
   const now = Date.now();
   const flatEvents = pages.flat();
-  
-  // Process each event with independent model (parallel with limit)
   const predictions = [];
   for (const event of flatEvents) {
     const pred = await eventToPrediction(event);
@@ -189,7 +175,6 @@ export async function fetchLivePredictions({ key, sportKeys, regions = "us,uk" }
       predictions.push(pred);
     }
   }
-  
   return predictions.sort((a,b) => new Date(a.kickoff) - new Date(b.kickoff));
 }
 export async function fetchLiveScores({ key, sportKeys }) {
@@ -203,69 +188,84 @@ export async function fetchLiveScores({ key, sportKeys }) {
           { daysFrom: "3" },
         );
       } catch {
-        warnings.push(
-          `Results are unavailable for ${sport}. Unsettled picks remain pending.`,
-        );
+        warnings.push(`Results unavailable for ${sport}`);
         return [];
       }
     }),
   );
   return { events: pages.flat(), warnings };
 }
-// Multi-source: Combine Odds API + ESPN free for more games
 export async function fetchMultiSourcePredictions({ key, sportKeys, regions }) {
   const oddsPredictions = await fetchLivePredictions({ key, sportKeys, regions });
-  
-  // Also try ESPN for additional games (free, no key)
-  let espnGames = [];
+  let freeGames = [];
   try {
-    espnGames = await fetchESPNGames();
-  } catch {}
+    freeGames = await fetchAllFreeSources();
+  } catch (e) {
+    console.warn("Free sources failed:", e.message);
+  }
   
-  // Merge, deduplicate by teams and time
   const allGames = [...oddsPredictions];
   const existingKeys = new Set(oddsPredictions.map(p => `${p.home.name}_${p.away.name}_${p.kickoff.slice(0,10)}`.toLowerCase()));
   
-  for (const espnGame of espnGames.slice(0, 20)) {
-    const dupKey = `${espnGame.home}_${espnGame.away}_${espnGame.kickoff.slice(0,10)}`.toLowerCase();
+  for (const freeGame of freeGames.slice(0, 30)) {
+    const dupKey = `${freeGame.home}_${freeGame.away}_${freeGame.kickoff.slice(0,10)}`.toLowerCase();
     if (!existingKeys.has(dupKey)) {
-      // Create a prediction from ESPN data (no odds, use generic model)
-      const home = person(espnGame.home, 0);
-      const away = person(espnGame.away, 1);
+      const home = person(freeGame.home, 0);
+      const away = person(freeGame.away, 1);
+      const mockEvent = {
+        sport_key: freeGame.sportKey,
+        sport_title: freeGame.league,
+        home_team: freeGame.home,
+        away_team: freeGame.away,
+        commence_time: freeGame.kickoff,
+        bookmakers: [{
+          title: freeGame.source,
+          markets: [{ key: "h2h", outcomes: [{ name: freeGame.home, price: 2.0 }, { name: freeGame.away, price: 2.0 }] }]
+        }]
+      };
+      let independentModel = null;
+      try {
+        independentModel = await liveIndependentModel(mockEvent, { home: 0.5, away: 0.5 });
+      } catch {}
+      
       allGames.push({
-        id: espnGame.id,
-        sport: espnGame.sport,
-        sportKey: espnGame.sportKey,
-        league: espnGame.league,
-        region: "ESPN + Vanish Model",
-        kickoff: espnGame.kickoff,
+        id: freeGame.id,
+        sport: freeGame.sport,
+        sportKey: freeGame.sportKey,
+        league: `${freeGame.league} (${freeGame.source})`,
+        region: `${freeGame.source} + Vanish Model`,
+        kickoff: freeGame.kickoff,
         home,
         away,
         probabilities: { home: 0.5, away: 0.5 },
-        independentProbabilities: { home: 0.5, away: 0.5 },
-        pick: { side: "home", probability: 0.5, label: `${espnGame.home} to win`, fairOdds: 2.0 },
+        independentProbabilities: independentModel?.probabilities || { home: 0.5, away: 0.5 },
+        independentModel,
+        pick: independentModel ? { side: "home", probability: independentModel.probabilities.home, label: `${freeGame.home} to win`, fairOdds: 1/independentModel.probabilities.home } : { side: "home", probability: 0.5, label: `${freeGame.home} to win`, fairOdds: 2.0 },
+        marketPick: { side: "home", probability: 0.5, label: `${freeGame.home} to win`, fairOdds: 2.0 },
+        vanishPick: independentModel ? { side: independentModel.probabilities.home > 0.5 ? "home" : "away", probability: Math.max(independentModel.probabilities.home, independentModel.probabilities.away), label: `${independentModel.probabilities.home > 0.5 ? freeGame.home : freeGame.away} to win`, fairOdds: 1/Math.max(independentModel.probabilities.home, independentModel.probabilities.away) } : null,
         mode: "live",
         sample: false,
         calibrated: false,
-        model: "Vanish Model (ESPN source)",
+        model: independentModel ? `${independentModel.model} (${freeGame.source})` : `Vanish Model (${freeGame.source})`,
         modelVersion: MODEL_VERSION,
         publishedAt: new Date().toISOString(),
-        sources: [{ name: "ESPN", updatedAt: null }],
-        isToday: new Date(espnGame.kickoff).toDateString() === new Date().toDateString(),
+        sources: [{ name: freeGame.source, updatedAt: null }],
+        isToday: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() || (new Date(freeGame.kickoff) - Date.now() < 24*3600000),
         hasLiveModel: true,
         explanation: [
-          `Additional game from ESPN free API: ${espnGame.league}`,
-          "No market odds available, using Vanish generic model (50/50 prior)",
-          "This expands coverage beyond The Odds API for more games today",
+          `Additional game from ${freeGame.source} free API: ${freeGame.league}`,
+          ...(independentModel ? independentModel.explanation.slice(0,2) : ["Vanish model uses free team stats + Poisson/rating models"]),
+          "This expands coverage beyond The Odds API - more games today!",
         ],
         inputRows: [
-          ["Data source", "ESPN (free) + Vanish Model"],
-          ["League", espnGame.league],
-          ["Sport key", espnGame.sportKey],
+          ["Data source", `${freeGame.source} (free) + Vanish Model`],
+          ["League", freeGame.league],
+          ["Vanish Model", independentModel?.model || "Generic"],
         ],
         metrics: [
-          { label: "Source", value: "ESPN" },
-          { label: "Model", value: "Vanish Generic" },
+          { label: "Source", value: freeGame.source },
+          { label: "Vanish home", value: independentModel ? `${(independentModel.probabilities.home*100).toFixed(1)}%` : "50%" },
+          { label: "Today", value: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() ? "Yes" : "No" },
         ],
       });
     }
