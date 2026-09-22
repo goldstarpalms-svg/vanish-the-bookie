@@ -20,8 +20,7 @@ export async function fetchOpenLigaDB() {
   const cached = getCached("openligadb");
   if (cached) return cached;
   try {
-    // Get current matchday for Bundesliga, 2. Bundesliga, etc.
-    const leagues = ["bl1", "bl2", "bl3"]; // Bundesliga 1,2,3
+    const leagues = ["bl1", "bl2", "bl3"];
     const games = [];
     for (const league of leagues) {
       try {
@@ -54,29 +53,36 @@ export async function fetchOpenLigaDB() {
   }
 }
 
-// football-data.org - Free tier, needs API key (10 req/min)
+// football-data.org - Free tier, needs API key (10 req/min) - NOW WITH YOUR KEY 8e31...
 export async function fetchFootballDataOrg(apiKey) {
-  if (!apiKey) return [];
+  if (!apiKey) {
+    console.log("football-data.org: No API key, skipping");
+    return [];
+  }
   const cached = getCached("footballdataorg");
   if (cached) return cached;
   try {
-    const res = await fetch("https://api.football-data.org/v4/matches?status=SCHEDULED", {
+    const today = new Date().toISOString().slice(0,10);
+    const nextWeek = new Date(Date.now() + 7*24*3600000).toISOString().slice(0,10);
+    console.log(`football-data.org: Fetching ${today} to ${nextWeek} with key ${apiKey.slice(0,4)}...`);
+    
+    const res = await fetch(`https://api.football-data.org/v4/matches?dateFrom=${today}&dateTo=${nextWeek}`, {
       headers: { "X-Auth-Token": apiKey },
-      signal: AbortSignal.timeout(8000),
+      signal: AbortSignal.timeout(10000),
     });
     if (!res.ok) {
-      console.warn(`football-data.org failed: ${res.status}`);
+      const text = await res.text();
+      console.warn(`football-data.org failed: ${res.status} - ${text.slice(0,200)}`);
       return [];
     }
     const data = await res.json();
     const games = [];
-    for (const match of (data.matches || []).slice(0, 30)) {
+    for (const match of (data.matches || []).slice(0, 50)) {
       const dt = new Date(match.utcDate);
-      if (dt - Date.now() > 7*24*3600000) continue;
       games.push({
         id: `fdorg_${match.id}`,
         sport: "football",
-        sportKey: `soccer_${match.competition?.code?.toLowerCase() || "unknown"}`,
+        sportKey: `soccer_${(match.competition?.code || "unknown").toLowerCase()}`,
         league: `${match.competition?.name || "Football"} (football-data.org)`,
         home: match.homeTeam?.name || "Home",
         away: match.awayTeam?.name || "Away",
@@ -84,6 +90,7 @@ export async function fetchFootballDataOrg(apiKey) {
         source: "football-data.org",
       });
     }
+    console.log(`football-data.org: Got ${games.length} games`);
     setCached("footballdataorg", games);
     return games;
   } catch (e) {
@@ -103,10 +110,7 @@ export async function fetchAPIFootball(apiKey) {
       headers: { "x-apisports-key": apiKey },
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) {
-      console.warn(`API-Football failed: ${res.status}`);
-      return [];
-    }
+    if (!res.ok) return [];
     const data = await res.json();
     const games = [];
     for (const fixture of (data.response || []).slice(0, 30)) {
@@ -115,7 +119,7 @@ export async function fetchAPIFootball(apiKey) {
       games.push({
         id: `apifb_${fixture.fixture?.id}`,
         sport: "football",
-        sportKey: `soccer_${fixture.league?.name?.toLowerCase().replace(/\s+/g,"_") || "unknown"}`,
+        sportKey: `soccer_${(fixture.league?.name || "unknown").toLowerCase().replace(/\s+/g,"_")}`,
         league: `${fixture.league?.name || "Football"} (API-Football)`,
         home: fixture.teams?.home?.name || "Home",
         away: fixture.teams?.away?.name || "Away",
@@ -131,10 +135,11 @@ export async function fetchAPIFootball(apiKey) {
   }
 }
 
-// Combined football free sources
 export async function fetchAllFootballFree() {
   const footballDataKey = process.env.FOOTBALL_DATA_API_KEY;
   const apiFootballKey = process.env.API_FOOTBALL_KEY;
+  
+  console.log(`Football free sources - football-data.org key: ${footballDataKey ? 'YES '+footballDataKey.slice(0,4)+'...' : 'NO'}, API-Football key: ${apiFootballKey ? 'YES' : 'NO'}`);
   
   const [openLiga, fdOrg, apiFb] = await Promise.all([
     fetchOpenLigaDB().catch(()=>[]),
@@ -142,8 +147,9 @@ export async function fetchAllFootballFree() {
     fetchAPIFootball(apiFootballKey).catch(()=>[]),
   ]);
   
+  console.log(`OpenLigaDB: ${openLiga.length}, football-data.org: ${fdOrg.length}, API-Football: ${apiFb.length}`);
+  
   const all = [...openLiga, ...fdOrg, ...apiFb];
-  // Deduplicate
   const seen = new Set();
   const deduped = [];
   for (const g of all) {
