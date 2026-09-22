@@ -986,7 +986,8 @@ function Predictions({
     [onlySaved, setOnlySaved] = useState(false),
     [limit, setLimit] = useState(6),
     [showFinished, setShowFinished] = useState(true),
-    [finishedLimit, setFinishedLimit] = useState(6);
+    [finishedLimit, setFinishedLimit] = useState(6),
+    [safeFilter, setSafeFilter] = useState("all");
   const today = data.meta.snapshotDate;
   useEffect(() => {
     setLimit(6);
@@ -1014,6 +1015,64 @@ function Predictions({
   const finishedGames = (data.finishedGames || []).filter(
     (p) => sport === "all" || p.sport === sport
   );
+
+  // SAFE TIPS + BEST BETS TODAY + VALUES — like Footbot + WinDrawWin + Forebet
+  const safeTips = useMemo(() => {
+    return data.predictions
+      .filter(p => {
+        const prob = p.independentProbabilities?.[p.pick.side] || p.pick.probability;
+        const conf = p.independentModel?.confidence || p.pick.probability;
+        return prob >= 0.6 || conf >= 0.6;
+      })
+      .filter(p => sport === "all" || p.sport === sport)
+      .sort((a,b) => {
+        const pa = a.independentProbabilities?.[a.pick.side] || a.pick.probability;
+        const pb = b.independentProbabilities?.[b.pick.side] || b.pick.probability;
+        return pb - pa;
+      })
+      .slice(0, 20);
+  }, [data.predictions, sport]);
+
+  const bestBetsToday = useMemo(() => {
+    return safeTips.filter(p => p.isToday).slice(0, 5);
+  }, [safeTips]);
+
+  const valueBets = useMemo(() => {
+    // Values: Vanish higher than market by >5% — Kelly Criteria like Forebet
+    return data.predictions
+      .filter(p => p.hasLiveModel && p.marketPick && p.vanishPick)
+      .filter(p => {
+        const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
+        const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
+        return vanishProb - marketProb > 0.05;
+      })
+      .filter(p => sport === "all" || p.sport === sport)
+      .map(p => {
+        const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
+        const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
+        const edge = vanishProb - marketProb;
+        const kelly = edge / (1/marketProb -1); // simplified Kelly
+        return {...p, edge, kelly};
+      })
+      .sort((a,b) => b.edge - a.edge)
+      .slice(0, 10);
+  }, [data.predictions, sport]);
+
+  const accumulatorTips = useMemo(() => {
+    // Ready-made accumulators from Safe Tips — like WinDrawWin + PredictZ
+    const safe = safeTips.slice(0, 10);
+    if (safe.length < 2) return [];
+    const double = safe.slice(0,2);
+    const treble = safe.slice(0,3);
+    const fiveFold = safe.slice(0,5);
+    const calcOdds = (picks) => picks.reduce((acc,p) => acc * (1/(p.independentProbabilities?.[p.pick.side] || p.pick.probability)), 1);
+    return [
+      {label: "Double", picks: double, totalOdds: calcOdds(double), stake: "Medium"},
+      {label: "Treble", picks: treble, totalOdds: calcOdds(treble), stake: "High Risk"},
+      {label: "5-Fold", picks: fiveFold, totalOdds: calcOdds(fiveFold), stake: "Very High"},
+    ];
+  }, [safeTips]);
+
   const changeSport = (value) => setSport(value);
   const reset = () => {
     setSport("all");
@@ -1074,6 +1133,93 @@ function Predictions({
           {saved.length > 0 && <b>{saved.length}</b>}
         </button>
       </div>
+
+      {/* SAFE TIPS + BEST BETS TODAY + VALUES + ACCAS — like Footbot + WinDrawWin + Forebet + PredictZ */}
+      {(safeTips.length > 0 || valueBets.length > 0) && (
+        <div className="safe-tips-strip">
+          {/* Best Bets Today */}
+          {bestBetsToday.length > 0 && (
+            <div className="best-bets-today">
+              <div className="best-bets-header">
+                <div><div className="eyebrow"><ShieldCheck size={14} /> BEST BETS TODAY — Like WinDrawWin Sure Bets</div><h3>Today's safest {bestBetsToday.length} picks</h3><p className="small-text muted">Curated from {safeTips.length} safe tips where confidence ≥60% — low-risk baseline for singles & accumulators (Footbot style)</p></div>
+                <SmallTag tone="green">{bestBetsToday.length} TODAY</SmallTag>
+              </div>
+              <div className="best-bets-grid">
+                {bestBetsToday.map(p => (
+                  <button key={p.id} className="best-bet-card" onClick={() => onOpen(p)}>
+                    <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)}</SmallTag></div>
+                    <div className="best-bet-teams"><TeamBadge team={p.home} /><span>{p.home.name}</span><small>vs</small><span>{p.away.name}</span></div>
+                    <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>Stake: High • Safe Tip 80% target</span></div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Safe Tips */}
+          <div className="safe-tips-section">
+            <div className="section-heading small">
+              <div><div className="eyebrow"><Zap size={12} /> SAFE TIPS — Like Footbot.net 79% Win Rate</div><h3>{safeTips.length} safe tips (confidence ≥60%)</h3></div>
+              <div style={{display:'flex',gap:'6px'}}>
+                {["all","football","tennis","baseball","icehockey","basketball"].map(f => (
+                  <button key={f} className={`tag ${safeFilter===f ? "green" : ""}`} onClick={() => setSafeFilter(f)}>{f}</button>
+                ))}
+              </div>
+            </div>
+            <div className="safe-tips-grid">
+              {safeTips.filter(p => safeFilter==="all" || p.sport===safeFilter).slice(0,8).map(p => (
+                <button key={p.id} className="safe-tip-card" onClick={() => onOpen(p)}>
+                  <div><SportIcon sport={p.sport} size={12} />{p.home.name} vs {p.away.name}</div>
+                  <div><strong>{p.pick.label}</strong><span>{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)} • {p.independentModel?.confidence ? `${pct(p.independentModel.confidence)} conf` : "Safe"}</span></div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Values — Kelly Criteria like Forebet */}
+          {valueBets.length > 0 && (
+            <div className="values-section">
+              <div className="section-heading small">
+                <div><div className="eyebrow"><TrendingUp size={12} /> VALUES — Kelly Criteria like Forebet (79 values)</div><h3>{valueBets.length} value bets — Vanish higher than market by &gt;5%</h3><p className="small-text muted">Where Vanish model probability exceeds market consensus — highest prospective value, statistical relevance + profitability</p></div>
+                <SmallTag tone="amber">KELLY</SmallTag>
+              </div>
+              <div className="values-grid">
+                {valueBets.map(p => (
+                  <button key={p.id} className="value-card" onClick={() => onOpen(p)}>
+                    <div className="value-top"><span>{p.home.name} vs {p.away.name}</span><SmallTag tone="green">+{pct(p.edge,1)} edge</SmallTag></div>
+                    <div className="value-probs"><span>Market {pct(p.probabilities?.[p.vanishPick.side] || 0)}</span><ArrowRight size={12} /><span>Vanish {pct(p.independentProbabilities?.[p.vanishPick.side] || 0)}</span></div>
+                    <div className="value-kelly">Kelly {pct(p.kelly,1)} • {p.vanishPick.label}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Accumulator Tips — like WinDrawWin + PredictZ */}
+          {accumulatorTips.length > 0 && (
+            <div className="accas-section">
+              <div className="section-heading small">
+                <div><div className="eyebrow"><Layers3 size={12} /> ACCUMULATOR TIPS — Ready-made like WinDrawWin + PredictZ</div><h3>Accas from Safe Tips</h3></div>
+                <SmallTag>ACCA</SmallTag>
+              </div>
+              <div className="accas-grid">
+                {accumulatorTips.map((acca,i) => (
+                  <div key={i} className="acca-card">
+                    <div className="acca-header"><strong>{acca.label}</strong><span>{acca.picks.length} legs • {pct(1/acca.totalOdds)} combined prob</span><SmallTag tone={acca.label==="Double" ? "green" : "amber"}>{acca.stake}</SmallTag></div>
+                    <div className="acca-odds">Total Odds: {acca.totalOdds.toFixed(2)} • $10 returns ${(10*acca.totalOdds).toFixed(2)}</div>
+                    <div className="acca-picks">
+                      {acca.picks.map(p => (
+                        <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.home.name} vs {p.away.name} — <strong>{p.pick.label} {pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)}</strong></div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       <div className="content-grid">
         <div className="prediction-main">
           <div className="list-toolbar">

@@ -4690,6 +4690,222 @@ option {
 .row-pending td {
   background: #1a1e14 !important;
 }
+.safe-tips-strip {
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.best-bets-today {
+  border: 1px solid #4a6b2a;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e2e14, #162112);
+  padding: 20px;
+}
+.best-bets-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+.best-bets-header .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #c8e890;
+  margin-bottom: 6px;
+}
+.best-bets-header h3 {
+  font-size: 18px;
+  color: #e0efcc;
+}
+.best-bets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.best-bet-card {
+  text-align: left;
+  background: #121c11;
+  border: 1px solid #2e4a22;
+  border-radius: 8px;
+  padding: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.best-bet-card:hover {
+  border-color: #5a7a3a;
+  transform: translateY(-1px);
+}
+.best-bet-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #8a9a7a;
+  margin-bottom: 8px;
+}
+.best-bet-top .tag {
+  margin-left: auto;
+}
+.best-bet-teams {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #d6eac2;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.best-bet-teams small {
+  color: #6e825e;
+  font-size: 8px;
+}
+.best-bet-pick strong {
+  display: block;
+  font-size: 11px;
+  color: #e0efcc;
+  margin-bottom: 2px;
+}
+.best-bet-pick span {
+  font-size: 8px;
+  color: #8a9a7a;
+}
+.safe-tips-section, .values-section, .accas-section {
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  background: #121c11;
+  padding: 18px;
+}
+.section-heading.small {
+  margin-bottom: 14px;
+}
+.section-heading.small h3 {
+  font-size: 16px;
+}
+.section-heading.small .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  margin-bottom: 4px;
+}
+.safe-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.safe-tip-card {
+  text-align: left;
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 10px;
+  color: #9aaf88;
+}
+.safe-tip-card:hover {
+  border-color: #4a6b2a;
+}
+.safe-tip-card div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  font-size: 10px;
+  color: #b8cba2;
+}
+.safe-tip-card strong {
+  display: block;
+  color: #d6eac2;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+.safe-tip-card span {
+  font-size: 9px;
+  color: #8a9a7a;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.value-card {
+  text-align: left;
+  background: #1a2216;
+  border: 1px solid #3a4a32;
+  border-radius: 8px;
+  padding: 12px;
+}
+.value-card:hover {
+  border-color: #6a8a4a;
+}
+.value-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  color: #b8cba2;
+  margin-bottom: 6px;
+}
+.value-probs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #8a9a7a;
+  margin-bottom: 4px;
+}
+.value-kelly {
+  font-size: 10px;
+  color: #c8e890;
+}
+.accas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.acca-card {
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 8px;
+  padding: 14px;
+}
+.acca-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.acca-header strong {
+  font-size: 13px;
+  color: #e0efcc;
+}
+.acca-header span {
+  font-size: 9px;
+  color: #8a9a7a;
+  margin-left: auto;
+}
+.acca-odds {
+  font-size: 10px;
+  color: #c8e890;
+  margin-bottom: 10px;
+  font-family: var(--heading);
+}
+.acca-picks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.acca-picks div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: #9aaf88;
+}
+.acca-picks strong {
+  color: #d6eac2;
+}
 @media (max-width: 700px) {
   .method-grid {
     grid-template-columns: 1fr;
