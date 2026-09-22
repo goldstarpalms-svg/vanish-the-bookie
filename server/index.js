@@ -17,11 +17,11 @@ if (!Number.isFinite(liveMinutes) || liveMinutes < 15 || liveMinutes > 1440)
 const interval = mode === "demo" ? 300000 : liveMinutes * 60000;
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "soccer_epl,basketball_nba")
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,soccer_epl,basketball_nba")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),
-  regions: process.env.ODDS_REGIONS || "uk",
+  regions: process.env.ODDS_REGIONS || "us,uk",
 };
 let predictions = [],
   records = [],

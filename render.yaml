@@ -11,8 +11,8 @@ services:
       - key: DATA_MODE
         value: demo
       - key: LIVE_SPORT_KEYS
-        value: soccer_epl,basketball_nba
+        value: baseball_mlb,basketball_wnba,soccer_fa_cup,soccer_epl,basketball_nba,icehockey_liiga
       - key: ODDS_REGIONS
-        value: uk
+        value: us,uk
       - key: LIVE_REFRESH_MINUTES
-        value: 120
+        value: 60

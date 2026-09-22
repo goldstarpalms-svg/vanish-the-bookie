@@ -127,6 +127,51 @@ function SportIcon({ sport, size = 17 }) {
         <path d="M2.5 12h19M12 2.5v19M5.5 5.2c6 3.2 7.5 6.9 13 13.6M18.5 5.2c-6 3.2-7.5 6.9-13 13.6" />
       </svg>
     );
+  if (sport === "baseball")
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9.5" />
+        <path d="M7 6c2 2 2 10 0 12M17 6c-2 2-2 10 0 12" />
+      </svg>
+    );
+  if (sport === "icehockey")
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9.5" />
+        <path d="M6 15c3-3 9-3 12 0M8 9c2 1 6 1 8 0" />
+      </svg>
+    );
+  if (sport === "americanfootball")
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <ellipse cx="12" cy="12" rx="9" ry="5" />
+        <path d="M12 7v10M9 9c2 1 4 1 6 0M9 15c2-1 4-1 6 0" />
+      </svg>
+    );
   return (
     <svg
       width={size}
@@ -519,8 +564,13 @@ function Hero({ feature, onExplore, onModel, onOpen, demo }) {
           </span>
           <i />
           <span>
-            <SportIcon sport="tennis" size={14} />
-            Tennis
+            <SportIcon sport="baseball" size={14} />
+            Baseball
+          </span>
+          <i />
+          <span>
+            <SportIcon sport="icehockey" size={14} />
+            Hockey
           </span>
         </div>
       </div>

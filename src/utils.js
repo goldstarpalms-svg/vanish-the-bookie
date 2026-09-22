@@ -2,7 +2,11 @@ export const SPORTS = [
   { id: "all", label: "All sports" },
   { id: "football", label: "Football" },
   { id: "basketball", label: "Basketball" },
+  { id: "baseball", label: "Baseball" },
+  { id: "icehockey", label: "Ice Hockey" },
+  { id: "americanfootball", label: "American FB" },
   { id: "tennis", label: "Tennis" },
+  { id: "other", label: "Other" },
 ];
 export const pct = (n, digits = 0) => `${(n * 100).toFixed(digits)}%`;
 export const dateKey = (value) =>

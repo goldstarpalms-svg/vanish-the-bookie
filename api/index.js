@@ -6,8 +6,8 @@ const MODE = process.env.DATA_MODE || "demo";
 const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 120)));
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "soccer_epl,basketball_nba").split(",").map(s=>s.trim()).filter(Boolean),
-  regions: process.env.ODDS_REGIONS || "uk",
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,soccer_epl,basketball_nba,icehockey_liiga,basketball_nbl").split(",").map(s=>s.trim()).filter(Boolean),
+  regions: process.env.ODDS_REGIONS || "us,uk",
 };
 
 // Simple in-memory cache for Vercel serverless (resets on cold start, which is expected on free tier)
