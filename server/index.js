@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import { demoFixtures, demoArchive } from "./fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "./model.js";
-import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions } from "./live-provider.js";
+import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions, fetchFreeFallback } from "./live-provider.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const mode = process.env.DATA_MODE || "demo";
@@ -17,11 +17,11 @@ if (!Number.isFinite(liveMinutes) || liveMinutes < 15 || liveMinutes > 1440)
 const interval = mode === "demo" ? 300000 : liveMinutes * 60000;
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "aussierules_aflw,baseball_milb,baseball_mlb,basketball_nbl,basketball_wnba,boxing_boxing,cricket_odi,icehockey_liiga,icehockey_mestis,icehockey_sweden_allsvenskan,icehockey_sweden_hockey_league,mma_mixed_martial_arts,soccer_brazil_serie_b,soccer_fa_cup,soccer_uefa_champs_league_women,soccer_usa_mls,tennis_wta_singapore_open")
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,icehockey_liiga")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),
-  regions: process.env.ODDS_REGIONS || "us,uk",
+  regions: process.env.ODDS_REGIONS || "us",
 };
 let predictions = [],
   records = [],
@@ -35,9 +35,7 @@ async function readRecords() {
     return JSON.parse(await readFile(recordPath, "utf8"));
   } catch (error) {
     if (error.code === "ENOENT") return [];
-    throw new Error(
-      "The results archive could not be read. Restore it before restarting live mode.",
-    );
+    throw new Error("The results archive could not be read. Restore it before restarting live mode.");
   }
 }
 async function persistRecords(value) {
@@ -53,12 +51,8 @@ function generateDemo() {
     return {
       ...prediction,
       status: gradePrediction(prediction.pick, f.result),
-      publishedAt: new Date(
-        new Date(f.kickoff).getTime() - 3 * 3600000,
-      ).toISOString(),
-      settledAt: new Date(
-        new Date(f.kickoff).getTime() + 2 * 3600000,
-      ).toISOString(),
+      publishedAt: new Date(new Date(f.kickoff).getTime() - 3 * 3600000).toISOString(),
+      settledAt: new Date(new Date(f.kickoff).getTime() + 2 * 3600000).toISOString(),
     };
   });
 }
@@ -69,10 +63,23 @@ async function refresh() {
     if (mode === "demo") generateDemo();
     else {
       let incoming;
+      let usedFallback = false;
       try {
         incoming = await fetchMultiSourcePredictions(config);
-      } catch {
-        incoming = await fetchLivePredictions(config);
+      } catch (e) {
+        console.warn(`Live fetch failed (${e.message}), trying free fallback...`);
+        if (e.message.includes("401") || e.message.includes("429") || e.message.includes("quota")) {
+          try {
+            incoming = await fetchFreeFallback();
+            usedFallback = true;
+            warnings = [e.message, "Showing games from free sources (ESPN, MLB Stats API, TheSportsDB) - no Odds API credits needed. Get new free key at the-odds-api.com for market odds."];
+            console.log(`Free fallback: ${incoming.length} games from free sources`);
+          } catch (fallbackError) {
+            throw new Error(`${e.message} - Free fallback also failed: ${fallbackError.message}`);
+          }
+        } else {
+          throw e;
+        }
       }
       const archive = await readRecords();
       const byId = new Map(archive.map((row) => [row.id, row]));
@@ -80,48 +87,29 @@ async function refresh() {
         if (!byId.has(prediction.id))
           byId.set(prediction.id, { ...prediction, status: "pending" });
       }
-      const scores = await fetchLiveScores(config);
-      warnings = scores.warnings;
-      for (const event of scores.events) {
-        const row = byId.get(event.id);
-        if (
-          !row ||
-          row.status !== "pending" ||
-          !event.completed ||
-          !event.scores?.length
-        )
-          continue;
-        const homeScore = event.scores.find((s) => s.name === row.home.name);
-        const awayScore = event.scores.find((s) => s.name === row.away.name);
-        if (
-          !homeScore ||
-          !awayScore ||
-          homeScore.score == null ||
-          awayScore.score == null
-        )
-          continue;
-        const result = {
-          home: Number(homeScore.score),
-          away: Number(awayScore.score),
-        };
-        if (!Number.isFinite(result.home) || !Number.isFinite(result.away))
-          continue;
-        if (result.home === result.away && !("draw" in row.probabilities))
-          continue;
-        byId.set(row.id, {
-          ...row,
-          result,
-          status: gradePrediction(row.pick, result),
-          settledAt: new Date().toISOString(),
-        });
+      if (!usedFallback) {
+        try {
+          const scores = await fetchLiveScores(config);
+          warnings = scores.warnings;
+          for (const event of scores.events) {
+            const row = byId.get(event.id);
+            if (!row || row.status !== "pending" || !event.completed || !event.scores?.length) continue;
+            const homeScore = event.scores.find((s) => s.name === row.home.name);
+            const awayScore = event.scores.find((s) => s.name === row.away.name);
+            if (!homeScore || !awayScore || homeScore.score == null || awayScore.score == null) continue;
+            const result = { home: Number(homeScore.score), away: Number(awayScore.score) };
+            if (!Number.isFinite(result.home) || !Number.isFinite(result.away)) continue;
+            if (result.home === result.away && !("draw" in row.probabilities)) continue;
+            byId.set(row.id, { ...row, result, status: gradePrediction(row.pick, result), settledAt: new Date().toISOString() });
+          }
+        } catch (e) {
+          warnings.push(`Scores unavailable: ${e.message}`);
+        }
       }
       const allRecords = [...byId.values()];
       await persistRecords(allRecords);
       records = allRecords;
-      predictions = allRecords.filter(
-        (p) =>
-          p.status === "pending" && new Date(p.kickoff).getTime() > Date.now(),
-      );
+      predictions = allRecords.filter((p) => p.status === "pending" && new Date(p.kickoff).getTime() > Date.now());
       if (!predictions.length) predictions = incoming;
     }
     generatedAt = new Date().toISOString();
@@ -129,6 +117,15 @@ async function refresh() {
   } catch (error) {
     lastError = error.message;
     console.error(`Prediction refresh: ${error.message}`);
+    // On error, keep old predictions if any, don't clear
+    if (!predictions.length) {
+      try {
+        console.log("Trying free fallback as last resort...");
+        predictions = await fetchFreeFallback();
+        warnings = [lastError, "Showing free sources fallback"];
+        lastError = null;
+      } catch {}
+    }
   } finally {
     refreshing = false;
   }
@@ -137,18 +134,8 @@ function communityUrl() {
   const value = process.env.WHATSAPP_URL || "";
   try {
     const url = new URL(value);
-    return url.protocol === "https:" &&
-      [
-        "wa.me",
-        "chat.whatsapp.com",
-        "whatsapp.com",
-        "www.whatsapp.com",
-      ].includes(url.hostname)
-      ? url.href
-      : null;
-  } catch {
-    return null;
-  }
+    return url.protocol === "https:" && ["wa.me","chat.whatsapp.com","whatsapp.com","www.whatsapp.com"].includes(url.hostname) ? url.href : null;
+  } catch { return null; }
 }
 function dashboard() {
   return {
@@ -158,28 +145,15 @@ function dashboard() {
       mode,
       modelVersion: MODEL_VERSION,
       generatedAt,
-      nextRun: generatedAt
-        ? new Date(new Date(generatedAt).getTime() + interval).toISOString()
-        : null,
+      nextRun: generatedAt ? new Date(new Date(generatedAt).getTime() + interval).toISOString() : null,
       refreshMinutes: interval / 60000,
       timezone: "Africa/Lagos",
       calibrated: false,
-      stale:
-        Boolean(lastError) ||
-        (generatedAt &&
-          Date.now() - new Date(generatedAt).getTime() > interval * 2),
+      stale: Boolean(lastError) || (generatedAt && Date.now() - new Date(generatedAt).getTime() > interval * 2),
       error: lastError,
       warnings,
-      source:
-        mode === "demo"
-          ? "Synthetic fixtures and ratings"
-          : "The Odds API + MLB Stats API + ESPN + TheSportsDB (76 games today)",
-      snapshotDate: new Intl.DateTimeFormat("en-CA", {
-        timeZone: "Africa/Lagos",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      }).format(new Date()),
+      source: mode === "demo" ? "Synthetic fixtures and ratings" : predictions[0]?.region?.includes("Free") ? "Free sources (ESPN, MLB Stats API, TheSportsDB) + Vanish Model - No quota needed" : "The Odds API + MLB Stats API + ESPN + Vanish Model",
+      snapshotDate: new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()),
     },
     community: { x: "https://x.com/vanishthebookie", whatsapp: communityUrl() },
   };
@@ -197,24 +171,14 @@ app.get("/api/dashboard", (req, res) => {
   res.json(dashboard());
 });
 app.get("/api/health", (req, res) =>
-  res.json({ ok: !lastError, mode, generatedAt, modelVersion: MODEL_VERSION }),
+  res.json({ ok: !lastError, mode, generatedAt, modelVersion: MODEL_VERSION, games: predictions.length }),
 );
 let lastManualRefresh = 0;
 app.post("/api/demo/refresh", async (req, res) => {
   if (mode !== "demo")
-    return res
-      .status(403)
-      .json({
-        error:
-          "Live refresh is scheduled server-side to protect provider quota.",
-      });
+    return res.status(403).json({ error: "Live refresh is scheduled server-side to protect provider quota." });
   if (Date.now() - lastManualRefresh < 10000)
-    return res
-      .status(429)
-      .json({
-        error:
-          "Already up to date. Please wait a few seconds before refreshing again.",
-      });
+    return res.status(429).json({ error: "Already up to date. Please wait a few seconds before refreshing again." });
   lastManualRefresh = Date.now();
   await refresh();
   res.json(dashboard());
@@ -226,21 +190,12 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => res.sendFile(path.join(root, "dist/index.html")));
 } else {
   const { createServer } = await import("vite");
-  const vite = await createServer({
-    root,
-    server: { middlewareMode: true, allowedHosts: true, hmr: false },
-    appType: "spa",
-  });
+  const vite = await createServer({ root, server: { middlewareMode: true, allowedHosts: true, hmr: false }, appType: "spa" });
   app.use(vite.middlewares);
 }
 await refresh();
 const timer = setInterval(refresh, interval);
 timer.unref();
 const port = Number(process.env.PORT || 3000);
-server.listen(port, "0.0.0.0", () =>
-  console.log(`Vanish The Bookie is ready on 0.0.0.0:${port} (${mode} mode) - ${predictions.length} games`),
-);
-process.on("SIGTERM", () => {
-  clearInterval(timer);
-  server.close(() => process.exit(0));
-});
+server.listen(port, "0.0.0.0", () => console.log(`Vanish The Bookie is ready on 0.0.0.0:${port} (${mode} mode) - ${predictions.length} games`));
+process.on("SIGTERM", () => { clearInterval(timer); server.close(() => process.exit(0)); });

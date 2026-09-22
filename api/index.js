@@ -1,13 +1,13 @@
 import { demoFixtures, demoArchive } from "../server/fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
-import { fetchLivePredictions, fetchMultiSourcePredictions } from "../server/live-provider.js";
+import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback } from "../server/live-provider.js";
 
 const MODE = process.env.DATA_MODE || "demo";
-const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 60)));
+const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 360)));
 const config = {
   key: process.env.ODDS_API_KEY,
-  sportKeys: (process.env.LIVE_SPORT_KEYS || "aussierules_aflw,baseball_milb,baseball_mlb,basketball_nbl,basketball_wnba,boxing_boxing,cricket_odi,icehockey_liiga,icehockey_mestis,icehockey_sweden_allsvenskan,icehockey_sweden_hockey_league,mma_mixed_martial_arts,soccer_brazil_serie_b,soccer_fa_cup,soccer_uefa_champs_league_women,soccer_usa_mls,tennis_wta_singapore_open").split(",").map(s=>s.trim()).filter(Boolean),
-  regions: process.env.ODDS_REGIONS || "us,uk",
+  sportKeys: (process.env.LIVE_SPORT_KEYS || "baseball_mlb,basketball_wnba,soccer_fa_cup,icehockey_liiga").split(",").map(s=>s.trim()).filter(Boolean),
+  regions: process.env.ODDS_REGIONS || "us",
 };
 
 let cache = { predictions: [], records: [], generatedAt: null, error: null, warnings: [] };
@@ -38,22 +38,54 @@ async function getDashboard() {
           };
         });
       } else {
-        if (!config.key) throw new Error("ODDS_API_KEY is not set. Add it in Vercel Environment Variables.");
+        if (!config.key) throw new Error("ODDS_API_KEY is not set");
         let incoming;
+        let usedFallback = false;
         try {
           incoming = await fetchMultiSourcePredictions(config);
         } catch (e) {
-          console.warn("Multi-source failed, fallback to single:", e.message);
-          incoming = await fetchLivePredictions(config);
+          console.warn(`Live fetch failed (${e.message}), trying free fallback...`);
+          if (e.message.includes("401") || e.message.includes("429") || e.message.includes("quota") || e.message.includes("OUT_OF_USAGE")) {
+            try {
+              incoming = await fetchFreeFallback();
+              usedFallback = true;
+              cache.warnings = [e.message, "Showing free sources (ESPN, MLB, TheSportsDB) - no quota needed. Get new free key at the-odds-api.com for market odds."];
+              console.log(`Free fallback: ${incoming.length} games`);
+            } catch (fallbackError) {
+              throw new Error(`${e.message} - Free fallback failed: ${fallbackError.message}`);
+            }
+          } else {
+            throw e;
+          }
         }
         cache.predictions = incoming;
         cache.records = [];
+        if (!usedFallback) cache.warnings = [];
       }
       cache.generatedAt = new Date().toISOString();
       cache.error = null;
-      cache.warnings = [];
     } catch (e) {
-      cache.error = e.message;
+      // On 401/429, keep old cache if available, don't break site
+      if (e.message.includes("401") || e.message.includes("429") || e.message.includes("quota")) {
+        if (cache.predictions.length > 0) {
+          console.log(`Keeping ${cache.predictions.length} cached games due to ${e.message.slice(0,100)}`);
+          cache.warnings = [e.message, "Showing cached games. Quota exceeded - get new free key at the-odds-api.com or wait for reset."];
+          // Don't set error, keep stale as false to show cached data
+          cache.error = null;
+        } else {
+          // No cache, try free fallback
+          try {
+            console.log("No cache, trying free fallback...");
+            cache.predictions = await fetchFreeFallback();
+            cache.warnings = [e.message, "Showing free sources (no quota needed)"];
+            cache.error = null;
+          } catch {
+            cache.error = e.message;
+          }
+        }
+      } else {
+        cache.error = e.message;
+      }
     }
   }
   return {
@@ -69,8 +101,8 @@ async function getDashboard() {
       calibrated: false,
       stale: Boolean(cache.error) || !cache.generatedAt,
       error: cache.error,
-      warnings: cache.warnings,
-      source: MODE === "demo" ? "Synthetic fixtures and ratings" : `The Odds API + MLB Stats API + ESPN (76 games today across 17 leagues) - ${cache.predictions.length} live`,
+      warnings: cache.warnings || [],
+      source: MODE === "demo" ? "Synthetic fixtures" : cache.predictions[0]?.region?.includes("Free") ? `Free sources (ESPN, MLB, TheSportsDB) + Vanish Model - ${cache.predictions.length} games (no quota)` : `The Odds API + Vanish Model - ${cache.predictions.length} games (4 leagues, 1 region, 360min = 480 credits/month)`,
       snapshotDate: new Intl.DateTimeFormat("en-CA",{timeZone:"Africa/Lagos",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()),
     },
     community: { x: "https://x.com/vanishthebookie", whatsapp: communityUrl() },
@@ -85,7 +117,7 @@ export default async function handler(req, res) {
 
   if (path === "/api/health") {
     const d = await getDashboard();
-    return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length });
+    return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length, error: d.meta.error, warnings: d.meta.warnings });
   }
   if (path === "/api/dashboard") {
     res.setHeader("Cache-Control","no-store");
@@ -93,7 +125,7 @@ export default async function handler(req, res) {
     return res.json(d);
   }
   if (path === "/api/demo/refresh" && req.method === "POST") {
-    if (MODE !== "demo") return res.status(403).json({ error: "Live refresh is scheduled server-side to protect provider quota." });
+    if (MODE !== "demo") return res.status(403).json({ error: "Live refresh is scheduled server-side" });
     cache.generatedAt = null;
     const d = await getDashboard();
     return res.json(d);
