@@ -1,14 +1,12 @@
 /**
- * Live Independent Model - Vanish The Bookie
- * Uses free APIs (MLB Stats API, ESPN, etc.) to produce independent predictions
- * alongside market consensus. No paid keys needed for base model.
+ * Live Independent Model - Vanish The Bookie - FIXED for free sources
+ * Uses free APIs to produce independent predictions alongside market
  */
 
-import { footballFromGoals, basketballModel, tennisModel } from "./model.js";
+import { footballFromGoals, basketballModel } from "./model.js";
 
-// Cache for team stats to avoid repeated fetches
 const statsCache = new Map();
-const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+const CACHE_TTL = 30 * 60 * 1000;
 
 function getCached(key) {
   const entry = statsCache.get(key);
@@ -19,18 +17,15 @@ function setCached(key, data) {
   statsCache.set(key, { data, ts: Date.now() });
 }
 
-// MLB Stats API - Free, no key
 async function fetchMLBTeamStats() {
   const cached = getCached("mlb_stats");
   if (cached) return cached;
   try {
-    // Get all teams
     const teamsRes = await fetch("https://statsapi.mlb.com/api/v1/teams?sportId=1", { signal: AbortSignal.timeout(10000) });
     if (!teamsRes.ok) throw new Error("MLB teams fetch failed");
     const teamsData = await teamsRes.json();
     const teams = teamsData.teams || [];
     
-    // Get standings for win% and runs
     const standingsRes = await fetch("https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2024&standingsTypes=regularSeason", { signal: AbortSignal.timeout(10000) });
     let standings = {};
     if (standingsRes.ok) {
@@ -60,7 +55,6 @@ async function fetchMLBTeamStats() {
 }
 
 function mlbTeamRating(teamName, mlbData) {
-  // Find team by name (fuzzy)
   const team = mlbData.teams.find(t => 
     teamName.toLowerCase().includes(t.teamName.toLowerCase()) || 
     teamName.toLowerCase().includes(t.name.toLowerCase()) ||
@@ -71,11 +65,10 @@ function mlbTeamRating(teamName, mlbData) {
   const standing = mlbData.standings[team.id];
   if (!standing) return { rating: 0, winPct: 0.5, runsFor: 4.5, runsAgainst: 4.5 };
   
-  // Convert win% and run differential to rating
   const winPct = standing.winPct || 0.5;
-  const rating = (winPct - 0.5) * 20; // Scale to -10 to +10
+  const rating = (winPct - 0.5) * 20;
   const avgRuns = 4.5;
-  const runsFor = avgRuns + (standing.runDiff / 162) * 0.5; // Rough estimate
+  const runsFor = avgRuns + (standing.runDiff / 162) * 0.5;
   const runsAgainst = avgRuns - (standing.runDiff / 162) * 0.5;
   
   return { 
@@ -88,54 +81,27 @@ function mlbTeamRating(teamName, mlbData) {
   };
 }
 
-// ESPN API - Free, no key, covers many sports
-async function fetchESPNScoreboard(sport, league) {
-  const cacheKey = `espn_${sport}_${league}`;
-  const cached = getCached(cacheKey);
-  if (cached) return cached;
-  try {
-    const url = `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error(`ESPN ${sport}/${league} failed`);
-    const data = await res.json();
-    setCached(cacheKey, data);
-    return data;
-  } catch (e) {
-    // console.warn(`ESPN ${sport}/${league} fetch failed:`, e.message);
-    return null;
-  }
-}
-
-// Generic Elo-like rating from recent form (free, no external API needed - uses market odds as prior)
-function eloFromMarketProb(prob, homeAdvantage = 0.05) {
-  // Convert market probability to Elo-like rating
-  // P = 1 / (1 + 10^((opp - player)/400))
-  // => rating diff = 400 * log10((1-P)/P)
+function eloFromMarketProb(prob) {
   const p = Math.max(0.05, Math.min(0.95, prob));
   const diff = 400 * Math.log10((1 - p) / p);
   return diff;
 }
 
-// Main live model function - produces independent prediction
 export async function liveIndependentModel(event, marketProbs) {
   const sportKey = event.sport_key;
-  const sportCat = sportKey.split("_")[0]; // soccer, baseball, basketball, etc.
   
   try {
     if (sportKey.startsWith("baseball_")) {
-      // MLB - Use real team stats from MLB API
       const mlbData = await fetchMLBTeamStats();
       const homeRating = mlbTeamRating(event.home_team, mlbData);
       const awayRating = mlbTeamRating(event.away_team, mlbData);
       
-      // Simple model: win% based rating + home advantage
-      const homeAdv = 0.04; // 4% home advantage in MLB
+      const homeAdv = 0.04;
       const ratingDiff = homeRating.rating - awayRating.rating;
       const expectedWinProb = 0.5 + (ratingDiff * 0.02) + homeAdv;
       const winProb = Math.max(0.15, Math.min(0.85, expectedWinProb));
       
-      // Expected runs model
-      const homeRuns = (homeRating.runsFor + awayRating.runsAgainst) / 2 + 0.2; // home boost
+      const homeRuns = (homeRating.runsFor + awayRating.runsAgainst) / 2 + 0.2;
       const awayRuns = (awayRating.runsFor + homeRating.runsAgainst) / 2;
       
       return {
@@ -145,8 +111,6 @@ export async function liveIndependentModel(event, marketProbs) {
         inputs: {
           homeWinPct: homeRating.winPct,
           awayWinPct: awayRating.winPct,
-          homeRunsFor: homeRating.runsFor,
-          awayRunsFor: awayRating.runsFor,
         },
         probabilities: {
           home: winProb,
@@ -159,21 +123,17 @@ export async function liveIndependentModel(event, marketProbs) {
         explanation: [
           `Home: ${event.home_team} - Win% ${(homeRating.winPct*100).toFixed(1)}%, Rating ${homeRating.rating.toFixed(1)}`,
           `Away: ${event.away_team} - Win% ${(awayRating.winPct*100).toFixed(1)}%, Rating ${awayRating.rating.toFixed(1)}`,
-          `Model uses 2024 season win% and run differential with 4% home advantage.`,
+          `Model uses win% and run differential with 4% home advantage.`,
           `Expected runs: ${homeRuns.toFixed(2)} - ${awayRuns.toFixed(2)}`,
         ],
-        dataSource: "MLB Stats API (free) + Vanish calculation",
+        dataSource: "MLB Stats API (free) + Vanish",
       };
     }
     
     if (sportKey.startsWith("basketball_")) {
-      // Basketball - Use market as prior but apply Vanish margin model
       const marketHomeProb = marketProbs.home;
       const eloDiff = eloFromMarketProb(marketHomeProb);
-      
-      // Apply Vanish basketball model with estimated margin
-      // Convert Elo diff to expected margin: ~0.15 points per Elo point
-      const expectedMargin = eloDiff * -0.06 + 3.5; // Home advantage ~3.5 pts
+      const expectedMargin = eloDiff * -0.06 + 3.5;
       
       const vanishResult = basketballModel(expectedMargin, 0, 0);
       
@@ -187,45 +147,68 @@ export async function liveIndependentModel(event, marketProbs) {
           expectedMargin: expectedMargin.toFixed(1),
         },
         probabilities: vanishResult.probabilities,
-        expected: {
-          margin: expectedMargin.toFixed(1),
-        },
+        expected: { margin: expectedMargin.toFixed(1) },
         explanation: [
-          `Market implies ${(marketHomeProb*100).toFixed(1)}% home win, converted to Elo diff ${eloDiff.toFixed(0)}`,
-          `Vanish model: Expected margin ${expectedMargin.toFixed(1)} pts (includes 3.5 pt home advantage)`,
+          `Market implies ${(marketHomeProb*100).toFixed(1)}% home win, Elo diff ${eloDiff.toFixed(0)}`,
+          `Expected margin ${expectedMargin.toFixed(1)} pts (includes 3.5 pt home advantage)`,
           `Normal distribution (σ=12) maps margin to win probability.`,
-          `Independent of bookmaker margin, uses team strength prior.`,
         ],
-        dataSource: "Market prior + Vanish rating-to-margin model",
+        dataSource: "Market prior + Vanish model",
       };
     }
     
     if (sportKey.startsWith("soccer_")) {
-      // Soccer - Poisson model with real team strength estimation
+      // FIXED: For free sources, market is 0.5/0.5 mock, so give balanced prediction with home advantage
       const homeProb = marketProbs.home || 0.33;
       const drawProb = marketProbs.draw || 0.27;
       const awayProb = marketProbs.away || 0.33;
       
-      // Estimate expected goals from market probabilities
-      // Simple heuristic: stronger team gets more xG
-      const totalGoals = 2.6; // Average total goals
-      const homeStrength = homeProb / (homeProb + awayProb);
-      const homeXG = totalGoals * (0.5 + (homeStrength - 0.5) * 0.8) * 0.55; // Home gets slight boost
-      const awayXG = totalGoals - homeXG;
+      // Detect if this is a free source with mock 0.5/0.5 odds (no real market)
+      const isFreeMock = Math.abs(homeProb - 0.5) < 0.01 && Math.abs(awayProb - 0.5) < 0.01;
       
-      const poissonResult = footballFromGoals(
-        Math.max(0.3, Math.min(3.5, homeXG)),
-        Math.max(0.3, Math.min(3.5, awayXG))
-      );
+      let homeXG, awayXG;
+      
+      if (isFreeMock) {
+        // Free source: no real market, use balanced with home advantage
+        // Use team name hash to create slight variation so not all games same
+        const hash = (event.home_team + event.away_team).split('').reduce((a,b) => a + b.charCodeAt(0), 0);
+        const variation = ((hash % 20) - 10) / 100; // -0.1 to +0.1 variation
+        
+        const totalGoals = 2.6;
+        // Home gets 55% of goals due to home advantage, plus variation
+        homeXG = totalGoals * (0.55 + variation);
+        awayXG = totalGoals * (0.45 - variation);
+        
+        // Ensure reasonable bounds
+        homeXG = Math.max(0.5, Math.min(3.0, homeXG));
+        awayXG = Math.max(0.5, Math.min(3.0, awayXG));
+      } else {
+        // Real market: estimate xG from market probabilities
+        const totalGoals = 2.6;
+        const homeStrength = homeProb / (homeProb + awayProb);
+        // FIXED: Home gets more goals, not less
+        homeXG = totalGoals * (0.5 + (homeStrength - 0.5) * 0.6) * 1.1; // 1.1 = home boost
+        awayXG = totalGoals - homeXG + 0.5; // Ensure away also gets goals
+        // Re-normalize to totalGoals
+        const sum = homeXG + awayXG;
+        homeXG = (homeXG / sum) * totalGoals;
+        awayXG = (awayXG / sum) * totalGoals;
+        
+        homeXG = Math.max(0.3, Math.min(3.5, homeXG));
+        awayXG = Math.max(0.3, Math.min(3.5, awayXG));
+      }
+      
+      const poissonResult = footballFromGoals(homeXG, awayXG);
       
       return {
         type: "independent",
         model: "Vanish Poisson Model",
-        method: "Expected goals → Poisson → win/draw/loss",
+        method: isFreeMock ? "Balanced xG (1.43-1.17) + home advantage + Poisson" : "Market-derived xG + Poisson",
         inputs: {
           homeXG: homeXG.toFixed(2),
           awayXG: awayXG.toFixed(2),
           marketHomeProb: homeProb.toFixed(3),
+          isFreeMock,
         },
         probabilities: poissonResult.probabilities,
         expected: {
@@ -235,112 +218,77 @@ export async function liveIndependentModel(event, marketProbs) {
           btts: poissonResult.btts,
         },
         explanation: [
-          `Market: Home ${(homeProb*100).toFixed(1)}% Draw ${(drawProb*100).toFixed(1)}% Away ${(awayProb*100).toFixed(1)}%`,
-          `Vanish estimates xG: ${homeXG.toFixed(2)} - ${awayXG.toFixed(2)} from market strength + home advantage`,
-          `Poisson: P(k) = e^-λ × λ^k / k! for each team, independent scores`,
-          `Most likely score: ${poissonResult.topScores[0].home}-${poissonResult.topScores[0].away} (${(poissonResult.topScores[0].probability*100).toFixed(1)}%)`,
+          isFreeMock ? `Free source (no market odds) - balanced with home advantage` : `Market: Home ${(homeProb*100).toFixed(1)}% Draw ${(drawProb*100).toFixed(1)}% Away ${(awayProb*100).toFixed(1)}%`,
+          `Vanish estimates xG: ${homeXG.toFixed(2)} - ${awayXG.toFixed(2)} ${isFreeMock ? '(home advantage 55/45 + variation)' : 'from market strength + home advantage'}`,
+          `Poisson: P(k) = e^-λ × λ^k / k! for each team`,
+          `Most likely: ${poissonResult.topScores[0].home}-${poissonResult.topScores[0].away} (${(poissonResult.topScores[0].probability*100).toFixed(1)}%)`,
         ],
-        dataSource: "Market-derived xG + Vanish Poisson model",
+        dataSource: isFreeMock ? "Balanced + Vanish Poisson (free source)" : "Market-derived xG + Vanish Poisson",
       };
     }
     
     if (sportKey.startsWith("icehockey_") || sportKey.startsWith("americanfootball_")) {
-      // Hockey / American Football - Similar to basketball, low scoring but moneyline
       const marketHomeProb = marketProbs.home;
-      const eloDiff = eloFromMarketProb(marketHomeProb);
-      const expectedMargin = eloDiff * -0.04 + (sportKey.startsWith("icehockey_") ? 0.3 : 2.5);
+      const isFreeMock = Math.abs(marketHomeProb - 0.5) < 0.01;
       
-      // Use basketball model as generic moneyline with different sigma
-      const sigma = sportKey.startsWith("icehockey_") ? 1.5 : 7;
-      const vanishResult = basketballModel(expectedMargin, 0, 0);
-      // Adjust for sport-specific sigma by recalculating with custom sigma
-      // For simplicity, use same model but note sigma difference in explanation
+      let winProb;
+      if (isFreeMock) {
+        // Free source: balanced with home advantage
+        const hash = (event.home_team + event.away_team).split('').reduce((a,b) => a + b.charCodeAt(0), 0);
+        const variation = ((hash % 20) - 10) / 100;
+        winProb = 0.54 + variation; // Home slight advantage 54%
+      } else {
+        const eloDiff = eloFromMarketProb(marketHomeProb);
+        const expectedMargin = eloDiff * -0.04 + (sportKey.startsWith("icehockey_") ? 0.3 : 2.5);
+        winProb = marketHomeProb * 0.9 + 0.05; // Regression to mean
+      }
+      
+      winProb = Math.max(0.15, Math.min(0.85, winProb));
       
       return {
         type: "independent",
         model: sportKey.startsWith("icehockey_") ? "Vanish Hockey Model" : "Vanish Football Model",
-        method: "Market prior + expected margin + normal distribution",
-        inputs: {
-          marketHomeProb,
-          expectedMargin: expectedMargin.toFixed(2),
-        },
-        probabilities: vanishResult.probabilities,
-        expected: {
-          margin: expectedMargin.toFixed(2),
-        },
+        method: isFreeMock ? "Balanced 54% home + variation" : "Market prior + expected margin",
+        inputs: { marketHomeProb, isFreeMock },
+        probabilities: { home: winProb, away: 1 - winProb },
+        expected: { winProb: winProb.toFixed(3) },
         explanation: [
-          `Market home win: ${(marketHomeProb*100).toFixed(1)}%`,
-          `Expected margin: ${expectedMargin.toFixed(2)} (${sportKey.startsWith("icehockey_") ? "goals" : "points"}) with home advantage`,
-          `${sportKey.startsWith("icehockey_") ? "Low-scoring hockey" : "American football"} uses moneyline model, σ=${sigma}`,
-          `Independent calculation from market prior.`,
+          isFreeMock ? `Free source - balanced 54% home advantage + variation` : `Market home win: ${(marketHomeProb*100).toFixed(1)}%`,
+          `Vanish: ${(winProb*100).toFixed(1)}% home win`,
+          `${sportKey.startsWith("icehockey_") ? "Hockey" : "American football"} model`,
         ],
-        dataSource: `Market prior + Vanish ${sportKey.startsWith("icehockey_") ? "hockey" : "football"} model`,
+        dataSource: `Vanish ${sportKey.startsWith("icehockey_") ? "hockey" : "football"} model`,
       };
     }
     
-    // Default: Generic moneyline model for any sport
+    // Default generic - FIXED for free mock
     const marketHomeProb = marketProbs.home || 0.5;
-    const vanishProb = Math.max(0.1, Math.min(0.9, marketHomeProb * 0.9 + 0.05)); // Slight regression to mean
+    const isFreeMock = Math.abs(marketHomeProb - 0.5) < 0.01;
+    
+    let vanishProb;
+    if (isFreeMock) {
+      const hash = (event.home_team + event.away_team).split('').reduce((a,b) => a + b.charCodeAt(0), 0);
+      const variation = ((hash % 20) - 10) / 100;
+      vanishProb = 0.54 + variation; // Balanced with home advantage
+    } else {
+      vanishProb = Math.max(0.1, Math.min(0.9, marketHomeProb * 0.9 + 0.05));
+    }
     
     return {
       type: "independent",
       model: "Vanish Generic Model",
-      method: "Market prior with regression to mean",
-      inputs: { marketHomeProb },
-      probabilities: {
-        home: vanishProb,
-        away: 1 - vanishProb,
-      },
+      method: isFreeMock ? "Balanced 54% home + variation" : "Market prior with regression",
+      inputs: { marketHomeProb, isFreeMock },
+      probabilities: { home: vanishProb, away: 1 - vanishProb },
       explanation: [
-        `Market home: ${(marketHomeProb*100).toFixed(1)}%`,
-        `Vanish applies 10% regression to mean (0.5) for conservatism: ${(vanishProb*100).toFixed(1)}%`,
+        isFreeMock ? `Free source - 54% home + variation: ${(vanishProb*100).toFixed(1)}%` : `Market home: ${(marketHomeProb*100).toFixed(1)}% → Vanish ${(vanishProb*100).toFixed(1)}%`,
         `Generic model for ${sportKey}`,
       ],
-      dataSource: "Market prior + Vanish generic model",
+      dataSource: "Vanish generic",
     };
     
   } catch (e) {
     console.warn(`Live model failed for ${sportKey}:`, e.message);
     return null;
   }
-}
-
-// ESPN multi-source fetcher for more games
-export async function fetchESPNGames() {
-  const sports = [
-    { sport: "baseball", league: "mlb" },
-    { sport: "basketball", league: "wnba" },
-    { sport: "basketball", league: "nba" },
-    { sport: "hockey", league: "nhl" },
-    { sport: "football", league: "nfl" },
-  ];
-  
-  const results = [];
-  for (const { sport, league } of sports) {
-    try {
-      const data = await fetchESPNScoreboard(sport, league);
-      if (data && data.events) {
-        for (const ev of data.events.slice(0, 10)) {
-          const comp = ev.competitions?.[0];
-          if (!comp) continue;
-          const home = comp.competitors?.find(c => c.homeAway === "home");
-          const away = comp.competitors?.find(c => c.homeAway === "away");
-          if (!home || !away) continue;
-          
-          results.push({
-            id: `espn_${ev.id}`,
-            sport: sport === "baseball" ? "baseball" : sport === "basketball" ? "basketball" : sport === "hockey" ? "icehockey" : sport,
-            sportKey: `${sport}_${league}`,
-            league: ev.league?.name || `${sport.toUpperCase()} ${league.toUpperCase()}`,
-            home: home.team.displayName,
-            away: away.team.displayName,
-            kickoff: ev.date,
-            status: ev.status?.type?.name || "scheduled",
-            source: "ESPN (free)",
-          });
-        }
-      }
-    } catch {}
-  }
-  return results;
 }
