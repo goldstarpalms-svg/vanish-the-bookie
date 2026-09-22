@@ -94,24 +94,19 @@ export async function fetchESPNAllWorldwide() {
       const awayLower = away.team.displayName.toLowerCase();
       const lowCombined = `${lowLeague} ${homeLower} ${awayLower}`;
       if (BLOCKED.some(kw => lowCombined.includes(kw))) continue;
-      // Block B teams like Hibernian B, Aberdeen B, Rangers B — not on Bet9ja (Scottish Challenge Cup B teams)
+      // Block B teams like Hibernian B, Aberdeen B, Rangers B — not on Bet9ja
       const isBTeam = (name) => name.endsWith(" b") || name.includes(" b ") || /\b[abc] team\b/.test(name) || name.match(/\b\w+ [abc]$/);
-      if ((isBTeam(homeLower) || isBTeam(awayLower)) && (lowLeague.includes("league-phase") || lowLeague.includes("challenge") || lowLeague.includes("group"))) continue;
-      // Block generic league-phase with B teams — but allow Champions League league-phase with top clubs (Bayern vs Man City)
-      if (lowLeague === "league-phase" || lowLeague.includes("league-phase")) {
-        // If both teams are not top clubs (check if contains B or is obscure Scottish), skip unless top league
-        const obscureScottish = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","kilmanrock b","st mirren b"];
-        if (obscureScottish.some(kw => lowCombined.includes(kw))) continue;
-      }
-      // Only allow if league contains top league OR is generic but not blocked? For worldwide, be strict: require top league match
+      if (isBTeam(homeLower) || isBTeam(awayLower)) continue;
+      // Block obscure Scottish low leagues
+      const obscureScottish = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","kilmanrock b","st mirren b","ncaa","ncaa division","fighting camels","blue hens","buccaneers","jaguars","leathernecks","greyhounds","monarchs","bonnies","seawolves","huskies","terriers","bulldogs"];
+      if (obscureScottish.some(kw => lowCombined.includes(kw))) continue;
+      // STRICT: Only allow top leagues — Premier League, LaLiga, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira, Championship, Champions League, Europa, Conference, MLS, FA Cup, etc, MLB, NBA, NHL, NFL, MLS, Liga MX, Brazil, Argentine, Turkish, Scottish Prem, etc
       const isTop = TOP_LEAGUES.some(t => lowLeague.includes(t.toLowerCase()));
-      // Allow if top, OR if league is not generic qualifying — but block generic group-stage/second-round-qualifying
-      if (!isTop && (lowLeague.includes("group-stage") || lowLeague.includes("qualifying") || lowLeague.includes("round") || lowLeague === "league-phase")) {
-        // Allow league-phase only if it's Champions League/Europa with top clubs (contains vs top)
-        if (!(lowCombined.includes("bayern") || lowCombined.includes("manchester") || lowCombined.includes("real madrid") || lowCombined.includes("barcelona") || lowCombined.includes("psg") || lowCombined.includes("inter"))) {
-          // If not top clubs, block
-          if (lowLeague.includes("league-phase") || lowLeague.includes("group-stage")) continue;
-        }
+      // For worldwide, require top league — block generic league-phase, group-stage, qualifying, round-of-16, ncaa unless top
+      if (!isTop) {
+        // Allow league-phase only if it's Champions League with top clubs
+        const isChampionsTop = lowLeague.includes("league-phase") && (lowCombined.includes("bayern") || lowCombined.includes("manchester") || lowCombined.includes("real madrid") || lowCombined.includes("barcelona") || lowCombined.includes("psg") || lowCombined.includes("inter") || lowCombined.includes("arsenal") || lowCombined.includes("liverpool") || lowCombined.includes("chelsea") || lowCombined.includes("dortmund"));
+        if (!isChampionsTop) continue;
       }
       games.push({
         id: `espn_world_${ev.id}`, sport: "football",
@@ -126,17 +121,13 @@ export async function fetchESPNAllWorldwide() {
 }
 
 export async function fetchESPNFree() {
+  // ONLY top leagues available on Bet9ja/SportyBet/BetKing/MSport/1xBet/Betway — user complaint: most games not on my bookie
   const leagues = [
     { sport: "baseball", league: "mlb", name: "MLB" },
-    { sport: "baseball", league: "college-baseball", name: "College Baseball" },
     { sport: "basketball", league: "nba", name: "NBA" },
     { sport: "basketball", league: "wnba", name: "WNBA" },
-    { sport: "basketball", league: "nbl", name: "NBL" },
-    { sport: "basketball", league: "mens-college-basketball", name: "NCAA Basketball" },
-    { sport: "basketball", league: "womens-college-basketball", name: "NCAA W Basketball" },
     { sport: "hockey", league: "nhl", name: "NHL" },
     { sport: "football", league: "nfl", name: "NFL" },
-    { sport: "football", league: "college-football", name: "NCAA Football" },
     { sport: "soccer", league: "eng.1", name: "EPL" },
     { sport: "soccer", league: "eng.2", name: "EFL Championship" },
     { sport: "soccer", league: "esp.1", name: "La Liga" },
