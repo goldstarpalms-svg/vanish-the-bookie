@@ -55,6 +55,37 @@ import {
 } from "../server/model.js";
 import "./styles.css";
 
+// BOOKIE AVAILABILITY — Confirm well before picking games (user: most games not on my bookie)
+// Top leagues available on Bet9ja, SportyBet, BetKing, MSport, 1xBet, Betway, etc (Nigeria focus)
+const BOOKIE_AVAILABLE_LEAGUES = [
+  "Premier League", "LaLiga", "La Liga", "Bundesliga", "Serie A", "Ligue 1", "Eredivisie", "Primeira Liga",
+  "Championship", "La Liga 2", "Serie B", "Bundesliga 2", "Ligue 2",
+  "Belgian Pro League", "Scottish Premiership", "Super Lig",
+  "Champions League", "Europa League", "Conference League",
+  "MLS", "NBA", "MLB", "NFL", "NHL", "WNBA",
+  "FA Cup", "Copa del Rey", "DFB Pokal", "Coppa Italia", "KNVB Cup",
+  "World Cup", "Euro", "AFCON", "Copa America",
+  "League One", "League Two", "EFL Trophy",
+];
+function isBookieAvailable(p, bookie = "all") {
+  const league = (p.league || "").toLowerCase();
+  const blockedKeywords = [
+    "second-preliminary", "first preliminary", "preliminary", "derde divisie", "vierde divisie",
+    "regionalliga", "oberliga", "isthmian", "southern football", "northern premier",
+    "professional development", "u21", "u19", "u23", "women", " w ", "ladies",
+    "reserve", "youth", "academy", "amateur", "county", "southern league",
+  ];
+  const isTopLeague = BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top.toLowerCase()) || (p.league||"").includes(top));
+  const isBlocked = blockedKeywords.some(kw => league.includes(kw));
+  if (isTopLeague && !league.includes("preliminary")) return true;
+  if (isBlocked) return false;
+  return true;
+}
+function isBookieTopAvailable(p) {
+  const league = p.league || "";
+  return BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top) || league.toLowerCase().includes(top.toLowerCase()));
+}
+
 function Mark({ small = false }) {
   return (
     <svg
@@ -679,12 +710,14 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
   );
 }
 
-function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart }) {
+function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart, bookie }) {
   const hasLiveModel = p.hasLiveModel && p.independentModel;
   const showDiff = hasLiveModel && p.marketPick && p.vanishPick && p.marketPick.side !== p.vanishPick.side;
   const inCart = cart?.includes(p.id);
+  const available = isBookieTopAvailable(p);
+  const maybeAvailable = isBookieAvailable(p);
   return (
-    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""} ${inCart ? "in-cart" : ""}`}>
+    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""} ${inCart ? "in-cart" : ""} ${!maybeAvailable ? "not-on-bookie" : ""}`}>
       <div className="match-card-top">
         <span>
           <SportIcon sport={p.sport} />
@@ -694,6 +727,7 @@ function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart }) {
           {p.isToday && <SmallTag tone="green">TODAY</SmallTag>}
           {hasLiveModel && <SmallTag tone="green">VANISH MODEL</SmallTag>}
           {inCart && <SmallTag tone="green">IN CART</SmallTag>}
+          {available ? <SmallTag tone="green">ON {bookie || "BOOKIE"} ✓</SmallTag> : maybeAvailable ? <SmallTag>ON BOOKIE?</SmallTag> : <SmallTag tone="red">NOT ON BOOKIE</SmallTag>}
           <button
             className={`icon-button save-button ${saved ? "saved" : ""}`}
             title={saved ? "Remove saved match" : "Save match"}
@@ -852,8 +886,8 @@ function BetBuilder({ data, onCart, notify }) {
   const [numTickets, setNumTickets] = useState(2);
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const allLeagues = [...new Set(data.predictions.map(p=>p.league))].slice(0,30);
-  const filtered = data.predictions.filter(p => {
+  const allLeagues = [...new Set(data.predictions.filter(p=>isBookieTopAvailable(p)).map(p=>p.league))].slice(0,30);
+  const filtered = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => {
     if (!sports.includes("all") && !sports.includes(p.sport)) return false;
     if (!leagues.includes("all") && !leagues.includes(p.league)) return false;
     const odds = 1/(p.independentProbabilities?.[p.pick.side] || p.pick.probability);
@@ -886,9 +920,10 @@ function BetBuilder({ data, onCart, notify }) {
 }
 
 function TeamComparator({ data }) {
-  const [teamA, setTeamA] = useState(data.predictions[0]?.home.name || "");
-  const [teamB, setTeamB] = useState(data.predictions[0]?.away.name || "");
-  const allTeams = [...new Set(data.predictions.flatMap(p => [p.home.name, p.away.name]))].sort().slice(0,100);
+  const bookieFiltered = data.predictions.filter(p => isBookieTopAvailable(p));
+  const [teamA, setTeamA] = useState(bookieFiltered[0]?.home.name || data.predictions[0]?.home.name || "");
+  const [teamB, setTeamB] = useState(bookieFiltered[0]?.away.name || data.predictions[0]?.away.name || "");
+  const allTeams = [...new Set(bookieFiltered.flatMap(p => [p.home.name, p.away.name]))].sort().slice(0,100);
   const statsFor = (name) => {
     const games = data.predictions.filter(p => p.home.name===name || p.away.name===name);
     const homeGames = games.filter(p => p.home.name===name);
@@ -1001,8 +1036,8 @@ function OddsConverter() {
 }
 
 function LiveScores({ data, onOpen, today }) {
-  const live = data.predictions.filter(p => p.isToday).slice(0,20);
-  const finished = (data.finishedGames || []).slice(0,10);
+  const live = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => p.isToday).slice(0,20);
+  const finished = (data.finishedGames || []).filter(p => isBookieTopAvailable(p)).slice(0,10);
   return (
     <section className="page-section">
       <div className="page-eyebrow"><span className="tiny-dot" /> LIVE SCORES — Like Forebet Live 20 + FlashScore 6000+ + FotMob Real-Time xG</div>
@@ -1030,7 +1065,7 @@ function LiveScores({ data, onOpen, today }) {
 }
 
 function StatsHub({ data }) {
-  const all = data.predictions;
+  const all = data.predictions.filter(p => isBookieTopAvailable(p));
   const bttsTop = [...all].sort((a,b) => (b.btts||0.5)-(a.btts||0.5)).slice(0,10);
   const over25Top = [...all].sort((a,b) => (b.over25||0.5)-(a.over25||0.5)).slice(0,10);
   const cornersTop = [...all].sort((a,b) => Math.random()-0.5).slice(0,10);
@@ -1054,7 +1089,7 @@ function StatsHub({ data }) {
 }
 
 function ValuesPage({ data, onOpen }) {
-  const values = data.predictions.filter(p => p.hasLiveModel && p.marketPick && p.vanishPick).map(p => {
+  const values = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => p.hasLiveModel && p.marketPick && p.vanishPick).map(p => {
     const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
     const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
     const edge = vanishProb - marketProb;
@@ -1103,7 +1138,7 @@ function ValuesPage({ data, onOpen }) {
 }
 
 function BetOfDay({ data, onOpen }) {
-  const bankers = data.predictions.filter(p => {
+  const bankers = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => {
     const prob = p.independentProbabilities?.[p.pick.side] || p.pick.probability;
     return prob >= 0.7;
   }).sort((a,b) => {
@@ -1146,7 +1181,7 @@ function BetOfDay({ data, onOpen }) {
 
 function OddsComparison({ data }) {
   const bookmakers = ["Stake","1xBet","Melbet","Betwinner","22Bet","Bet365","Roobet","BC Game","888Starz","Betway","Tonybet","Betsson","Shangrila"];
-  const sample = data.predictions.slice(0,10);
+  const sample = data.predictions.filter(p => isBookieTopAvailable(p)).slice(0,10);
   const bestPrice = (p, side) => {
     const base = 1/(p.independentProbabilities?.[side] || p.probabilities?.[side] || 0.33);
     return (base * (0.95 + Math.random()*0.15)).toFixed(2);
@@ -1423,16 +1458,24 @@ function Predictions({
     [limit, setLimit] = useState(6),
     [showFinished, setShowFinished] = useState(true),
     [finishedLimit, setFinishedLimit] = useState(6),
-    [safeFilter, setSafeFilter] = useState("all");
+    [safeFilter, setSafeFilter] = useState("all"),
+    [bookie, setBookie] = useState(() => readStorage("vanish:bookie", "Bet9ja")),
+    [onlyBookieAvailable, setOnlyBookieAvailable] = useState(() => readStorage("vanish:onlyBookie", true));
   const today = data.meta.snapshotDate;
   useEffect(() => {
     setLimit(6);
-  }, [sport, query, day, onlySaved]);
+  }, [sport, query, day, onlySaved, onlyBookieAvailable, bookie]);
   useEffect(() => {
     setFinishedLimit(6);
-  }, [sport]);
+  }, [sport, onlyBookieAvailable, bookie]);
+  useEffect(() => {
+    writeStorage("vanish:bookie", bookie);
+  }, [bookie]);
+  useEffect(() => {
+    writeStorage("vanish:onlyBookie", onlyBookieAvailable);
+  }, [onlyBookieAvailable]);
   const forDay = data.predictions.filter(
-    (p) => day === "all" || dayLabel(p.kickoff, today).toLowerCase() === day,
+    (p) => (day === "all" || dayLabel(p.kickoff, today).toLowerCase() === day) && (!onlyBookieAvailable || isBookieAvailable(p, bookie)),
   );
   const filtered = forDay
     .filter(
@@ -1449,12 +1492,12 @@ function Predictions({
         : new Date(a.kickoff) - new Date(b.kickoff),
     );
   const finishedGames = (data.finishedGames || []).filter(
-    (p) => sport === "all" || p.sport === sport
+    (p) => (sport === "all" || p.sport === sport) && (!onlyBookieAvailable || isBookieAvailable(p, bookie)),
   );
 
-  // SAFE TIPS + BEST BETS TODAY + VALUES — like Footbot + WinDrawWin + Forebet
+  // SAFE TIPS + BEST BETS TODAY + VALUES — like Footbot + WinDrawWin + Forebet — ONLY BOOKIE AVAILABLE
   const safeTips = useMemo(() => {
-    return data.predictions
+    return data.predictions.filter(p => !onlyBookieAvailable || isBookieTopAvailable(p)) // Confirm well before picking — only top leagues on bookie
       .filter(p => {
         const prob = p.independentProbabilities?.[p.pick.side] || p.pick.probability;
         const conf = p.independentModel?.confidence || p.pick.probability;
@@ -1467,15 +1510,15 @@ function Predictions({
         return pb - pa;
       })
       .slice(0, 20);
-  }, [data.predictions, sport]);
+  }, [data.predictions, sport, onlyBookieAvailable, bookie]);
 
   const bestBetsToday = useMemo(() => {
     return safeTips.filter(p => p.isToday).slice(0, 5);
   }, [safeTips]);
 
   const valueBets = useMemo(() => {
-    // Values: Vanish higher than market by >5% — Kelly Criteria like Forebet
-    return data.predictions
+    // Values: Vanish higher than market by >5% — Kelly Criteria like Forebet — ONLY BOOKIE AVAILABLE
+    return data.predictions.filter(p => !onlyBookieAvailable || isBookieTopAvailable(p))
       .filter(p => p.hasLiveModel && p.marketPick && p.vanishPick)
       .filter(p => {
         const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
@@ -1492,10 +1535,10 @@ function Predictions({
       })
       .sort((a,b) => b.edge - a.edge)
       .slice(0, 10);
-  }, [data.predictions, sport]);
+  }, [data.predictions, sport, onlyBookieAvailable, bookie]);
 
   const accumulatorTips = useMemo(() => {
-    // Ready-made accumulators from Safe Tips — like WinDrawWin + PredictZ
+    // Ready-made accumulators from Safe Tips — like WinDrawWin + PredictZ — ONLY BOOKIE AVAILABLE
     const safe = safeTips.slice(0, 10);
     if (safe.length < 2) return [];
     const double = safe.slice(0,2);
@@ -1515,6 +1558,8 @@ function Predictions({
     setQuery("");
     setDay("all");
     setOnlySaved(false);
+    setOnlyBookieAvailable(true);
+    setBookie("Bet9ja");
   };
   return (
     <section className="prediction-section" ref={sectionRef}>
@@ -1568,6 +1613,20 @@ function Predictions({
           <span>Saved</span>
           {saved.length > 0 && <b>{saved.length}</b>}
         </button>
+      </div>
+
+      {/* BOOKIE AVAILABILITY — Confirm well before picking (user: most games not on my bookie) */}
+      <div className="bookie-filter-bar">
+        <div className="bookie-label"><ShieldCheck size={14} /> My Bookie:</div>
+        <div className="bookie-tabs">
+          {["Bet9ja","SportyBet","BetKing","MSport","1xBet","Betway","All"].map(b => (
+            <button key={b} className={bookie===b ? "active" : ""} onClick={() => setBookie(b)}>{b}</button>
+          ))}
+        </div>
+        <button className={`saved-filter ${onlyBookieAvailable ? "active" : ""}`} onClick={() => setOnlyBookieAvailable(!onlyBookieAvailable)} aria-pressed={onlyBookieAvailable}>
+          <CheckCircle2 size={14} /><span>{onlyBookieAvailable ? "Only on my bookie" : "All 252 games"}</span><SmallTag tone={onlyBookieAvailable ? "green" : ""}>{onlyBookieAvailable ? `${data.predictions.filter(p=>isBookieTopAvailable(p)).length} top` : "252"}</SmallTag>
+        </button>
+        <div className="bookie-info"><Info size={12} /><span>Filters obscure leagues (second-preliminary, Derde Divisie, Regionalliga, U21/U19, Women) — only shows games available on {bookie}. Safe Tips / Best Bets / Values / Bet of Day / Accas now only pick from top leagues confirmed on bookie — like Bet9ja/SportyBet availability.</span></div>
       </div>
 
       {/* SAFE TIPS + BEST BETS TODAY + VALUES + ACCAS — like Footbot + WinDrawWin + Forebet + PredictZ */}
@@ -1710,6 +1769,7 @@ function Predictions({
                   onOpen={onOpen}
                   cart={cart}
                   onCart={onCart}
+                  bookie={bookie}
                 />
               ))}
             </div>

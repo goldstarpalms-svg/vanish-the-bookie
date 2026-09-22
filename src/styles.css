@@ -5140,6 +5140,63 @@ option {
 .lists-section {
   margin-top: 28px;
 }
+.bookie-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background: #1a2216;
+  border: 1px solid #3a4a32;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 16px 0 20px;
+}
+.bookie-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #c8e890;
+}
+.bookie-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bookie-tabs button {
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 10px;
+  color: #9aaf88;
+  transition: all 0.2s;
+}
+.bookie-tabs button.active {
+  background: #2e4a22;
+  border-color: #4a6b2a;
+  color: #e0efcc;
+}
+.bookie-tabs button:hover {
+  border-color: #4a6b2a;
+}
+.bookie-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 9px;
+  color: #8a9a7a;
+  flex: 1 1 100%;
+  margin-top: 4px;
+}
+.match-card.not-on-bookie {
+  opacity: 0.6;
+  border-style: dashed;
+}
+.match-card.not-on-bookie:hover {
+  opacity: 1;
+}
 @media (max-width: 700px) {
   .method-grid {
     grid-template-columns: 1fr;
