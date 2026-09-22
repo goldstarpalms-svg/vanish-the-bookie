@@ -69,8 +69,8 @@ export async function fetchESPNAllWorldwide() {
   let cachedData = getCached(cacheKey);
   if (cachedData) return cachedData;
   // Only top leagues available on Bet9ja/SportyBet etc — block obscure second-preliminary, Derde Divisie etc
-  const TOP_LEAGUES = ["Premier League","LaLiga","La Liga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","La Liga 2","Serie B","Bundesliga 2","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","EFL Trophy"];
-  const BLOCKED = ["second-preliminary","first preliminary","preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","southern football","northern premier","professional development","u21","u19","u23","women","reserve","youth","academy","amateur","county","southern league","group-stage","second-round-qualifying","first round qualifying","qualifying","acv","hoogeveen"];
+  const TOP_LEAGUES = ["Premier League","LaLiga","La Liga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","La Liga 2","Serie B","Bundesliga 2","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","EFL Trophy","MLB","NBA","WNBA","NHL","NFL","MLS","Liga MX","Brazil","Argentine","Turkish","Primeira Liga","Eredivisie","Champions League","Europa League","LaLiga2","A-League","J1 League"];
+  const BLOCKED = ["second-preliminary","first preliminary","preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","southern football","northern premier","professional development","u21","u19","u23","women","reserve","youth","academy","amateur","county","southern league","group-stage","second-round-qualifying","first round qualifying","qualifying","acv","hoogeveen","b team","c team"];
   try {
     const res = await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard", { signal: AbortSignal.timeout(10000) });
     if (!res.ok) return [];
@@ -90,12 +90,29 @@ export async function fetchESPNAllWorldwide() {
       else if (comp.league?.name) leagueName = comp.league.name;
       else if (ev.season?.slug) leagueName = ev.season.slug;
       const lowLeague = leagueName.toLowerCase();
-      const lowCombined = `${lowLeague} ${home.team.displayName.toLowerCase()} ${away.team.displayName.toLowerCase()}`;
+      const homeLower = home.team.displayName.toLowerCase();
+      const awayLower = away.team.displayName.toLowerCase();
+      const lowCombined = `${lowLeague} ${homeLower} ${awayLower}`;
       if (BLOCKED.some(kw => lowCombined.includes(kw))) continue;
+      // Block B teams like Hibernian B, Aberdeen B, Rangers B — not on Bet9ja (Scottish Challenge Cup B teams)
+      const isBTeam = (name) => name.endsWith(" b") || name.includes(" b ") || /\b[abc] team\b/.test(name) || name.match(/\b\w+ [abc]$/);
+      if ((isBTeam(homeLower) || isBTeam(awayLower)) && (lowLeague.includes("league-phase") || lowLeague.includes("challenge") || lowLeague.includes("group"))) continue;
+      // Block generic league-phase with B teams — but allow Champions League league-phase with top clubs (Bayern vs Man City)
+      if (lowLeague === "league-phase" || lowLeague.includes("league-phase")) {
+        // If both teams are not top clubs (check if contains B or is obscure Scottish), skip unless top league
+        const obscureScottish = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","kilmanrock b","st mirren b"];
+        if (obscureScottish.some(kw => lowCombined.includes(kw))) continue;
+      }
       // Only allow if league contains top league OR is generic but not blocked? For worldwide, be strict: require top league match
       const isTop = TOP_LEAGUES.some(t => lowLeague.includes(t.toLowerCase()));
       // Allow if top, OR if league is not generic qualifying — but block generic group-stage/second-round-qualifying
-      if (!isTop && (lowLeague.includes("group-stage") || lowLeague.includes("qualifying") || lowLeague.includes("round"))) continue;
+      if (!isTop && (lowLeague.includes("group-stage") || lowLeague.includes("qualifying") || lowLeague.includes("round") || lowLeague === "league-phase")) {
+        // Allow league-phase only if it's Champions League/Europa with top clubs (contains vs top)
+        if (!(lowCombined.includes("bayern") || lowCombined.includes("manchester") || lowCombined.includes("real madrid") || lowCombined.includes("barcelona") || lowCombined.includes("psg") || lowCombined.includes("inter"))) {
+          // If not top clubs, block
+          if (lowLeague.includes("league-phase") || lowLeague.includes("group-stage")) continue;
+        }
+      }
       games.push({
         id: `espn_world_${ev.id}`, sport: "football",
         sportKey: `soccer_world_${leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'_').slice(0,30)}`,

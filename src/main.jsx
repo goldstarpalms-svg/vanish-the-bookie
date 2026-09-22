@@ -77,24 +77,25 @@ function isBookieAvailable(p, bookie = "all") {
     "regionalliga", "oberliga", "isthmian", "southern football", "northern premier",
     "professional development", "u21", "u19", "u23", "women", " w ", "ladies",
     "reserve", "youth", "academy", "amateur", "county", "southern league",
-    "group-stage", "efl trophy", "trophy", "u21", "u23", "u19", // EFL Trophy group-stage with U21 is NOT on Bet9ja
-    "acv", "hoogeveen", // second-preliminary obscure Dutch
+    "group-stage", "second-round-qualifying", "first round qualifying", "qualifying",
+    "efl trophy", "trophy", "u21", "u23", "u19",
+    "acv", "hoogeveen", "banks o'dee", "berwick", "bonnyrigg", "clydebank", "alloa",
   ];
   const isBlocked = blockedKeywords.some(kw => combined.includes(kw));
+  const isBTeam = (name) => name.endsWith(" b") || name.includes(" b ") || /\b[abc] team\b/.test(name);
+  if (isBTeam(homeName) || isBTeam(awayName)) {
+    if (combined.includes("league-phase") || combined.includes("challenge") || combined.includes("group") || combined.includes("scottish")) return false;
+  }
   if (isBlocked) {
-    // Allow EFL Trophy only if NOT u21? Actually EFL Trophy with U21 teams is still on Bet9ja? User said no. So block all U21 regardless.
-    // But if league itself is EFL Trophy and contains u21 teams, block.
-    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("group-stage")) return false;
+    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("group-stage") || combined.includes("qualifying") || combined.includes("banks o'dee") || combined.includes("berwick")) return false;
   }
   const isTopLeague = BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top.toLowerCase()) || (p.league||"").includes(top));
   if (isTopLeague) {
-    // Even top league, block if has U21/U19/U23/women/reserve etc
-    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("reserve") || combined.includes("youth") || combined.includes("preliminary")) return false;
+    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("reserve") || combined.includes("youth") || combined.includes("preliminary") || combined.includes("qualifying")) return false;
+    if (isBTeam(homeName) || isBTeam(awayName)) return false;
     return true;
   }
-  // For ESPN Worldwide free: only allow if league name matches top league, otherwise require manual verification
-  // Strict mode: if league is generic "group-stage" or "Football" without top league name, block
-  const genericBlocked = ["group-stage", "worldwide", "free trained", "trophy"];
+  const genericBlocked = ["group-stage", "worldwide", "free trained", "trophy", "second-round", "qualifying", "league-phase"];
   const isGeneric = genericBlocked.some(kw => league.includes(kw)) && !isTopLeague;
   if (isGeneric) return false;
   if (isBlocked) return false;
@@ -105,8 +106,17 @@ function isBookieTopAvailable(p) {
   const homeName = (p.home?.name || "").toLowerCase();
   const awayName = (p.away?.name || "").toLowerCase();
   const combined = `${league} ${homeName} ${awayName}`.toLowerCase();
-  // Block U21/U19/U23/women/preliminary even for top leagues
-  if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("preliminary") || combined.includes("derde divisie") || combined.includes("vierde divisie") || combined.includes("regionalliga") || combined.includes("group-stage") || combined.includes("acv") || combined.includes("hoogeveen")) return false;
+  // Block U21/U19/U23/women/preliminary even for top leagues + B teams + obscure
+  if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("preliminary") || combined.includes("derde divisie") || combined.includes("vierde divisie") || combined.includes("regionalliga") || combined.includes("group-stage") || combined.includes("second-round-qualifying") || combined.includes("first round qualifying") || combined.includes("acv") || combined.includes("hoogeveen")) return false;
+  // Block B teams like Hibernian B, Aberdeen B, Rangers B, Celtic B — Scottish Challenge Cup B teams not on Bet9ja
+  const isBTeam = (name) => name.endsWith(" b") || name.includes(" b ") || /\b[abc] team\b/.test(name);
+  if (isBTeam(homeName) || isBTeam(awayName)) {
+    // Allow only if top clubs? No, block all B teams
+    if (combined.includes("league-phase") || combined.includes("challenge") || combined.includes("group")) return false;
+  }
+  // Block obscure Scottish low leagues in league-phase
+  const obscure = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","st mirren b","kilmarnock b"];
+  if (obscure.some(kw => combined.includes(kw))) return false;
   return BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top) || league.toLowerCase().includes(top.toLowerCase()));
 }
 
