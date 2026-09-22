@@ -5064,6 +5064,82 @@ option {
   50% { opacity: 0.4; }
   100% { opacity: 1; }
 }
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+.live-grid .live-card {
+  background: #121c11;
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  padding: 14px;
+  transition: border-color 0.2s;
+}
+.live-grid .live-card:hover {
+  border-color: #4a6b2a;
+}
+.live-header {
+  font-size: 9px;
+  color: #8a9a7a;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.live-teams {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #e0efcc;
+  margin-bottom: 10px;
+}
+.live-teams span {
+  color: #6e825e;
+  font-size: 9px;
+}
+.live-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.live-events span {
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 9px;
+  color: #9aaf88;
+}
+.live-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.finished-live {
+  margin-top: 28px;
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  background: #121c11;
+  padding: 18px;
+}
+.finished-live h3 {
+  font-size: 14px;
+  color: #c8e890;
+  margin-bottom: 12px;
+}
+.finished-result-box.small {
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 6px;
+  padding: 10px;
+}
+.lists-section {
+  margin-top: 28px;
+}
 @media (max-width: 700px) {
   .method-grid {
     grid-template-columns: 1fr;
