@@ -6,6 +6,10 @@ export const SPORTS = [
   { id: "icehockey", label: "Ice Hockey" },
   { id: "americanfootball", label: "American FB" },
   { id: "tennis", label: "Tennis" },
+  { id: "cricket", label: "Cricket" },
+  { id: "rugby", label: "Rugby" },
+  { id: "handball", label: "Handball" },
+  { id: "volleyball", label: "Volleyball" },
   { id: "other", label: "Other" },
 ];
 export const pct = (n, digits = 0) => `${(n * 100).toFixed(digits)}%`;

@@ -1,0 +1,25 @@
+{
+  "name": "Vanish The Bookie — Read the game. Not the noise.",
+  "short_name": "Vanish",
+  "description": "Free, multi-sport, automatic predictions with transparent baselines, safe tips 79%, values Kelly, bet builder, cart, split, booking codes, team comparator 70+ stats, odds converter, live scores, stats hub, bet of day — only games available on your bookie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1510",
+  "theme_color": "#13200d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "finance"],
+  "shortcuts": [
+    {"name": "Predictions", "url": "/#predictions", "description": "Find your next angle — only on bookie"},
+    {"name": "Live Scores", "url": "/#live", "description": "Live scores real-time"},
+    {"name": "Best Bets Today", "url": "/#betofday", "description": "Today's safest picks"},
+    {"name": "Bet Builder", "url": "/#builder", "description": "Build bets from top leagues"},
+    {"name": "Cart", "url": "/#cart", "description": "Cart 0 items → booking code"}
+  ]
+}
