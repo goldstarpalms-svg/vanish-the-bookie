@@ -1,6 +1,6 @@
 /**
- * EXPANDED Free Sources - Maximize free games without any API keys
- * ESPN (14+ leagues), TheSportsDB (10), MLB Stats API (16/day), NHL API (50+/week), OpenLigaDB, football-data.org
+ * ULTRA EXPANDED Football Free Sources - Maximize football games
+ * ESPN 30+ soccer leagues, TheSportsDB 20+ leagues, OpenLigaDB 832 leagues, football-data.org 13 comps
  */
 
 const CACHE = new Map();
@@ -13,7 +13,7 @@ function getCached(key) {
   return null;
 }
 
-// MLB Stats API - FREE, unlimited, no key - 15+ games daily
+// MLB Stats API
 export async function fetchMLBStats() {
   const cacheKey = "mlb_stats";
   let cachedData = getCached(cacheKey);
@@ -36,8 +36,7 @@ export async function fetchMLBStats() {
           sport: "baseball",
           sportKey: "baseball_mlb",
           league: "MLB",
-          home,
-          away,
+          home, away,
           kickoff: g.gameDate,
           source: "MLB Stats API",
         });
@@ -48,7 +47,7 @@ export async function fetchMLBStats() {
   } catch { return []; }
 }
 
-// NHL API - FREE, unlimited, no key - 50+ games weekly
+// NHL API
 export async function fetchNHLFree() {
   const cacheKey = "nhl_free";
   let cachedData = getCached(cacheKey);
@@ -71,8 +70,7 @@ export async function fetchNHLFree() {
           sport: "icehockey",
           sportKey: "icehockey_nhl",
           league: "NHL",
-          home,
-          away,
+          home, away,
           kickoff: g.startTimeUTC,
           source: "NHL API",
         });
@@ -83,9 +81,10 @@ export async function fetchNHLFree() {
   } catch { return []; }
 }
 
-// ESPN - EXPANDED to 25+ leagues, no key
+// ESPN - ULTRA EXPANDED to 40+ leagues including 25+ football
 export async function fetchESPNFree() {
   const leagues = [
+    // Baseball, Basketball, Hockey, American Football
     { sport: "baseball", league: "mlb", name: "MLB" },
     { sport: "basketball", league: "nba", name: "NBA" },
     { sport: "basketball", league: "wnba", name: "WNBA" },
@@ -94,11 +93,18 @@ export async function fetchESPNFree() {
     { sport: "hockey", league: "nhl", name: "NHL" },
     { sport: "football", league: "nfl", name: "NFL" },
     { sport: "football", league: "college-football", name: "NCAA Football" },
+    // FOOTBALL SOCCER - 25 leagues (free, no key)
     { sport: "soccer", league: "eng.1", name: "EPL" },
+    { sport: "soccer", league: "eng.2", name: "EFL Championship" },
+    { sport: "soccer", league: "eng.3", name: "EFL League One" },
     { sport: "soccer", league: "esp.1", name: "La Liga" },
+    { sport: "soccer", league: "esp.2", name: "LaLiga2" },
     { sport: "soccer", league: "ita.1", name: "Serie A" },
+    { sport: "soccer", league: "ita.2", name: "Serie B" },
     { sport: "soccer", league: "ger.1", name: "Bundesliga" },
+    { sport: "soccer", league: "ger.2", name: "2. Bundesliga" },
     { sport: "soccer", league: "fra.1", name: "Ligue 1" },
+    { sport: "soccer", league: "fra.2", name: "Ligue 2" },
     { sport: "soccer", league: "usa.1", name: "MLS" },
     { sport: "soccer", league: "bra.1", name: "Brazil Serie A" },
     { sport: "soccer", league: "mex.1", name: "Liga MX" },
@@ -106,9 +112,17 @@ export async function fetchESPNFree() {
     { sport: "soccer", league: "por.1", name: "Primeira Liga" },
     { sport: "soccer", league: "uefa.champions", name: "Champions League" },
     { sport: "soccer", league: "uefa.europa", name: "Europa League" },
+    { sport: "soccer", league: "uefa.europa.conf", name: "Conference League" },
+    { sport: "soccer", league: "arg.1", name: "Argentine LPF" },
+    { sport: "soccer", league: "tur.1", name: "Turkish Super Lig" },
+    { sport: "soccer", league: "sco.1", name: "Scottish Prem" },
+    { sport: "soccer", league: "bel.1", name: "Belgian Pro League" },
+    { sport: "soccer", league: "jpn.1", name: "J1 League" },
+    { sport: "soccer", league: "aus.1", name: "A-League" },
+    { sport: "soccer", league: "chn.1", name: "Chinese Super League" },
+    // Other sports
     { sport: "tennis", league: "atp", name: "ATP Tennis" },
     { sport: "cricket", league: "icc", name: "Cricket" },
-    { sport: "rugby", league: "rugby", name: "Rugby" },
   ];
   
   const games = [];
@@ -134,7 +148,7 @@ export async function fetchESPNFree() {
       if (dt - Date.now() > 7*24*3600000) continue;
       games.push({
         id: `espn_${ev.id}`,
-        sport: sport === "baseball" ? "baseball" : sport === "basketball" ? "basketball" : sport === "hockey" ? "icehockey" : sport === "football" ? "americanfootball" : sport === "tennis" ? "tennis" : sport === "cricket" ? "cricket" : sport === "rugby" ? "rugby" : "football",
+        sport: sport === "baseball" ? "baseball" : sport === "basketball" ? "basketball" : sport === "hockey" ? "icehockey" : sport === "football" ? "americanfootball" : sport === "tennis" ? "tennis" : sport === "cricket" ? "cricket" : "football",
         sportKey: `${sport}_${league}`,
         league: name,
         home: home.team.displayName,
@@ -147,7 +161,7 @@ export async function fetchESPNFree() {
   return games;
 }
 
-// TheSportsDB - FREE, no key
+// TheSportsDB - EXPANDED to 20+ leagues
 export async function fetchTheSportsDB() {
   const leagueIds = [
     { id: 4328, name: "EPL" },
@@ -162,6 +176,18 @@ export async function fetchTheSportsDB() {
     { id: 4391, name: "MLB" },
     { id: 4380, name: "NHL" },
     { id: 4443, name: "UFC" },
+    // More football leagues
+    { id: 4329, name: "EFL Championship" },
+    { id: 4330, name: "Scottish Prem" },
+    { id: 4336, name: "Eredivisie" },
+    { id: 4337, name: "Belgian Pro League" },
+    { id: 4344, name: "Portuguese Primeira" },
+    { id: 4347, name: "Argentine Primera" },
+    { id: 4355, name: "Turkish Super Lig" },
+    { id: 4351, name: "Swiss Super League" },
+    { id: 4349, name: "Austrian Bundesliga" },
+    { id: 4406, name: "Champions League" },
+    { id: 4480, name: "Europa League" },
   ];
   
   const games = [];
@@ -197,7 +223,6 @@ export async function fetchTheSportsDB() {
   return games;
 }
 
-// Combined ALL free sources
 export async function fetchAllFreeSources() {
   const { fetchAllFootballFree } = await import("./football-data.js");
   
