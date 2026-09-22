@@ -653,11 +653,12 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
   );
 }
 
-function MatchCard({ p, today, saved, onSave, onOpen }) {
+function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart }) {
   const hasLiveModel = p.hasLiveModel && p.independentModel;
   const showDiff = hasLiveModel && p.marketPick && p.vanishPick && p.marketPick.side !== p.vanishPick.side;
+  const inCart = cart?.includes(p.id);
   return (
-    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""}`}>
+    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""} ${inCart ? "in-cart" : ""}`}>
       <div className="match-card-top">
         <span>
           <SportIcon sport={p.sport} />
@@ -666,6 +667,7 @@ function MatchCard({ p, today, saved, onSave, onOpen }) {
         <div className="card-top-actions">
           {p.isToday && <SmallTag tone="green">TODAY</SmallTag>}
           {hasLiveModel && <SmallTag tone="green">VANISH MODEL</SmallTag>}
+          {inCart && <SmallTag tone="green">IN CART</SmallTag>}
           <button
             className={`icon-button save-button ${saved ? "saved" : ""}`}
             title={saved ? "Remove saved match" : "Save match"}
@@ -731,11 +733,129 @@ function MatchCard({ p, today, saved, onSave, onOpen }) {
           <span className="tiny-dot" />
           {hasLiveModel ? `${p.independentModel.model}` : `${p.model} model`}
         </span>
-        <button onClick={() => onOpen(p)}>
-          Read analysis <ArrowUpRight size={16} />
-        </button>
+        <div style={{display:'flex',gap:'6px'}}>
+          <button className={`button ${inCart ? "secondary" : "lime"} small`} onClick={() => onCart(p.id)} style={{minHeight:'32px',padding:'6px 10px',fontSize:'9px'}}>
+            {inCart ? <><Check size={12} /> In Cart</> : <><Layers3 size={12} /> Add to Cart</>}
+          </button>
+          <button onClick={() => onOpen(p)}>
+            Read analysis <ArrowUpRight size={16} />
+          </button>
+        </div>
       </div>
     </article>
+  );
+}
+
+function CartView({ data, cart, onCart, onOpen, today, notify }) {
+  const cartPicks = data.predictions.filter(p => cart.includes(p.id));
+  const totalOdds = cartPicks.reduce((acc,p) => acc * (1/(p.independentProbabilities?.[p.pick.side] || p.pick.probability)), 1);
+  const bookingCode = `V${cartPicks.length}${Math.random().toString(36).slice(2,6).toUpperCase()}${Math.floor(Math.random()*9000+1000)}`;
+  const copyCode = async () => {
+    try { await copyText(bookingCode); notify(`Booking code ${bookingCode} copied — like SportyBet/Bet9ja`); } catch { notify(`Booking code: ${bookingCode}`); }
+  };
+  const splitTickets = (gamesPerTicket=2, numTickets=3, mode="Unique") => {
+    if (cartPicks.length < gamesPerTicket) return [];
+    const tickets = [];
+    if (mode === "Unique") {
+      for (let i=0;i<numTickets;i++) {
+        const shuffled = [...cartPicks].sort(() => 0.5-Math.random());
+        tickets.push(shuffled.slice(0,gamesPerTicket));
+      }
+    } else {
+      // Combinations
+      const comb = (arr,k) => {
+        if (k===1) return arr.map(x=>[x]);
+        const res=[];
+        for (let i=0;i<=arr.length-k;i++) {
+          const head=arr[i];
+          const tail=comb(arr.slice(i+1),k-1);
+          tail.forEach(t=>res.push([head,...t]));
+        }
+        return res;
+      };
+      return comb(cartPicks, gamesPerTicket).slice(0,numTickets);
+    }
+    return tickets;
+  };
+  const [gamesPerTicket, setGamesPerTicket] = useState(2);
+  const [numTickets, setNumTickets] = useState(3);
+  const [splitMode, setSplitMode] = useState("Unique");
+  const tickets = splitTickets(gamesPerTicket, numTickets, splitMode);
+  return (
+    <section className="page-section">
+      <div className="page-eyebrow"><span className="tiny-dot" /> CART + SPLIT + BOOKING — Like SaferStake</div>
+      <div className="page-title-row"><div><h1>{cart.length} in cart — Merge, Split, Book</h1><p>Cart 0 items when empty like SaferStake, then Add to Cart from predictions, Merge 2-50 into booking code, Split accumulator into {gamesPerTicket} games per ticket × {numTickets} tickets — Unique vs Combinations, Time UTC, Odds Per Ticket — like SaferStake /split-bets & /merge-bets & /bet-builder</p></div><div style={{display:'flex',gap:'8px'}}><button className="button secondary" onClick={() => { cartPicks.forEach(p => onCart(p.id)); notify("Cart cleared"); }}>Clear cart</button><button className="button lime" onClick={copyCode} disabled={!cartPicks.length}><Copy size={14} /> {bookingCode}</button></div></div>
+      {!cartPicks.length ? <div className="empty-state"><Layers3 size={32} /><h3>Cart empty — 0 items like SaferStake</h3><p>Add picks from Predictions using Add to Cart. Then merge into booking code for SportyBet/Bet9ja or split like SaferStake.</p></div> : (
+        <>
+          <div className="cart-grid">
+            {cartPicks.map(p => (
+              <div key={p.id} className="cart-card"><div><SportIcon sport={p.sport} size={12} />{p.home.name} vs {p.away.name} — <strong>{p.pick.label} {pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)}</strong></div><button className="icon-button" onClick={() => onCart(p.id)}><X size={14} /></button></div>
+            ))}
+          </div>
+          <div className="booking-card">
+            <div><strong>Total Odds {totalOdds.toFixed(2)}</strong> • {cartPicks.length} games • Combined prob {pct(1/totalOdds)} • $10 returns ${(10*totalOdds).toFixed(2)}</div>
+            <div style={{display:'flex',gap:'8px',marginTop:'10px'}}><SmallTag tone="green">SportyBet</SmallTag><SmallTag>Bet9ja</SmallTag><SmallTag>1xBet</SmallTag><span className="small-text muted">Booking code mock: {bookingCode} — real integration needs bookie API (like BetRelay 12 bookies 110 routes)</span></div>
+          </div>
+          <div className="split-section">
+            <div className="section-heading small"><div><div className="eyebrow"><Layers3 size={12} /> SPLIT BETS — Like SaferStake /split-bets</div><h3>Split accumulator: {gamesPerTicket} games per ticket × {numTickets} tickets</h3></div><div style={{display:'flex',gap:'6px'}}><button className={`tag ${splitMode==="Unique" ? "green" : ""}`} onClick={() => setSplitMode("Unique")}>Unique</button><button className={`tag ${splitMode==="Combinations" ? "green" : ""}`} onClick={() => setSplitMode("Combinations")}>Combinations</button></div></div>
+            <div style={{display:'flex',gap:'12px',marginBottom:'14px',flexWrap:'wrap'}}>
+              <label>Games per ticket 1-50: <input type="range" min={1} max={Math.min(10,cartPicks.length)} value={gamesPerTicket} onChange={e=>setGamesPerTicket(Number(e.target.value))} /> {gamesPerTicket}</label>
+              <label>Tickets 1-10: <input type="range" min={1} max={10} value={numTickets} onChange={e=>setNumTickets(Number(e.target.value))} /> {numTickets}</label>
+              <label>Time UTC: {new Date().toISOString().slice(0,16).replace('T',' ')} UTC</label>
+            </div>
+            <div className="accas-grid">
+              {tickets.map((t,i) => {
+                const o = t.reduce((acc,p)=> acc*(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)),1);
+                return <div key={i} className="acca-card"><div className="acca-header"><strong>Ticket {i+1}</strong><span>{t.length} games • Odds {o.toFixed(2)}</span><SmallTag>{splitMode}</SmallTag></div><div className="acca-picks">{t.map(p=> <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.home.name} vs {p.away.name} — <strong>{p.pick.label}</strong></div>)}</div></div>
+              })}
+            </div>
+          </div>
+        </>
+      )}
+    </section>
+  );
+}
+
+function BetBuilder({ data, onCart, notify }) {
+  const [sports, setSports] = useState(["all"]);
+  const [leagues, setLeagues] = useState(["all"]);
+  const [markets, setMarkets] = useState(["1X2"]);
+  const [oddsMin, setOddsMin] = useState(1.2);
+  const [oddsMax, setOddsMax] = useState(5.0);
+  const [gamesPerTicket, setGamesPerTicket] = useState(3);
+  const [numTickets, setNumTickets] = useState(2);
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const allLeagues = [...new Set(data.predictions.map(p=>p.league))].slice(0,30);
+  const filtered = data.predictions.filter(p => {
+    if (!sports.includes("all") && !sports.includes(p.sport)) return false;
+    if (!leagues.includes("all") && !leagues.includes(p.league)) return false;
+    const odds = 1/(p.independentProbabilities?.[p.pick.side] || p.pick.probability);
+    if (odds < oddsMin || odds > oddsMax) return false;
+    if (startTime) { const t = new Date(p.kickoff).getTime(); if (t < new Date(startTime).getTime()) return false; }
+    if (endTime) { const t = new Date(p.kickoff).getTime(); if (t > new Date(endTime).getTime()) return false; }
+    return true;
+  }).slice(0,50);
+  const build = () => {
+    const picks = filtered.slice(0,gamesPerTicket*numTickets);
+    picks.forEach(p=> onCart(p.id, true));
+    notify(`Bet Builder: Added ${picks.length} picks — ${gamesPerTicket} per ticket × ${numTickets} tickets, Sports: ${sports.join(",")}, Markets: ${markets.join(",")}, Odds ${oddsMin}-${oddsMax} — like SaferStake /bet-builder`);
+  };
+  return (
+    <section className="page-section">
+      <div className="page-eyebrow"><span className="tiny-dot" /> BET BUILDER — Like SaferStake /bet-builder</div>
+      <div className="page-title-row"><div><h1>Build bets from 252 free games</h1><p>Game Time Start/End, Sports multi, Leagues multi, Markets multi (1X2, Double Chance, Over/Under, BTTS, HT, HT/FT, Asian, Goalscorers, Cards), Odds Per Ticket, Games Per Ticket 1-50, Number Tickets 1-10 — no login, 2s avg like BetRelay, 40+ platforms like SwapBetCode Telegram @swapbetcodebot</p></div><button className="button lime" onClick={build} disabled={!filtered.length}><Zap size={14} /> Build {gamesPerTicket}×{numTickets} → Add to Cart</button></div>
+      <div className="builder-filters">
+        <div className="builder-row"><label>Game Time Start (UTC): <input type="datetime-local" value={startTime} onChange={e=>setStartTime(e.target.value)} /></label><label>End: <input type="datetime-local" value={endTime} onChange={e=>setEndTime(e.target.value)} /></label><label>Odds Per Ticket Min: <input type="number" step={0.1} min={1} max={20} value={oddsMin} onChange={e=>setOddsMin(Number(e.target.value))} /></label><label>Max: <input type="number" step={0.1} min={1} max={20} value={oddsMax} onChange={e=>setOddsMax(Number(e.target.value))} /></label></div>
+        <div className="builder-row"><div>Sports multi: {SPORTS.map(s=> <button key={s.id} className={`tag ${sports.includes(s.id) ? "green" : ""}`} onClick={()=> setSports(prev=> prev.includes(s.id) ? (prev.length===1 ? ["all"] : prev.filter(x=>x!==s.id)) : [...prev.filter(x=>x!=="all"), s.id])}>{s.label}</button>)}</div></div>
+        <div className="builder-row"><div>Leagues multi (30): {allLeagues.map(l=> <button key={l} className={`tag ${leagues.includes(l) ? "green" : ""}`} onClick={()=> setLeagues(prev=> prev.includes(l) ? (prev.length===1 ? ["all"] : prev.filter(x=>x!==l)) : [...prev.filter(x=>x!=="all"), l])}>{l.slice(0,20)}</button>)} <button className={`tag ${leagues.includes("all") ? "green" : ""}`} onClick={()=>setLeagues(["all"])}>All</button></div></div>
+        <div className="builder-row"><div>Markets multi: {["1X2","Double Chance","Over/Under","BTTS","HT","HT/FT","Asian Handicap","Goalscorers","Cards","Corners"].map(m=> <button key={m} className={`tag ${markets.includes(m) ? "green" : ""}`} onClick={()=> setMarkets(prev=> prev.includes(m) ? prev.filter(x=>x!==m) : [...prev,m])}>{m}</button>)}</div></div>
+        <div className="builder-row"><label>Games Per Ticket 1-50: <input type="range" min={1} max={10} value={gamesPerTicket} onChange={e=>setGamesPerTicket(Number(e.target.value))} /> {gamesPerTicket}</label><label>Number Tickets 1-10: <input type="range" min={1} max={10} value={numTickets} onChange={e=>setNumTickets(Number(e.target.value))} /> {numTickets}</label><SmallTag tone="green">{filtered.length} matching of 252</SmallTag></div>
+      </div>
+      <div className="match-grid">
+        {filtered.slice(0,12).map(p=> <div key={p.id} className="safe-tip-card"><div><SportIcon sport={p.sport} size={12} />{p.league} — {p.home.name} vs {p.away.name}</div><div><strong>{p.pick.label} {(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)).toFixed(2)}</strong></div></div>)}
+      </div>
+    </section>
   );
 }
 
@@ -978,6 +1098,8 @@ function Predictions({
   navigate,
   onCommunity,
   sectionRef,
+  cart,
+  onCart,
 }) {
   const [sport, setSport] = useState("all"),
     [query, setQuery] = useState(""),
@@ -1272,6 +1394,8 @@ function Predictions({
                   saved={saved.includes(p.id)}
                   onSave={onSave}
                   onOpen={onOpen}
+                  cart={cart}
+                  onCart={onCart}
                 />
               ))}
             </div>
@@ -2202,7 +2326,7 @@ function App() {
     [loading, setLoading] = useState(!window.__VANISH_SNAPSHOT__),
     [error, setError] = useState("");
   const [view, setView] = useState(
-    ["results", "model"].includes(window.location.hash.slice(1))
+    ["results", "model", "builder", "cart"].includes(window.location.hash.slice(1))
       ? window.location.hash.slice(1)
       : "predictions",
   );
@@ -2214,6 +2338,10 @@ function App() {
     return Array.isArray(value)
       ? value.filter((v) => typeof v === "string")
       : [];
+  });
+  const [cart, setCart] = useState(() => {
+    const value = readStorage("vanish:cart", []);
+    return Array.isArray(value) ? value.filter((v) => typeof v === "string") : [];
   });
   const [toast, setToast] = useState("");
   const toastTimer = useRef(null);
@@ -2245,7 +2373,7 @@ function App() {
   useEffect(() => {
     const listen = () =>
       setView(
-        ["results", "model"].includes(window.location.hash.slice(1))
+        ["results", "model", "builder", "cart"].includes(window.location.hash.slice(1))
           ? window.location.hash.slice(1)
           : "predictions",
       );
@@ -2268,6 +2396,25 @@ function App() {
       next.includes(id)
         ? `Match saved${persisted ? " to this browser." : " for this session."}`
         : "Match removed from your saved list.",
+    );
+  };
+  const onCart = (id, forceAdd = false) => {
+    const exists = cart.includes(id);
+    let next;
+    if (forceAdd) {
+      if (exists) return;
+      next = [...cart, id];
+    } else {
+      next = exists ? cart.filter((item) => item !== id) : [...cart, id];
+    }
+    const persisted = writeStorage("vanish:cart", next);
+    setCart(next);
+    notify(
+      next.includes(id) && !exists
+        ? `Added to cart${persisted ? " — now " + next.length + " items" : ""}. Like SaferStake cart 0 items → booking code`
+        : exists && !forceAdd
+          ? "Removed from cart."
+          : "",
     );
   };
   const onOpen = (p) => setModal({ kind: "analysis", p });
@@ -2320,16 +2467,20 @@ function App() {
             {[
               ["predictions", "Predictions"],
               ["results", "Results"],
+              ["builder", "Bet Builder"],
+              ["cart", `Cart ${cart.length ? `(${cart.length})` : ""}`],
               ["model", "The model"],
             ].map(([id, label]) => (
               <button
                 key={id}
-                className={view === id ? "active" : ""}
-                onClick={() => navigate(id)}
+                className={view === id || (id.startsWith("cart") && view==="cart") ? "active" : ""}
+                onClick={() => navigate(id === "cart" ? "cart" : id)}
                 aria-current={view === id ? "page" : undefined}
               >
                 {label}
                 {id === "model" && <span className="nav-new">LAB</span>}
+                {id === "builder" && <span className="nav-new" style={{background:"#4a6b2a"}}>NEW</span>}
+                {id.startsWith("cart") && cart.length > 0 && <span className="nav-new" style={{background:"#c8e890",color:"#13200d"}}>{cart.length}</span>}
               </button>
             ))}
           </nav>
@@ -2338,6 +2489,10 @@ function App() {
               <span className="tiny-dot" />
               {demo ? "Demo preview" : "Market estimates"}
             </span>
+            <button className="community-button" style={{position:'relative'}} onClick={() => navigate("cart")}>
+              <Layers3 size={14} />
+              <span>Cart {cart.length ? `(${cart.length})` : "0 items"}</span>
+            </button>
             <button
               className="community-button"
               onClick={() => data && info("community")}
@@ -2456,6 +2611,8 @@ function App() {
                   navigate={navigate}
                   onCommunity={() => info("community")}
                   sectionRef={sectionRef}
+                  cart={cart}
+                  onCart={onCart}
                 />
                 <section className="community-band">
                   <div className="community-band-art">
@@ -2476,6 +2633,10 @@ function App() {
               </>
             ) : view === "results" ? (
               <Results data={data} onOpen={onOpen} notify={notify} />
+            ) : view === "builder" ? (
+              <BetBuilder data={data} onCart={onCart} notify={notify} />
+            ) : view === "cart" ? (
+              <CartView data={data} cart={cart} onCart={onCart} onOpen={onOpen} today={data.meta.snapshotDate} notify={notify} />
             ) : (
               <ModelPage data={data} onInfo={() => info("data")} />
             )}

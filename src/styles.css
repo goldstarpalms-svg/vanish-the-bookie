@@ -4906,6 +4906,82 @@ option {
 .acca-picks strong {
   color: #d6eac2;
 }
+.cart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+}
+.cart-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: #b8cba2;
+}
+.cart-card strong {
+  color: #e0efcc;
+}
+.booking-card {
+  background: linear-gradient(135deg, #1e2e14, #162112);
+  border: 1px solid #4a6b2a;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 18px 0;
+  font-size: 12px;
+  color: #c8e890;
+}
+.split-section {
+  margin-top: 28px;
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  background: #121c11;
+  padding: 18px;
+}
+.builder-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #121c11;
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 18px 0;
+}
+.builder-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  color: #9aaf88;
+}
+.builder-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #171e14;
+  border: 1px solid #2d3b26;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+.builder-row input[type="datetime-local"],
+.builder-row input[type="number"] {
+  background: #0e1510;
+  border: 1px solid #2d3b26;
+  border-radius: 4px;
+  color: #c8e890;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+.match-card.in-cart {
+  border-color: #4a6b2a;
+  box-shadow: 0 0 0 1px #4a6b2a;
+}
 @media (max-width: 700px) {
   .method-grid {
     grid-template-columns: 1fr;
