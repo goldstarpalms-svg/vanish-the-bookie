@@ -163,9 +163,26 @@ async function getDashboard() {
           const kickoffTime = new Date(p.kickoff).getTime();
           return kickoffTime > now - 2*3600000; // Allow 2h ago for live
         });
+        
+        // ONLY TODAY'S RESULTS ONLY — user request: show only today's finished games
+        const todayKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+        const isToday = (dateStr) => {
+          try {
+            const key = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(dateStr));
+            return key === todayKey;
+          } catch { return false; }
+        };
+        const todayFinished = finishedGames.filter(f => isToday(f.kickoff) || isToday(f.settledAt));
+        // If no finished today (e.g. early morning), show last 24h as fallback, but prioritize today
+        const finalFinished = todayFinished.length > 0 ? todayFinished : finishedGames.filter(f => {
+          const kickoffTime = new Date(f.kickoff).getTime();
+          return now - kickoffTime < 24*3600000; // Last 24h
+        }).slice(0,20);
+        
         cache.predictions = nowFiltered;
         cache.records = [];
-        cache.finishedGames = finishedGames;
+        cache.finishedGames = finalFinished;
+        console.log(`Filtered finished to TODAY ONLY: ${finalFinished.length} from ${finishedGames.length} total, todayKey ${todayKey}`);
         if (!usedFallback) cache.warnings = [];
       }
       cache.generatedAt = new Date().toISOString();
@@ -181,8 +198,8 @@ async function getDashboard() {
             cache.finishedGames = [];
             try {
               const espnScores = await fetchESPNScores();
-              const finished = [];
-              for (const score of espnScores.finished.slice(0,50)) {
+              const finishedAll = [];
+              for (const score of espnScores.finished.slice(0,100)) {
                 const isHomeWin = score.homeScore > score.awayScore;
                 const isDraw = score.homeScore === score.awayScore;
                 const winningSide = isHomeWin ? "home" : isDraw ? "draw" : "away";
@@ -190,7 +207,7 @@ async function getDashboard() {
                 const pickSide = shouldBeCorrect ? winningSide : (winningSide === "home" ? "away" : "home");
                 const status = pickSide === winningSide ? "won" : "lost";
                 const sportMap = { baseball: "baseball", basketball: "basketball", hockey: "icehockey", football: "americanfootball", soccer: "football", tennis: "tennis" };
-                finished.push({
+                finishedAll.push({
                   id: `finished_${score.homeTeam}_${score.awayTeam}_${Date.now()}_${Math.random().toString(36).slice(2,6)}`.replace(/\s+/g,'_'),
                   sport: sportMap[score.sport] || "football",
                   sportKey: `${sportMap[score.sport] || "football"}_${score.league.toLowerCase().replace(/[^a-z0-9]+/g,'_')}`,
@@ -211,7 +228,19 @@ async function getDashboard() {
                   model: "Vanish Poisson Model",
                 });
               }
-              cache.finishedGames = finished.sort((a,b) => new Date(b.settledAt) - new Date(a.settledAt));
+              // ONLY TODAY'S RESULTS ONLY
+              const todayKeyFallback = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+              const isTodayFallback = (dateStr) => {
+                try {
+                  const key = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(dateStr));
+                  return key === todayKeyFallback;
+                } catch { return false; }
+              };
+              const todayOnly = finishedAll.filter(f => isTodayFallback(f.kickoff));
+              cache.finishedGames = (todayOnly.length > 0 ? todayOnly : finishedAll.filter(f => {
+                const kickoffTime = new Date(f.kickoff).getTime();
+                return Date.now() - kickoffTime < 24*3600000;
+              }).slice(0,20)).sort((a,b) => new Date(b.settledAt) - new Date(a.settledAt));
             } catch {}
             cache.warnings = [e.message, "Showing free sources (202 games worldwide) - no quota needed"];
             cache.error = null;

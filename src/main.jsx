@@ -1093,7 +1093,12 @@ function OddsConverter() {
 
 function LiveScores({ data, onOpen, today }) {
   const live = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => p.isToday).slice(0,20);
-  const finished = (data.finishedGames || []).filter(p => isBookieTopAvailable(p)).slice(0,10);
+  // ONLY TODAY'S RESULTS ONLY — filter finished to today only
+  const finished = (data.finishedGames || []).filter(p => {
+    const kickoffToday = dateKey(p.kickoff) === today;
+    const settledToday = p.settledAt ? dateKey(p.settledAt) === today : false;
+    return (kickoffToday || settledToday) && isBookieTopAvailable(p);
+  }).slice(0,20);
   return (
     <section className="page-section">
       <div className="page-eyebrow"><span className="tiny-dot" /> LIVE SCORES — Like Forebet Live 20 + FlashScore 6000+ + FotMob Real-Time xG</div>
@@ -1687,8 +1692,13 @@ function Predictions({
         ? b.pick.probability - a.pick.probability
         : new Date(a.kickoff) - new Date(b.kickoff),
     );
+  // ONLY TODAY'S RESULTS ONLY — user requested: filter finished to today only (Africa/Lagos)
   const finishedGames = (data.finishedGames || []).filter(
-    (p) => (sport === "all" || p.sport === sport) && (!onlyBookieAvailable || isBookieAvailable(p, bookie)),
+    (p) => {
+      const kickoffToday = dateKey(p.kickoff) === today;
+      const settledToday = p.settledAt ? dateKey(p.settledAt) === today : false;
+      return (kickoffToday || settledToday) && (sport === "all" || p.sport === sport) && (!onlyBookieAvailable || isBookieAvailable(p, bookie));
+    },
   );
 
   // SAFE TIPS + BEST BETS TODAY + VALUES — like Footbot + WinDrawWin + Forebet — ONLY BOOKIE AVAILABLE
@@ -2091,11 +2101,21 @@ function Results({ data, onOpen, notify }) {
   const [showDemo, setShowDemo] = useState(false),
     [filter, setFilter] = useState("all"),
     [sport, setSport] = useState("all"),
-    [showMethod, setShowMethod] = useState(false);
+    [showMethod, setShowMethod] = useState(false),
+    [onlyToday, setOnlyToday] = useState(true); // ONLY TODAY'S RESULTS ONLY — user request
   const demo = data.meta.mode === "demo";
   // Combine records + finishedGames for full transparent archive (like NerdyTips + Forebet)
   const allHistory = [...(data.records || []), ...(data.finishedGames || [])].filter((v,i,a) => a.findIndex(x=>x.id===v.id)===i);
-  const records = demo && !showDemo ? [] : (allHistory.length ? allHistory : data.records);
+  const todayKey = data.meta.snapshotDate; // YYYY-MM-DD in Africa/Lagos
+  const isTodayRecord = (p) => {
+    try {
+      const kickoffKey = dateKey(p.kickoff);
+      const settledKey = p.settledAt ? dateKey(p.settledAt) : null;
+      return kickoffKey === todayKey || settledKey === todayKey;
+    } catch { return false; }
+  };
+  const filteredByDate = onlyToday ? allHistory.filter(isTodayRecord) : allHistory;
+  const records = demo && !showDemo ? [] : (filteredByDate.length ? filteredByDate : (onlyToday ? [] : data.records));
   const visible = records
     .filter(
       (p) =>
@@ -2196,6 +2216,14 @@ function Results({ data, onOpen, notify }) {
             ? "SYNTHETIC RESULTS · NOT PERFORMANCE EVIDENCE"
             : `EVERY PUBLISHED PICK. ${totalSettled} SETTLED (W${won}/L${lost}) + ${pending} PENDING + ${voids} VOID · NO CHERRY-PICKING · GREEN/RED GRADED`}
         </span>
+      </div>
+      <div className="bookie-filter-bar" style={{margin:'12px 0'}}>
+        <div className="bookie-label"><CalendarDays size={12} /> Date Filter:</div>
+        <div className="bookie-tabs">
+          <button className={onlyToday ? "active" : ""} onClick={()=>setOnlyToday(true)}>Today Only ({todayKey}) — {allHistory.filter(isTodayRecord).length} results</button>
+          <button className={!onlyToday ? "active" : ""} onClick={()=>setOnlyToday(false)}>All Time ({allHistory.length})</button>
+        </div>
+        <div className="bookie-info"><Info size={10} /> Only today's results only — user requested. Shows only games finished today {todayKey} (Africa/Lagos). Auto-updates when ESPN reports final. Yesterday's results hidden when toggle ON.</div>
       </div>
       {!records.length ? (
         <div className="results-empty">
