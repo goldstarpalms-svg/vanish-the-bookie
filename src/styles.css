@@ -4623,6 +4623,78 @@ option {
   padding: 8px 12px;
   font-size: 10px;
 }
+.transparency-card {
+  border: 1px solid #3e532d;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1b2516, #162512);
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+.transparency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.transparency-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #d6eac2;
+}
+.transparency-body {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #2e3b2b;
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.method-grid > div {
+  background: #121c11;
+  border: 1px solid #25351f;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.method-grid strong {
+  font-size: 11px;
+  color: #c8e890;
+}
+.method-grid span {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #9aaf88;
+}
+.correct-score-section {
+  margin: 28px 0;
+  padding: 20px;
+  border: 1px solid #2a3526;
+  border-radius: 10px;
+  background: #121c11;
+}
+.row-won td {
+  background: #1a2a14 !important;
+  border-bottom-color: #2e4a22 !important;
+}
+.row-lost td {
+  background: #2a1a14 !important;
+  border-bottom-color: #4a2a22 !important;
+}
+.row-pending td {
+  background: #1a1e14 !important;
+}
+@media (max-width: 700px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .comparison-section {
   margin-bottom: 24px;
   padding: 16px;
