@@ -69,20 +69,44 @@ const BOOKIE_AVAILABLE_LEAGUES = [
 ];
 function isBookieAvailable(p, bookie = "all") {
   const league = (p.league || "").toLowerCase();
+  const homeName = (p.home?.name || "").toLowerCase();
+  const awayName = (p.away?.name || "").toLowerCase();
+  const combined = `${league} ${homeName} ${awayName}`;
   const blockedKeywords = [
     "second-preliminary", "first preliminary", "preliminary", "derde divisie", "vierde divisie",
     "regionalliga", "oberliga", "isthmian", "southern football", "northern premier",
     "professional development", "u21", "u19", "u23", "women", " w ", "ladies",
     "reserve", "youth", "academy", "amateur", "county", "southern league",
+    "group-stage", "efl trophy", "trophy", "u21", "u23", "u19", // EFL Trophy group-stage with U21 is NOT on Bet9ja
+    "acv", "hoogeveen", // second-preliminary obscure Dutch
   ];
+  const isBlocked = blockedKeywords.some(kw => combined.includes(kw));
+  if (isBlocked) {
+    // Allow EFL Trophy only if NOT u21? Actually EFL Trophy with U21 teams is still on Bet9ja? User said no. So block all U21 regardless.
+    // But if league itself is EFL Trophy and contains u21 teams, block.
+    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("group-stage")) return false;
+  }
   const isTopLeague = BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top.toLowerCase()) || (p.league||"").includes(top));
-  const isBlocked = blockedKeywords.some(kw => league.includes(kw));
-  if (isTopLeague && !league.includes("preliminary")) return true;
+  if (isTopLeague) {
+    // Even top league, block if has U21/U19/U23/women/reserve etc
+    if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("reserve") || combined.includes("youth") || combined.includes("preliminary")) return false;
+    return true;
+  }
+  // For ESPN Worldwide free: only allow if league name matches top league, otherwise require manual verification
+  // Strict mode: if league is generic "group-stage" or "Football" without top league name, block
+  const genericBlocked = ["group-stage", "worldwide", "free trained", "trophy"];
+  const isGeneric = genericBlocked.some(kw => league.includes(kw)) && !isTopLeague;
+  if (isGeneric) return false;
   if (isBlocked) return false;
   return true;
 }
 function isBookieTopAvailable(p) {
   const league = p.league || "";
+  const homeName = (p.home?.name || "").toLowerCase();
+  const awayName = (p.away?.name || "").toLowerCase();
+  const combined = `${league} ${homeName} ${awayName}`.toLowerCase();
+  // Block U21/U19/U23/women/preliminary even for top leagues
+  if (combined.includes("u21") || combined.includes("u19") || combined.includes("u23") || combined.includes("women") || combined.includes("preliminary") || combined.includes("derde divisie") || combined.includes("vierde divisie") || combined.includes("regionalliga") || combined.includes("group-stage") || combined.includes("acv") || combined.includes("hoogeveen")) return false;
   return BOOKIE_AVAILABLE_LEAGUES.some(top => league.includes(top) || league.toLowerCase().includes(top.toLowerCase()));
 }
 
