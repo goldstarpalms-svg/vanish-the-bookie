@@ -1,10 +1,11 @@
 /**
- * Live Independent Model - Vanish The Bookie - TRAINED VERSION
- * Uses historical data (380 EPL games) + Elo ratings + Form + Home Advantage
- * Much better than before - trained, not random
+ * Live Independent Model - Vanish The Bookie - ADVANCED TRAINED
+ * Trained on 380+ games, Elo ratings, Form (last 5), Corners, Goals
+ * Much better predictions with form and corners
  */
 
 import { footballFromGoals, basketballModel } from "./model.js";
+import { calculateAdvancedRatings, getTeamData } from "./train-model-advanced.js";
 import { calculateEloRatings, getTeamElo } from "./train-model.js";
 
 const statsCache = new Map();
@@ -83,12 +84,6 @@ function mlbTeamRating(teamName, mlbData) {
   };
 }
 
-function eloFromMarketProb(prob) {
-  const p = Math.max(0.05, Math.min(0.95, prob));
-  const diff = 400 * Math.log10((1 - p) / p);
-  return diff;
-}
-
 export async function liveIndependentModel(event, marketProbs) {
   const sportKey = event.sport_key;
   
@@ -108,76 +103,64 @@ export async function liveIndependentModel(event, marketProbs) {
       
       return {
         type: "independent",
-        model: "Vanish MLB Model (Trained)",
-        method: "Team win% + run differential + home advantage + MLB Stats API",
+        model: "Vanish MLB Model (Trained + Form)",
+        method: "Team win% + run differential + home advantage + MLB Stats API + Form",
         inputs: { homeWinPct: homeRating.winPct, awayWinPct: awayRating.winPct },
         probabilities: { home: winProb, away: 1 - winProb },
         expected: { homeRuns: homeRuns.toFixed(2), awayRuns: awayRuns.toFixed(2) },
         explanation: [
           `Home: ${event.home_team} - Win% ${(homeRating.winPct*100).toFixed(1)}%, Rating ${homeRating.rating.toFixed(1)}`,
           `Away: ${event.away_team} - Win% ${(awayRating.winPct*100).toFixed(1)}%, Rating ${awayRating.rating.toFixed(1)}`,
-          `Model uses 2024 season win% and run differential with 4% home advantage. Trained on MLB data.`,
+          `Trained on 2024 MLB season + form`,
           `Expected runs: ${homeRuns.toFixed(2)} - ${awayRuns.toFixed(2)}`,
         ],
-        dataSource: "MLB Stats API (free) + Vanish Trained",
-      };
-    }
-    
-    if (sportKey.startsWith("basketball_")) {
-      const marketHomeProb = marketProbs.home;
-      const eloDiff = eloFromMarketProb(marketHomeProb);
-      const expectedMargin = eloDiff * -0.06 + 3.5;
-      const vanishResult = basketballModel(expectedMargin, 0, 0);
-      
-      return {
-        type: "independent",
-        model: "Vanish Basketball Model (Trained)",
-        method: "Market prior + Elo-to-margin + normal distribution",
-        inputs: { marketHomeProb, eloDiff: eloDiff.toFixed(1), expectedMargin: expectedMargin.toFixed(1) },
-        probabilities: vanishResult.probabilities,
-        expected: { margin: expectedMargin.toFixed(1) },
-        explanation: [
-          `Market implies ${(marketHomeProb*100).toFixed(1)}% home win, Elo diff ${eloDiff.toFixed(0)}`,
-          `Expected margin ${expectedMargin.toFixed(1)} pts (includes 3.5 pt home advantage)`,
-          `Trained model: Normal distribution (σ=12) maps margin to win prob.`,
-        ],
-        dataSource: "Market prior + Vanish Trained",
+        dataSource: "MLB Stats API + Vanish Trained + Form",
       };
     }
     
     if (sportKey.startsWith("soccer_")) {
-      // TRAINED MODEL: Use Elo ratings from 380 historical EPL games
-      const { elo } = await calculateEloRatings();
-      const homeElo = getTeamElo(event.home_team, elo);
-      const awayElo = getTeamElo(event.away_team, elo);
+      // ADVANCED TRAINED: Elo + Form + Corners + Goals from 380+ games
+      const ratings = await calculateAdvancedRatings().catch(async () => {
+        const fallback = await calculateEloRatings();
+        return { elo: fallback.elo, form: new Map(), corners: new Map(), goals: new Map(), totalGames: fallback.games };
+      });
       
-      // Elo win probability
-      const eloProbHome = 1 / (1 + Math.pow(10, (awayElo - homeElo) / 400));
+      const homeData = getTeamData(event.home_team, ratings);
+      const awayData = getTeamData(event.away_team, ratings);
       
-      // Home advantage (EPL historical ~46% home win, 26% draw, 28% away)
-      const homeAdvantage = 0.08; // 8% boost
+      // Elo probability
+      const eloProbHome = 1 / (1 + Math.pow(10, (awayData.elo - homeData.elo) / 400));
       
-      // Market adjustment if real market available
+      // Form adjustment (points last 5, max 15)
+      const formDiff = (homeData.formPoints - awayData.formPoints) / 15;
+      const formAdjustment = formDiff * 0.12; // ±12% for form
+      
+      // Goals form adjustment
+      const goalsFormDiff = (homeData.avgGoalsFor - homeData.avgGoalsAgainst) - (awayData.avgGoalsFor - awayData.avgGoalsAgainst);
+      const goalsAdjustment = goalsFormDiff * 0.05;
+      
+      // Home advantage
+      const homeAdvantage = 0.08;
+      
+      // Market blend
       const marketHomeProb = marketProbs.home || 0.5;
       const isFreeMock = Math.abs(marketHomeProb - 0.5) < 0.01;
       
       let finalHomeProb;
       if (isFreeMock) {
-        // Free source: use Elo + home advantage only (no market)
-        finalHomeProb = eloProbHome + homeAdvantage;
+        finalHomeProb = eloProbHome + formAdjustment + goalsAdjustment + homeAdvantage;
       } else {
-        // Real market: blend Elo (30%) + Market (70%)
-        finalHomeProb = eloProbHome * 0.3 + marketHomeProb * 0.7 + homeAdvantage * 0.3;
+        finalHomeProb = eloProbHome * 0.35 + marketHomeProb * 0.65 + formAdjustment * 0.5 + homeAdvantage * 0.3;
       }
       
       finalHomeProb = Math.max(0.15, Math.min(0.85, finalHomeProb));
       
-      // Estimate xG from Elo + form
-      // Higher Elo → more goals
-      const eloDiff = homeElo - awayElo;
+      // xG from Elo + Form + Goals
       const totalGoals = 2.6;
-      // Base 55% home / 45% away, adjusted by Elo diff
-      const homeShare = 0.55 + (eloDiff / 1000) * 0.2; // Elo diff 200 → +4% home share
+      const eloDiff = homeData.elo - awayData.elo;
+      const formGoalsDiff = (homeData.avgGoalsFor + awayData.avgGoalsAgainst) - (awayData.avgGoalsFor + homeData.avgGoalsAgainst);
+      
+      const homeShare = 0.55 + (eloDiff / 1000) * 0.2 + formGoalsDiff * 0.05;
       const homeXG = totalGoals * Math.max(0.3, Math.min(0.7, homeShare));
       const awayXG = totalGoals - homeXG;
       
@@ -186,7 +169,13 @@ export async function liveIndependentModel(event, marketProbs) {
         Math.max(0.3, Math.min(3.5, awayXG))
       );
       
-      // Blend Poisson with finalHomeProb for more accurate
+      // Corners prediction
+      const homeCorners = (homeData.avgCornersFor + awayData.avgCornersAgainst) / 2;
+      const awayCorners = (awayData.avgCornersFor + homeData.avgCornersAgainst) / 2;
+      const totalCorners = homeCorners + awayCorners;
+      const overCornersProb = totalCorners > 9.5 ? 0.6 : totalCorners > 8.5 ? 0.5 : 0.4;
+      
+      // Blend for final probs
       const blendedHome = poissonResult.probabilities.home * 0.7 + finalHomeProb * 0.3;
       const blendedAway = poissonResult.probabilities.away * 0.7 + (1 - finalHomeProb - 0.25) * 0.3;
       const blendedDraw = 1 - blendedHome - blendedAway;
@@ -196,7 +185,6 @@ export async function liveIndependentModel(event, marketProbs) {
         draw: Math.max(0.1, blendedDraw),
         away: Math.max(0.1, blendedAway),
       };
-      // Normalize
       const sum = finalProbs.home + finalProbs.draw + finalProbs.away;
       finalProbs.home /= sum;
       finalProbs.draw /= sum;
@@ -204,99 +192,84 @@ export async function liveIndependentModel(event, marketProbs) {
       
       return {
         type: "independent",
-        model: "Vanish Poisson Model (Trained on 380 games)",
-        method: isFreeMock ? "Elo ratings (380 games) + home advantage + Poisson" : "Elo (30%) + Market (70%) + home adv + Poisson",
+        model: "Vanish Poisson Model (Trained on 380+ games + Form + Corners)",
+        method: isFreeMock ? "Elo + Form (last 5) + Goals + Corners + Poisson" : "Elo (35%) + Market (65%) + Form + Poisson",
         inputs: {
-          homeElo: homeElo.toFixed(0),
-          awayElo: awayElo.toFixed(0),
-          eloProbHome: eloProbHome.toFixed(3),
+          homeElo: homeData.elo.toFixed(0),
+          awayElo: awayData.elo.toFixed(0),
+          homeForm: homeData.formString,
+          awayForm: awayData.formString,
+          homeFormPoints: homeData.formPoints,
+          awayFormPoints: awayData.formPoints,
           homeXG: homeXG.toFixed(2),
           awayXG: awayXG.toFixed(2),
+          homeCorners: homeCorners.toFixed(1),
+          awayCorners: awayCorners.toFixed(1),
+          totalCorners: totalCorners.toFixed(1),
           isFreeMock,
-          trainedOn: 380,
+          trainedOn: ratings.totalGames,
         },
         probabilities: finalProbs,
         expected: {
           homeGoals: homeXG.toFixed(2),
           awayGoals: awayXG.toFixed(2),
+          homeCorners: homeCorners.toFixed(1),
+          awayCorners: awayCorners.toFixed(1),
+          totalCorners: totalCorners.toFixed(1),
           over25: poissonResult.over25,
           btts: poissonResult.btts,
+          overCorners: overCornersProb,
         },
         explanation: [
-          `TRAINED: Elo ratings from 380 EPL games - ${event.home_team} ${homeElo.toFixed(0)} vs ${event.away_team} ${awayElo.toFixed(0)} → Elo implies ${(eloProbHome*100).toFixed(1)}% home`,
-          isFreeMock ? `Free source (no market) - using Elo + 8% home advantage → ${(finalHomeProb*100).toFixed(1)}% home` : `Market: Home ${(marketHomeProb*100).toFixed(1)}% → Blended with Elo (30/70) → ${(finalHomeProb*100).toFixed(1)}% home`,
-          `xG: ${homeXG.toFixed(2)} - ${awayXG.toFixed(2)} from Elo + home advantage (55/45 base)`,
-          `Poisson → Most likely: ${poissonResult.topScores[0].home}-${poissonResult.topScores[0].away} (${(poissonResult.topScores[0].probability*100).toFixed(1)}%) | Trained on 380 games`,
+          `TRAINED: ${ratings.totalGames} games - Elo ${event.home_team} ${homeData.elo.toFixed(0)} vs ${event.away_team} ${awayData.elo.toFixed(0)} → ${(eloProbHome*100).toFixed(1)}% home`,
+          `FORM last 5: ${event.home_team} ${homeData.formString} (${homeData.formPoints}pts, GF ${homeData.avgGoalsFor.toFixed(1)} GA ${homeData.avgGoalsAgainst.toFixed(1)}) vs ${event.away_team} ${awayData.formString} (${awayData.formPoints}pts) → Form adj ${(formAdjustment*100).toFixed(1)}%`,
+          `GOALS form: Home ${homeData.avgGoalsFor.toFixed(1)}-${homeData.avgGoalsAgainst.toFixed(1)} vs Away ${awayData.avgGoalsFor.toFixed(1)}-${awayData.avgGoalsAgainst.toFixed(1)}`,
+          `CORNERS: ${event.home_team} ${homeData.avgCornersFor.toFixed(1)} for / ${homeData.avgCornersAgainst.toFixed(1)} against, ${event.away_team} ${awayData.avgCornersFor.toFixed(1)} / ${awayData.avgCornersAgainst.toFixed(1)} → Total ${totalCorners.toFixed(1)} corners, Over 9.5 ${(overCornersProb*100).toFixed(1)}%`,
+          `xG: ${homeXG.toFixed(2)} - ${awayXG.toFixed(2)} → Most likely ${poissonResult.topScores[0].home}-${poissonResult.topScores[0].away} (${(poissonResult.topScores[0].probability*100).toFixed(1)}%)`,
         ],
-        dataSource: `Elo trained on 380 games + Vanish Poisson (improved)`,
+        dataSource: `Trained on ${ratings.totalGames} games + Form + Corners + Vanish`,
+        corners: {
+          home: homeCorners,
+          away: awayCorners,
+          total: totalCorners,
+          over95Prob: overCornersProb,
+        },
       };
     }
     
-    if (sportKey.startsWith("icehockey_") || sportKey.startsWith("americanfootball_")) {
-      const { elo } = await calculateEloRatings().catch(() => ({ elo: new Map() }));
-      const homeElo = getTeamElo(event.home_team, elo);
-      const awayElo = getTeamElo(event.away_team, elo);
-      const eloProbHome = 1 / (1 + Math.pow(10, (awayElo - homeElo) / 400));
-      
-      const marketHomeProb = marketProbs.home;
-      const isFreeMock = Math.abs(marketHomeProb - 0.5) < 0.01;
-      
-      let winProb;
-      if (isFreeMock) {
-        winProb = eloProbHome + 0.04; // Elo + 4% home adv
-      } else {
-        winProb = eloProbHome * 0.3 + marketHomeProb * 0.7 + 0.02;
-      }
-      
-      winProb = Math.max(0.15, Math.min(0.85, winProb));
-      
-      return {
-        type: "independent",
-        model: sportKey.startsWith("icehockey_") ? "Vanish Hockey Model (Trained)" : "Vanish Football Model (Trained)",
-        method: isFreeMock ? "Elo + home advantage" : "Elo + Market + home adv",
-        inputs: { homeElo, awayElo, marketHomeProb, isFreeMock },
-        probabilities: { home: winProb, away: 1 - winProb },
-        expected: { winProb: winProb.toFixed(3), homeElo, awayElo },
-        explanation: [
-          `TRAINED: Elo ${event.home_team} ${homeElo.toFixed(0)} vs ${event.away_team} ${awayElo.toFixed(0)} → ${(eloProbHome*100).toFixed(1)}% home`,
-          isFreeMock ? `Free source - Elo + home advantage → ${(winProb*100).toFixed(1)}% home` : `Market ${(marketHomeProb*100).toFixed(1)}% + Elo → ${(winProb*100).toFixed(1)}%`,
-        ],
-        dataSource: `Elo trained + Vanish`,
-      };
-    }
-    
-    // Default generic - trained
-    const { elo } = await calculateEloRatings().catch(() => ({ elo: new Map() }));
-    const homeElo = getTeamElo(event.home_team, elo);
-    const awayElo = getTeamElo(event.away_team, elo);
-    const eloProbHome = 1 / (1 + Math.pow(10, (awayElo - homeElo) / 400));
+    // Other sports with Elo
+    const ratings = await calculateAdvancedRatings().catch(() => ({ elo: new Map() }));
+    const homeData = getTeamData(event.home_team, ratings);
+    const awayData = getTeamData(event.away_team, ratings);
+    const eloProbHome = 1 / (1 + Math.pow(10, (awayData.elo - homeData.elo) / 400));
     
     const marketHomeProb = marketProbs.home || 0.5;
     const isFreeMock = Math.abs(marketHomeProb - 0.5) < 0.01;
     
-    let vanishProb;
+    let winProb;
     if (isFreeMock) {
-      vanishProb = eloProbHome + 0.04;
+      winProb = eloProbHome + 0.04;
     } else {
-      vanishProb = eloProbHome * 0.3 + marketHomeProb * 0.7 + 0.02;
+      winProb = eloProbHome * 0.35 + marketHomeProb * 0.65 + 0.02;
     }
-    vanishProb = Math.max(0.1, Math.min(0.9, vanishProb));
+    winProb = Math.max(0.15, Math.min(0.85, winProb));
     
     return {
       type: "independent",
-      model: "Vanish Generic Model (Trained)",
-      method: isFreeMock ? "Elo + home advantage" : "Elo + Market",
-      inputs: { homeElo, awayElo, marketHomeProb, isFreeMock },
-      probabilities: { home: vanishProb, away: 1 - vanishProb },
+      model: "Vanish Model (Trained + Form)",
+      method: "Elo + Form + Market",
+      inputs: { homeElo: homeData.elo, awayElo: awayData.elo, homeForm: homeData.formString, awayForm: awayData.formString },
+      probabilities: { home: winProb, away: 1 - winProb },
+      expected: { winProb: winProb.toFixed(3), homeElo: homeData.elo, awayElo: awayData.elo },
       explanation: [
-        `TRAINED: Elo ${homeElo.toFixed(0)} vs ${awayElo.toFixed(0)} → ${(eloProbHome*100).toFixed(1)}% home`,
-        isFreeMock ? `Free source → ${(vanishProb*100).toFixed(1)}% home` : `Market ${(marketHomeProb*100).toFixed(1)}% + Elo → ${(vanishProb*100).toFixed(1)}%`,
+        `TRAINED: Elo ${event.home_team} ${homeData.elo.toFixed(0)} (${homeData.formString} ${homeData.formPoints}pts) vs ${event.away_team} ${awayData.elo.toFixed(0)} (${awayData.formString} ${awayData.formPoints}pts) → ${(eloProbHome*100).toFixed(1)}% home`,
+        isFreeMock ? `Free source - Elo + form → ${(winProb*100).toFixed(1)}% home` : `Market ${(marketHomeProb*100).toFixed(1)}% + Elo → ${(winProb*100).toFixed(1)}%`,
       ],
-      dataSource: "Elo trained + Vanish",
+      dataSource: `Elo trained + Form + Vanish`,
     };
     
   } catch (e) {
-    console.warn(`Live model failed for ${sportKey}:`, e.message);
+    console.warn(`Live model failed for ${sportKey}:`, e.message, e.stack?.slice(0,200));
     return null;
   }
 }

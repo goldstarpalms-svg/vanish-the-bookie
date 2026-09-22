@@ -1,36 +1,28 @@
 /**
- * Worldwide Betting Options + SofaScore/Forebet Alternative
- * Since SofaScore & Forebet block (403), we use ESPN Worldwide (100 games, 50+ leagues)
- * Generates worldwide betting markets: 1X2, Over/Under, BTTS, Double Chance, Correct Score
+ * Worldwide Betting Options + Corners + SofaScore/Forebet Alternative
+ * Generates: 1X2, Over/Under 2.5, BTTS, Double Chance, Correct Score, Corners
  */
 
-export function generateWorldwideMarkets(homeGoals, awayGoals, homeProb, awayProb, drawProb) {
+export function generateWorldwideMarkets(homeGoals, awayGoals, homeProb, awayProb, drawProb, homeCorners=5, awayCorners=5) {
   const totalGoals = homeGoals + awayGoals;
+  const totalCorners = homeCorners + awayCorners;
   
-  // Poisson for Over/Under 2.5 - P(X <= 2)
   function poisson(k, lambda) {
-    return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
-  }
-  function factorial(n) {
-    if (n <= 1) return 1;
-    let r = 1;
-    for (let i = 2; i <= n; i++) r *= i;
-    return r;
+    let f=1;
+    for (let i=2; i<=k; i++) f*=i;
+    return (Math.pow(lambda, k) * Math.exp(-lambda)) / f;
   }
   
   const under25Prob = poisson(0, totalGoals) + poisson(1, totalGoals) + poisson(2, totalGoals);
   const over25Prob = 1 - under25Prob;
   
-  // BTTS
   const bttsYesProb = (1 - Math.exp(-homeGoals)) * (1 - Math.exp(-awayGoals));
   const bttsNoProb = 1 - bttsYesProb;
   
-  // Double Chance
   const homeDrawProb = homeProb + drawProb;
   const awayDrawProb = awayProb + drawProb;
   const homeAwayProb = homeProb + awayProb;
   
-  // Correct Score top 3
   const likelyScores = [];
   for (let h = 0; h <= 3; h++) {
     for (let a = 0; a <= 3; a++) {
@@ -40,10 +32,23 @@ export function generateWorldwideMarkets(homeGoals, awayGoals, homeProb, awayPro
   }
   likelyScores.sort((a,b) => b.prob - a.prob);
   
+  // Corners markets
+  const overCorners95 = totalCorners > 9.5 ? 0.55 + (totalCorners-9.5)*0.05 : 0.45 - (9.5-totalCorners)*0.05;
+  const underCorners95 = 1 - overCorners95;
+  const overCorners105 = totalCorners > 10.5 ? 0.5 + (totalCorners-10.5)*0.05 : 0.4 - (10.5-totalCorners)*0.05;
+  
+  // Corner distribution
+  const cornerOverUnder = {
+    over95: { prob: Math.max(0.1, Math.min(0.9, overCorners95)), odds: 1/Math.max(0.1, overCorners95), label: "Over 9.5 Corners" },
+    under95: { prob: Math.max(0.1, Math.min(0.9, underCorners95)), odds: 1/Math.max(0.1, underCorners95), label: "Under 9.5 Corners" },
+    over105: { prob: Math.max(0.1, Math.min(0.9, overCorners105)), odds: 1/Math.max(0.1, overCorners105), label: "Over 10.5 Corners" },
+    under105: { prob: Math.max(0.1, Math.min(0.9, 1-overCorners105)), odds: 1/Math.max(0.1, 1-overCorners105), label: "Under 10.5 Corners" },
+  };
+  
   return {
     overUnder: {
-      over25: { prob: Math.max(0.05, Math.min(0.95, over25Prob)), odds: 1/Math.max(0.05, over25Prob), label: "Over 2.5" },
-      under25: { prob: Math.max(0.05, Math.min(0.95, under25Prob)), odds: 1/Math.max(0.05, under25Prob), label: "Under 2.5" },
+      over25: { prob: Math.max(0.05, Math.min(0.95, over25Prob)), odds: 1/Math.max(0.05, over25Prob), label: "Over 2.5 Goals" },
+      under25: { prob: Math.max(0.05, Math.min(0.95, under25Prob)), odds: 1/Math.max(0.05, under25Prob), label: "Under 2.5 Goals" },
     },
     btts: {
       yes: { prob: bttsYesProb, odds: 1/bttsYesProb, label: "BTTS Yes" },
@@ -54,10 +59,14 @@ export function generateWorldwideMarkets(homeGoals, awayGoals, homeProb, awayPro
       awayDraw: { prob: awayDrawProb, odds: 1/awayDrawProb, label: "X2 (Away/Draw)" },
       homeAway: { prob: homeAwayProb, odds: 1/homeAwayProb, label: "12 (Home/Away)" },
     },
+    corners: cornerOverUnder,
     correctScore: likelyScores.slice(0,3),
     totalGoals,
     homeGoals,
     awayGoals,
+    totalCorners,
+    homeCorners,
+    awayCorners,
   };
 }
 
