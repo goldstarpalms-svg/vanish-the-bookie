@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vanish-the-bookie
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_MODE
+        value: demo
+      - key: LIVE_SPORT_KEYS
+        value: soccer_epl,basketball_nba
+      - key: ODDS_REGIONS
+        value: uk
+      - key: LIVE_REFRESH_MINUTES
+        value: 120
