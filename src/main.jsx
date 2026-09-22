@@ -984,11 +984,16 @@ function Predictions({
     [day, setDay] = useState("today"),
     [sort, setSort] = useState("time"),
     [onlySaved, setOnlySaved] = useState(false),
-    [limit, setLimit] = useState(6);
+    [limit, setLimit] = useState(6),
+    [showFinished, setShowFinished] = useState(true),
+    [finishedLimit, setFinishedLimit] = useState(6);
   const today = data.meta.snapshotDate;
   useEffect(() => {
     setLimit(6);
   }, [sport, query, day, onlySaved]);
+  useEffect(() => {
+    setFinishedLimit(6);
+  }, [sport]);
   const forDay = data.predictions.filter(
     (p) => day === "all" || dayLabel(p.kickoff, today).toLowerCase() === day,
   );
@@ -1006,6 +1011,9 @@ function Predictions({
         ? b.pick.probability - a.pick.probability
         : new Date(a.kickoff) - new Date(b.kickoff),
     );
+  const finishedGames = (data.finishedGames || []).filter(
+    (p) => sport === "all" || p.sport === sport
+  );
   const changeSport = (value) => setSport(value);
   const reset = () => {
     setSport("all");
@@ -1158,10 +1166,84 @@ function Predictions({
                 : "Live picks are frozen when first published."}
             </span>
           </div>
+
+          {/* Finished Games - Auto moves from upcoming when game ends */}
+          {finishedGames.length > 0 && (
+            <div className="finished-games-section">
+              <div className="section-heading">
+                <div>
+                  <div className="eyebrow muted">
+                    <CheckCircle2 size={14} /> FINISHED GAMES — Auto-updated when game ends
+                  </div>
+                  <h2>{finishedGames.length} finished games</h2>
+                  <p className="small-text muted">When a game finishes, it automatically moves from upcoming to here with final score and won/lost result</p>
+                </div>
+                <button
+                  className="button secondary small"
+                  onClick={() => setShowFinished(!showFinished)}
+                >
+                  {showFinished ? "Hide" : "Show"} finished <ChevronDown size={14} style={{ transform: showFinished ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+                </button>
+              </div>
+              {showFinished && (
+                <>
+                  <div className="match-grid">
+                    {finishedGames.slice(0, finishedLimit).map((p) => (
+                      <FinishedMatchCard key={p.id} p={p} today={today} onOpen={onOpen} />
+                    ))}
+                  </div>
+                  {finishedGames.length > finishedLimit && (
+                    <button className="load-more" onClick={() => setFinishedLimit((n) => n + 6)}>
+                      Show {Math.min(6, finishedGames.length - finishedLimit)} more finished games <ChevronDown size={16} />
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+          )}
         </div>
         <Sidebar data={data} navigate={navigate} onCommunity={onCommunity} />
       </div>
     </section>
+  );
+}
+
+function FinishedMatchCard({ p, today, onOpen }) {
+  const isWon = p.status === 'won';
+  return (
+    <article className={`match-card finished-card sport-${p.sport} ${isWon ? 'won' : 'lost'}`}>
+      <div className="match-card-top">
+        <span><SportIcon sport={p.sport} />{p.league}</span>
+        <div className="card-top-actions">
+          <SmallTag tone={isWon ? "green" : "red"}>{isWon ? "WON" : "LOST"}</SmallTag>
+          <SmallTag tone="amber">FINISHED</SmallTag>
+        </div>
+      </div>
+      <div className="match-timing">
+        <CheckCircle2 size={12} />
+        <span>Finished · {formatDate(p.settledAt || p.kickoff, true)} · {formatTime(p.settledAt || p.kickoff)} WAT</span>
+        {p.result && <SmallTag>{p.result.home} - {p.result.away}</SmallTag>}
+      </div>
+      <div className="teams">
+        <div><TeamBadge team={p.home} tennis={p.sport === "tennis"} /><h3>{p.home.name}</h3></div>
+        <span className="teams-vs">vs</span>
+        <div><TeamBadge team={p.away} tennis={p.sport === "tennis"} /><h3>{p.away.name}</h3></div>
+      </div>
+      <div className="finished-result-box">
+        <div className="result-score">
+          <span className="score">{p.result ? `${p.result.home} - ${p.result.away}` : "—"}</span>
+          <span className="result-label">Final Score</span>
+        </div>
+        <div className="result-pick">
+          <span>Pick: {p.pick.label}</span>
+          <span className={`outcome ${p.status}`}>{isWon ? <CheckCircle2 size={14} /> : <CircleX size={14} />}{p.status.toUpperCase()}</span>
+        </div>
+      </div>
+      <div className="card-foot">
+        <span><span className="tiny-dot" />{p.scoreSource || "ESPN Free"} · {p.model || "Vanish"} model</span>
+        <button onClick={() => onOpen(p)}>See result <ArrowUpRight size={16} /></button>
+      </div>
+    </article>
   );
 }
 

@@ -4543,6 +4543,86 @@ option {
   border-color: #2e3b2b;
   color: #8a9a7a;
 }
+.finished-games-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px dashed #2e3b2b;
+}
+.finished-games-section .section-heading h2 {
+  font-size: 24px;
+}
+.finished-games-section .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a8b995;
+}
+.finished-card {
+  border-color: #3a4a32;
+  background: linear-gradient(135deg, #1a2216, #141c12);
+  opacity: 0.95;
+}
+.finished-card.won {
+  border-color: #4a6b2a;
+  box-shadow: 0 0 0 1px #4a6b2a22;
+}
+.finished-card.lost {
+  border-color: #5a3a32;
+}
+.finished-result-box {
+  border: 1px solid #35422a80;
+  background: #202c1b80;
+  border-radius: 7px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.result-score {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.result-score .score {
+  font-family: var(--heading);
+  font-size: 26px;
+  font-weight: 600;
+  color: #e0efcc;
+  letter-spacing: -0.5px;
+}
+.result-score .result-label {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #8a9a7a;
+  text-transform: uppercase;
+}
+.result-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  text-align: right;
+}
+.result-pick > span:first-child {
+  font-size: 10px;
+  color: #a8b995;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tag.red {
+  color: #d9a193;
+  border-color: #5a3a32;
+  background: #3a201830;
+}
+.button.small {
+  min-height: 36px;
+  padding: 8px 12px;
+  font-size: 10px;
+}
 .comparison-section {
   margin-bottom: 24px;
   padding: 16px;
