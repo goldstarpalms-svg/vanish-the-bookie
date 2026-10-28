@@ -2,6 +2,7 @@ import { demoFixtures, demoArchive } from "../server/fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
 import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback } from "../server/live-provider.js";
 import { fetchESPNScores } from "../server/free-scores.js";
+import { enrichMany, getFootyBoards, tryLiveRefresh } from "../server/footystats.js";
 
 const MODE = process.env.DATA_MODE || "live"; // FORCE LIVE TOTALLY — user requested everything live
 const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 60)));
@@ -238,10 +239,13 @@ async function getDashboard() {
         // Also include original finishedGames from other sports (NFL, MLB etc)
         const finalFinished = combinedFinished.length > 0 ? combinedFinished.slice(0,100) : todayFinished;
         
-        cache.predictions = nowFiltered;
+        // FootyStats enrichment: form, H2H, BTTS/O2.5 %, xG + small confidence nudges.
+        tryLiveRefresh().catch(() => {}); // best-effort, never blocks (Cloudflare usually blocks datacenter IPs)
+        cache.predictions = enrichMany(nowFiltered);
         cache.records = [];
         cache.finishedGames = finalFinished;
         console.log(`Finished TODAY: ${finalFinished.length} (top filtered ${todayFinished.length} + all scoreboard ${allFinishedToday.length}) todayKey ${todayKey} — a lot has finished`);
+        console.log(`FootyStats: enriched ${cache.predictions.filter(p => p.footy).length} of ${cache.predictions.length} football games`);
         if (!usedFallback) cache.warnings = [];
       }
       cache.generatedAt = new Date().toISOString();
@@ -253,7 +257,7 @@ async function getDashboard() {
           cache.error = null;
         } else {
           try {
-            cache.predictions = await fetchFreeFallback();
+            cache.predictions = enrichMany(await fetchFreeFallback());
             cache.finishedGames = [];
             try {
               const espnScores = await fetchESPNScores();
@@ -313,6 +317,7 @@ async function getDashboard() {
     predictions: cache.predictions,
     records: cache.records,
     finishedGames: cache.finishedGames || [],
+    footyBoards: getFootyBoards(),
     meta: {
       mode: MODE,
       modelVersion: MODEL_VERSION,
@@ -324,7 +329,7 @@ async function getDashboard() {
       stale: Boolean(cache.error) || !cache.generatedAt,
       error: cache.error,
       warnings: cache.warnings || [],
-      source: MODE === "demo" ? "Synthetic fixtures" : `Free sources (ESPN Worldwide 100, MLB 19, NHL 52, Tennis 49, etc.) + Vanish Trained (380+ games + Form + Corners) - ${cache.predictions.length} upcoming, ${cache.finishedGames?.length || 0} finished`,
+      source: MODE === "demo" ? "Synthetic fixtures" : `Free sources (ESPN Worldwide 100, MLB 19, NHL 52, Tennis 49, etc.) + Vanish Trained (380+ games + Form + Corners) + FootyStats form/H2H/xG enrichment - ${cache.predictions.length} upcoming, ${cache.finishedGames?.length || 0} finished`,
       snapshotDate: new Intl.DateTimeFormat("en-CA",{timeZone:"Africa/Lagos",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()),
     },
     community: { x: "https://x.com/vanishthebookie", whatsapp: communityUrl() },

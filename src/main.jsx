@@ -537,23 +537,32 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
       {tab === "analysis" ? (
         <div className="analysis-body">
           {/* xG viz + H2H + Live scores — like Forebet + FootyStats */}
+          <FootyInsight p={p} />
           <div className="xg-h2h-grid">
             <div className="xg-card">
               <h5><Activity size={14} /> xG Expected Goals — like Forebet xG viz</h5>
               <div className="xg-bars">
-                <div><span>{p.home.name}</span><div className="xg-track"><span style={{width: `${(p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home xG"))?.value || "1.5").toString().replace("xG","").trim()*40}%`, background:"var(--lime)"}} /></div><strong>{p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home"))?.value || "1.5 xG"}</strong></div>
-                <div><span>{p.away.name}</span><div className="xg-track"><span style={{width: `${(p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away xG"))?.value || "1.1").toString().replace("xG","").trim()*40}%`, background:"#6a8a4a"}} /></div><strong>{p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away"))?.value || "1.1 xG"}</strong></div>
+                <div><span>{p.home.name}</span><div className="xg-track"><span style={{width: `${(p.footy?.teams?.home?.xg ?? p.independentModel?.expected?.homeXG ?? p.metrics?.find(m=>m.label.includes("Home xG"))?.value ?? "1.5").toString().replace("xG","").trim()*40}%`, background:"var(--lime)"}} /></div><strong>{p.footy?.teams?.home?.xg ? `${p.footy.teams.home.xg} xG` : (p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home"))?.value || "1.5 xG")}</strong></div>
+                <div><span>{p.away.name}</span><div className="xg-track"><span style={{width: `${(p.footy?.teams?.away?.xg ?? p.independentModel?.expected?.awayXG ?? p.metrics?.find(m=>m.label.includes("Away xG"))?.value ?? "1.1").toString().replace("xG","").trim()*40}%`, background:"#6a8a4a"}} /></div><strong>{p.footy?.teams?.away?.xg ? `${p.footy.teams.away.xg} xG` : (p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away"))?.value || "1.1 xG")}</strong></div>
               </div>
-              <p className="small-text muted">xG from Vanish model (Elo 50%+Form 30%+Goals 20%+Home 8%+Corners). Real xG needs StatsBomb/FootyStats API.</p>
+              <p className="small-text muted">{p.footy?.teams?.home?.xg ? "Season xG/xGA via FootyStats (footystats.org) — snapshot data." : "xG from Vanish model (Elo 50%+Form 30%+Goals 20%+Home 8%+Corners). Real xG needs StatsBomb/FootyStats API."}</p>
             </div>
             <div className="h2h-card">
               <h5><Layers3 size={14} /> H2H Last 5 — like PredictZ + Forebet H2H</h5>
               <div className="h2h-list">
-                {[...Array(3)].map((_,i) => (
-                  <div key={i} className="h2h-row"><span>{p.home.name} {1+i} - {i} {p.away.name}</span><small>{2023+i} · {p.league}</small></div>
-                ))}
+                {p.footy?.h2h ? (
+                  <>
+                    <div className="h2h-row"><span>H2H record: {p.home.name} {p.footy.h2h.homeWins}W · {p.footy.h2h.draws}D · {p.footy.h2h.awayWins}W {p.away.name}</span><small>{p.footy.h2h.matches} meetings (FootyStats)</small></div>
+                    <div className="h2h-row"><span>BTTS {p.footy.h2h.btts}% · Over 2.5 {p.footy.h2h.over25}% · Over 1.5 {p.footy.h2h.over15}%</span><small>in those {p.footy.h2h.matches} H2H (FootyStats)</small></div>
+                    <div className="h2h-row"><span>Clean sheets: {p.home.name} {p.footy.h2h.csHome}% · {p.away.name} {p.footy.h2h.csAway}%</span><small>season — FootyStats</small></div>
+                  </>
+                ) : (
+                  [...Array(3)].map((_,i) => (
+                    <div key={i} className="h2h-row"><span>{p.home.name} {1+i} - {i} {p.away.name}</span><small>{2023+i} · {p.league}</small></div>
+                  ))
+                )}
               </div>
-              <p className="small-text muted">H2H from free sources (ESPN, TheSportsDB) — last meetings, form, home advantage.</p>
+              <p className="small-text muted">{p.footy?.h2h ? "Head-to-head record + goal markets via FootyStats (footystats.org)." : "H2H from free sources (ESPN, TheSportsDB) — last meetings, form, home advantage."}</p>
             </div>
             <div className="live-card">
               <h5><Globe2 size={14} /> Live Score — ESPN Free + TheSportsDB</h5>
@@ -561,6 +570,14 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
               <p className="small-text muted">When game finishes, auto-moves to finished section with final score — like ESPN live feed (57 finished detected today).</p>
             </div>
           </div>
+          {p.footy?.form ? (
+            <div className="footy-form-row">
+              <span className="footy-tag">FOOTYSTATS</span>
+              <span className="footy-chip" title="Last 5 results (most recent first) — FootyStats">Form {p.footy.form.home} v {p.footy.form.away}</span>
+              {p.footy.form.ppgHome != null ? <span className="footy-chip">PPG {p.footy.form.ppgHome} v {p.footy.form.ppgAway}</span> : null}
+              {p.footy.prediction ? <span className="footy-chip" title={`BTTS ${p.footy.prediction.btts}% · O2.5 ${p.footy.prediction.over25}% · ${p.footy.prediction.gpm} goals/match`}>BTTS {p.footy.prediction.btts}% · O2.5 {p.footy.prediction.over25}% · {p.footy.prediction.gpm} GPM</span> : null}
+            </div>
+          ) : null}
 
           <h4>How the outcomes compare</h4>
           {hasLiveModel ? (
@@ -843,6 +860,7 @@ function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart, bookie }) {
           </div>
         </div>
       )}
+      <FootyStrip p={p} />
       <div className="card-foot">
         <span style={{display:'flex',alignItems:'center',gap:'6px'}}>
           <span className="tiny-dot" />
@@ -1279,6 +1297,51 @@ function TrustScore({ p }) {
     <div className="trust-score">
       <span className={`trust-badge ${isBanker ? "banker" : score>=7 ? "high" : score>=5 ? "medium" : "low"}`}>{score}/10 {isBanker ? "BANKER" : ""}</span>
       <div className="trust-bar"><span style={{width: `${score*10}%`, background: isBanker ? "#4ade80" : score>=7 ? "#c8e890" : score>=5 ? "#eab308" : "#ef4444"}} /></div>
+    </div>
+  );
+}
+
+/* ---- FootyStats (footystats.org) enrichment chips — form, BTTS, Over 2.5, xG ---- */
+function FootyStrip({ p }) {
+  const f = p.footy;
+  if (!f) return null;
+  const chips = [];
+  if (f.form?.home && f.form?.away) {
+    chips.push({ t: `FootyStats form ${f.form.home} v ${f.form.away}`, l: `Form ${f.form.home} v ${f.form.away}` });
+  }
+  if (f.form?.ppgHome != null && f.form?.ppgAway != null) {
+    chips.push({ t: `Points per game ${f.form.ppgHome} v ${f.form.ppgAway} (FootyStats)`, l: `PPG ${f.form.ppgHome} v ${f.form.ppgAway}` });
+  }
+  if (f.prediction?.btts != null) {
+    chips.push({ t: `Both teams to score ${f.prediction.btts}% — league avg ${f.prediction.bttsAvg}% (FootyStats)`, l: `BTTS ${f.prediction.btts}%` });
+  }
+  if (f.prediction?.over25 != null) {
+    chips.push({ t: `Over 2.5 goals ${f.prediction.over25}% — league avg ${f.prediction.over25Avg}% (FootyStats)`, l: `O2.5 ${f.prediction.over25}%` });
+  }
+  if (f.teams?.home?.xg != null && f.teams?.away?.xg != null) {
+    chips.push({ t: `Season xG ${f.teams.home.xg} v ${f.teams.away.xg} (FootyStats)`, l: `xG ${f.teams.home.xg} v ${f.teams.away.xg}` });
+  }
+  if (f.boardBtts) {
+    chips.push({ t: `FootyStats BTTS board: ${f.boardBtts.pct}% BTTS, ${f.boardBtts.gpm} goals/match`, l: `BTTS board ${f.boardBtts.pct}%` });
+  }
+  if (chips.length === 0) return null;
+  return (
+    <div className="footy-strip" title="Stats from FootyStats (footystats.org) — snapshot data">
+      <span className="footy-tag">FOOTYSTATS</span>
+      {chips.map((c, i) => (
+        <span key={i} className="footy-chip" title={c.t}>{c.l}</span>
+      ))}
+    </div>
+  );
+}
+
+function FootyInsight({ p }) {
+  const f = p.footy;
+  if (!f || !f.insight || f.insight.length === 0) return null;
+  return (
+    <div className="footy-insight">
+      <strong>FootyStats signals{f.confidenceDelta ? ` (${f.confidenceDelta > 0 ? "+" : ""}${f.confidenceDelta}pp)` : ""}:</strong>{" "}
+      {f.insight.join(" · ")}
     </div>
   );
 }
