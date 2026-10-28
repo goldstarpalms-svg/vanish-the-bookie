@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0c100e" />
+    <meta name="theme-color" content="#f6f7f3" />
     <meta
       name="description"
       content="Vanish The Bookie. Free multi-sport analysis, transparent prediction models and an honest results record. Safe Tips 79%, Values Kelly, Bet Builder, Cart Split Booking Codes, Team Comparator 70+ stats, Odds 13 Bookies, Live Scores, Stats Hub, Bet of Day — only games available on your bookie (Bet9ja/SportyBet). Preview uses clearly labelled synthetic data."
@@ -17,5 +17,80 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      /* ---- WOW layer: scroll progress, glass header, staggered reveals ---- */
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce) return;
+        document.documentElement.classList.add("reveal-ready");
+
+        var bar = document.createElement("div");
+        bar.className = "scroll-progress";
+        bar.setAttribute("aria-hidden", "true");
+        document.body.appendChild(bar);
+
+        var header = null;
+        var ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            var h = document.body.scrollHeight - window.innerHeight;
+            bar.style.transform =
+              "scaleX(" + (h > 0 ? Math.min(window.scrollY / h, 1) : 0) + ")";
+            header = header || document.querySelector(".site-header");
+            if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
+            ticking = false;
+          });
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        if (!("IntersectionObserver" in window)) return;
+        var SEL = [
+          ".match-card", ".sidebar-card", ".insight-card", ".safe-tip-card",
+          ".acca-card", ".spotlight", ".section-heading", ".data-banner",
+          ".facts-strip", ".community-band", ".community-teaser", ".analysis-pick",
+          ".method-grid > *", ".model-cards > *", ".engine-status", ".lab-title",
+          ".empty-state", ".results-empty", ".fact-card", ".other-markets",
+        ].join(",");
+        var io = new IntersectionObserver(
+          function (entries) {
+            var batch = 0;
+            entries.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              var el = e.target;
+              el.style.transitionDelay = Math.min(batch * 80, 320) + "ms";
+              el.classList.add("is-visible");
+              batch++;
+              io.unobserve(el);
+            });
+          },
+          { rootMargin: "0px 0px -6% 0px", threshold: 0.05 }
+        );
+        function scan(root) {
+          if (root.nodeType !== 1) return;
+          var list = [];
+          if (root.matches && root.matches(SEL)) list.push(root);
+          if (root.querySelectorAll)
+            list = list.concat(Array.prototype.slice.call(root.querySelectorAll(SEL)));
+          list.forEach(function (el) {
+            if (el.classList.contains("reveal")) return;
+            var r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight && r.bottom > 0) return; /* above-fold stays calm */
+            el.classList.add("reveal");
+            io.observe(el);
+          });
+        }
+        scan(document.body);
+        new MutationObserver(function (muts) {
+          muts.forEach(function (m) {
+            Array.prototype.forEach.call(m.addedNodes, function (n) {
+              if (n.nodeType === 1) scan(n);
+            });
+          });
+        }).observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>

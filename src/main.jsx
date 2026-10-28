@@ -296,9 +296,9 @@ function ProbabilityBar({ label, value, primary = false }) {
       </div>
       <div className="probability-track">
         <span
-          style={{
+            style={{
             width: pct(value),
-            background: primary ? "var(--lime)" : undefined,
+            background: primary ? "linear-gradient(90deg,#d3f76b,#9acc3a)" : undefined,
           }}
         />
       </div>
@@ -497,7 +497,7 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
           </div>
           <div>
             <strong>{pct(p.pick.probability)}</strong>
-            <span>estimated probability</span>
+            <span style={{display:"block"}}>estimated probability</span>
           </div>
         </div>
       )}
@@ -1488,7 +1488,7 @@ function Hero({ feature, onExplore, onModel, onOpen, demo }) {
         <p>
           Every pick has a reason. Explore free, multi-sport
           <br className="desktop-break" /> predictions with the analysis to back
-          them up. <strong style={{color:'#4ade80'}}>You won 4/5 = 80% — keep going!</strong>
+          them up. <strong style={{color:'#15803d'}}>You won 4/5 = 80% — keep going!</strong>
         </p>
         <div className="hero-actions">
           <button className="button lime" onClick={onExplore}>
