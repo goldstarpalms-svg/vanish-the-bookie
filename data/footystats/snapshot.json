@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-10-28T12:00:00Z",
+  "source": "FootyStats (footystats.org)",
+  "fetchedVia": "browser-rendered fetch (Cloudflare-protected site)",
+  "note": "FootyStats stats snapshot — team form, H2H, BTTS/Over2.5 percentages, xG season averages. Data labelled FootyStats throughout the UI.",
+  "matches": {
+    "argentina|argentinos juniors|independiente rivadavia": {
+      "home": "Argentinos Juniors",
+      "away": "CS Independiente Rivadavia",
+      "league": "Argentina - Primera División",
+      "url": "https://footystats.org/argentina/argentinos-juniors-vs-cs-independiente-rivadavia-h2h-stats",
+      "form": { "home": "DLWDW", "away": "WWDLD", "ppgHome": 1.91, "ppgAway": 1.77 },
+      "h2h": { "matches": 7, "homeWins": 1, "draws": 2, "awayWins": 4, "over15": 86, "over25": 86, "over35": 43, "btts": 86, "csHome": 14, "csAway": 14 },
+      "prediction": { "over25": 44, "over25Avg": 38, "over15": 72, "over15Avg": 65, "btts": 57, "bttsAvg": 47, "gpm": 2.4, "gpmAvg": 2.16 },
+      "teams": {
+        "home": { "winPct": 53, "winPctHome": 71, "winPctAway": 33, "avgGoals": 1.97, "scored": 1.19, "scoredHome": 1.41, "conceded": 0.78, "concededHome": 0.53, "btts": 47, "cs": 44, "xg": 1.62, "xgHome": 2.03, "xga": 1.19, "ppg": 1.91, "ppgHome": 2.41, "ppgAway": 1.33 },
+        "away": { "winPct": 50, "winPctHome": 63, "winPctAway": 36, "avgGoals": 2.83, "scored": 1.57, "scoredAway": 0.93, "conceded": 1.27, "concededAway": 1.21, "btts": 67, "cs": 23, "xg": 1.62, "xgAway": 1.36, "xga": 1.43, "ppg": 1.77, "ppgHome": 2.06, "ppgAway": 1.43 }
+      }
+    },
+    "italy|genoa|juventus": {
+      "home": "Genoa CFC",
+      "away": "Juventus FC",
+      "league": "Italy - Serie A",
+      "url": "https://footystats.org/italy/juventus-fc-vs-genoa-cfc-h2h-stats",
+      "form": { "home": "LLDWW", "away": "WLDW", "ppgHome": 1.4, "ppgAway": 1.75 },
+      "h2h": { "matches": 36, "homeWins": 5, "draws": 7, "awayWins": 24, "over15": 75, "over25": 47, "over35": 39, "btts": 50, "csHome": 11, "csAway": 44 },
+      "prediction": { "over25": 33, "over25Avg": 59, "over15": 78, "over15Avg": 85, "btts": 55, "bttsAvg": 56, "gpm": 2.55, "gpmAvg": 3.07 },
+      "teams": {
+        "home": { "winPct": 25, "winPctHome": 40, "winPctAway": 0, "avgGoals": 2.38, "scored": 0.75, "scoredHome": 1.0, "conceded": 1.63, "concededHome": 1.6, "btts": 50, "cs": 13, "xg": 1.12, "xgHome": 1.17, "xga": 1.73, "ppg": 0.88, "ppgHome": 1.4 },
+        "away": { "winPct": 55, "winPctHome": 67, "winPctAway": 43, "avgGoals": 2.6, "scored": 1.55, "conceded": 1.05, "btts": 48, "cs": 38, "xg": 1.55, "xga": 1.15, "ppg": 1.75 }
+      }
+    },
+    "italy|ac milan|bologna": {
+      "home": "AC Milan",
+      "away": "Bologna FC 1909",
+      "league": "Italy - Serie A",
+      "url": "https://footystats.org/italy/ac-milan-vs-bologna-fc-1909-h2h-stats",
+      "form": { "home": "WWW", "away": "LLWW", "ppgHome": 3.0, "ppgAway": 1.5 },
+      "h2h": { "matches": 35, "homeWins": 23, "draws": 8, "awayWins": 4, "over15": 69, "over25": 54, "over35": 26, "btts": 51, "csHome": 43, "csAway": 14 },
+      "prediction": { "over25": 46, "over25Avg": 59, "over15": 75, "over15Avg": 85, "btts": 29, "bttsAvg": 56, "gpm": 2.54, "gpmAvg": 3.07 },
+      "teams": {
+        "home": { "winPct": 63, "winPctHome": 100, "winPctAway": 40, "avgGoals": 2.88, "scored": 2.0, "scoredHome": 2.67, "conceded": 0.88, "concededHome": 0.67, "btts": 63, "cs": 38, "xg": 1.95, "xgHome": 2.35, "xga": 1.05, "ppg": 2.25, "ppgHome": 3.0, "ppgAway": 1.8 },
+        "away": { "winPct": 33, "winPctHome": 40, "winPctAway": 25, "avgGoals": 2.3, "scored": 1.1, "conceded": 1.2, "btts": 45, "cs": 30, "xg": 1.25, "xga": 1.35, "ppg": 1.5 }
+      }
+    },
+    "usa|inter miami|fc cincinnati": {
+      "home": "Inter Miami",
+      "away": "FC Cincinnati",
+      "league": "USA - MLS",
+      "url": "https://footystats.org/usa/fc-cincinnati-vs-club-internacional-de-futbol-miami-h2h-stats",
+      "form": { "home": "DDDWW", "away": "LDLWW", "ppgHome": 1.67, "ppgAway": 0.94 },
+      "h2h": { "matches": 15, "homeWins": 7, "draws": 3, "awayWins": 5, "over15": 73, "over25": 67, "over35": 53, "btts": 53, "csHome": 27, "csAway": 27 },
+      "prediction": { "over25": 78, "over25Avg": 64, "over15": 97, "over15Avg": 83, "btts": 78, "bttsAvg": 64, "gpm": 4.33, "gpmAvg": 3.24 },
+      "teams": {
+        "home": { "winPct": 48, "winPctHome": 40, "winPctAway": 56, "avgGoals": 3.1, "scored": 1.75, "conceded": 1.35, "btts": 62, "cs": 24, "xg": 1.7, "xgHome": 1.85, "xga": 1.3, "ppg": 1.77, "ppgHome": 1.67 },
+        "away": { "winPct": 42, "winPctHome": 50, "winPctAway": 33, "avgGoals": 3.0, "scored": 1.35, "conceded": 1.65, "btts": 58, "cs": 22, "xg": 1.4, "xga": 1.5, "ppg": 1.4, "ppgAway": 1.1 }
+      }
+    },
+    "scotland|celtic|dundee united": {
+      "home": "Celtic FC",
+      "away": "Dundee United FC",
+      "league": "Scotland - Premiership",
+      "url": "https://footystats.org/scotland/celtic-fc-vs-dundee-united-fc-h2h-stats",
+      "form": { "home": "WLWWW", "away": "DWWDW", "ppgHome": 2.7, "ppgAway": 1.5 },
+      "h2h": { "matches": 35, "homeWins": 26, "draws": 6, "awayWins": 3, "over15": 86, "over25": 63, "over35": 40, "btts": 34, "csHome": 63, "csAway": 9 },
+      "prediction": { "over25": 55, "over25Avg": 57, "over15": 80, "over15Avg": 78, "btts": 45, "bttsAvg": 55, "gpm": 2.95, "gpmAvg": 2.82 },
+      "teams": {
+        "home": { "winPct": 80, "winPctHome": 80, "winPctAway": 100, "avgGoals": 3.2, "scored": 2.3, "scoredHome": 2.2, "conceded": 0.9, "btts": 45, "cs": 50, "xg": 2.15, "xgHome": 2.1, "xga": 0.95, "ppg": 2.7, "ppgHome": 2.4, "ppgAway": 3.0 },
+        "away": { "winPct": 45, "winPctHome": 55, "winPctAway": 33, "avgGoals": 2.6, "scored": 1.4, "conceded": 1.2, "btts": 55, "cs": 30, "xg": 1.35, "xga": 1.3, "ppg": 1.5 }
+      }
+    }
+  },
+  "bttsBoard": [
+    { "home": "Freiburg", "away": "Wolfsburg", "btts": 100, "gpm": 6.0, "date": "Tomorrow", "odds": 1.48, "url": "https://footystats.org/germany/sc-freiburg-vs-vfl-wolfsburg-h2h-stats" },
+    { "home": "Jeddeloh", "away": "Hertha BSC", "btts": 100, "gpm": 4.5, "date": "Tomorrow", "odds": 1.8, "url": "https://footystats.org/germany/hertha-bsc-vs-ssv-jeddeloh-h2h-stats" },
+    { "home": "Manchester City W", "away": "PSG W", "btts": 88, "gpm": 3.38, "date": "In 2 Days", "odds": 1.65, "url": "https://footystats.org/europe/paris-saint-germain-fc-women-vs-manchester-city-women-h2h-stats" },
+    { "home": "Vora", "away": "Vllaznia Shkodër", "btts": 84, "gpm": 3.17, "date": "Tomorrow", "odds": 1.74, "url": "https://footystats.org/albania/ks-vllaznia-shkoder-vs-fk-vora-h2h-stats" },
+    { "home": "Králův Dvůr", "away": "Sparta Praha II", "btts": 80, "gpm": 3.29, "date": "Tomorrow", "odds": 1.35, "url": "https://footystats.org/czech-republic/fk-kraluv-dvur-vs-ac-sparta-praha-ii-h2h-stats" },
+    { "home": "Toronto", "away": "DC United", "btts": 80, "gpm": 3.57, "date": "Tomorrow", "odds": 1.44, "url": "https://footystats.org/usa/toronto-fc-vs-dc-united-h2h-stats" },
+    { "home": "Örgryte", "away": "Mjällby", "btts": 80, "gpm": 3.33, "date": "In 2 Days", "odds": 1.62, "url": "https://footystats.org/sweden/mjallby-aif-vs-orgryte-is-h2h-stats" },
+    { "home": "Inter Miami", "away": "FC Cincinnati", "btts": 78, "gpm": 4.33, "date": "Tomorrow", "odds": 1.3, "url": "https://footystats.org/usa/fc-cincinnati-vs-club-internacional-de-futbol-miami-h2h-stats" },
+    { "home": "Austin", "away": "Real Salt Lake", "btts": 77, "gpm": 2.87, "date": "Tomorrow", "odds": 1.47, "url": "https://footystats.org/usa/real-salt-lake-vs-austin-fc-h2h-stats" },
+    { "home": "Liverpool", "away": "Chelsea", "btts": 75, "gpm": 4.75, "date": "Tomorrow", "odds": 1.4, "url": "https://footystats.org/england/liverpool-fc-vs-chelsea-fc-h2h-stats" },
+    { "home": "LASK Linz", "away": "Ried", "btts": 75, "gpm": 6.5, "date": "Tomorrow", "odds": 1.62, "url": "https://footystats.org/austria/sv-ried-vs-lask-linz-h2h-stats" },
+    { "home": "Chicago Fire", "away": "Orlando City", "btts": 70, "gpm": 4.17, "date": "Tomorrow", "odds": 1.33, "url": "https://footystats.org/usa/chicago-fire-vs-orlando-city-sc-h2h-stats" },
+    { "home": "FC Dallas", "away": "Columbus Crew", "btts": 70, "gpm": 3.44, "date": "Tomorrow", "odds": 1.44, "url": "https://footystats.org/usa/columbus-crew-vs-fc-dallas-h2h-stats" },
+    { "home": "St. Louis City", "away": "Portland Timbers", "btts": 70, "gpm": 3.47, "date": "Tomorrow", "odds": 1.4, "url": "https://footystats.org/usa/portland-timbers-vs-st-louis-city-sc-h2h-stats" }
+  ],
+  "over25Board": [
+    { "home": "NTV Beleza", "away": "Cerezo Osaka W", "over25": 100, "gpm": 3.75, "date": "Tomorrow", "odds": 1.66, "url": "https://footystats.org/japan/ntv-beleza-vs-cerezo-osaka-sakai-ladies-h2h-stats" },
+    { "home": "Nagoya Grampus", "away": "Urawa Reds", "over25": 100, "gpm": 4.75, "date": "Tomorrow", "odds": 1.66, "url": "https://footystats.org/japan/nagoya-grampus-vs-urawa-red-diamonds-h2h-stats" },
+    { "home": "Prostějov", "away": "Hradec Králové", "over25": 100, "gpm": 3.84, "date": "Tomorrow", "odds": 1.75, "url": "https://footystats.org/czech-republic/fc-hradec-kralove-vs-fk-prostejov-h2h-stats" },
+    { "home": "Brabrand", "away": "Horsens", "over25": 100, "gpm": 4.25, "date": "Tomorrow", "odds": 1.65, "url": "https://footystats.org/denmark/ac-horsens-vs-brabrand-if-h2h-stats" },
+    { "home": "Vardar", "away": "Tikveš", "over25": 100, "gpm": 9.0, "date": "Tomorrow", "odds": 1.8, "url": "https://footystats.org/fyr-macedonia/fk-vardar-skopje-vs-fk-tikves-h2h-stats" }
+  ],
+  "topBttsTeams": [
+    { "team": "Werder Bremen", "btts": 100, "record": "7/7", "odds": 1.4 },
+    { "team": "Go Ahead Eagles", "btts": 100, "record": "10/10", "odds": 1.4 },
+    { "team": "Barnet", "btts": 100, "record": "11/11", "odds": 1.53 },
+    { "team": "Kawasaki Frontale", "btts": 92, "record": "11/12", "odds": 1.44 },
+    { "team": "Burnley", "btts": 92, "record": "11/12", "odds": 1.7 },
+    { "team": "PSV", "btts": 90, "record": "9/10", "odds": 1.75 },
+    { "team": "Utrecht", "btts": 90, "record": "9/10", "odds": 1.44 },
+    { "team": "Rayo Vallecano", "btts": 89, "record": "8/9", "odds": 1.8 }
+  ],
+  "topOver25Teams": [
+    { "team": "Borussia Mgladbach", "over25": 100, "record": "7/7", "odds": 1.47 },
+    { "team": "Hoffenheim", "over25": 100, "record": "7/7", "odds": 1.33 },
+    { "team": "Vaduz", "over25": 100, "record": "11/11", "odds": 1.33 },
+    { "team": "Zilina", "over25": 92, "record": "11/12", "odds": 1.4 },
+    { "team": "FC Barcelona", "over25": 90, "record": "9/10", "odds": 1.26 },
+    { "team": "Sparta Rotterdam", "over25": 90, "record": "9/10", "odds": 1.58 },
+    { "team": "Utrecht", "over25": 90, "record": "9/10", "odds": 1.5 },
+    { "team": "Excelsior", "over25": 90, "record": "9/10", "odds": 1.36 }
+  ]
+}
