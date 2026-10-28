@@ -69,6 +69,26 @@ const ALIASES = {
   "argentina juniors": "argentinos",
   "argentina juniors fc": "argentinos",
   "argentinos juniors": "argentinos",
+  "montreal impact": "montreal",
+  "cf montreal": "montreal",
+  "se palmeiras": "palmeiras",
+  "sepalmeiras": "palmeiras",
+  "santos fc sao paulo": "santos",
+  "santosaopaulo": "santos",
+  "clube atletico bragantino": "bragantino",
+  "clubeatleticobragantino": "bragantino",
+  "chapecoense af": "chapecoense",
+  "ss monza 1912": "monza",
+  "ss monza": "monza",
+  "ssmonza": "monza",
+  "ssc napoli": "napoli",
+  "sscnapoli": "napoli",
+  "heart of midlothian fc": "hearts",
+  "heartmidlothian": "hearts",
+  "saint johnstone fc": "stjohnstone",
+  "saintjohnstone": "stjohnstone",
+  "saint mirren fc": "stmirren",
+  "saintmirren": "stmirren",
 };
 
 export function normalizeName(name) {
@@ -80,6 +100,8 @@ export function normalizeName(name) {
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+
+  s = s.replace(/\bsaint\b/g, "st");
 
   if (ALIASES[s]) return ALIASES[s];
 
