@@ -4,6 +4,39 @@ import { fetchAllFreeSources } from "./free-sources.js";
 import { generateWorldwideMarkets } from "./worldwide-betting.js";
 
 /** Strip source-tag junk from league labels: "Serie A (football-data.org) (football-data.org)" → "Serie A". */
+// One competition must read the same whichever feed it came from — clients see these labels.
+const LEAGUE_CANON = {
+  championsleague: "Champions League",
+  uefachampionsleague: "Champions League",
+  europaleague: "Europa League",
+  uefaeuropaleague: "Europa League",
+  conferenceleague: "Conference League",
+  uefaconferenceleague: "Conference League",
+  uefaeuropaconferenceleague: "Conference League",
+  bundesliga: "Bundesliga",
+  "1fussballbundesliga": "Bundesliga",
+  germanbundesliga: "Bundesliga",
+  "2bundesliga": "2. Bundesliga",
+  "2fussballbundesliga": "2. Bundesliga",
+  "3liga": "3. Liga",
+  championship: "Championship",
+  eflchampionship: "Championship",
+  laliga: "La Liga",
+  laliga2: "LaLiga 2",
+  primersadivision: "LaLiga 2",
+  primeiraliga: "Primeira Liga",
+  portugueseprimeiraliga: "Primeira Liga",
+  brasileiraoseriea: "Brasileirão Série A",
+  campeonatobrasileiroseriea: "Brasileirão Série A",
+  brazilseriea: "Brasileirão Série A",
+  mls: "MLS",
+  majorleaguesoccer: "MLS",
+  seriea: "Serie A",
+  ligue1: "Ligue 1",
+  eredivisie: "Eredivisie",
+  fa: "FA Cup",
+};
+
 export function cleanLeagueName(name) {
   let s = String(name || "Football");
   for (let i = 0; i < 3; i++) {
@@ -12,7 +45,19 @@ export function cleanLeagueName(name) {
       .replace(/\s*\([^)]*FREE[^)]*\)/gi, "")
       .replace(/\s*-\s*FREE Trained\s*/gi, " ");
   }
-  s = s.replace(/\s*\(\s*\)/g, "").replace(/\s{2,}/g, " ").trim();
+  // season suffixes from the feeds: "3. Liga 2026/2027", "LaLiga 2026-27"
+  s = s
+    .replace(/\s*\b(?:19|20)\d{2}\s*[\/\-–]\s*(?:\d{2}|(?:19|20)\d{2})\s*$/g, "")
+    .replace(/\s*\(\s*\)/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+  const key = s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]/g, "");
+  if (LEAGUE_CANON[key]) return LEAGUE_CANON[key];
   return s || "Football";
 }
 

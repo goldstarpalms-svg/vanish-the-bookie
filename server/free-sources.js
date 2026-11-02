@@ -226,30 +226,30 @@ export async function fetchESPNFree() {
     if (!board) continue;
     const { sport, league, name, data } = board;
     
-    // Special handling for tennis: events are tournaments, matches in groupings[].competitions[]
+    // Special handling for tennis: events are tournaments, matches live in groupings[].competitions[]
     if (sport === "tennis") {
-      for (const ev of (data.events || []).slice(0, 5)) {
+      const lo = Date.now() - 12 * 3600000;
+      const hi = Date.now() + 7 * 86400000;
+      const found = [];
+      for (const ev of (data.events || [])) {
         const tournamentName = ev.name || name;
-        const tournamentDate = ev.date;
-        // Check groupings
         for (const grouping of (ev.groupings || [])) {
-          for (const comp of (grouping.competitions || []).slice(0, 20)) {
+          for (const comp of (grouping.competitions || [])) {
             const competitors = comp.competitors || [];
             if (competitors.length < 2) continue;
-            const home = competitors[0];
-            const away = competitors[1];
-            const homeName = home.athlete?.displayName || home.team?.displayName || home.displayName;
-            const awayName = away.athlete?.displayName || away.team?.displayName || away.displayName;
-            if (!homeName || !awayName || homeName === "TBD" || awayName === "TBD" || !homeName.trim() || !awayName.trim()) continue;
-            const dt = new Date(comp.date || tournamentDate);
-            if (isNaN(dt.getTime())) continue;
-            if (dt < new Date(Date.now() - 12*3600000)) continue;
-            if (dt - Date.now() > 7*24*3600000) continue;
-            games.push({
-              id: `espn_${comp.id || ev.id}_${homeName}_${awayName}`.replace(/\s+/g,'_'),
+            const homeName = competitors[0].athlete?.displayName || competitors[0].team?.displayName || competitors[0].displayName;
+            const awayName = competitors[1].athlete?.displayName || competitors[1].team?.displayName || competitors[1].displayName;
+            if (!homeName || !awayName) continue;
+            if (/\bTBD\b|\bTBA\b/i.test(homeName + awayName)) continue;
+            const dt = new Date(comp.date || ev.date);
+            const t = dt.getTime();
+            if (!Number.isFinite(t) || t < lo || t > hi) continue;
+            if ((comp.status?.type?.name || "").toUpperCase().includes("FINAL")) continue;
+            found.push({
+              id: `espn_tennis_${comp.id || ev.id}_${homeName}_${awayName}`.replace(/[^a-z0-9_]+/gi, "_").toLowerCase(),
               sport: "tennis",
               sportKey: `tennis_${league}`,
-              league: `${tournamentName} (${name})`,
+              league: tournamentName,
               home: homeName,
               away: awayName,
               kickoff: dt.toISOString(),
@@ -258,6 +258,9 @@ export async function fetchESPNFree() {
           }
         }
       }
+      // kickoff order, cap so tennis never swamps the football board
+      found.sort((a, b) => new Date(a.kickoff) - new Date(b.kickoff));
+      games.push(...found.slice(0, 40));
       continue;
     }
     
