@@ -64,12 +64,36 @@ export async function fetchNHLFree() {
   } catch { return []; }
 }
 
+/** ESPN now returns slug league names in the worldwide feed: pretty them up. */
+function prettyLeague(raw) {
+  let s = String(raw || "").trim();
+  if (!/^\d{4}-\d{2}-/.test(s) && !/^[a-z0-9-]+$/.test(s)) return s; // already human
+  s = s.replace(/^\d{4}-\d{2}-/, "").replace(/-/g, " ");
+  const fixes = {
+    "laliga": "La Liga", "serie a": "Serie A", "ligue 1": "Ligue 1", "primeira liga": "Primeira Liga",
+    "english premier league": "Premier League", "english league championship": "EFL Championship",
+    "italian serie a": "Serie A", "german bundesliga": "Bundesliga", "spanish laliga": "La Liga",
+    "french ligue 1": "Ligue 1", "portuguese primeira liga": "Primeira Liga", "turkish super lig": "Turkish Super Lig",
+    "english fa cup": "FA Cup", "uefa champions league": "Champions League", "uefa europa league": "Europa League",
+    "uefa europa conference league": "Conference League", "usa major league soccer": "MLS",
+    "mexican liga mx": "Liga MX", "brazilian serie a": "Brazil Serie A", "argentine liga profesional": "Argentine LPF",
+    "saudi pro league": "Saudi Pro League", "chinese super league": "Chinese Super League",
+    "swedish allsvenskan": "Allsvenskan", "danish superliga": "Danish Superliga", "greek super league": "Greek Super League",
+    "swiss super league": "Swiss Super League", "austrian bundesliga": "Austrian Bundesliga",
+    "russian premier league": "Russian Premier League", "dutch eredivisie": "Eredivisie",
+  };
+  const key = s.toLowerCase();
+  if (fixes[key]) return fixes[key];
+  return s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
+}
+
 export async function fetchESPNAllWorldwide() {
   const cacheKey = "espn_all_worldwide";
   let cachedData = getCached(cacheKey);
   if (cachedData) return cachedData;
   // Only top leagues available on Bet9ja/SportyBet etc — block obscure second-preliminary, Derde Divisie etc
-  const TOP_LEAGUES = ["Premier League","LaLiga","La Liga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","La Liga 2","Serie B","Bundesliga 2","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","EFL Trophy","MLB","NBA","WNBA","NHL","NFL","MLS","Liga MX","Brazil","Argentine","Turkish","Primeira Liga","Eredivisie","Champions League","Europa League","LaLiga2","A-League","J1 League"];
+  const TOP_LEAGUES = ["Premier League","LaLiga","La Liga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","La Liga 2","Serie B","Bundesliga 2","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","EFL Trophy","MLB","NBA","WNBA","NHL","NFL","Liga MX","Brazil","Argentine","Turkish","A-League","J1 League","Swiss Super League","Austrian Bundesliga","Danish Superliga","Allsvenskan","Greek Super League","Chinese Super League","Saudi Pro League","Coupe de France","Russian Premier League"];
+  const normKey = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
   const BLOCKED = ["second-preliminary","first preliminary","preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","southern football","northern premier","professional development","u21","u19","u23","women","reserve","youth","academy","amateur","county","southern league","group-stage","second-round-qualifying","first round qualifying","qualifying","acv","hoogeveen","b team","c team"];
   try {
     const res = await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard", { signal: AbortSignal.timeout(10000) });
@@ -86,9 +110,9 @@ export async function fetchESPNAllWorldwide() {
       if (dt < new Date(Date.now() - 12*3600000)) continue;
       if (dt - Date.now() > 7*24*3600000) continue;
       let leagueName = "Football";
-      if (ev.leagues && ev.leagues[0]?.name) leagueName = ev.leagues[0].name;
-      else if (comp.league?.name) leagueName = comp.league.name;
-      else if (ev.season?.slug) leagueName = ev.season.slug;
+      if (ev.leagues && ev.leagues[0]?.name) leagueName = prettyLeague(ev.leagues[0].name);
+      else if (comp.league?.name) leagueName = prettyLeague(comp.league.name);
+      else if (ev.season?.slug) leagueName = prettyLeague(ev.season.slug);
       const lowLeague = leagueName.toLowerCase();
       const homeLower = home.team.displayName.toLowerCase();
       const awayLower = away.team.displayName.toLowerCase();
@@ -101,7 +125,7 @@ export async function fetchESPNAllWorldwide() {
       const obscureScottish = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","kilmanrock b","st mirren b","ncaa","ncaa division","fighting camels","blue hens","buccaneers","jaguars","leathernecks","greyhounds","monarchs","bonnies","seawolves","huskies","terriers","bulldogs"];
       if (obscureScottish.some(kw => lowCombined.includes(kw))) continue;
       // STRICT: Only allow top leagues — Premier League, LaLiga, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira, Championship, Champions League, Europa, Conference, MLS, FA Cup, etc, MLB, NBA, NHL, NFL, MLS, Liga MX, Brazil, Argentine, Turkish, Scottish Prem, etc
-      const isTop = TOP_LEAGUES.some(t => lowLeague.includes(t.toLowerCase()));
+      const isTop = TOP_LEAGUES.some(t => normKey(lowLeague).includes(normKey(t)));
       // For worldwide, require top league — block generic league-phase, group-stage, qualifying, round-of-16, ncaa unless top
       if (!isTop) {
         // Allow league-phase only if it's Champions League with top clubs
@@ -178,20 +202,24 @@ export async function fetchESPNFree() {
   ];
   
   const games = [];
-  const boards = await Promise.all(
-    leagues.map(async ({ sport, league, name }) => {
-      const cacheKey = `espn_${sport}_${league}`;
-      const cachedBoard = getCached(cacheKey);
-      if (cachedBoard) return { sport, league, name, data: cachedBoard };
-      try {
-        const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`, { signal: AbortSignal.timeout(8000) });
-        if (!res.ok) return null;
-        const data = await res.json();
-        cached(cacheKey, data);
-        return { sport, league, name, data };
-      } catch { return null; }
-    })
-  );
+  const fetchBoard = async ({ sport, league, name }) => {
+    const cacheKey = `espn_${sport}_${league}`;
+    const cachedBoard = getCached(cacheKey);
+    if (cachedBoard) return { sport, league, name, data: cachedBoard };
+    try {
+      const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`, { signal: AbortSignal.timeout(8000) });
+      if (!res.ok) return null;
+      const data = await res.json();
+      cached(cacheKey, data);
+      return { sport, league, name, data };
+    } catch { return null; }
+  };
+  const boards = [];
+  const WAVE = 6;
+  for (let i = 0; i < leagues.length; i += WAVE) {
+    const batch = await Promise.all(leagues.slice(i, i + WAVE).map(fetchBoard));
+    boards.push(...batch);
+  }
   for (const board of boards) {
     if (!board) continue;
     const { sport, league, name, data } = board;
