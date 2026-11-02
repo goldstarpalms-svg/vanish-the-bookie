@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 
 /** Strip source-tag junk from league labels — shared helper. */
 import { cleanLeagueName } from "../server/live-provider.js";
-import { diagnoseESPN } from "../server/free-sources.js";
+import { diagnoseESPN, fetchAllFreeSources } from "../server/free-sources.js";
 
 /**
  * A finished game with a REAL score but no published pick.
@@ -338,6 +338,25 @@ export default async function handler(req, res) {
   if (path === "/api/health") {
     const d = await getDashboard(url.searchParams.get("refresh") === "1");
     return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length, finished: d.finishedGames.length, error: d.meta.error, warnings: d.meta.warnings });
+  }
+  if (path === "/api/pipeline") {
+    res.setHeader("Cache-Control", "no-store");
+    const t0 = Date.now();
+    const games = await fetchAllFreeSources();
+    const now = Date.now();
+    const bySport = {}, byLeague = {};
+    for (const g of games) {
+      bySport[g.sport] = (bySport[g.sport] || 0) + 1;
+      byLeague[g.league] = (byLeague[g.league] || 0) + 1;
+    }
+    const upcoming = games.filter(g => new Date(g.kickoff).getTime() > now - 2 * 3600000);
+    const badDate = games.filter(g => isNaN(new Date(g.kickoff).getTime())).length;
+    return res.json({
+      total: games.length, upcoming: upcoming.length, badDate, ms: Date.now() - t0,
+      bySport,
+      leagues: Object.entries(byLeague).sort((a, b) => b[1] - a[1]).slice(0, 25),
+      sample: games.slice(0, 5).map(g => ({ league: g.league, home: g.home, away: g.away, kickoff: g.kickoff, sport: g.sport })),
+    });
   }
   if (path === "/api/sources") {
     res.setHeader("Cache-Control", "no-store");
