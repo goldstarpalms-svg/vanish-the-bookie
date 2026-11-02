@@ -54,15 +54,26 @@ function loadRealLogRecords() {
  *  shares a distinctive token (>=4 chars) with the other. Keeps the first (richest). */
 const CLUB_NOISE = new Set(["fc", "cf", "ca", "cd", "sc", "ac", "afc", "ssc", "ss", "us", "as", "club", "calcio", "de", "do", "the"]);
 
+/** Feeds hand us either a string or {name} / {team:{name}} — accept all three. */
+function sideName(v) {
+  if (!v) return "";
+  if (typeof v === "string") return v;
+  return v.name || v.displayName || v.team?.name || v.team?.displayName || "";
+}
+
 function sideTokens(name) {
-  return normalizeName(name)
-    .split(/\s+/)
+  // NB: normalizeName() concatenates words ("ussassuolocalcio"), so tokenise first.
+  return String(sideName(name) || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(/[^a-z0-9]+/)
     .filter((t) => t.length >= 4 && !CLUB_NOISE.has(t));
 }
 
 function sameSide(a, b) {
-  const na = normalizeName(a);
-  const nb = normalizeName(b);
+  const na = normalizeName(sideName(a));
+  const nb = normalizeName(sideName(b));
   if (na === nb) return true;
   if (!na || !nb) return false;
   const ta = sideTokens(a);
