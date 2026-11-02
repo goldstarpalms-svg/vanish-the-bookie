@@ -212,7 +212,7 @@ export async function fetchFreeFallback() {
   const freeGames = await fetchAllFreeSources().catch(()=>[]);
   console.log(`Free fallback found ${freeGames.length} games worldwide`);
   const predictions = [];
-  for (const freeGame of playableFree(freeGames).slice(0, 320)) {
+  for (const freeGame of playableFree(freeGames).slice(0, 640)) {
     const home = person(freeGame.home, 0);
     const away = person(freeGame.away, 1);
     const mockEvent = {
@@ -288,7 +288,7 @@ export async function fetchMultiSourcePredictions({ key, sportKeys, regions = "u
       try { freeGames = await fetchAllFreeSources(); } catch {}
       const allGames = [...oddsPredictions];
       const existingKeys = new Set(oddsPredictions.map(p => `${p.home.name}_${p.away.name}_${p.kickoff.slice(0,10)}`.toLowerCase()));
-      for (const freeGame of playableFree(freeGames).slice(0, 320)) {
+      for (const freeGame of playableFree(freeGames).slice(0, 640)) {
         const dupKey = `${freeGame.home}_${freeGame.away}_${freeGame.kickoff.slice(0,10)}`.toLowerCase();
         if (!existingKeys.has(dupKey)) {
           const home = person(freeGame.home, 0);

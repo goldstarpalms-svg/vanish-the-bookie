@@ -65,26 +65,45 @@ export async function fetchNHLFree() {
 }
 
 /** ESPN now returns slug league names in the worldwide feed: pretty them up. */
+const LEAGUE_CANON = {
+  "laliga": "La Liga", "serie a": "Serie A", "ligue 1": "Ligue 1", "primeira liga": "Primeira Liga",
+  "english premier league": "Premier League", "english league championship": "EFL Championship",
+  "italian serie a": "Serie A", "german bundesliga": "Bundesliga", "spanish laliga": "La Liga",
+  "french ligue 1": "Ligue 1", "portuguese primeira liga": "Primeira Liga", "turkish super lig": "Turkish Super Lig",
+  "english fa cup": "FA Cup", "uefa champions league": "Champions League", "uefa europa league": "Europa League",
+  "uefa europa conference league": "Conference League", "usa major league soccer": "MLS",
+  "spanish laliga 2": "LaLiga 2", "spanish copa del rey": "Copa del Rey", "italian coppa italia": "Coppa Italia",
+  "mexican liga bbva mx": "Liga MX", "brazilian serie a": "Brasileirão Série A",
+  "argentine liga profesional de futbol": "Argentine LPF", "greek super league": "Greek Super League",
+  "danish superliga": "Danish Superliga", "swedish allsvenskan": "Allsvenskan",
+  "russian premier league": "Russian Premier League", "keuken kampioen divisie": "Eerste Divisie",
+  "usl championship": "USL Championship",
+  "brasileiro serie b": "Brasileirão Série B", "primera division de chile": "Chilean Primera División",
+  "bolivian liga profesional": "Bolivian Liga Profesional", "copa chile": "Copa Chile",
+  "copa colombia": "Copa Colombia", "colombian primera a": "Colombian Primera A",
+  "peruvian primera division": "Peruvian Primera División", "uruguayan primera division": "Uruguayan Primera División",
+  "ecuadorian liga pro": "Ecuadorian Liga Pro", "guatemalan liga nacional": "Guatemalan Liga Nacional",
+  "honduran liga nacional": "Honduran Liga Nacional", "argentine primera nacional": "Argentine Primera Nacional",
+  "argentine primera b metropolitana": "Argentine Primera B Metropolitana", "ligue 2": "Ligue 2", "afc champions league elite": "AFC Champions League Elite",
+};
+const LEAGUE_CANON_KEYS = Object.keys(LEAGUE_CANON).sort((a, b) => b.length - a.length);
+
 function prettyLeague(raw) {
   let s = String(raw || "").trim();
-  if (!/^\d{4}-\d{2}-/.test(s) && !/^[a-z0-9-]+$/.test(s)) return s; // already human
-  s = s.replace(/^\d{4}-\d{2}-/, "").replace(/-/g, " ");
-  const fixes = {
-    "laliga": "La Liga", "serie a": "Serie A", "ligue 1": "Ligue 1", "primeira liga": "Primeira Liga",
-    "english premier league": "Premier League", "english league championship": "EFL Championship",
-    "italian serie a": "Serie A", "german bundesliga": "Bundesliga", "spanish laliga": "La Liga",
-    "french ligue 1": "Ligue 1", "portuguese primeira liga": "Primeira Liga", "turkish super lig": "Turkish Super Lig",
-    "english fa cup": "FA Cup", "uefa champions league": "Champions League", "uefa europa league": "Europa League",
-    "uefa europa conference league": "Conference League", "usa major league soccer": "MLS",
-    "mexican liga mx": "Liga MX", "brazilian serie a": "Brazil Serie A", "argentine liga profesional": "Argentine LPF",
-    "saudi pro league": "Saudi Pro League", "chinese super league": "Chinese Super League",
-    "swedish allsvenskan": "Allsvenskan", "danish superliga": "Danish Superliga", "greek super league": "Greek Super League",
-    "swiss super league": "Swiss Super League", "austrian bundesliga": "Austrian Bundesliga",
-    "russian premier league": "Russian Premier League", "dutch eredivisie": "Eredivisie",
-  };
-  const key = s.toLowerCase();
-  if (fixes[key]) return fixes[key];
-  return s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
+  if (!s) return s;
+  // a bare year prefix ("2026 Brasileiro Serie B") is feed noise, strip it first
+  const yearless = s.replace(/^\d{4}-\d{2}-/, "").replace(/^\d{4}[-\s]+/, "");
+  const lookup = (v) => LEAGUE_CANON[v.toLowerCase().replace(/\s+/g, " ").trim()] || null;
+  const direct = lookup(yearless);
+  if (direct) return direct;
+  if (!/^\d{4}-\d{2}-/.test(s) && !/^[a-z0-9-]+$/.test(s)) return yearless; // already human
+  s = yearless.replace(/-/g, " ");
+  const hit = lookup(s);
+  if (hit) return hit;
+  // longest-prefix match handles "Italian Serie A 2026" style suffixes
+  const lower = s.toLowerCase();
+  for (const key of LEAGUE_CANON_KEYS) if (lower.startsWith(key)) return LEAGUE_CANON[key];
+  return s.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 // ESPN's soccer scoreboards label many events with the *round* ("Regular
@@ -408,7 +427,7 @@ export async function fetchESPNFree() {
         id: `espn_${ev.id}`,
         sport: ESPN_SPORT_MAP[sport] || sport,
         sportKey: `${sport}_${league}`,
-        league: name,
+        league: prettyLeague(name),
         home: homeName,
         away: awayName,
         kickoff: ev.date,
