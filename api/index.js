@@ -8,6 +8,7 @@ import { readFileSync } from "node:fs";
 /** Strip source-tag junk from league labels — shared helper. */
 import { cleanLeagueName } from "../server/live-provider.js";
 import { diagnoseESPN, fetchAllFreeSources } from "../server/free-sources.js";
+import { forebetFor, forebetStats } from "../server/forebet.js";
 
 /**
  * A finished game with a REAL score but no published pick.
@@ -258,6 +259,14 @@ async function getDashboard(force = false) {
         // FootyStats enrichment: form, H2H, BTTS/O2.5 %, xG + small confidence nudges.
         tryLiveRefresh().catch(() => {}); // best-effort, never blocks (Cloudflare usually blocks datacenter IPs)
         cache.predictions = enrichMany(dedupeGames(nowFiltered));
+        // Forebet second opinion — only for fixtures we actually have numbers for.
+        let forebetHits = 0;
+        for (const p of cache.predictions) {
+          if (p.sport !== "football") continue;
+          const fb = forebetFor(p.home?.name, p.away?.name, p.kickoff);
+          if (fb) { p.forebet = fb; forebetHits += 1; }
+        }
+        cache.forebet = { ...forebetStats(), matched: forebetHits };
         // REAL records: publisher-side frozen log (GitHub-tracked) + today's genuinely graded picks.
         cache.records = [...loadRealLogRecords(), ...sampleFinished.filter(f => f.status === "won" || f.status === "lost")]
           .filter((r, i, all) => all.findIndex((x) => x.id === r.id) === i);
@@ -388,6 +397,12 @@ export default async function handler(req, res) {
       leagues: Object.entries(byLeague).sort((a, b) => b[1] - a[1]).slice(0, 25),
       sample: games.slice(0, 5).map(g => ({ league: g.league, home: g.home, away: g.away, kickoff: g.kickoff, sport: g.sport })),
     });
+  }
+  if (path === "/api/forebet") {
+    res.setHeader("Cache-Control", "no-store");
+    const { loadForebetSnapshot } = await import("../server/forebet.js");
+    const snap = loadForebetSnapshot();
+    return res.json({ ...forebetStats(), sample: snap.matches.slice(0, 5) });
   }
   if (path === "/api/sources") {
     res.setHeader("Cache-Control", "no-store");

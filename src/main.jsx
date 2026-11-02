@@ -848,6 +848,7 @@ function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart, bookie }) {
           <span className="mr-model"><span className="tiny-dot" /> {hasLiveModel ? `${p.independentModel.model}` : `${p.model} model`}</span>
           <TrustScore p={p} />
           <FootyStrip p={p} />
+          <ForebetStrip p={p} />
         </div>
       </div>
       {hasLiveModel ? (
@@ -1354,6 +1355,24 @@ function FootyStrip({ p }) {
       {chips.map((c, i) => (
         <span key={i} className="footy-chip" title={c.t}>{c.l}</span>
       ))}
+    </div>
+  );
+}
+
+function ForebetStrip({ p }) {
+  const f = p.forebet;
+  if (!f || !f.probabilities) return null;
+  const { home, draw, away } = f.probabilities;
+  const score = f.predictedScore ? `${f.predictedScore.home}-${f.predictedScore.away}` : null;
+  return (
+    <div className="forebet-strip" title="Forebet (forebet.com) — independent 1X2 model, captured snapshot">
+      <span className="forebet-tag">FOREBET</span>
+      <span className="forebet-probs">
+        <b>{pct(home)}</b> / <b>{pct(draw)}</b> / <b>{pct(away)}</b>
+      </span>
+      {f.tip ? <span className="forebet-chip">tip {f.tip === "X" ? "draw" : f.tip === "1" ? "home" : "away"}</span> : null}
+      {score ? <span className="forebet-chip">{score}</span> : null}
+      {f.avgGoals != null ? <span className="forebet-chip">{f.avgGoals} goals</span> : null}
     </div>
   );
 }
