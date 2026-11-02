@@ -23,12 +23,24 @@ export function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
-// "02/11/2026 12:00" — Forebet renders UTC (verified against ESPN kickoffs) -> ISO
-export function forebetDateToIso(dateStr, offsetHours = 0) {
-  const m = /^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/.exec(String(dateStr).trim());
-  if (!m) return null;
-  const [, dd, mm, yyyy, hh, mins] = m;
-  const utc = Date.UTC(+yyyy, +mm - 1, +dd, +hh - offsetHours, +mins);
+// Forebet renders dates differently by locale:
+//   02/11/2026 19:45   (EU: DD/MM/YYYY, 24h)
+//   11/03/2026 2:45 PM (US: MM/DD/YYYY, 12h)  <- the AM/PM marker disambiguates
+// Times are UTC (verified against ESPN kickoffs).
+export function forebetDateToIso(dateStr) {
+  const s = String(dateStr).trim();
+  const us = /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(s);
+  if (us) {
+    const [, mm, dd, yyyy, h12, mins, ap] = us;
+    let h = Number(h12) % 12;
+    if (/pm/i.test(ap)) h += 12;
+    const utc = Date.UTC(+yyyy, +mm - 1, +dd, h, +mins);
+    return Number.isFinite(utc) ? new Date(utc).toISOString() : null;
+  }
+  const eu = /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/.exec(s);
+  if (!eu) return null;
+  const [, dd, mm, yyyy, hh, mins] = eu;
+  const utc = Date.UTC(+yyyy, +mm - 1, +dd, +hh, +mins);
   return Number.isFinite(utc) ? new Date(utc).toISOString() : null;
 }
 
@@ -69,7 +81,7 @@ export function parseForebetMarkdown(text) {
   const rows = [];
   const blocks = String(text).split(/\n\s*\n/).map((b) => b.trim()).filter(Boolean);
   for (let i = 0; i < blocks.length; i++) {
-    const link = /\[(.+?)(\d{2}\/\d{2}\/\d{4}\s+\d{1,2}:\d{2})\]\((https:\/\/www\.forebet\.com\/en\/football\/matches\/[^)]+)\)/.exec(blocks[i]);
+    const link = /\[(.+?)(\d{1,2}\/\d{1,2}\/\d{4}\s+\d{1,2}:\d{2}(?:\s*[AP]M)?)\]\((https:\/\/www\.forebet\.com\/en\/football\/matches\/[^)]+)\)/i.exec(blocks[i]);
     if (!link) continue;
     let j = i;
     let probs = null;

@@ -17,6 +17,12 @@ test("rows whose percentages do not sum to 100 are rejected", () => {
   assert.equal(parseForebetText("Es2 | x-y-1 | 02/11/2026 13:00 | 39/38/20 | 1 | 1-0 | 1.17 | -").length, 0);
 });
 
+test("US-format captures (MM/DD + AM/PM) parse correctly", () => {
+  assert.equal(forebetDateToIso("11/03/2026 2:45 PM"), "2026-11-03T14:45:00.000Z");
+  assert.equal(forebetDateToIso("11/03/2026 12:00 AM"), "2026-11-03T00:00:00.000Z");
+  assert.equal(forebetDateToIso("11/03/2026 12:30 PM"), "2026-11-03T12:30:00.000Z");
+});
+
 test("forebet kickoff is parsed as UTC", () => {
   assert.equal(forebetDateToIso("02/11/2026 13:00"), "2026-11-02T13:00:00.000Z");
   assert.equal(forebetDateToIso("nonsense"), null);

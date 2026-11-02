@@ -144,6 +144,21 @@ export async function fetchESPNAllWorldwide() {
   } catch { return []; }
 }
 
+// ESPN's sport keys -> the labels the app uses. Anything unknown keeps its own
+// key rather than being silently relabelled as football.
+const ESPN_SPORT_MAP = {
+  baseball: "baseball",
+  basketball: "basketball",
+  hockey: "icehockey",
+  football: "americanfootball",
+  soccer: "football",
+  tennis: "tennis",
+  mma: "mma",
+  golf: "golf",
+  cricket: "cricket",
+  rugby: "rugby",
+};
+
 const ESPN_LEAGUES = [
   { sport: "baseball", league: "mlb", name: "MLB" },
   { sport: "basketball", league: "nba", name: "NBA" },
@@ -292,10 +307,12 @@ export async function fetchESPNFree() {
       }
       
       if (!homeName || !awayName) continue;
-      
+      // placeholders like "TBC v TBC" (ESPN cricket) are not fixtures
+      if (/\bTBC\b|\bTBA\b|\bTBD\b/i.test(`${homeName} ${awayName}`)) continue;
+
       games.push({
         id: `espn_${ev.id}`,
-        sport: sport === "baseball" ? "baseball" : sport === "basketball" ? "basketball" : sport === "hockey" ? "icehockey" : sport === "football" ? "americanfootball" : sport === "tennis" ? "tennis" : sport === "mma" ? "mma" : sport === "golf" ? "golf" : "football",
+        sport: ESPN_SPORT_MAP[sport] || sport,
         sportKey: `${sport}_${league}`,
         league: name,
         home: homeName,
