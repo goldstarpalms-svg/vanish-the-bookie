@@ -90,7 +90,7 @@ function dedupeGames(games) {
       const kt = new Date(k.kickoff).getTime();
       if (!Number.isFinite(t) || !Number.isFinite(kt) || Math.abs(kt - t) > 12 * 3600000) continue;
       if (g.sport !== k.sport) continue;
-      if (sameSide(g.home?.name, k.home?.name) && sameSide(g.away?.name, k.away?.name)) return false;
+      if (sameSide(g.home, k.home) && sameSide(g.away, k.away)) return false;
     }
     kept.push(g);
     return true;
