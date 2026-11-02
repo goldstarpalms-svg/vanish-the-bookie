@@ -1978,3 +1978,8 @@ button.tag:active { transform: scale(0.95); }
   }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
+/* safe-tip cards: text nodes are flex items, so spacing must come from gap not source whitespace */
+.safe-tip-card > div { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.safe-tip-card > div:nth-child(2) { justify-content: space-between; gap: 10px; }
+.safe-tip-card > div strong { font-size: 12.5px; }
+.safe-tip-card > div span { font-size: 11px; color: var(--muted); white-space: nowrap; }

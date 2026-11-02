@@ -1701,7 +1701,7 @@ function Predictions({
 }) {
   const [sport, setSport] = useState("all"),
     [query, setQuery] = useState(""),
-    [day, setDay] = useState("today"),
+    [day, setDay] = useState("all"),
     [sort, setSort] = useState("time"),
     [onlySaved, setOnlySaved] = useState(false),
     [limit, setLimit] = useState(12),
