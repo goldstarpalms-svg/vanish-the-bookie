@@ -147,12 +147,27 @@ export async function fetchLiveScores({ key, sportKeys }) {
   }));
   return { events: pages.flat(), warnings };
 }
+// Free sources arrive oldest-first (yesterday's leftovers at the head) and can include
+// fixtures far in the future. Pick the ones a punter can actually still bet on.
+const HORIZON_DAYS = 7;
+function playableFree(games, backHours = 2) {
+  const now = Date.now();
+  const lo = now - backHours * 3600000;
+  const hi = now + HORIZON_DAYS * 86400000;
+  return games
+    .filter((g) => {
+      const t = new Date(g.kickoff).getTime();
+      return Number.isFinite(t) && t > lo && t < hi;
+    })
+    .sort((a, b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime());
+}
+
 export async function fetchFreeFallback() {
   console.log("Using FREE sources fallback (202 games worldwide) - ESPN Worldwide 100, MLB 19, NHL 52, etc. - Trained + Form + Corners");
   const freeGames = await fetchAllFreeSources().catch(()=>[]);
   console.log(`Free fallback found ${freeGames.length} games worldwide`);
   const predictions = [];
-  for (const freeGame of freeGames.slice(0, 200)) {
+  for (const freeGame of playableFree(freeGames).slice(0, 220)) {
     const home = person(freeGame.home, 0);
     const away = person(freeGame.away, 1);
     const mockEvent = {
@@ -228,7 +243,7 @@ export async function fetchMultiSourcePredictions({ key, sportKeys, regions = "u
       try { freeGames = await fetchAllFreeSources(); } catch {}
       const allGames = [...oddsPredictions];
       const existingKeys = new Set(oddsPredictions.map(p => `${p.home.name}_${p.away.name}_${p.kickoff.slice(0,10)}`.toLowerCase()));
-      for (const freeGame of freeGames.slice(0, 80)) {
+      for (const freeGame of playableFree(freeGames).slice(0, 220)) {
         const dupKey = `${freeGame.home}_${freeGame.away}_${freeGame.kickoff.slice(0,10)}`.toLowerCase();
         if (!existingKeys.has(dupKey)) {
           const home = person(freeGame.home, 0);
