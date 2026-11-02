@@ -1704,7 +1704,7 @@ function Predictions({
     [day, setDay] = useState("today"),
     [sort, setSort] = useState("time"),
     [onlySaved, setOnlySaved] = useState(false),
-    [limit, setLimit] = useState(6),
+    [limit, setLimit] = useState(12),
     [showFinished, setShowFinished] = useState(true),
     [finishedLimit, setFinishedLimit] = useState(6),
     [safeFilter, setSafeFilter] = useState("all"),
@@ -1712,7 +1712,7 @@ function Predictions({
     [onlyBookieAvailable, setOnlyBookieAvailable] = useState(() => readStorage("vanish:onlyBookie", true));
   const today = data.meta.snapshotDate;
   useEffect(() => {
-    setLimit(6);
+    setLimit(12);
   }, [sport, query, day, onlySaved, onlyBookieAvailable, bookie]);
   useEffect(() => {
     setFinishedLimit(6);
@@ -2046,13 +2046,18 @@ function Predictions({
             </div>
           )}
           {filtered.length > limit && (
-            <button
-              className="load-more"
-              onClick={() => setLimit((n) => n + 6)}
-            >
-              Show {Math.min(6, filtered.length - limit)} more matches{" "}
-              <ChevronDown size={16} />
-            </button>
+            <div className="load-more-row">
+              <button
+                className="load-more"
+                onClick={() => setLimit((n) => n + 24)}
+              >
+                Show {Math.min(24, filtered.length - limit)} more matches{" "}
+                <ChevronDown size={16} />
+              </button>
+              <button className="text-button" onClick={() => setLimit(filtered.length)}>
+                Show all {filtered.length}
+              </button>
+            </div>
           )}
           <div className="predictions-footnote">
             <Info size={14} />

@@ -1748,6 +1748,9 @@ button.tag:active { transform: scale(0.95); }
   color: var(--text);
 }
 .load-more:hover { border-color: var(--accent-line); color: var(--accent-ink); }
+.load-more-row { display: flex; align-items: center; gap: 16px; }
+.load-more-row .load-more { margin: 14px 0; flex: 1; }
+.load-more-row .text-button { white-space: nowrap; font-size: 12px; }
 .builder-row, .builder-filters {
   display: flex;
   align-items: center;
