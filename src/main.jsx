@@ -1158,7 +1158,7 @@ function LiveScores({ data, onOpen, today }) {
         <h3>Finished Today — Auto-moved from upcoming when ESPN reports final</h3>
         <div className="match-grid">
           {finished.map(p => (
-            <div key={p.id} className="finished-result-box small"><div className="result-score"><span className="score">{p.result ? `${p.result.home}-${p.result.away}` : "—"} FT</span><span className="result-label">{p.home.name} vs {p.away.name}</span></div><div className="result-pick"><span>{p.pick.label}</span><span className={`outcome ${p.status}`}>{p.status}</span></div></div>
+            <div key={p.id} className="finished-result-box small"><div className="result-score"><span className="score">{p.result ? `${p.result.home}-${p.result.away}` : "—"} FT</span><span className="result-label">{p.home.name} vs {p.away.name}</span></div><div className="result-pick"><span>{p.pick ? p.pick.label : "No published pick"}</span><span className={`outcome ${p.status}`}>{p.status}</span></div></div>
           ))}
         </div>
       </div>
@@ -2108,12 +2108,14 @@ function Predictions({
 
 function FinishedMatchCard({ p, today, onOpen }) {
   const isWon = p.status === 'won';
+  const isLost = p.status === 'lost';
+  const unpicked = p.status === 'unpicked' || !p.pick;
   return (
-    <article className={`match-card finished-card sport-${p.sport} ${isWon ? 'won' : 'lost'}`}>
+    <article className={`match-card finished-card sport-${p.sport} ${isWon ? 'won' : isLost ? 'lost' : 'unpicked'}`}>
       <div className="match-card-top">
         <span><SportIcon sport={p.sport} />{p.league}</span>
         <div className="card-top-actions">
-          <SmallTag tone={isWon ? "green" : "red"}>{isWon ? "WON" : "LOST"}</SmallTag>
+          <SmallTag tone={isWon ? "green" : isLost ? "red" : ""}>{unpicked ? "SCORE ONLY" : isWon ? "WON" : "LOST"}</SmallTag>
           <SmallTag tone="amber">FINISHED</SmallTag>
         </div>
       </div>
@@ -2133,13 +2135,13 @@ function FinishedMatchCard({ p, today, onOpen }) {
           <span className="result-label">Final Score</span>
         </div>
         <div className="result-pick">
-          <span>Pick: {p.pick.label}</span>
-          <span className={`outcome ${p.status}`}>{isWon ? <CheckCircle2 size={14} /> : p.status === "lost" ? <CircleX size={14} /> : <Minus size={14} />}{p.status === "unpicked" ? "NO PICK" : p.status.toUpperCase()}</span>
+          <span>{p.pick ? `Pick: ${p.pick.label}` : "No published pick — score only"}</span>
+          <span className={`outcome ${p.status}`}>{isWon ? <CheckCircle2 size={14} /> : isLost ? <CircleX size={14} /> : <Minus size={14} />}{unpicked ? "NO PICK" : p.status.toUpperCase()}</span>
         </div>
       </div>
       <div className="card-foot">
-        <span><span className="tiny-dot" />{p.scoreSource || "ESPN Free"} · {p.model || "Vanish"} model</span>
-        <button onClick={() => onOpen(p)}>See result <ArrowUpRight size={16} /></button>
+        <span><span className="tiny-dot" />{p.scoreSource || "ESPN Free"}{p.model ? ` · ${p.model} model` : ""}</span>
+        {!unpicked && <button onClick={() => onOpen(p)}>See result <ArrowUpRight size={16} /></button>}
       </div>
     </article>
   );
@@ -2429,8 +2431,20 @@ function Results({ data, onOpen, notify }) {
                         Published: {p.publishedAt ? `${formatDate(p.publishedAt, true)} ${formatTime(p.publishedAt)}` : "—"} · Settled: {p.settledAt ? `${formatDate(p.settledAt, true)} ${formatTime(p.settledAt)}` : "pending"} · {p.scoreSource || p.model || "Vanish"} · 90min
                       </small>
                     </td>
-                    <td>{p.pick.label}<br/><small className="small-text muted">{p.pick.side} · {p.model?.slice(0,30)}</small></td>
-                    <td>{pct(p.pick.probability, 1)}<br/><small className="small-text muted">fitted to 380-game backtest</small></td>
+                    <td>
+                      {p.pick ? (
+                        <>{p.pick.label}<br/><small className="small-text muted">{p.pick.side} · {p.model?.slice(0,30)}</small></>
+                      ) : (
+                        <span className="small-text muted">No published pick<br/><small>score-only — no verdict</small></span>
+                      )}
+                    </td>
+                    <td>
+                      {p.pick ? (
+                        <>{pct(p.pick.probability, 1)}<br/><small className="small-text muted">fitted to 380-game backtest</small></>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
                     <td>
                       {p.result && !p.result.void
                         ? `${p.result.home} – ${p.result.away}`
