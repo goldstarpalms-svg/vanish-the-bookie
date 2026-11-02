@@ -580,7 +580,19 @@ button.tag:active { transform: scale(0.95); }
   gap: 5px;
   min-width: 0;
 }
-.stat-tile.featured > div:last-child { text-align: right; align-items: flex-end; }
+.stat-tile.featured > div:first-child { flex: 1; min-width: 0; }
+.stat-tile.featured > div:last-child {
+  text-align: right;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding-left: 16px;
+}
+.stat-tile.featured .stat-note {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 /* ============================== FACTS / BANNERS ============================== */
 .facts-strip {
