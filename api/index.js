@@ -48,18 +48,40 @@ function loadRealLogRecords() {
   }
 }
 
-/** Drop cross-feed duplicates (ESPN + football-data list the same fixture, e.g. Brazil).
- *  Keys on alias-normalised team names so "Red Bull Bragantino vs Santos" and
- *  "RB Bragantino vs Santos FC" collapse to one row. Keeps the first (richest). */
+/** Drop cross-feed duplicates (ESPN + the records log + football-data all list the same
+ *  fixture under different spellings, e.g. "Sassuolo" vs "US Sassuolo Calcio").
+ *  Two fixtures are the same match when the kickoffs are within 12h and each side
+ *  shares a distinctive token (>=4 chars) with the other. Keeps the first (richest). */
+const CLUB_NOISE = new Set(["fc", "cf", "ca", "cd", "sc", "ac", "afc", "ssc", "ss", "us", "as", "club", "calcio", "de", "do", "the"]);
+
+function sideTokens(name) {
+  return normalizeName(name)
+    .split(/\s+/)
+    .filter((t) => t.length >= 4 && !CLUB_NOISE.has(t));
+}
+
+function sameSide(a, b) {
+  const na = normalizeName(a);
+  const nb = normalizeName(b);
+  if (na === nb) return true;
+  if (!na || !nb) return false;
+  const ta = sideTokens(a);
+  const tb = sideTokens(b);
+  if (!ta.length || !tb.length) return na.includes(nb) || nb.includes(na);
+  return ta.some((t) => tb.includes(t));
+}
+
 function dedupeGames(games) {
-  const seen = new Map();
+  const kept = [];
   return games.filter((g) => {
-    const k = `${normalizeName(g.home?.name)}|${normalizeName(g.away?.name)}`;
     const t = new Date(g.kickoff).getTime();
-    for (const [k2, t2] of seen) {
-      if (k2 === k && Math.abs(t2 - t) <= 6 * 3600000) return false;
+    for (const k of kept) {
+      const kt = new Date(k.kickoff).getTime();
+      if (!Number.isFinite(t) || !Number.isFinite(kt) || Math.abs(kt - t) > 12 * 3600000) continue;
+      if (g.sport !== k.sport) continue;
+      if (sameSide(g.home?.name, k.home?.name) && sameSide(g.away?.name, k.away?.name)) return false;
     }
-    seen.set(k, t);
+    kept.push(g);
     return true;
   });
 }
