@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-11-02T04:54:12.705Z",
+  "entry": {
+    "home": "Fulham",
+    "away": "Brentford",
+    "country": "England",
+    "source": "FootyStats API",
+    "matchId": 7466768,
+    "url": "https://footystats.org/england/fulham-fc-vs-brentford-fc-h2h-stats#7466768",
+    "form": {
+      "home": "WWLLD",
+      "away": "LDWLW",
+      "ppgHome": 1.75,
+      "ppgAway": 0
+    },
+    "h2h": {
+      "matches": 18,
+      "homeWins": 5,
+      "draws": 4,
+      "awayWins": 9,
+      "over15": 83,
+      "over25": 61,
+      "over35": 33,
+      "btts": 56,
+      "csHome": 17,
+      "csAway": 33,
+      "avgGoals": 2.94
+    },
+    "prediction": {
+      "over25": 61,
+      "over25Avg": 56,
+      "over15": 83,
+      "over15Avg": 81,
+      "btts": 56,
+      "bttsAvg": 56,
+      "gpm": 2.94,
+      "gpmAvg": 2.93
+    },
+    "teams": {
+      "home": {
+        "xg": 1.43,
+        "xga": 1.26,
+        "ppg": 1.42,
+        "ppgHome": 1.37,
+        "ppgAway": 1.47,
+        "winPctHome": 37,
+        "winPctAway": 42,
+        "scoredAvg": 1.42,
+        "concededAvg": 1.42,
+        "bttsPct": 71
+      },
+      "away": {
+        "xg": 1.36,
+        "xga": 1.71,
+        "ppg": 1.47,
+        "ppgHome": 1.63,
+        "ppgAway": 1.32,
+        "winPctHome": 47,
+        "winPctAway": 37,
+        "scoredAvg": 1.74,
+        "concededAvg": 1.5,
+        "bttsPct": 66
+      }
+    }
+  }
+}
