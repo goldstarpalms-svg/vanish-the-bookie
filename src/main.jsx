@@ -3156,7 +3156,6 @@ function App() {
         boardLabel: "On the board",
         boardValue: String(data?.predictions?.length ?? 0),
         boardNote: `${data?.finishedGames?.length ?? 0} finished today · ${data?.meta?.snapshotDate || ""}`,
-        sports: new Set((data?.predictions || []).map((p) => p.sport)).size,
       };
   return (
     <>
@@ -3336,7 +3335,7 @@ function App() {
                       <Globe2 size={20} />
                     </span>
                     <p>
-                      <strong>{stats.sports || 7} sports. One perspective.</strong>
+                      <strong>Seven sports. One perspective.</strong>
                       <span>Football, tennis, ice hockey & more</span>
                     </p>
                   </div>
