@@ -351,6 +351,23 @@ export default async function handler(req, res) {
     await t("free", () => fetchAllFreeSources());
     await t("fallback", () => fetchFreeFallback());
     await t("multi", () => fetchMultiSourcePredictions(config));
+    try {
+      const multi = await fetchMultiSourcePredictions(config);
+      const now = Date.now();
+      const upcoming = multi.filter(p => new Date(p.kickoff).getTime() > now - 2 * 3600000);
+      const deduped = dedupeGames(upcoming);
+      const bySport = {};
+      for (const p of multi) bySport[p.sport] = (bySport[p.sport] || 0) + 1;
+      const upSport = {};
+      for (const p of upcoming) upSport[p.sport] = (upSport[p.sport] || 0) + 1;
+      out.stages = {
+        multiBySport: bySport,
+        upcoming: upcoming.length,
+        upcomingBySport: upSport,
+        deduped: deduped.length,
+        firstFive: multi.slice(0, 5).map(p => `${p.sport}|${p.league}|${new Date(p.kickoff).toISOString()}`),
+      };
+    } catch (e) { out.stages = { error: e.message }; }
     return res.json(out);
   }
   if (path === "/api/pipeline") {
