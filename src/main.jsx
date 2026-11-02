@@ -1011,7 +1011,7 @@ function BetBuilder({ data, onCart, notify }) {
         <div className="builder-row"><label>Games Per Ticket 1-50: <input type="range" min={1} max={10} value={gamesPerTicket} onChange={e=>setGamesPerTicket(Number(e.target.value))} /> {gamesPerTicket}</label><label>Number Tickets 1-10: <input type="range" min={1} max={10} value={numTickets} onChange={e=>setNumTickets(Number(e.target.value))} /> {numTickets}</label><SmallTag tone="green">{filtered.length} matching of 252</SmallTag></div>
       </div>
       <div className="match-grid">
-        {filtered.slice(0,12).map(p=> <div key={p.id} className="safe-tip-card"><div><SportIcon sport={p.sport} size={12} />{p.league} — {p.home.name} vs {p.away.name}</div><div><strong>{p.pick.label} {(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)).toFixed(2)}</strong></div></div>)}
+        {filtered.slice(0,12).map(p=> <div key={p.id} className="safe-tip-card"><div className="stc-league"><SportIcon sport={p.sport} size={12} />{p.league}</div><div className="stc-teams">{`${p.home.name} vs ${p.away.name}`}</div><div className="stc-pick"><strong>{p.pick.label} @ {(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)).toFixed(2)}</strong></div></div>)}
       </div>
     </section>
   );
@@ -1937,8 +1937,9 @@ function Predictions({
             <div className="safe-tips-grid">
               {safeTips.filter(p => safeFilter==="all" || p.sport===safeFilter).slice(0,8).map(p => (
                 <button key={p.id} className="safe-tip-card" onClick={() => onOpen(p)}>
-                  <div><SportIcon sport={p.sport} size={12} />{p.home.name} vs {p.away.name}</div>
-                  <div><strong>{p.pick.label}</strong><span>{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)} • {p.independentModel?.confidence ? `${pct(p.independentModel.confidence)} conf` : "Safe"}</span></div>
+                  <div className="stc-league"><SportIcon sport={p.sport} size={12} />{p.league}</div>
+                  <div className="stc-teams">{`${p.home.name} vs ${p.away.name}`}</div>
+                  <div className="stc-pick"><strong>{p.pick.label}</strong><span>{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)} • {p.independentModel?.confidence ? `${pct(p.independentModel.confidence)} conf` : "Safe"}</span></div>
                 </button>
               ))}
             </div>
@@ -3155,6 +3156,7 @@ function App() {
         boardLabel: "On the board",
         boardValue: String(data?.predictions?.length ?? 0),
         boardNote: `${data?.finishedGames?.length ?? 0} finished today · ${data?.meta?.snapshotDate || ""}`,
+        sports: new Set((data?.predictions || []).map((p) => p.sport)).size,
       };
   return (
     <>
@@ -3334,8 +3336,8 @@ function App() {
                       <Globe2 size={20} />
                     </span>
                     <p>
-                      <strong>Three sports. One perspective.</strong>
-                      <span>Football, basketball & tennis</span>
+                      <strong>{stats.sports || 7} sports. One perspective.</strong>
+                      <span>Football, tennis, ice hockey & more</span>
                     </p>
                   </div>
                   <div>

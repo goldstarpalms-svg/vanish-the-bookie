@@ -2021,3 +2021,30 @@ button.tag:active { transform: scale(0.95); }
   .mr-actions { grid-column: auto; }
 }
 .mr-model { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+
+/* Best-bets / safe-tips cards: three explicit rows so long club names never
+   swallow the fixture line and "vs" never glues to a team. */
+.stc-league {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 660;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stc-teams {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 640;
+  line-height: 1.32;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.stc-pick { margin-top: 7px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.stc-pick strong { margin: 0; font-size: 12.5px; font-weight: 650; color: var(--ink); }
+.stc-pick span { font-size: 11.5px; color: var(--muted); }
