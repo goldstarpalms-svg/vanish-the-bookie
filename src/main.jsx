@@ -1270,9 +1270,9 @@ function BetOfDay({ data, onOpen }) {
         <div className="best-bets-header"><div><div className="eyebrow"><ShieldCheck size={14} /> ALL BANKERS TODAY — 19 Picks 9/10 Trust</div><h3>All Bankers Rated Above 9/10 Confidence</h3></div></div>
         <div className="best-bets-grid">
           {bankers.map(p => (
-            <button key={p.id} className="best-bet-card" onClick={()=>onOpen(p)}>
+            <button key={p.id} className="best-bet-card" style={{ textAlign: "left" }} onClick={()=>onOpen(p)}>
               <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(p.independentProbabilities?.[p.pick.side]||p.pick.probability)}</SmallTag></div>
-              <div className="best-bet-teams"><TeamBadge team={p.home} /><span>{p.home.name}</span><small>vs</small><span>{p.away.name}</span></div>
+              <div className="best-bet-teams"><span className="bbt-row"><TeamBadge team={p.home} /><span>{p.home.name}</span></span><span className="bbt-row"><TeamBadge team={p.away} /><span>{p.away.name}</span></span></div>
               <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>Trust 9/10 • Banker • {p.independentModel?.model || "Vanish"}</span></div>
             </button>
           ))}
@@ -1914,9 +1914,9 @@ function Predictions({
               </div>
               <div className="best-bets-grid">
                 {bestBetsToday.map(p => (
-                  <button key={p.id} className="best-bet-card" onClick={() => onOpen(p)}>
+                  <button key={p.id} className="best-bet-card" style={{ textAlign: "left" }} onClick={() => onOpen(p)}>
                     <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)}</SmallTag></div>
-                    <div className="best-bet-teams"><TeamBadge team={p.home} /><span>{p.home.name}</span><small>vs</small><span>{p.away.name}</span></div>
+                    <div className="best-bet-teams"><span className="bbt-row"><TeamBadge team={p.home} /><span>{p.home.name}</span></span><span className="bbt-row"><TeamBadge team={p.away} /><span>{p.away.name}</span></span></div>
                     <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>Stake: High • Safe Tip 80% target</span></div>
                   </button>
                 ))}
