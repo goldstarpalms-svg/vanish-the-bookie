@@ -2,7 +2,7 @@ import { demoFixtures, demoArchive } from "../server/fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
 import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback } from "../server/live-provider.js";
 import { fetchESPNScores } from "../server/free-scores.js";
-import { enrichMany, getFootyBoards, tryLiveRefresh } from "../server/footystats.js";
+import { enrichMany, getFootyBoards, tryLiveRefresh, normalizeName } from "../server/footystats.js";
 import { readFileSync } from "node:fs";
 
 /** Strip source-tag junk from league labels — shared helper. */
@@ -47,12 +47,12 @@ function loadRealLogRecords() {
 }
 
 /** Drop cross-feed duplicates (ESPN + football-data list the same fixture, e.g. Brazil).
- *  Keeps the first — richest — occurrence per team pair + kickoff window. */
+ *  Keys on alias-normalised team names so "Red Bull Bragantino vs Santos" and
+ *  "RB Bragantino vs Santos FC" collapse to one row. Keeps the first (richest). */
 function dedupeGames(games) {
-  const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
   const seen = new Map();
   return games.filter((g) => {
-    const k = `${norm(g.home?.name)}|${norm(g.away?.name)}`;
+    const k = `${normalizeName(g.home?.name)}|${normalizeName(g.away?.name)}`;
     const t = new Date(g.kickoff).getTime();
     for (const [k2, t2] of seen) {
       if (k2 === k && Math.abs(t2 - t) <= 6 * 3600000) return false;
@@ -258,7 +258,8 @@ async function getDashboard() {
         tryLiveRefresh().catch(() => {}); // best-effort, never blocks (Cloudflare usually blocks datacenter IPs)
         cache.predictions = enrichMany(dedupeGames(nowFiltered));
         // REAL records: publisher-side frozen log (GitHub-tracked) + today's genuinely graded picks.
-        cache.records = [...loadRealLogRecords(), ...sampleFinished.filter(f => f.status === "won" || f.status === "lost")];
+        cache.records = [...loadRealLogRecords(), ...sampleFinished.filter(f => f.status === "won" || f.status === "lost")]
+          .filter((r, i, all) => all.findIndex((x) => x.id === r.id) === i);
         cache.finishedGames = finalFinished;
         console.log(`Finished TODAY: ${finalFinished.length} (top filtered ${todayFinished.length} + all scoreboard ${allFinishedToday.length}) todayKey ${todayKey} — a lot has finished`);
         console.log(`FootyStats: enriched ${cache.predictions.filter(p => p.footy).length} of ${cache.predictions.length} football games`);
