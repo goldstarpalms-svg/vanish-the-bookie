@@ -80,9 +80,9 @@ function communityUrl() {
   } catch { return null; }
 }
 
-async function getDashboard() {
+async function getDashboard(force = false) {
   const now = Date.now();
-  const stale = !cache.generatedAt || (now - new Date(cache.generatedAt).getTime() > LIVE_REFRESH_MINUTES * 60000);
+  const stale = force || !cache.generatedAt || (now - new Date(cache.generatedAt).getTime() > LIVE_REFRESH_MINUTES * 60000);
   if (stale) {
     try {
       if (MODE === "demo") {
@@ -335,12 +335,13 @@ export default async function handler(req, res) {
   const path = url.pathname;
 
   if (path === "/api/health") {
-    const d = await getDashboard();
+    const d = await getDashboard(url.searchParams.get("refresh") === "1");
     return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length, finished: d.finishedGames.length, error: d.meta.error, warnings: d.meta.warnings });
   }
   if (path === "/api/dashboard") {
     res.setHeader("Cache-Control","no-store");
-    const d = await getDashboard();
+    // ?refresh=1 bypasses the in-memory TTL (ops switch after deploys/incidents)
+    const d = await getDashboard(url.searchParams.get("refresh") === "1");
     return res.json(d);
   }
   if (path === "/api/demo/refresh" && req.method === "POST") {
