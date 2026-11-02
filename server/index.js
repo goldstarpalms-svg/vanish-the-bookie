@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import { demoFixtures, demoArchive } from "./fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "./model.js";
-import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions, fetchFreeFallback, cleanLeagueName } from "./live-provider.js";
+import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions, fetchFreeFallback, cleanLeagueName, isTodayWAT } from "./live-provider.js";
 import { fetchESPNScores, gradeWithESPNScores } from "./free-scores.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -210,8 +210,9 @@ function communityUrl() {
   } catch { return null; }
 }
 function dashboard() {
+  const todayRows = predictions.map((p) => ({ ...p, isToday: isTodayWAT(p.kickoff) }));
   return {
-    predictions,
+    predictions: todayRows,
     records,
     finishedGames,
     meta: {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
@@ -51,8 +51,8 @@ const navLabel = (id) =>
   ({
     predictions: "Predictions",
     live: "Live Scores",
-    betofday: "Bet of the Day",
-    values: "Values",
+    betofday: "Strongest bet",
+    values: "Value bets",
     builder: "Bet Builder",
     cart: "Cart",
     stats: "Stats Hub",
@@ -1191,37 +1191,57 @@ function StatsHub({ data }) {
   );
 }
 
+const REGION_LEAGUES = {
+  "UK & Ireland": ["Premier League", "EFL Championship", "EFL League One", "Scottish", "FA Cup"],
+  "Top Europe": ["La Liga", "LaLiga 2", "Bundesliga", "Serie A", "Ligue 1", "Ligue 2", "Primeira Liga", "Eredivisie", "Eerste Divisie"],
+  "Rest of Europe": ["Greek", "Turkish", "Russian", "Danish", "Allsvenskan", "Austrian", "Swiss", "Belgian"],
+  "Americas": ["MLS", "Liga MX", "Brasileir", "Argentine", "Chilean", "Colombian", "Peruvian", "Uruguayan", "Bolivian", "Ecuadorian", "USL"],
+  "Asia & Oceania": ["AFC", "J1 League", "A-League", "Chinese", "Saudi"],
+  "Africa": ["Egypt", "Morocco", "Tunisia", "Algeria", "South Africa", "CAF"],
+};
+
 function ValuesPage({ data, onOpen }) {
-  const values = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => p.hasLiveModel && p.marketPick && p.vanishPick).map(p => {
-    const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
-    const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
-    const edge = vanishProb - marketProb;
-    const kelly = edge / (1/marketProb -1);
-    return {...p, edge, kelly, marketProb, vanishProb};
-  }).filter(p => p.edge > 0.05).sort((a,b)=>b.edge-a.edge).slice(0,20);
+  const today = data.meta.snapshotDate;
+  // Today's fixtures only — a value bet on next Saturday is not today's value.
+  const values = data.predictions
+    .filter(p => dateKey(p.kickoff) === today)
+    .filter(p => isBookieTopAvailable(p))
+    .filter(p => p.hasLiveModel && p.marketPick && p.vanishPick)
+    .map(p => {
+      const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
+      const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
+      const edge = vanishProb - marketProb;
+      const kelly = edge / (1/marketProb -1);
+      return {...p, edge, kelly, marketProb, vanishProb};
+    })
+    .filter(p => p.edge > 0.05)
+    .sort((a,b)=>b.edge-a.edge)
+    .slice(0,20);
   const [favs, setFavs] = useState(() => readStorage("vanish:favs", []));
   const toggleFav = (id) => {
     const next = favs.includes(id) ? favs.filter(x=>x!==id) : [...favs, id];
     writeStorage("vanish:favs", next);
     setFavs(next);
   };
-  const lists = {
-    "UK 210": values.filter(p => p.league.includes("Premier") || p.league.includes("Championship")).slice(0,5),
-    "Top Europe 63": values.filter(p => ["LaLiga","Bundesliga","Serie A","Ligue 1"].some(l=>p.league.includes(l))).slice(0,5),
-    "All Europe 777": values.slice(0,7),
-    "America 182": values.filter(p => p.league.includes("MLS") || p.league.includes("NBA") || p.league.includes("MLB")).slice(0,5),
-    "Africa 87": values.filter(p => p.league.includes("Africa") || Math.random()>0.7).slice(0,5),
-    "Asia 140": values.filter(p => Math.random()>0.6).slice(0,5),
-    "International 26": values.filter(p => p.league.includes("International")).slice(0,5),
-  };
+  const lists = Object.fromEntries(
+    Object.entries(REGION_LEAGUES).map(([region, needles]) => [
+      region,
+      values.filter(p => needles.some(n => p.league.toLowerCase().includes(n.toLowerCase()))).slice(0,5),
+    ]),
+  );
   return (
     <section className="page-section">
-      <div className="page-eyebrow"><span className="tiny-dot" /> VALUES 79 + FAVOURITES + LISTS — Like Forebet Values Kelly + Favourites Star + Lists Regional</div>
-      <div className="page-title-row"><div><h1>Values — Kelly Criteria Like Forebet (79 values)</h1><p>Where Vanish model probability exceeds market consensus — highest prospective value, statistical relevance + profitability. Favourites star follow match or entire league, Lists regional UK 210 Top Europe 63 All Europe 777 America 182 Africa 87 Asia 140 International 26 National cups 34 — like Forebet.</p></div><SmallTag tone="green">{values.length} VALUES</SmallTag></div>
+      <div className="page-eyebrow"><span className="tiny-dot" /> VALUE BETS — Kelly staking, today's fixtures only</div>
+      <div className="page-title-row"><div><h1>Value bets — where Vanish beats the market</h1><p>Today's fixtures where the Vanish model probability is more than 5 points above market consensus. Sorted by edge, staked with Kelly. Only leagues confirmed on your bookie. Every row is a game kicking off today, {formatDate(`${today}T12:00:00+01:00`, true)} WAT.</p></div><SmallTag tone="green">{values.length} VALUE BETS</SmallTag></div>
+      {values.length === 0 && (
+        <div className="inline-notice"><Info size={14} /><span>No fixture today clears a 5-point edge. That is a real answer, not a broken page — the list refills as the model runs again.</span></div>
+      )}
       <div className="values-grid">
         {values.map(p => (
           <div key={p.id} className="value-card">
-            <div className="value-top"><span>{p.home.name} vs {p.away.name} • {p.league}</span><SmallTag tone="green">+{pct(p.edge,1)} edge</SmallTag><button className={`icon-button ${favs.includes(p.id) ? "saved" : ""}`} onClick={()=>toggleFav(p.id)}><Bookmark size={14} fill={favs.includes(p.id) ? "currentColor" : "none"} /></button></div>
+            <div className="value-top"><SmallTag tone="green">+{pct(p.edge,1)} edge</SmallTag><button className={`icon-button ${favs.includes(p.id) ? "saved" : ""}`} onClick={()=>toggleFav(p.id)} aria-label="Save"><Bookmark size={14} fill={favs.includes(p.id) ? "currentColor" : "none"} /></button></div>
+            <div className="value-teams">{p.home.name} vs {p.away.name}</div>
+            <div className="value-league"><SportIcon sport={p.sport} size={10} />{p.league} • {formatTime(p.kickoff)} WAT</div>
             <div className="value-probs"><span>Market {pct(p.marketProb)}</span><ArrowRight size={12} /><span>Vanish {pct(p.vanishProb)}</span></div>
             <div className="value-kelly">Kelly {pct(p.kelly,1)} • {p.vanishPick.label} • Odds {(1/p.marketProb).toFixed(2)} → {(1/p.vanishProb).toFixed(2)}</div>
             <button className="button secondary small" onClick={()=>onOpen(p)} style={{marginTop:'8px'}}>Analysis <ArrowUpRight size={12} /></button>
@@ -1229,10 +1249,10 @@ function ValuesPage({ data, onOpen }) {
         ))}
       </div>
       <div className="lists-section" style={{marginTop:'28px'}}>
-        <h3>Lists Regional — Like Forebet Lists</h3>
+        <h3>Today by region</h3>
         <div className="accas-grid">
           {Object.entries(lists).map(([name, picks]) => (
-            <div key={name} className="acca-card"><div className="acca-header"><strong>{name}</strong><span>{picks.length} picks</span><SmallTag>{name.split(" ")[0]}</SmallTag></div><div className="acca-picks">{picks.map(p=> <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.home.name} vs {p.away.name} — <strong>{p.vanishPick.label} +{pct(p.edge,0)}</strong></div>)}</div></div>
+            <div key={name} className="acca-card"><div className="acca-header"><strong>{name}</strong><span>{picks.length} picks</span></div><div className="acca-picks">{picks.length ? picks.map(p=> <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.home.name} vs {p.away.name} — <strong>{p.vanishPick.label} +{pct(p.edge,0)}</strong></div>) : <div>No qualifying fixture</div>}</div></div>
           ))}
         </div>
       </div>
@@ -1241,43 +1261,80 @@ function ValuesPage({ data, onOpen }) {
 }
 
 function BetOfDay({ data, onOpen }) {
-  const bankers = data.predictions.filter(p => isBookieTopAvailable(p)).filter(p => {
-    const prob = p.independentProbabilities?.[p.pick.side] || p.pick.probability;
-    return prob >= 0.7;
-  }).sort((a,b) => {
-    const pa = a.independentProbabilities?.[a.pick.side] || a.pick.probability;
-    const pb = b.independentProbabilities?.[b.pick.side] || b.pick.probability;
-    return pb - pa;
-  }).slice(0,19);
-  const slip = bankers.slice(0,5);
-  const totalOdds = slip.reduce((acc,p)=> acc*(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)),1);
+  const today = data.meta.snapshotDate;
+  const probOf = (p) => p.independentProbabilities?.[p.pick.side] ?? p.pick.probability;
+  // Today's fixtures only, strongest first. Confidence comes from the model, so we
+  // never claim injury news, lineups or a "9/10 trust" score we cannot back.
+  const todayPicks = data.predictions
+    .filter(p => dateKey(p.kickoff) === today)
+    .filter(p => isBookieTopAvailable(p))
+    .sort((a, b) => probOf(b) - probOf(a));
+  const top = todayPicks[0];
+  const bankers = todayPicks.filter(p => probOf(p) >= 0.7);
+  const slipPicks = (bankers.length ? bankers : todayPicks).slice(0, 5);
+  const totalOdds = slipPicks.reduce((acc, p) => acc * (1 / probOf(p)), 1);
+  const combined = slipPicks.length ? Math.pow(slipPicks.reduce((a, p) => a * probOf(p), 1), 1 / slipPicks.length) : 0;
   return (
     <section className="page-section">
-      <div className="page-eyebrow"><span className="tiny-dot" /> BET OF THE DAY & SLIP OF THE DAY — Like NerdyTips Bankers 9/10 Trust 19 Picks Slip 5 Selections Odds 5.06</div>
-      <div className="page-title-row"><div><h1>Bet of the Day — Strongest AI Pick</h1><p>Single strongest football tip generated by AI for today's fixtures, plus ready-made accumulator Slip of the Day combines highest-confidence picks into ready-to-play accumulator. Every call from matches rated above 9/10 trust (70%+ prob) — built from team form, expected lineups, injury news, xG, live odds — like NerdyTips. Today flagged {bankers.length} banker picks above 9/10 threshold, Slip 5 selections total odds {totalOdds.toFixed(2)} avg odds 1.45 success 66%.</p></div><SmallTag tone="green">19 BANKERS TODAY</SmallTag></div>
-      {bankers[0] && (
+      <div className="page-eyebrow"><span className="tiny-dot" /> STRONGEST BET — the highest-confidence pick on today's board</div>
+      <div className="page-title-row">
+        <div>
+          <h1>The strongest bet today</h1>
+          <p>The single pick with the highest model probability among today's fixtures on your bookie, plus a slip built from the rest of today's best. Only leagues confirmed on Bet9ja/SportyBet-class books. {bankers.length} fixture{bankers.length === 1 ? "" : "s"} today clear the 70% line.</p>
+        </div>
+        <SmallTag tone="green">{todayPicks.length} TODAY</SmallTag>
+      </div>
+      {!top && (
+        <div className="inline-notice"><Info size={14} /><span>Every fixture on today's board has already kicked off. The next slate appears here as soon as it is priced.</span></div>
+      )}
+      {top && (
         <div className="best-bets-today" style={{marginBottom:'24px'}}>
-          <div className="best-bets-header"><div><div className="eyebrow"><ShieldCheck size={14} /> BET OF THE DAY — Highest Confidence 9/10+</div><h3>{bankers[0].home.name} vs {bankers[0].away.name} — {bankers[0].pick.label} {pct(bankers[0].independentProbabilities?.[bankers[0].pick.side] || bankers[0].pick.probability)}</h3><p className="small-text muted">{bankers[0].league} • {bankers[0].independentModel?.model || "Vanish"} • {bankers[0].independentModel?.method || "Elo 50%+Form30%+Goals20%+Home8%+Corners"}</p></div><SmallTag tone="green">BANKER 9/10</SmallTag></div>
-          <div className="dual-model-grid"><div className="model-comparison-card market"><div className="model-card-header"><Database size={14} /> Market</div><div>{bankers[0].marketPick?.label || bankers[0].pick.label} {pct(bankers[0].marketPick?.probability || bankers[0].pick.probability)}</div></div><div className="model-comparison-card vanish"><div className="model-card-header"><Activity size={14} /> Vanish</div><div>{bankers[0].vanishPick?.label || bankers[0].pick.label} {pct(bankers[0].vanishPick?.probability || bankers[0].pick.probability)}</div></div></div>
-          <button className="button lime" onClick={()=>onOpen(bankers[0])} style={{marginTop:'12px'}}>Read Analysis <ArrowUpRight size={14} /></button>
+          <div className="best-bets-header">
+            <div>
+              <div className="eyebrow"><ShieldCheck size={14} /> STRONGEST PICK</div>
+              <h3>{top.home.name} vs {top.away.name} — {top.pick.label} {pct(probOf(top))}</h3>
+              <p className="small-text muted">{top.league} • {formatTime(top.kickoff)} WAT • {top.independentModel?.model || "Vanish model"}</p>
+            </div>
+            <SmallTag tone="green">TOP PICK</SmallTag>
+          </div>
+          <div className="dual-model-grid">
+            <div className="model-comparison-card market"><div className="model-card-header"><Database size={14} /> Market</div><div>{top.marketPick?.label || top.pick.label} {pct(top.marketPick?.probability || top.pick.probability)}</div></div>
+            <div className="model-comparison-card vanish"><div className="model-card-header"><Activity size={14} /> Vanish</div><div>{top.vanishPick?.label || top.pick.label} {pct(top.vanishPick?.probability || top.pick.probability)}</div></div>
+          </div>
+          <button className="button lime" onClick={()=>onOpen(top)} style={{marginTop:'12px'}}>Read analysis <ArrowUpRight size={14} /></button>
         </div>
       )}
-      <div className="accas-section">
-        <div className="section-heading small"><div><div className="eyebrow"><Layers3 size={12} /> SLIP OF THE DAY — 5 Selections Accumulator Like NerdyTips</div><h3>Slip of the Day — Total Odds {totalOdds.toFixed(2)} • $10 returns ${(10*totalOdds).toFixed(2)}</h3></div><SmallTag tone="green">SLIP 5.06</SmallTag></div>
-        <div className="acca-card"><div className="acca-header"><strong>Slip of the Day</strong><span>{slip.length} legs • {pct(1/totalOdds)} combined prob</span><SmallTag tone="green">BANKER 9/10</SmallTag></div><div className="acca-odds">Total Odds: {totalOdds.toFixed(2)} • Avg 1.45 • Success 66% • 19 bankers today</div><div className="acca-picks">{slip.map(p=> <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.league} — {p.home.name} vs {p.away.name} — <strong>{p.pick.label} {pct(p.independentProbabilities?.[p.pick.side]||p.pick.probability)}</strong> • Odds {(1/(p.independentProbabilities?.[p.pick.side]||p.pick.probability)).toFixed(2)}</div>)}</div></div>
-      </div>
-      <div className="best-bets-today" style={{marginTop:'24px'}}>
-        <div className="best-bets-header"><div><div className="eyebrow"><ShieldCheck size={14} /> ALL BANKERS TODAY — 19 Picks 9/10 Trust</div><h3>All Bankers Rated Above 9/10 Confidence</h3></div></div>
-        <div className="best-bets-grid">
-          {bankers.map(p => (
-            <button key={p.id} className="best-bet-card" style={{ textAlign: "left" }} onClick={()=>onOpen(p)}>
-              <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(p.independentProbabilities?.[p.pick.side]||p.pick.probability)}</SmallTag></div>
-              <div className="best-bet-teams"><span className="bbt-row"><TeamBadge team={p.home} /><span>{p.home.name}</span></span><span className="bbt-row"><TeamBadge team={p.away} /><span>{p.away.name}</span></span></div>
-              <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>Trust 9/10 • Banker • {p.independentModel?.model || "Vanish"}</span></div>
-            </button>
-          ))}
+      {slipPicks.length > 0 && (
+        <div className="accas-section">
+          <div className="section-heading small">
+            <div><div className="eyebrow"><Layers3 size={12} /> SLIP OF THE DAY</div><h3>Slip of the day — {slipPicks.length} legs, total odds {totalOdds.toFixed(2)}</h3></div>
+            <SmallTag tone="green">SLIP {totalOdds.toFixed(2)}</SmallTag>
+          </div>
+          <div className="acca-card">
+            <div className="acca-header"><strong>Slip of the Day</strong><span>{slipPicks.length} legs • {pct(combined)} average pick</span></div>
+            <div className="acca-odds">Total odds {totalOdds.toFixed(2)} • $10 returns ${(10*totalOdds).toFixed(2)} • every leg kicks off today</div>
+            <div className="acca-picks">
+              {slipPicks.map(p => (
+                <div key={p.id}><SportIcon sport={p.sport} size={10} />{p.league} — {p.home.name} vs {p.away.name} — <strong>{p.pick.label} {pct(probOf(p))}</strong> • Odds {(1/probOf(p)).toFixed(2)}</div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
+      {todayPicks.length > 5 && (
+        <div className="best-bets-today" style={{marginTop:'24px'}}>
+          <div className="best-bets-header"><div><div className="eyebrow"><ShieldCheck size={14} /> ALL OF TODAY'S STRONG PICKS</div><h3>Today ranked by confidence</h3></div></div>
+          <div className="best-bets-grid">
+            {todayPicks.slice(0, 12).map(p => (
+              <button key={p.id} className="best-bet-card" style={{ textAlign: "left" }} onClick={()=>onOpen(p)}>
+                <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(probOf(p))}</SmallTag></div>
+                <div className="best-bet-teams"><span className="bbt-row"><TeamBadge team={p.home} /><span>{p.home.name}</span></span><span className="bbt-row"><TeamBadge team={p.away} /><span>{p.away.name}</span></span></div>
+                <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>{formatTime(p.kickoff)} WAT</span></div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -1720,7 +1777,7 @@ function Predictions({
 }) {
   const [sport, setSport] = useState("all"),
     [query, setQuery] = useState(""),
-    [day, setDay] = useState("all"),
+    [day, setDay] = useState("today"),
     [sort, setSort] = useState("time"),
     [onlySaved, setOnlySaved] = useState(false),
     [limit, setLimit] = useState(12),
@@ -1768,9 +1825,14 @@ function Predictions({
     },
   );
 
-  // SAFE TIPS + BEST BETS TODAY + VALUES — like Footbot + WinDrawWin + Forebet — ONLY BOOKIE AVAILABLE
+  // Every pick list below is scoped to TODAY (Africa/Lagos kickoff date) — a
+  // fixture kicking off tomorrow or on Wednesday is not today's tip.
+  const onToday = useCallback((p) => dateKey(p.kickoff) === today, [today]);
+
+  // SAFE TIPS — like Footbot + WinDrawWin + Forebet — ONLY BOOKIE AVAILABLE, TODAY ONLY
   const safeTips = useMemo(() => {
-    return data.predictions.filter(p => !onlyBookieAvailable || isBookieTopAvailable(p)) // Confirm well before picking — only top leagues on bookie
+    return data.predictions.filter(onToday)
+      .filter(p => !onlyBookieAvailable || isBookieTopAvailable(p)) // Confirm well before picking — only top leagues on bookie
       .filter(p => {
         const prob = p.independentProbabilities?.[p.pick.side] || p.pick.probability;
         const conf = p.independentModel?.confidence || p.pick.probability;
@@ -1783,32 +1845,7 @@ function Predictions({
         return pb - pa;
       })
       .slice(0, 20);
-  }, [data.predictions, sport, onlyBookieAvailable, bookie]);
-
-  const bestBetsToday = useMemo(() => {
-    return safeTips.filter(p => p.isToday).slice(0, 5);
-  }, [safeTips]);
-
-  const valueBets = useMemo(() => {
-    // Values: Vanish higher than market by >5% — Kelly Criteria like Forebet — ONLY BOOKIE AVAILABLE
-    return data.predictions.filter(p => !onlyBookieAvailable || isBookieTopAvailable(p))
-      .filter(p => p.hasLiveModel && p.marketPick && p.vanishPick)
-      .filter(p => {
-        const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
-        const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
-        return vanishProb - marketProb > 0.05;
-      })
-      .filter(p => sport === "all" || p.sport === sport)
-      .map(p => {
-        const marketProb = p.probabilities?.[p.vanishPick.side] || 0;
-        const vanishProb = p.independentProbabilities?.[p.vanishPick.side] || 0;
-        const edge = vanishProb - marketProb;
-        const kelly = edge / (1/marketProb -1); // simplified Kelly
-        return {...p, edge, kelly};
-      })
-      .sort((a,b) => b.edge - a.edge)
-      .slice(0, 10);
-  }, [data.predictions, sport, onlyBookieAvailable, bookie]);
+  }, [data.predictions, sport, onlyBookieAvailable, bookie, onToday]);
 
   const accumulatorTips = useMemo(() => {
     // Ready-made accumulators from Safe Tips — like WinDrawWin + PredictZ — ONLY BOOKIE AVAILABLE
@@ -1899,31 +1936,13 @@ function Predictions({
         <button className={`saved-filter ${onlyBookieAvailable ? "active" : ""}`} onClick={() => setOnlyBookieAvailable(!onlyBookieAvailable)} aria-pressed={onlyBookieAvailable}>
           <CheckCircle2 size={14} /><span>{onlyBookieAvailable ? "Only on my bookie" : "All 252 games"}</span><SmallTag tone={onlyBookieAvailable ? "green" : ""}>{onlyBookieAvailable ? `${data.predictions.filter(p=>isBookieTopAvailable(p)).length} top` : "252"}</SmallTag>
         </button>
-        <div className="bookie-info"><Info size={12} /><span>Filters obscure leagues (second-preliminary, Derde Divisie, Regionalliga, U21/U19, Women) — only shows games available on {bookie}. Safe Tips / Best Bets / Values / Bet of Day / Accas now only pick from top leagues confirmed on bookie — like Bet9ja/SportyBet availability.</span></div>
+        <div className="bookie-info"><Info size={12} /><span>Filters obscure leagues (second-preliminary, Derde Divisie, Regionalliga, U21/U19, Women) — only shows games available on {bookie}. Safe Tips, Accas, Bet of Day and Values now only pick from top leagues confirmed on bookie — like Bet9ja/SportyBet availability.</span></div>
       </div>
 
-      {/* SAFE TIPS + BEST BETS TODAY + VALUES + ACCAS — like Footbot + WinDrawWin + Forebet + PredictZ */}
-      {(safeTips.length > 0 || valueBets.length > 0) && (
+      {/* SAFE TIPS + ACCAS — the strongest pick and the value list live in the
+          sidebar as their own pages, so the landing page stays a board. */}
+      {safeTips.length > 0 && (
         <div className="safe-tips-strip">
-          {/* Best Bets Today */}
-          {bestBetsToday.length > 0 && (
-            <div className="best-bets-today">
-              <div className="best-bets-header">
-                <div><div className="eyebrow"><ShieldCheck size={14} /> BEST BETS TODAY — Like WinDrawWin Sure Bets</div><h3>Today's safest {bestBetsToday.length} picks</h3><p className="small-text muted">Curated from {safeTips.length} safe tips where confidence ≥60% — low-risk baseline for singles & accumulators (Footbot style)</p></div>
-                <SmallTag tone="green">{bestBetsToday.length} TODAY</SmallTag>
-              </div>
-              <div className="best-bets-grid">
-                {bestBetsToday.map(p => (
-                  <button key={p.id} className="best-bet-card" style={{ textAlign: "left" }} onClick={() => onOpen(p)}>
-                    <div className="best-bet-top"><SportIcon sport={p.sport} size={12} /><span>{p.league}</span><SmallTag tone="green">{pct(p.independentProbabilities?.[p.pick.side] || p.pick.probability)}</SmallTag></div>
-                    <div className="best-bet-teams"><span className="bbt-row"><TeamBadge team={p.home} /><span>{p.home.name}</span></span><span className="bbt-row"><TeamBadge team={p.away} /><span>{p.away.name}</span></span></div>
-                    <div className="best-bet-pick"><strong>{p.pick.label}</strong><span>Stake: High • Safe Tip 80% target</span></div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Safe Tips */}
           <div className="safe-tips-section">
             <div className="section-heading small">
@@ -1945,24 +1964,6 @@ function Predictions({
             </div>
           </div>
 
-          {/* Values — Kelly Criteria like Forebet */}
-          {valueBets.length > 0 && (
-            <div className="values-section">
-              <div className="section-heading small">
-                <div><div className="eyebrow"><TrendingUp size={12} /> VALUES — Kelly Criteria like Forebet (79 values)</div><h3>{valueBets.length} value bets — Vanish higher than market by &gt;5%</h3><p className="small-text muted">Where Vanish model probability exceeds market consensus — highest prospective value, statistical relevance + profitability</p></div>
-                <SmallTag tone="amber">KELLY</SmallTag>
-              </div>
-              <div className="values-grid">
-                {valueBets.map(p => (
-                  <button key={p.id} className="value-card" onClick={() => onOpen(p)}>
-                    <div className="value-top"><span>{p.home.name} vs {p.away.name}</span><SmallTag tone="green">+{pct(p.edge,1)} edge</SmallTag></div>
-                    <div className="value-probs"><span>Market {pct(p.probabilities?.[p.vanishPick.side] || 0)}</span><ArrowRight size={12} /><span>Vanish {pct(p.independentProbabilities?.[p.vanishPick.side] || 0)}</span></div>
-                    <div className="value-kelly">Kelly {pct(p.kelly,1)} • {p.vanishPick.label}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Accumulator Tips — like WinDrawWin + PredictZ */}
           {accumulatorTips.length > 0 && (
@@ -3184,10 +3185,10 @@ function App() {
               <Radio size={16} /><span>Live Scores</span>
             </button>
             <button onClick={() => navigate("betofday")} className={view === "betofday" ? "active" : ""}>
-              <Trophy size={16} /><span>Bet of Day</span>
+              <Trophy size={16} /><span>Strongest bet</span>
             </button>
             <button onClick={() => navigate("values")} className={view === "values" ? "active" : ""}>
-              <Sparkles size={16} /><span>Values</span>
+              <Sparkles size={16} /><span>Value bets</span>
             </button>
             <div className="nav-group-label">Build</div>
             <button onClick={() => navigate("builder")} className={view === "builder" ? "active" : ""}>
@@ -3316,6 +3317,10 @@ function App() {
                 <Hero
                   feature={
                     data.predictions.find((p) => p.id === "demo-ars-che") ||
+                    data.predictions
+                      .filter((p) => dateKey(p.kickoff) === data.meta.snapshotDate)
+                      .filter((p) => new Date(p.kickoff).getTime() > Date.now())
+                      .sort((a, b) => b.pick.probability - a.pick.probability)[0] ||
                     data.predictions[0]
                   }
                   onExplore={() =>

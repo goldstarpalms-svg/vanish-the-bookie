@@ -126417,5 +126417,6297 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186444_sebastian_baez_daniel_merida",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-02T13:35:00.000Z",
+    "home": {
+      "name": "Sebastian Baez",
+      "short": "SB",
+      "initials": "SB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Daniel Merida",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3274903566650149,
+      "away": 0.6725096433349851
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1440,
+        "awayElo": 1565,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3274903566650149,
+        "away": 0.6725096433349851
+      },
+      "expected": {
+        "winProb": "0.327",
+        "homeElo": 1440,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.6725096433349851,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Sebastian Baez 1440 (WDLLL 4pts) vs Daniel Merida 1565 (WWWDL 10pts) → 32.7% home",
+        "PICK for correctness: AWAY with 67.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5301283652862285,
+          "odds": 1.8863355848919288,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4698716347137715,
+          "odds": 2.1282408345614714,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5477577438549482,
+          "odds": 1.8256245780521727,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.45224225614505176,
+          "odds": 2.211204252614689,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.5774903566650149,
+          "odds": 1.7316306470898708,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.9225096433349851,
+          "odds": 1.0839995085415886,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11445793492572248
+        },
+        {
+          "score": "0-1",
+          "prob": 0.10231097338386141
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09611726498570446
+        }
+      ],
+      "totalGoals": 2.7982471069995043,
+      "homeGoals": 1.1187258916625373,
+      "awayGoals": 1.6795212153369672,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.6725096433349851,
+      "label": "Daniel Merida to win",
+      "fairOdds": 1.486967525165863
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Sebastian Baez to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.6725096433349851,
+      "label": "Daniel Merida to win",
+      "fairOdds": 1.486967525165863
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.539Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": true,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - Sebastian Baez vs Daniel Merida",
+      "ACCURACY FOCUS: Elo Sebastian Baez 1440 (WDLLL 4pts) vs Daniel Merida 1565 (WWWDL 10pts) → 32.7% home",
+      "PICK for correctness: AWAY with 67.3% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.0% (odds 1.89), BTTS Yes 54.8% (odds 1.83)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 57.7%, X2 92.3%, Correct: 1-1 11.4%, 0-1 10.2%, 1-2 9.6%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Sebastian Baez WDLLL undefinedpts vs Daniel Merida WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.0% odds 1.89"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "32.7%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.0%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "54.8%"
+      },
+      {
+        "label": "Form",
+        "value": "WDLLL vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186707_alice_tubello_rebeka_masarova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Alice Tubello",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Rebeka Masarova",
+      "short": "RM",
+      "initials": "RM",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5212219079428285,
+      "away": 0.4787780920571715
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1507,
+        "awayElo": 1534,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5212219079428285,
+        "away": 0.4787780920571715
+      },
+      "expected": {
+        "winProb": "0.521",
+        "homeElo": 1507,
+        "awayElo": 1534
+      },
+      "pick": "home",
+      "confidence": 0.5212219079428285,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alice Tubello 1507 (WWWWD 13pts) vs Rebeka Masarova 1534 (WWWDL 10pts) → 46.1% home",
+        "PICK for correctness: HOME with 52.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5438733317005063,
+          "odds": 1.8386634197954534,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.45612666829949366,
+          "odds": 2.1923734556634122,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5706389899799896,
+          "odds": 1.752421439052152,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.42936101002001037,
+          "odds": 2.3290424064201707,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7712219079428285,
+          "odds": 1.2966436633879066,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7287780920571715,
+          "odds": 1.372159798570827,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11547906250205603
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0925596309812719
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0921391327116948
+        }
+      ],
+      "totalGoals": 2.8563665723828486,
+      "homeGoals": 1.6030547698570714,
+      "awayGoals": 1.2533118025257772,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.5212219079428285,
+      "label": "Alice Tubello to win",
+      "fairOdds": 1.9185686264547563
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Alice Tubello to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.5212219079428285,
+      "label": "Alice Tubello to win",
+      "fairOdds": 1.9185686264547563
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.561Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Alice Tubello vs Rebeka Masarova",
+      "ACCURACY FOCUS: Elo Alice Tubello 1507 (WWWWD 13pts) vs Rebeka Masarova 1534 (WWWDL 10pts) → 46.1% home",
+      "PICK for correctness: HOME with 52.1% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.4% (odds 1.84), BTTS Yes 57.1% (odds 1.75)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 77.1%, X2 72.9%, Correct: 1-1 11.5%, 2-1 9.3%, 1-0 9.2%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Alice Tubello WWWWD undefinedpts vs Rebeka Masarova WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.4% odds 1.84"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "52.1%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.4%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.1%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186721_despina_papamichail_maria_lourdes_carle",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Despina Papamichail",
+      "short": "DP",
+      "initials": "DP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Maria Lourdes Carle",
+      "short": "MLC",
+      "initials": "ML",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7087735686687132,
+      "away": 0.2912264313312868
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1583,
+        "awayElo": 1445,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.7087735686687132,
+        "away": 0.2912264313312868
+      },
+      "expected": {
+        "winProb": "0.709",
+        "homeElo": 1583,
+        "awayElo": 1445
+      },
+      "pick": "home",
+      "confidence": 0.7087735686687132,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Despina Papamichail 1583 (WWDLL 7pts) vs Maria Lourdes Carle 1445 (WWWDL 10pts) → 68.9% home",
+        "PICK for correctness: HOME with 70.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5569537771015407,
+          "odds": 1.7954811352642746,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.44304622289845924,
+          "odds": 2.2571008357951574,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.4969813199536942,
+          "odds": 2.0121480624124346,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.5030186800463058,
+          "odds": 1.987997741769638,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.9587735686687132,
+          "odds": 1.0429991320980312,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.5412264313312868,
+          "odds": 1.8476555136825832,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "2-0",
+          "prob": 0.11662234497595612
+        },
+        {
+          "score": "1-0",
+          "prob": 0.11257342114642051
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09804418954502588
+        }
+      ],
+      "totalGoals": 2.9126320706006137,
+      "homeGoals": 2.071933921671783,
+      "awayGoals": 0.840698148928831,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.7087735686687132,
+      "label": "Despina Papamichail to win",
+      "fairOdds": 1.4108878268108902
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Despina Papamichail to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.7087735686687132,
+      "label": "Despina Papamichail to win",
+      "fairOdds": 1.4108878268108902
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.561Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Despina Papamichail vs Maria Lourdes Carle",
+      "ACCURACY FOCUS: Elo Despina Papamichail 1583 (WWDLL 7pts) vs Maria Lourdes Carle 1445 (WWWDL 10pts) → 68.9% home",
+      "PICK for correctness: HOME with 70.9% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.7% (odds 1.80), BTTS Yes 49.7% (odds 2.01)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 95.9%, X2 54.1%, Correct: 2-0 11.7%, 1-0 11.3%, 2-1 9.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Despina Papamichail WWDLL undefinedpts vs Maria Lourdes Carle WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.7% odds 1.80"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "70.9%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.7%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "49.7%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186720_renata_zarazua_nadia_podoroska",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Renata Zarazua",
+      "short": "RZ",
+      "initials": "RZ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Nadia Podoroska",
+      "short": "NP",
+      "initials": "NP",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.48010023964211856,
+      "away": 0.5198997603578814
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1419,
+        "awayElo": 1475,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.48010023964211856,
+        "away": 0.5198997603578814
+      },
+      "expected": {
+        "winProb": "0.480",
+        "homeElo": 1419,
+        "awayElo": 1475
+      },
+      "pick": "away",
+      "confidence": 0.5198997603578814,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Renata Zarazua 1419 (WWWWD 13pts) vs Nadia Podoroska 1475 (WWWDL 10pts) → 42.0% home",
+        "PICK for correctness: AWAY with 52.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5409754122605347,
+          "odds": 1.8485128479709874,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4590245877394653,
+          "odds": 2.1785325377114293,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5742585314139249,
+          "odds": 1.7413759575113759,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4257414685860751,
+          "odds": 2.348843309347074,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7301002396421186,
+          "odds": 1.369674937362274,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7698997603578814,
+          "odds": 1.2988703874062233,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11731275795375988
+        },
+        {
+          "score": "2-1",
+          "prob": 0.08799926770141145
+        },
+        {
+          "score": "1-0",
+          "prob": 0.08730060276216565
+        }
+      ],
+      "totalGoals": 2.844030071892636,
+      "homeGoals": 1.5002505991052966,
+      "awayGoals": 1.3437794727873391,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5198997603578814,
+      "label": "Nadia Podoroska to win",
+      "fairOdds": 1.9234477032873294
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Renata Zarazua to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5198997603578814,
+      "label": "Nadia Podoroska to win",
+      "fairOdds": 1.9234477032873294
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.561Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Renata Zarazua vs Nadia Podoroska",
+      "ACCURACY FOCUS: Elo Renata Zarazua 1419 (WWWWD 13pts) vs Nadia Podoroska 1475 (WWWDL 10pts) → 42.0% home",
+      "PICK for correctness: AWAY with 52.0% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.1% (odds 1.85), BTTS Yes 57.4% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 73.0%, X2 77.0%, Correct: 1-1 11.7%, 2-1 8.8%, 1-0 8.7%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Renata Zarazua WWWWD undefinedpts vs Nadia Podoroska WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.1% odds 1.85"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "48.0%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.1%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186706_marina_bassols_ribera_sofia_costoulas",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Marina Bassols Ribera",
+      "short": "MBR",
+      "initials": "MB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sofia Costoulas",
+      "short": "SC",
+      "initials": "SC",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.694519994382466,
+      "away": 0.30548000561753397
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1588,
+        "awayElo": 1477,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.694519994382466,
+        "away": 0.30548000561753397
+      },
+      "expected": {
+        "winProb": "0.695",
+        "homeElo": 1588,
+        "awayElo": 1477
+      },
+      "pick": "home",
+      "confidence": 0.694519994382466,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Marina Bassols Ribera 1588 (WWWWD 13pts) vs Sofia Costoulas 1477 (WWWWD 13pts) → 65.5% home",
+        "PICK for correctness: HOME with 69.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5559676408484062,
+          "odds": 1.7986658332740386,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4440323591515938,
+          "odds": 2.2520881178810606,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.50596358705993,
+          "odds": 1.9764268132630514,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.49403641294006995,
+          "odds": 2.024142297627173,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.944519994382466,
+          "odds": 1.058738836602191,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.555480005617534,
+          "odds": 1.8002448150915669,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "2-0",
+          "prob": 0.11312811725238608
+        },
+        {
+          "score": "1-0",
+          "prob": 0.11111144530039925
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09865405481674909
+        }
+      ],
+      "totalGoals": 2.9083559983147396,
+      "homeGoals": 2.036299985956165,
+      "awayGoals": 0.8720560123585748,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.694519994382466,
+      "label": "Marina Bassols Ribera to win",
+      "fairOdds": 1.4398433566900435
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Marina Bassols Ribera to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.694519994382466,
+      "label": "Marina Bassols Ribera to win",
+      "fairOdds": 1.4398433566900435
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.561Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Marina Bassols Ribera vs Sofia Costoulas",
+      "ACCURACY FOCUS: Elo Marina Bassols Ribera 1588 (WWWWD 13pts) vs Sofia Costoulas 1477 (WWWWD 13pts) → 65.5% home",
+      "PICK for correctness: HOME with 69.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.6% (odds 1.80), BTTS Yes 50.6% (odds 1.98)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 94.5%, X2 55.5%, Correct: 2-0 11.3%, 1-0 11.1%, 2-1 9.9%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Marina Bassols Ribera WWWWD undefinedpts vs Sofia Costoulas WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.6% odds 1.80"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "69.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.6%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "50.6%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186708_julia_riera_valentina_mediorreal_arias",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Julia Riera",
+      "short": "JR",
+      "initials": "JR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Valentina Mediorreal Arias",
+      "short": "VMA",
+      "initials": "VM",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.36525666494768316,
+      "away": 0.6347433350523168
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1422,
+        "awayElo": 1518,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.36525666494768316,
+        "away": 0.6347433350523168
+      },
+      "expected": {
+        "winProb": "0.365",
+        "homeElo": 1422,
+        "awayElo": 1518
+      },
+      "pick": "away",
+      "confidence": 0.6347433350523168,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Julia Riera 1422 (WWDLL 7pts) vs Valentina Mediorreal Arias 1518 (WWWWD 13pts) → 36.5% home",
+        "PICK for correctness: AWAY with 63.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5328261086670386,
+          "odds": 1.8767849092486888,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4671738913329614,
+          "odds": 2.1405305787674807,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5603510549176958,
+          "odds": 1.7845955517062064,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.43964894508230423,
+          "odds": 2.274542020822535,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6152566649476832,
+          "odds": 1.625337939386699,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8847433350523168,
+          "odds": 1.1302713005923553,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11664847427542048
+        },
+        {
+          "score": "0-1",
+          "prob": 0.09615404193407352
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09311087317692132
+        }
+      ],
+      "totalGoals": 2.809576999484305,
+      "homeGoals": 1.213141662369208,
+      "awayGoals": 1.5964353371150972,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.6347433350523168,
+      "label": "Valentina Mediorreal Arias to win",
+      "fairOdds": 1.5754399373371568
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Julia Riera to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.6347433350523168,
+      "label": "Valentina Mediorreal Arias to win",
+      "fairOdds": 1.5754399373371568
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.562Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Julia Riera vs Valentina Mediorreal Arias",
+      "ACCURACY FOCUS: Elo Julia Riera 1422 (WWDLL 7pts) vs Valentina Mediorreal Arias 1518 (WWWWD 13pts) → 36.5% home",
+      "PICK for correctness: AWAY with 63.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.3% (odds 1.88), BTTS Yes 56.0% (odds 1.78)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 61.5%, X2 88.5%, Correct: 1-1 11.7%, 0-1 9.6%, 1-2 9.3%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Julia Riera WWDLL undefinedpts vs Valentina Mediorreal Arias WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.3% odds 1.88"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "36.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.3%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.0%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186710_laura_pigossi_julia_grabher",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Laura Pigossi",
+      "short": "LP",
+      "initials": "LP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Julia Grabher",
+      "short": "JG",
+      "initials": "JG",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.752509643334985,
+      "away": 0.24749035666501495
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1567,
+        "awayElo": 1442,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.752509643334985,
+        "away": 0.24749035666501495
+      },
+      "expected": {
+        "winProb": "0.753",
+        "homeElo": 1567,
+        "awayElo": 1442
+      },
+      "pick": "home",
+      "confidence": 0.752509643334985,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Laura Pigossi 1567 (WWWWD 13pts) vs Julia Grabher 1442 (WWDLL 7pts) → 67.3% home",
+        "PICK for correctness: HOME with 75.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5599714135476059,
+          "odds": 1.7858054461470918,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4400285864523941,
+          "odds": 2.2725796250244032,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.4657449049162519,
+          "odds": 2.1470980990759636,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.5342550950837481,
+          "odds": 1.8717650223686555,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 1.0025096433349852,
+          "odds": 0.9974966392077422,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.49749035666501495,
+          "odds": 2.0100892139972673,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "2-0",
+          "prob": 0.12757105765566915
+        },
+        {
+          "score": "1-0",
+          "prob": 0.11696930447031442
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09497394596167028
+        }
+      ],
+      "totalGoals": 2.925752893000496,
+      "homeGoals": 2.1812741083374627,
+      "awayGoals": 0.744478784663033,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.752509643334985,
+      "label": "Laura Pigossi to win",
+      "fairOdds": 1.3288866247190974
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Laura Pigossi to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.752509643334985,
+      "label": "Laura Pigossi to win",
+      "fairOdds": 1.3288866247190974
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.562Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Laura Pigossi vs Julia Grabher",
+      "ACCURACY FOCUS: Elo Laura Pigossi 1567 (WWWWD 13pts) vs Julia Grabher 1442 (WWDLL 7pts) → 67.3% home",
+      "PICK for correctness: HOME with 75.3% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 56.0% (odds 1.79), BTTS Yes 46.6% (odds 2.15)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 100.3%, X2 49.7%, Correct: 2-0 12.8%, 1-0 11.7%, 2-1 9.5%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Laura Pigossi WWWWD undefinedpts vs Julia Grabher WWDLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "56.0% odds 1.79"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "75.3%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "56.0%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "46.6%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWDLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186714_maria_herazo_gonzalez_carole_monnet",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Maria Herazo Gonzalez",
+      "short": "MHG",
+      "initials": "MH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Carole Monnet",
+      "short": "CM",
+      "initials": "CM",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5602082283237456,
+      "away": 0.4397917716762544
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1473,
+        "awayElo": 1445,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5602082283237456,
+        "away": 0.4397917716762544
+      },
+      "expected": {
+        "winProb": "0.560",
+        "homeElo": 1473,
+        "awayElo": 1445
+      },
+      "pick": "home",
+      "confidence": 0.5602082283237456,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Maria Herazo Gonzalez 1473 (WWDLL 7pts) vs Carole Monnet 1445 (WWWDL 10pts) → 54.0% home",
+        "PICK for correctness: HOME with 56.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5466108908763414,
+          "odds": 1.8294549499311528,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4533891091236586,
+          "odds": 2.2056109859649435,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.563089646548024,
+          "odds": 1.7759161549682543,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.43691035345197604,
+          "odds": 2.2887990456145535,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.8102082283237456,
+          "odds": 1.2342506099560577,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.6897917716762544,
+          "odds": 1.449712856924797,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11279001654976537
+        },
+        {
+          "score": "1-0",
+          "prob": 0.096604684399882
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0959008716624023
+        }
+      ],
+      "totalGoals": 2.868062468497124,
+      "homeGoals": 1.700520570809364,
+      "awayGoals": 1.1675418976877598,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.5602082283237456,
+      "label": "Maria Herazo Gonzalez to win",
+      "fairOdds": 1.7850505391400602
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Maria Herazo Gonzalez to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.5602082283237456,
+      "label": "Maria Herazo Gonzalez to win",
+      "fairOdds": 1.7850505391400602
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.562Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Maria Herazo Gonzalez vs Carole Monnet",
+      "ACCURACY FOCUS: Elo Maria Herazo Gonzalez 1473 (WWDLL 7pts) vs Carole Monnet 1445 (WWWDL 10pts) → 54.0% home",
+      "PICK for correctness: HOME with 56.0% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.7% (odds 1.83), BTTS Yes 56.3% (odds 1.78)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 81.0%, X2 69.0%, Correct: 1-1 11.3%, 1-0 9.7%, 2-1 9.6%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Maria Herazo Gonzalez WWDLL undefinedpts vs Carole Monnet WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.7% odds 1.83"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "56.0%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.7%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.3%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186716_bianca_andreescu_tamara_zidansek",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Bianca Andreescu",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tamara Zidansek",
+      "short": "TZ",
+      "initials": "TZ",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6907302886162022,
+      "away": 0.3092697113837978
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1548,
+        "awayElo": 1455,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6907302886162022,
+        "away": 0.3092697113837978
+      },
+      "expected": {
+        "winProb": "0.691",
+        "homeElo": 1548,
+        "awayElo": 1455
+      },
+      "pick": "home",
+      "confidence": 0.6907302886162022,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Bianca Andreescu 1548 (WWWWD 13pts) vs Tamara Zidansek 1455 (WWWDL 10pts) → 63.1% home",
+        "PICK for correctness: HOME with 69.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5557052274489809,
+          "odds": 1.7995151936766867,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4442947725510191,
+          "odds": 2.250757969215513,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5082545712900534,
+          "odds": 1.96751796538061,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.49174542870994664,
+          "odds": 2.0335725389932287,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.9407302886162022,
+          "odds": 1.0630039365172164,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.5592697113837978,
+          "odds": 1.7880460529959792,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "2-0",
+          "prob": 0.11220536208267744
+        },
+        {
+          "score": "1-0",
+          "prob": 0.11072028629811824
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09878485629998869
+        }
+      ],
+      "totalGoals": 2.9072190865848606,
+      "homeGoals": 2.0268257215405057,
+      "awayGoals": 0.8803933650443552,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.6907302886162022,
+      "label": "Bianca Andreescu to win",
+      "fairOdds": 1.4477430865285836
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Bianca Andreescu to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.6907302886162022,
+      "label": "Bianca Andreescu to win",
+      "fairOdds": 1.4477430865285836
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.562Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Bianca Andreescu vs Tamara Zidansek",
+      "ACCURACY FOCUS: Elo Bianca Andreescu 1548 (WWWWD 13pts) vs Tamara Zidansek 1455 (WWWDL 10pts) → 63.1% home",
+      "PICK for correctness: HOME with 69.1% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.6% (odds 1.80), BTTS Yes 50.8% (odds 1.97)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 94.1%, X2 55.9%, Correct: 2-0 11.2%, 1-0 11.1%, 2-1 9.9%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Bianca Andreescu WWWWD undefinedpts vs Tamara Zidansek WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.6% odds 1.80"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "69.1%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.6%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "50.8%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186717_elizabeth_mandlik_jazmin_ortenzi",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Elizabeth Mandlik",
+      "short": "EM",
+      "initials": "EM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jazmin Ortenzi",
+      "short": "JO",
+      "initials": "JO",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6254986786718095,
+      "away": 0.3745013213281905
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1556,
+        "awayElo": 1496,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6254986786718095,
+        "away": 0.3745013213281905
+      },
+      "expected": {
+        "winProb": "0.625",
+        "homeElo": 1556,
+        "awayElo": 1496
+      },
+      "pick": "home",
+      "confidence": 0.6254986786718095,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Elizabeth Mandlik 1556 (WWWDD 11pts) vs Jazmin Ortenzi 1496 (WWWDD 11pts) → 58.5% home",
+        "PICK for correctness: HOME with 62.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.551173791664279,
+          "odds": 1.8143097787369067,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.44882620833572096,
+          "odds": 2.22803388355611,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5414262143207342,
+          "odds": 1.846973740003679,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.45857378567926577,
+          "odds": 2.180674149349254,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.8754986786718095,
+          "odds": 1.1422061784457143,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.6245013213281905,
+          "odds": 1.601277636808195,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.10630541180543017
+        },
+        {
+          "score": "1-0",
+          "prob": 0.10382372301783731
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09906318004576349
+        }
+      ],
+      "totalGoals": 2.887649603601543,
+      "homeGoals": 1.863746696679524,
+      "awayGoals": 1.0239029069220191,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.6254986786718095,
+      "label": "Elizabeth Mandlik to win",
+      "fairOdds": 1.598724400383084
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Elizabeth Mandlik to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.6254986786718095,
+      "label": "Elizabeth Mandlik to win",
+      "fairOdds": 1.598724400383084
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.562Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Elizabeth Mandlik vs Jazmin Ortenzi",
+      "ACCURACY FOCUS: Elo Elizabeth Mandlik 1556 (WWWDD 11pts) vs Jazmin Ortenzi 1496 (WWWDD 11pts) → 58.5% home",
+      "PICK for correctness: HOME with 62.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.1% (odds 1.81), BTTS Yes 54.1% (odds 1.85)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 87.5%, X2 62.5%, Correct: 1-1 10.6%, 1-0 10.4%, 2-1 9.9%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Elizabeth Mandlik WWWDD undefinedpts vs Jazmin Ortenzi WWWDD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.1% odds 1.81"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "62.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.1%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "54.1%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWDD vs WWWDD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186719_irene_burillo_elvina_kalieva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "Irene Burillo",
+      "short": "IB",
+      "initials": "IB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Elvina Kalieva",
+      "short": "EK",
+      "initials": "EK",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.36118308020524337,
+      "away": 0.6388169197947566
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1400,
+        "awayElo": 1530,
+        "homeForm": "WDLLL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.36118308020524337,
+        "away": 0.6388169197947566
+      },
+      "expected": {
+        "winProb": "0.361",
+        "homeElo": 1400,
+        "awayElo": 1530
+      },
+      "pick": "away",
+      "confidence": 0.6388169197947566,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Irene Burillo 1400 (WDLLL 4pts) vs Elvina Kalieva 1530 (WDLLL 4pts) → 32.1% home",
+        "PICK for correctness: AWAY with 63.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.532535544171699,
+          "odds": 1.8778089292713616,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.467464455828301,
+          "odds": 2.13920007720822,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5591896572304087,
+          "odds": 1.78830203146615,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4408103427695913,
+          "odds": 2.268549312425488,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6111830802052434,
+          "odds": 1.6361709484238123,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8888169197947566,
+          "odds": 1.125091093260148,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.1164608129502625
+        },
+        {
+          "score": "0-1",
+          "prob": 0.09681205989253605
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09348293288127425
+        }
+      ],
+      "totalGoals": 2.808354924061573,
+      "homeGoals": 1.2029577005131085,
+      "awayGoals": 1.6053972235484646,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.6388169197947566,
+      "label": "Elvina Kalieva to win",
+      "fairOdds": 1.5653937286465216
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Irene Burillo to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.6388169197947566,
+      "label": "Elvina Kalieva to win",
+      "fairOdds": 1.5653937286465216
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - Irene Burillo vs Elvina Kalieva",
+      "ACCURACY FOCUS: Elo Irene Burillo 1400 (WDLLL 4pts) vs Elvina Kalieva 1530 (WDLLL 4pts) → 32.1% home",
+      "PICK for correctness: AWAY with 63.9% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.3% (odds 1.88), BTTS Yes 55.9% (odds 1.79)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 61.1%, X2 88.9%, Correct: 1-1 11.6%, 0-1 9.7%, 1-2 9.3%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Irene Burillo WDLLL undefinedpts vs Elvina Kalieva WDLLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.3% odds 1.88"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "36.1%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.3%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "55.9%"
+      },
+      {
+        "label": "Form",
+        "value": "WDLLL vs WDLLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186743_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:00:00.000Z",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5451931042867482,
+          "odds": 1.83421248753367,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.45480689571325184,
+          "odds": 2.198735352136093,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5675029477171938,
+          "odds": 1.7621053846901502,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4324970522828062,
+          "odds": 2.3121544868844754,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.79,
+          "odds": 1.2658227848101264,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.71,
+          "odds": 1.4084507042253522,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11429724354483231
+        },
+        {
+          "score": "1-0",
+          "prob": 0.09430465639012567
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09429522592448668
+        }
+      ],
+      "totalGoals": 2.862,
+      "homeGoals": 1.6500000000000001,
+      "awayGoals": 1.212,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "TBD to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Reto Win Tennis Cali Open - TBD vs TBD",
+      "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+      "PICK for correctness: HOME with 54.0% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.5% (odds 1.83), BTTS Yes 56.8% (odds 1.76)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 79.0%, X2 71.0%, Correct: 1-1 11.4%, 1-0 9.4%, 2-1 9.4%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Reto Win Tennis Cali Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "TBD WWWWD undefinedpts vs TBD WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.5% odds 1.83"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "54.0%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.5%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.8%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186581_teodora_kostovic_oksana_selekhmeteva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:30:00.000Z",
+    "home": {
+      "name": "Teodora Kostovic",
+      "short": "TK",
+      "initials": "TK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Oksana Selekhmeteva",
+      "short": "OS",
+      "initials": "OS",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4164636814738219,
+      "away": 0.5835363185261782
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1430,
+        "awayElo": 1503,
+        "homeForm": "WDLLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.4164636814738219,
+        "away": 0.5835363185261782
+      },
+      "expected": {
+        "winProb": "0.416",
+        "homeElo": 1430,
+        "awayElo": 1503
+      },
+      "pick": "away",
+      "confidence": 0.5835363185261782,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Teodora Kostovic 1430 (WDLLL 4pts) vs Oksana Selekhmeteva 1503 (WWDLL 7pts) → 39.6% home",
+        "PICK for correctness: AWAY with 58.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5364699012472629,
+          "odds": 1.8640374747493853,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.46353009875273715,
+          "odds": 2.15735720871372,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5709910919268258,
+          "odds": 1.7513408074817267,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.42900890807317416,
+          "odds": 2.330953929351589,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6664636814738218,
+          "odds": 1.5004568557863407,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8335363185261782,
+          "odds": 1.199707772503729,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11803052893689289
+        },
+        {
+          "score": "0-1",
+          "prob": 0.08800635197717666
+        },
+        {
+          "score": "1-2",
+          "prob": 0.08756566325617451
+        }
+      ],
+      "totalGoals": 2.824939104442147,
+      "homeGoals": 1.3411592036845548,
+      "awayGoals": 1.483779900757592,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5835363185261782,
+      "label": "Oksana Selekhmeteva to win",
+      "fairOdds": 1.7136893938764135
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Teodora Kostovic to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5835363185261782,
+      "label": "Oksana Selekhmeteva to win",
+      "fairOdds": 1.7136893938764135
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Teodora Kostovic vs Oksana Selekhmeteva",
+      "ACCURACY FOCUS: Elo Teodora Kostovic 1430 (WDLLL 4pts) vs Oksana Selekhmeteva 1503 (WWDLL 7pts) → 39.6% home",
+      "PICK for correctness: AWAY with 58.4% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.6% (odds 1.86), BTTS Yes 57.1% (odds 1.75)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 66.6%, X2 83.4%, Correct: 1-1 11.8%, 0-1 8.8%, 1-2 8.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Teodora Kostovic WDLLL undefinedpts vs Oksana Selekhmeteva WWDLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.6% odds 1.86"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "41.6%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.6%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.1%"
+      },
+      {
+        "label": "Form",
+        "value": "WDLLL vs WWDLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186583_joanna_garland_jil_teichmann",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T05:30:00.000Z",
+    "home": {
+      "name": "Joanna Garland",
+      "short": "JG",
+      "initials": "JG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jil Teichmann",
+      "short": "JT",
+      "initials": "JT",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.29091693712246436,
+      "away": 0.7090830628775356
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1408,
+        "awayElo": 1598,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.29091693712246436,
+        "away": 0.7090830628775356
+      },
+      "expected": {
+        "winProb": "0.291",
+        "homeElo": 1408,
+        "awayElo": 1598
+      },
+      "pick": "away",
+      "confidence": 0.7090830628775356,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Joanna Garland 1408 (WWWWD 13pts) vs Jil Teichmann 1598 (WWWWD 13pts) → 25.1% home",
+        "PICK for correctness: AWAY with 70.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5275075085434874,
+          "odds": 1.8957076132643536,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4724924914565126,
+          "odds": 2.11643574888859,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5315660534504016,
+          "odds": 1.881233749802095,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.46843394654959836,
+          "odds": 2.134772698191118,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.5409169371224644,
+          "odds": 1.8487126791032586,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.9590830628775356,
+          "odds": 1.0426625583395261,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11135360255168118
+        },
+        {
+          "score": "0-1",
+          "prob": 0.10839524243654605
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09799020917094137
+        }
+      ],
+      "totalGoals": 2.7872750811367393,
+      "homeGoals": 1.0272923428061609,
+      "awayGoals": 1.7599827383305784,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.7090830628775356,
+      "label": "Jil Teichmann to win",
+      "fairOdds": 1.4102720151598207
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Joanna Garland to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.7090830628775356,
+      "label": "Jil Teichmann to win",
+      "fairOdds": 1.4102720151598207
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Joanna Garland vs Jil Teichmann",
+      "ACCURACY FOCUS: Elo Joanna Garland 1408 (WWWWD 13pts) vs Jil Teichmann 1598 (WWWWD 13pts) → 25.1% home",
+      "PICK for correctness: AWAY with 70.9% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 52.8% (odds 1.90), BTTS Yes 53.2% (odds 1.88)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 54.1%, X2 95.9%, Correct: 1-1 11.1%, 0-1 10.8%, 1-2 9.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Joanna Garland WWWWD undefinedpts vs Jil Teichmann WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "52.8% odds 1.90"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "29.1%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "52.8%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "53.2%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186584_polina_iatcenko_anastasia_zakharova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T07:00:00.000Z",
+    "home": {
+      "name": "Polina Iatcenko",
+      "short": "PI",
+      "initials": "PI",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Anastasia Zakharova",
+      "short": "AZ",
+      "initials": "AZ",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4927711556570478,
+      "away": 0.5072288443429522
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1517,
+        "awayElo": 1564,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.4927711556570478,
+        "away": 0.5072288443429522
+      },
+      "expected": {
+        "winProb": "0.493",
+        "homeElo": 1517,
+        "awayElo": 1564
+      },
+      "pick": "away",
+      "confidence": 0.5072288443429522,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Polina Iatcenko 1517 (WWWWD 13pts) vs Anastasia Zakharova 1564 (WWWDL 10pts) → 43.3% home",
+        "PICK for correctness: AWAY with 50.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5418694912124075,
+          "odds": 1.8454628212460293,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.45813050878759254,
+          "odds": 2.1827841211588894,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5736194109527345,
+          "odds": 1.7433161795188947,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4263805890472655,
+          "odds": 2.345322525667666,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7427711556570478,
+          "odds": 1.3463096841925832,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7572288443429522,
+          "odds": 1.3206047385420194,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11685973885445085
+        },
+        {
+          "score": "2-1",
+          "prob": 0.08951034653452832
+        },
+        {
+          "score": "1-0",
+          "prob": 0.08880570849143116
+        }
+      ],
+      "totalGoals": 2.847831346697115,
+      "homeGoals": 1.5319278891426196,
+      "awayGoals": 1.315903457554495,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5072288443429522,
+      "label": "Anastasia Zakharova to win",
+      "fairOdds": 1.9714967142599462
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Polina Iatcenko to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5072288443429522,
+      "label": "Anastasia Zakharova to win",
+      "fairOdds": 1.9714967142599462
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Polina Iatcenko vs Anastasia Zakharova",
+      "ACCURACY FOCUS: Elo Polina Iatcenko 1517 (WWWWD 13pts) vs Anastasia Zakharova 1564 (WWWDL 10pts) → 43.3% home",
+      "PICK for correctness: AWAY with 50.7% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.2% (odds 1.85), BTTS Yes 57.4% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 74.3%, X2 75.7%, Correct: 1-1 11.7%, 2-1 9.0%, 1-0 8.9%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Polina Iatcenko WWWWD undefinedpts vs Anastasia Zakharova WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.2% odds 1.85"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "49.3%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.2%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186586_katherine_hui_janice_tjen",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T07:00:00.000Z",
+    "home": {
+      "name": "Katherine Hui",
+      "short": "KH",
+      "initials": "KH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Janice Tjen",
+      "short": "JT",
+      "initials": "JT",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7188169197947567,
+      "away": 0.2811830802052433
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1549,
+        "awayElo": 1419,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7188169197947567,
+        "away": 0.2811830802052433
+      },
+      "expected": {
+        "winProb": "0.719",
+        "homeElo": 1549,
+        "awayElo": 1419
+      },
+      "pick": "home",
+      "confidence": 0.7188169197947567,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Katherine Hui 1549 (WWWWD 13pts) vs Janice Tjen 1419 (WWWWD 13pts) → 67.9% home",
+        "PICK for correctness: HOME with 71.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5576478354460997,
+          "odds": 1.7932464477335113,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.44235216455390025,
+          "odds": 2.2606422667977037,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.4903024566478566,
+          "odds": 2.039557392465232,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.5096975433521433,
+          "odds": 1.961947851314467,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.9688169197947567,
+          "odds": 1.0321867626051053,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.5311830802052433,
+          "odds": 1.882590084785101,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "2-0",
+          "prob": 0.11910659741916498
+        },
+        {
+          "score": "1-0",
+          "prob": 0.11359484493785194
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09750099134102372
+        }
+      ],
+      "totalGoals": 2.915645075938427,
+      "homeGoals": 2.097042299486892,
+      "awayGoals": 0.8186027764515353,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.7188169197947567,
+      "label": "Katherine Hui to win",
+      "fairOdds": 1.3911748213794541
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Katherine Hui to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.7188169197947567,
+      "label": "Katherine Hui to win",
+      "fairOdds": 1.3911748213794541
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.563Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Katherine Hui vs Janice Tjen",
+      "ACCURACY FOCUS: Elo Katherine Hui 1549 (WWWWD 13pts) vs Janice Tjen 1419 (WWWWD 13pts) → 67.9% home",
+      "PICK for correctness: HOME with 71.9% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.8% (odds 1.79), BTTS Yes 49.0% (odds 2.04)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 96.9%, X2 53.1%, Correct: 2-0 11.9%, 1-0 11.4%, 2-1 9.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Katherine Hui WWWWD undefinedpts vs Janice Tjen WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.8% odds 1.79"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "71.9%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.8%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "49.0%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186578_lucrezia_stefanini_rada_zolotareva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T08:30:00.000Z",
+    "home": {
+      "name": "Lucrezia Stefanini",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Rada Zolotareva",
+      "short": "RZ",
+      "initials": "RZ",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3947546267920029,
+      "away": 0.6052453732079971
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1442,
+        "awayElo": 1551,
+        "homeForm": "WWDLL",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.3947546267920029,
+        "away": 0.6052453732079971
+      },
+      "expected": {
+        "winProb": "0.395",
+        "homeElo": 1442,
+        "awayElo": 1551
+      },
+      "pick": "away",
+      "confidence": 0.6052453732079971,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lucrezia Stefanini 1442 (WWDLL 7pts) vs Rada Zolotareva 1551 (WWLLL 6pts) → 34.8% home",
+        "PICK for correctness: AWAY with 60.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5349271100127755,
+          "odds": 1.8694135729559815,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4650728899872245,
+          "odds": 2.150200584745909,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5673681596746921,
+          "odds": 1.7625240030624258,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4326318403253079,
+          "odds": 2.3114341266423484,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6447546267920029,
+          "odds": 1.550977625357311,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8552453732079971,
+          "odds": 1.169255083192129,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11766343772119031
+        },
+        {
+          "score": "0-1",
+          "prob": 0.09143264118244408
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09010312017626657
+        }
+      ],
+      "totalGoals": 2.818426388037601,
+      "homeGoals": 1.2868865669800074,
+      "awayGoals": 1.5315398210575937,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.6052453732079971,
+      "label": "Rada Zolotareva to win",
+      "fairOdds": 1.6522224609494742
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Lucrezia Stefanini to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.6052453732079971,
+      "label": "Rada Zolotareva to win",
+      "fairOdds": 1.6522224609494742
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.564Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Lucrezia Stefanini vs Rada Zolotareva",
+      "ACCURACY FOCUS: Elo Lucrezia Stefanini 1442 (WWDLL 7pts) vs Rada Zolotareva 1551 (WWLLL 6pts) → 34.8% home",
+      "PICK for correctness: AWAY with 60.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.5% (odds 1.87), BTTS Yes 56.7% (odds 1.76)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 64.5%, X2 85.5%, Correct: 1-1 11.8%, 0-1 9.1%, 1-2 9.0%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Lucrezia Stefanini WWDLL undefinedpts vs Rada Zolotareva WWLLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.5% odds 1.87"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "39.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.5%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.7%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWLLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186582_vaishnavi_adkar_jodie_burrage",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T08:30:00.000Z",
+    "home": {
+      "name": "Vaishnavi Adkar",
+      "short": "VA",
+      "initials": "VA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jodie Burrage",
+      "short": "JB",
+      "initials": "JB",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4443130476235704,
+      "away": 0.5556869523764296
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1442,
+        "awayElo": 1495,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.4443130476235704,
+        "away": 0.5556869523764296
+      },
+      "expected": {
+        "winProb": "0.444",
+        "homeElo": 1442,
+        "awayElo": 1495
+      },
+      "pick": "away",
+      "confidence": 0.5556869523764296,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Vaishnavi Adkar 1442 (WWDLL 7pts) vs Jodie Burrage 1495 (WWWDL 10pts) → 42.4% home",
+        "PICK for correctness: AWAY with 55.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5384447704827686,
+          "odds": 1.8572006913604189,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4615552295172314,
+          "odds": 2.1665879531815957,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5737587402624833,
+          "odds": 1.7428928394929892,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4262412597375167,
+          "odds": 2.3460891623110567,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6943130476235704,
+          "odds": 1.4402725160109064,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8056869523764296,
+          "odds": 1.2411768578980094,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11804073673702659
+        },
+        {
+          "score": "1-2",
+          "prob": 0.08395714065273607
+        },
+        {
+          "score": "0-1",
+          "prob": 0.08367039339892536
+        }
+      ],
+      "totalGoals": 2.8332939142870712,
+      "homeGoals": 1.4107826190589259,
+      "awayGoals": 1.4225112952281451,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5556869523764296,
+      "label": "Jodie Burrage to win",
+      "fairOdds": 1.7995743749667652
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Vaishnavi Adkar to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5556869523764296,
+      "label": "Jodie Burrage to win",
+      "fairOdds": 1.7995743749667652
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.564Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Chennai Open - Vaishnavi Adkar vs Jodie Burrage",
+      "ACCURACY FOCUS: Elo Vaishnavi Adkar 1442 (WWDLL 7pts) vs Jodie Burrage 1495 (WWWDL 10pts) → 42.4% home",
+      "PICK for correctness: AWAY with 55.6% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.8% (odds 1.86), BTTS Yes 57.4% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 69.4%, X2 80.6%, Correct: 1-1 11.8%, 1-2 8.4%, 0-1 8.4%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Chennai Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Vaishnavi Adkar WWDLL undefinedpts vs Jodie Burrage WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.8% odds 1.86"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "44.4%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.8%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186666_lamis_alhussein_abdel_aziz_tiphanie_lemaitre",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T09:00:00.000Z",
+    "home": {
+      "name": "Lamis Alhussein Abdel Aziz",
+      "short": "LAA",
+      "initials": "LA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tiphanie Lemaitre",
+      "short": "TL",
+      "initials": "TL",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.48408407305489765,
+      "away": 0.5159159269451024
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1444,
+        "awayElo": 1469,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.48408407305489765,
+        "away": 0.5159159269451024
+      },
+      "expected": {
+        "winProb": "0.484",
+        "homeElo": 1444,
+        "awayElo": 1469
+      },
+      "pick": "away",
+      "confidence": 0.5159159269451024,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lamis Alhussein Abdel Aziz 1444 (WWWDL 10pts) vs Tiphanie Lemaitre 1469 (WWWWD 13pts) → 46.4% home",
+        "PICK for correctness: AWAY with 51.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5412566264223929,
+          "odds": 1.8475524384981976,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4587433735776071,
+          "odds": 2.179867999402997,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5741034059298461,
+          "odds": 1.7418464856176055,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4258965940701539,
+          "odds": 2.347987783709018,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7340840730548976,
+          "odds": 1.3622417876994535,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7659159269451024,
+          "odds": 1.3056263289739316,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11718119934991249
+        },
+        {
+          "score": "2-1",
+          "prob": 0.08848412023594134
+        },
+        {
+          "score": "1-0",
+          "prob": 0.08777519046765093
+        }
+      ],
+      "totalGoals": 2.8452252219164693,
+      "homeGoals": 1.510210182637244,
+      "awayGoals": 1.3350150392792253,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5159159269451024,
+      "label": "Tiphanie Lemaitre to win",
+      "fairOdds": 1.9383003078065626
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Lamis Alhussein Abdel Aziz to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5159159269451024,
+      "label": "Tiphanie Lemaitre to win",
+      "fairOdds": 1.9383003078065626
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.564Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Angola Ladies Open - Lamis Alhussein Abdel Aziz vs Tiphanie Lemaitre",
+      "ACCURACY FOCUS: Elo Lamis Alhussein Abdel Aziz 1444 (WWWDL 10pts) vs Tiphanie Lemaitre 1469 (WWWWD 13pts) → 46.4% home",
+      "PICK for correctness: AWAY with 51.6% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.1% (odds 1.85), BTTS Yes 57.4% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 73.4%, X2 76.6%, Correct: 1-1 11.7%, 2-1 8.8%, 1-0 8.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Angola Ladies Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Lamis Alhussein Abdel Aziz WWWDL undefinedpts vs Tiphanie Lemaitre WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.1% odds 1.85"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "48.4%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.1%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWDL vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186670_martyna_kubka_darja_suvirdjonkova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "region": "ESPN",
+    "kickoff": "2026-11-03T09:00:00.000Z",
+    "home": {
+      "name": "Martyna Kubka",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Darja Suvirdjonkova",
+      "short": "DS",
+      "initials": "DS",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4831303481404886,
+      "away": 0.5168696518595114
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1428,
+        "awayElo": 1501,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.4831303481404886,
+        "away": 0.5168696518595114
+      },
+      "expected": {
+        "winProb": "0.483",
+        "homeElo": 1428,
+        "awayElo": 1501
+      },
+      "pick": "away",
+      "confidence": 0.5168696518595114,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Martyna Kubka 1428 (WWWWD 13pts) vs Darja Suvirdjonkova 1501 (WWLLL 6pts) → 39.6% home",
+        "PICK for correctness: AWAY with 51.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5411893131771928,
+          "odds": 1.8477822374747934,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4588106868228073,
+          "odds": 2.1795481856031835,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5741443717773743,
+          "odds": 1.7417222029091877,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4258556282226257,
+          "odds": 2.348213652062448,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7331303481404886,
+          "odds": 1.3640139199480685,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7668696518595114,
+          "odds": 1.3040025740687382,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11721360500499495
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0883688529918304
+        },
+        {
+          "score": "1-0",
+          "prob": 0.08766168938914586
+        }
+      ],
+      "totalGoals": 2.8449391044421466,
+      "homeGoals": 1.5078258703512215,
+      "awayGoals": 1.337113234090925,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5168696518595114,
+      "label": "Darja Suvirdjonkova to win",
+      "fairOdds": 1.9347237672058306
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Martyna Kubka to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5168696518595114,
+      "label": "Darja Suvirdjonkova to win",
+      "fairOdds": 1.9347237672058306
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.564Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Angola Ladies Open - Martyna Kubka vs Darja Suvirdjonkova",
+      "ACCURACY FOCUS: Elo Martyna Kubka 1428 (WWWWD 13pts) vs Darja Suvirdjonkova 1501 (WWLLL 6pts) → 39.6% home",
+      "PICK for correctness: AWAY with 51.7% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.1% (odds 1.85), BTTS Yes 57.4% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 73.3%, X2 76.7%, Correct: 1-1 11.7%, 2-1 8.8%, 1-0 8.8%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Angola Ladies Open"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Martyna Kubka WWWWD undefinedpts vs Darja Suvirdjonkova WWLLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.1% odds 1.85"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "48.3%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.1%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWLLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186478_lorenzo_musetti_alexander_zverev",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "home": {
+      "name": "Lorenzo Musetti",
+      "short": "LM",
+      "initials": "LM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alexander Zverev",
+      "short": "AZ",
+      "initials": "AZ",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5569904127024378,
+      "away": 0.44300958729756224
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1444,
+        "awayElo": 1460,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.5569904127024378,
+        "away": 0.44300958729756224
+      },
+      "expected": {
+        "winProb": "0.557",
+        "homeElo": 1444,
+        "awayElo": 1460
+      },
+      "pick": "home",
+      "confidence": 0.5569904127024378,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lorenzo Musetti 1444 (WWWDL 10pts) vs Alexander Zverev 1460 (WDLLL 4pts) → 47.7% home",
+        "PICK for correctness: HOME with 55.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.546385306325322,
+          "odds": 1.8302102718051358,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.453614693674678,
+          "odds": 2.20451412607277,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5638645268971667,
+          "odds": 1.7734756351898908,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4361354731028333,
+          "odds": 2.292865546766055,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.8069904127024378,
+          "odds": 1.2391720945620834,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.6930095872975622,
+          "odds": 1.4429814800969314,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11304617235575537
+        },
+        {
+          "score": "1-0",
+          "prob": 0.09624054354244226
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09566396859694219
+        }
+      ],
+      "totalGoals": 2.8670971238107317,
+      "homeGoals": 1.6924760317560945,
+      "awayGoals": 1.174621092054637,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.5569904127024378,
+      "label": "Lorenzo Musetti to win",
+      "fairOdds": 1.7953630389222377
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Lorenzo Musetti to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.5569904127024378,
+      "label": "Lorenzo Musetti to win",
+      "fairOdds": 1.7953630389222377
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.572Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - Lorenzo Musetti vs Alexander Zverev",
+      "ACCURACY FOCUS: Elo Lorenzo Musetti 1444 (WWWDL 10pts) vs Alexander Zverev 1460 (WDLLL 4pts) → 47.7% home",
+      "PICK for correctness: HOME with 55.7% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.6% (odds 1.83), BTTS Yes 56.4% (odds 1.77)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 80.7%, X2 69.3%, Correct: 1-1 11.3%, 1-0 9.6%, 2-1 9.6%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Lorenzo Musetti WWWDL undefinedpts vs Alexander Zverev WDLLL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.6% odds 1.83"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "55.7%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.6%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.4%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWDL vs WDLLL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186479_tbd_luca_van_assche",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luca Van Assche",
+      "short": "LVA",
+      "initials": "LV",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3849597989597013,
+      "away": 0.6150402010402987
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1565,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3849597989597013,
+        "away": 0.6150402010402987
+      },
+      "expected": {
+        "winProb": "0.385",
+        "homeElo": 1438,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.6150402010402987,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Luca Van Assche 1565 (WWWDL 10pts) → 32.5% home",
+        "PICK for correctness: AWAY with 61.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5342300670078299,
+          "odds": 1.8718527124482185,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.46576993299217,
+          "odds": 2.1469827250888924,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5653078112222878,
+          "odds": 1.7689477841069217,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4346921887777122,
+          "odds": 2.300478420861085,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6349597989597013,
+          "odds": 1.5749028546978396,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8650402010402987,
+          "odds": 1.1560156381141575,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11739297930721673
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0929919407834566
+        },
+        {
+          "score": "1-2",
+          "prob": 0.09116083968393489
+        }
+      ],
+      "totalGoals": 2.8154879396879102,
+      "homeGoals": 1.2623994973992532,
+      "awayGoals": 1.553088442288657,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.6150402010402987,
+      "label": "Luca Van Assche to win",
+      "fairOdds": 1.6259099784185944
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "TBD to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.6150402010402987,
+      "label": "Luca Van Assche to win",
+      "fairOdds": 1.6259099784185944
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.573Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - TBD vs Luca Van Assche",
+      "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Luca Van Assche 1565 (WWWDL 10pts) → 32.5% home",
+      "PICK for correctness: AWAY with 61.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.4% (odds 1.87), BTTS Yes 56.5% (odds 1.77)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 63.5%, X2 86.5%, Correct: 1-1 11.7%, 0-1 9.3%, 1-2 9.1%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "TBD WWWWD undefinedpts vs Luca Van Assche WWWDL undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.4% odds 1.87"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "38.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.4%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.5%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWDL"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186482_rinky_hijikata_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "home": {
+      "name": "Rinky Hijikata",
+      "short": "RH",
+      "initials": "RH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6453524504393825,
+      "away": 0.3546475495606175
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1542,
+        "awayElo": 1438,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6453524504393825,
+        "away": 0.3546475495606175
+      },
+      "expected": {
+        "winProb": "0.645",
+        "homeElo": 1542,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.6453524504393825,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Rinky Hijikata 1542 (WWDLL 7pts) vs TBD 1438 (WWWWD 13pts) → 64.5% home",
+        "PICK for correctness: HOME with 64.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5525558769913604,
+          "odds": 1.8097717201832162,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.44744412300863956,
+          "odds": 2.234915933806312,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5325688166918943,
+          "odds": 1.8776916121593494,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.46743118330810574,
+          "odds": 2.1393523489870665,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.8953524504393825,
+          "odds": 1.1168786096573065,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.6046475495606175,
+          "odds": 1.6538560368377833,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-0",
+          "prob": 0.10595573833158514
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1038604221809189
+        },
+        {
+          "score": "2-0",
+          "prob": 0.10136685496274088
+        }
+      ],
+      "totalGoals": 2.893605735131815,
+      "homeGoals": 1.9133811260984563,
+      "awayGoals": 0.9802246090333586,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.6453524504393825,
+      "label": "Rinky Hijikata to win",
+      "fairOdds": 1.5495408738576244
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Rinky Hijikata to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.6453524504393825,
+      "label": "Rinky Hijikata to win",
+      "fairOdds": 1.5495408738576244
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.573Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - Rinky Hijikata vs TBD",
+      "ACCURACY FOCUS: Elo Rinky Hijikata 1542 (WWDLL 7pts) vs TBD 1438 (WWWWD 13pts) → 64.5% home",
+      "PICK for correctness: HOME with 64.5% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 55.3% (odds 1.81), BTTS Yes 53.3% (odds 1.88)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 89.5%, X2 60.5%, Correct: 1-0 10.6%, 1-1 10.4%, 2-0 10.1%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Rinky Hijikata WWDLL undefinedpts vs TBD WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "55.3% odds 1.81"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "64.5%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "55.3%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "53.3%"
+      },
+      {
+        "label": "Form",
+        "value": "WWDLL vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186483_daniil_medvedev_ignacio_buse",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "home": {
+      "name": "Daniil Medvedev",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ignacio Buse",
+      "short": "IB",
+      "initials": "IB",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4388639593116572,
+      "away": 0.5611360406883428
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1551,
+        "awayElo": 1589,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4388639593116572,
+        "away": 0.5611360406883428
+      },
+      "expected": {
+        "winProb": "0.439",
+        "homeElo": 1551,
+        "awayElo": 1589
+      },
+      "pick": "away",
+      "confidence": 0.5611360406883428,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Daniil Medvedev 1551 (WWLLL 6pts) vs Ignacio Buse 1589 (WWWWD 13pts) → 44.6% home",
+        "PICK for correctness: AWAY with 56.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5380587424818493,
+          "odds": 1.8585331322513243,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.46194125751815074,
+          "odds": 2.1647774121165346,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5733820808252054,
+          "odds": 1.7440377602327766,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.42661791917479464,
+          "odds": 2.344017808568135,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.6888639593116572,
+          "odds": 1.4516654362339458,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.8111360406883428,
+          "odds": 1.232838820910219,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11807895187230877
+        },
+        {
+          "score": "1-2",
+          "prob": 0.08469208628371329
+        },
+        {
+          "score": "0-1",
+          "prob": 0.08451355640663928
+        }
+      ],
+      "totalGoals": 2.8316591877934973,
+      "homeGoals": 1.397159898279143,
+      "awayGoals": 1.4344992895143542,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "away",
+      "probability": 0.5611360406883428,
+      "label": "Ignacio Buse to win",
+      "fairOdds": 1.7820990410334454
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Daniil Medvedev to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "away",
+      "probability": 0.5611360406883428,
+      "label": "Ignacio Buse to win",
+      "fairOdds": 1.7820990410334454
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.573Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - Daniil Medvedev vs Ignacio Buse",
+      "ACCURACY FOCUS: Elo Daniil Medvedev 1551 (WWLLL 6pts) vs Ignacio Buse 1589 (WWWWD 13pts) → 44.6% home",
+      "PICK for correctness: AWAY with 56.1% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 53.8% (odds 1.86), BTTS Yes 57.3% (odds 1.74)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 68.9%, X2 81.1%, Correct: 1-1 11.8%, 1-2 8.5%, 0-1 8.5%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Daniil Medvedev WWLLL undefinedpts vs Ignacio Buse WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "53.8% odds 1.86"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "43.9%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "53.8%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.3%"
+      },
+      {
+        "label": "Form",
+        "value": "WWLLL vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186484_rafael_jodar_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "home": {
+      "name": "Rafael Jodar",
+      "short": "RJ",
+      "initials": "RJ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5013002220704414,
+      "away": 0.49869977792955855
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1425,
+        "awayElo": 1438,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5013002220704414,
+        "away": 0.49869977792955855
+      },
+      "expected": {
+        "winProb": "0.501",
+        "homeElo": 1425,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.5013002220704414,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Rafael Jodar 1425 (WWWDL 10pts) vs TBD 1438 (WWWWD 13pts) → 48.1% home",
+        "PICK for correctness: HOME with 50.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5424707456958187,
+          "odds": 1.8434173786041048,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.4575292543041813,
+          "odds": 2.18565259071973,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5729501088015022,
+          "odds": 1.7453526662064893,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4270498911984978,
+          "odds": 2.341646773854787,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.7513002220704414,
+          "odds": 1.3310258277898401,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.7486997779295586,
+          "odds": 1.3356488534902238,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11649828408619091
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09047551221696976
+        },
+        {
+          "score": "1-0",
+          "prob": 0.08981168413905644
+        }
+      ],
+      "totalGoals": 2.8503900666211326,
+      "homeGoals": 1.5532505551761038,
+      "awayGoals": 1.2971395114450288,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.5013002220704414,
+      "label": "Rafael Jodar to win",
+      "fairOdds": 1.994812601258897
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "Rafael Jodar to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.5013002220704414,
+      "label": "Rafael Jodar to win",
+      "fairOdds": 1.994812601258897
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.573Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - Rafael Jodar vs TBD",
+      "ACCURACY FOCUS: Elo Rafael Jodar 1425 (WWWDL 10pts) vs TBD 1438 (WWWWD 13pts) → 48.1% home",
+      "PICK for correctness: HOME with 50.1% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.2% (odds 1.84), BTTS Yes 57.3% (odds 1.75)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 75.1%, X2 74.9%, Correct: 1-1 11.6%, 2-1 9.0%, 1-0 9.0%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "Rafael Jodar WWWDL undefinedpts vs TBD WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.2% odds 1.84"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "50.1%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.2%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "57.3%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWDL vs WWWWD"
+      }
+    ],
+    "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186494_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "region": "ESPN",
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "worldwideMarkets": {
+      "overUnder": {
+        "over25": {
+          "prob": 0.5451931042867482,
+          "odds": 1.83421248753367,
+          "label": "Over 2.5 Goals"
+        },
+        "under25": {
+          "prob": 0.45480689571325184,
+          "odds": 2.198735352136093,
+          "label": "Under 2.5 Goals"
+        }
+      },
+      "btts": {
+        "yes": {
+          "prob": 0.5675029477171938,
+          "odds": 1.7621053846901502,
+          "label": "BTTS Yes"
+        },
+        "no": {
+          "prob": 0.4324970522828062,
+          "odds": 2.3121544868844754,
+          "label": "BTTS No"
+        }
+      },
+      "doubleChance": {
+        "homeDraw": {
+          "prob": 0.79,
+          "odds": 1.2658227848101264,
+          "label": "1X (Home/Draw)"
+        },
+        "awayDraw": {
+          "prob": 0.71,
+          "odds": 1.4084507042253522,
+          "label": "X2 (Away/Draw)"
+        },
+        "homeAway": {
+          "prob": 1,
+          "odds": 1,
+          "label": "12 (Home/Away)"
+        }
+      },
+      "corners": {
+        "over95": {
+          "prob": 0.5750000000000001,
+          "odds": 1.7391304347826084,
+          "label": "Over 9.5 Corners"
+        },
+        "under95": {
+          "prob": 0.42499999999999993,
+          "odds": 2.3529411764705888,
+          "label": "Under 9.5 Corners"
+        },
+        "over105": {
+          "prob": 0.375,
+          "odds": 2.6666666666666665,
+          "label": "Over 10.5 Corners"
+        },
+        "under105": {
+          "prob": 0.625,
+          "odds": 1.6,
+          "label": "Under 10.5 Corners"
+        }
+      },
+      "correctScore": [
+        {
+          "score": "1-1",
+          "prob": 0.11429724354483231
+        },
+        {
+          "score": "1-0",
+          "prob": 0.09430465639012567
+        },
+        {
+          "score": "2-1",
+          "prob": 0.09429522592448668
+        }
+      ],
+      "totalGoals": 2.862,
+      "homeGoals": 1.6500000000000001,
+      "awayGoals": 1.212,
+      "totalCorners": 10,
+      "homeCorners": 5,
+      "awayCorners": 5
+    },
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "marketPick": {
+      "side": "home",
+      "probability": 0.5,
+      "label": "TBD to win",
+      "fairOdds": 2
+    },
+    "vanishPick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "mode": "live",
+    "sample": false,
+    "calibrated": false,
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-02T14:35:40.574Z",
+    "sources": [
+      {
+        "name": "ESPN",
+        "updatedAt": null
+      }
+    ],
+    "isToday": false,
+    "hasLiveModel": true,
+    "explanation": [
+      "FREE TRAINED WORLDWIDE: ESPN - 202 games, trained on 380+ games, form, corners",
+      "Game: Rolex Paris Masters - TBD vs TBD",
+      "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+      "PICK for correctness: HOME with 54.0% confidence",
+      "WORLDWIDE MARKETS: Over 2.5 54.5% (odds 1.83), BTTS Yes 56.8% (odds 1.76)",
+      "Corners: Over 9.5 57.5% (odds 1.74), Over 10.5 37.5%, Total 10.0 corners",
+      "Double Chance: 1X 79.0%, X2 71.0%, Correct: 1-1 11.4%, 1-0 9.4%, 2-1 9.4%"
+    ],
+    "inputRows": [
+      [
+        "Data source",
+        "ESPN (FREE Trained) + Vanish + Form + Corners"
+      ],
+      [
+        "League",
+        "Rolex Paris Masters"
+      ],
+      [
+        "Worldwide Markets",
+        "1X2, O/U 2.5, BTTS, Double Chance, Correct Score, Corners O/U 9.5/10.5"
+      ],
+      [
+        "Form",
+        "TBD WWWWD undefinedpts vs TBD WWWWD undefinedpts"
+      ],
+      [
+        "Corners",
+        "5-5 avg"
+      ],
+      [
+        "Vanish Model",
+        "Vanish Model (Accuracy Focused + Form)"
+      ],
+      [
+        "Over 2.5",
+        "54.5% odds 1.83"
+      ],
+      [
+        "Corners O9.5",
+        "57.5% odds 1.74"
+      ]
+    ],
+    "metrics": [
+      {
+        "label": "Source",
+        "value": "ESPN (FREE Trained)"
+      },
+      {
+        "label": "Vanish home",
+        "value": "54.0%"
+      },
+      {
+        "label": "Over 2.5",
+        "value": "54.5%"
+      },
+      {
+        "label": "Corners O9.5",
+        "value": "57.5%"
+      },
+      {
+        "label": "BTTS Yes",
+        "value": "56.8%"
+      },
+      {
+        "label": "Form",
+        "value": "WWWWD vs WWWWD"
+      }
+    ],
+    "status": "pending"
   }
 ]

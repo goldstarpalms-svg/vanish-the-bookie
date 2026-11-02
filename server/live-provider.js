@@ -125,7 +125,7 @@ export async function eventToPrediction(event) {
   const probabilities = { home: mean(event.home_team), ...(isFootball ? { draw: mean("Draw") } : {}), away: mean(event.away_team) };
   const home = person(event.home_team, 0), away = person(event.away_team, 1);
   const kickoffDate = new Date(event.commence_time);
-  const isToday = kickoffDate.toDateString() === new Date().toDateString() || (kickoffDate - Date.now() < 24*3600000 && kickoffDate > Date.now());
+  const isToday = isTodayWAT(kickoffDate);
   let independentModel = null;
   try { independentModel = await liveIndependentModel(event, probabilities); } catch {}
   const primaryProbs = independentModel?.probabilities || probabilities;
@@ -171,6 +171,20 @@ export async function eventToPrediction(event) {
     ],
   };
 }
+/** Is this kickoff on today's calendar day in the visitor's timezone (WAT)?
+ *  "Within the next N hours" is NOT today — that shortcut is what put tomorrow's
+ *  and Wednesday's fixtures under today's picks. */
+const LAGOS_DAY = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit",
+});
+export function isTodayWAT(kickoff) {
+  try {
+    return LAGOS_DAY.format(new Date(kickoff)) === LAGOS_DAY.format(new Date());
+  } catch {
+    return false;
+  }
+}
+
 export async function fetchLivePredictions({ key, sportKeys, regions = "us" }) {
   if (!key) throw new Error("No ODDS_API_KEY");
   const limitedKeys = sportKeys.slice(0, 4);
@@ -247,7 +261,7 @@ export async function fetchFreeFallback() {
       model: independentModel ? independentModel.model : "Vanish Model",
       modelVersion: MODEL_VERSION, publishedAt: new Date().toISOString(),
       sources: [{ name: freeGame.source, updatedAt: null }],
-      isToday: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() || (new Date(freeGame.kickoff) - Date.now() < 48*3600000),
+      isToday: isTodayWAT(freeGame.kickoff),
       hasLiveModel: true,
       explanation: [
         `FREE TRAINED WORLDWIDE: ${freeGame.source} - 202 games, trained on 380+ games, form, corners`,
@@ -324,7 +338,7 @@ export async function fetchMultiSourcePredictions({ key, sportKeys, regions = "u
             model: independentModel ? independentModel.model : "Vanish Model",
             modelVersion: MODEL_VERSION, publishedAt: new Date().toISOString(),
             sources: [{ name: freeGame.source, updatedAt: null }],
-            isToday: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() || (new Date(freeGame.kickoff) - Date.now() < 48*3600000),
+            isToday: isTodayWAT(freeGame.kickoff),
             hasLiveModel: true,
             explanation: [`From ${freeGame.source} free API worldwide trained`, ...(independentModel ? independentModel.explanation.slice(0,2) : ["Vanish model"]), ...(worldwideMarkets ? [`Corners O9.5 ${(worldwideMarkets.corners.over95.prob*100).toFixed(1)}%`] : [])],
             inputRows: [["Data source", `${freeGame.source} + Vanish Trained + Form + Corners`], ["League", freeGame.league]],

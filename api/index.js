@@ -1,6 +1,6 @@
 import { demoFixtures, demoArchive } from "../server/fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
-import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback } from "../server/live-provider.js";
+import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback, isTodayWAT } from "../server/live-provider.js";
 import { fetchESPNScores } from "../server/free-scores.js";
 import { enrichMany, getFootyBoards, tryLiveRefresh, normalizeName } from "../server/footystats.js";
 import { readFileSync } from "node:fs";
@@ -348,8 +348,11 @@ async function getDashboard(force = false) {
       }
     }
   }
+  // The isToday flag travels with archived rows, so recompute it from the
+  // kickoff every time: "today" means today in WAT, not ""flagged when the row was written"".
+  const predictions = cache.predictions.map((p) => ({ ...p, isToday: isTodayWAT(p.kickoff) }));
   return {
-    predictions: cache.predictions,
+    predictions,
     records: cache.records,
     finishedGames: cache.finishedGames || [],
     footyBoards: getFootyBoards(),
