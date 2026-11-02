@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 
 /** Strip source-tag junk from league labels — shared helper. */
 import { cleanLeagueName } from "../server/live-provider.js";
+import { diagnoseESPN } from "../server/free-sources.js";
 
 /**
  * A finished game with a REAL score but no published pick.
@@ -337,6 +338,19 @@ export default async function handler(req, res) {
   if (path === "/api/health") {
     const d = await getDashboard(url.searchParams.get("refresh") === "1");
     return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length, finished: d.finishedGames.length, error: d.meta.error, warnings: d.meta.warnings });
+  }
+  if (path === "/api/sources") {
+    res.setHeader("Cache-Control", "no-store");
+    const diag = await diagnoseESPN();
+    const feeds = diag.feeds;
+    const summary = {
+      worldwide: diag.worldwide,
+      feeds: feeds.length,
+      live: feeds.filter(f => f.status === 200 && f.events > 0).length,
+      empty: feeds.filter(f => f.status === 200 && f.events === 0).length,
+      failed: feeds.filter(f => f.status !== 200),
+    };
+    return res.json({ summary, detail: feeds });
   }
   if (path === "/api/dashboard") {
     res.setHeader("Cache-Control","no-store");

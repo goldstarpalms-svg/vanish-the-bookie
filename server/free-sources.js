@@ -144,62 +144,64 @@ export async function fetchESPNAllWorldwide() {
   } catch { return []; }
 }
 
+const ESPN_LEAGUES = [
+  { sport: "baseball", league: "mlb", name: "MLB" },
+  { sport: "basketball", league: "nba", name: "NBA" },
+  { sport: "basketball", league: "wnba", name: "WNBA" },
+  { sport: "hockey", league: "nhl", name: "NHL" },
+  { sport: "football", league: "nfl", name: "NFL" },
+  { sport: "soccer", league: "eng.1", name: "EPL" },
+  { sport: "soccer", league: "eng.2", name: "EFL Championship" },
+  { sport: "soccer", league: "esp.1", name: "La Liga" },
+  { sport: "soccer", league: "esp.2", name: "LaLiga2" },
+  { sport: "soccer", league: "ita.1", name: "Serie A" },
+  { sport: "soccer", league: "ger.1", name: "Bundesliga" },
+  { sport: "soccer", league: "fra.1", name: "Ligue 1" },
+  { sport: "soccer", league: "usa.1", name: "MLS" },
+  { sport: "soccer", league: "bra.1", name: "Brazil Serie A" },
+  { sport: "soccer", league: "mex.1", name: "Liga MX" },
+  { sport: "soccer", league: "ned.1", name: "Eredivisie" },
+  { sport: "soccer", league: "por.1", name: "Primeira Liga" },
+  { sport: "soccer", league: "uefa.champions", name: "Champions League" },
+  { sport: "soccer", league: "uefa.europa", name: "Europa League" },
+  { sport: "soccer", league: "arg.1", name: "Argentine LPF" },
+  { sport: "soccer", league: "tur.1", name: "Turkish Super Lig" },
+  { sport: "soccer", league: "sco.1", name: "Scottish Prem" },
+  { sport: "soccer", league: "jpn.1", name: "J1 League" },
+  { sport: "soccer", league: "aus.1", name: "A-League" },
+  // Expanded worldwide coverage (client request: more games, more leagues)
+  { sport: "soccer", league: "bel.1", name: "Belgian Pro League" },
+  { sport: "soccer", league: "sui.1", name: "Swiss Super League" },
+  { sport: "soccer", league: "aut.1", name: "Austrian Bundesliga" },
+  { sport: "soccer", league: "den.1", name: "Danish Superliga" },
+  { sport: "soccer", league: "swe.1", name: "Allsvenskan" },
+  { sport: "soccer", league: "gre.1", name: "Greek Super League" },
+  { sport: "soccer", league: "chn.1", name: "Chinese Super League" },
+  { sport: "soccer", league: "ksa.1", name: "Saudi Pro League" },
+  { sport: "soccer", league: "eng.3", name: "EFL League One" },
+  { sport: "soccer", league: "uefa.europa.conf", name: "Conference League" },
+  { sport: "soccer", league: "ger.dfb_pokal", name: "DFB Pokal" },
+  { sport: "soccer", league: "esp.copa_del_rey", name: "Copa del Rey" },
+  { sport: "soccer", league: "ita.coppa_italia", name: "Coppa Italia" },
+  { sport: "soccer", league: "fra.coupe_de_france", name: "Coupe de France" },
+  { sport: "soccer", league: "eng.fa", name: "FA Cup" },
+  // US college + more sports
+  { sport: "football", league: "college-football", name: "NCAA Football" },
+  { sport: "basketball", league: "mens-college-basketball", name: "NCAA Basketball" },
+  { sport: "cricket", league: "8039", name: "Cricket" },
+  { sport: "rugby", league: "289234", name: "Rugby" },
+  // Tennis - FIXED to handle groupings structure
+  { sport: "tennis", league: "atp", name: "ATP Tennis" },
+  { sport: "tennis", league: "wta", name: "WTA Tennis" },
+  // MMA / UFC
+  { sport: "mma", league: "ufc", name: "UFC" },
+  // Golf
+  { sport: "golf", league: "pga", name: "PGA Golf" },
+];
+
 export async function fetchESPNFree() {
   // ONLY top leagues available on Bet9ja/SportyBet/BetKing/MSport/1xBet/Betway — user complaint: most games not on my bookie
-  const leagues = [
-    { sport: "baseball", league: "mlb", name: "MLB" },
-    { sport: "basketball", league: "nba", name: "NBA" },
-    { sport: "basketball", league: "wnba", name: "WNBA" },
-    { sport: "hockey", league: "nhl", name: "NHL" },
-    { sport: "football", league: "nfl", name: "NFL" },
-    { sport: "soccer", league: "eng.1", name: "EPL" },
-    { sport: "soccer", league: "eng.2", name: "EFL Championship" },
-    { sport: "soccer", league: "esp.1", name: "La Liga" },
-    { sport: "soccer", league: "esp.2", name: "LaLiga2" },
-    { sport: "soccer", league: "ita.1", name: "Serie A" },
-    { sport: "soccer", league: "ger.1", name: "Bundesliga" },
-    { sport: "soccer", league: "fra.1", name: "Ligue 1" },
-    { sport: "soccer", league: "usa.1", name: "MLS" },
-    { sport: "soccer", league: "bra.1", name: "Brazil Serie A" },
-    { sport: "soccer", league: "mex.1", name: "Liga MX" },
-    { sport: "soccer", league: "ned.1", name: "Eredivisie" },
-    { sport: "soccer", league: "por.1", name: "Primeira Liga" },
-    { sport: "soccer", league: "uefa.champions", name: "Champions League" },
-    { sport: "soccer", league: "uefa.europa", name: "Europa League" },
-    { sport: "soccer", league: "arg.1", name: "Argentine LPF" },
-    { sport: "soccer", league: "tur.1", name: "Turkish Super Lig" },
-    { sport: "soccer", league: "sco.1", name: "Scottish Prem" },
-    { sport: "soccer", league: "jpn.1", name: "J1 League" },
-    { sport: "soccer", league: "aus.1", name: "A-League" },
-    // Expanded worldwide coverage (client request: more games, more leagues)
-    { sport: "soccer", league: "bel.1", name: "Belgian Pro League" },
-    { sport: "soccer", league: "sui.1", name: "Swiss Super League" },
-    { sport: "soccer", league: "aut.1", name: "Austrian Bundesliga" },
-    { sport: "soccer", league: "den.1", name: "Danish Superliga" },
-    { sport: "soccer", league: "swe.1", name: "Allsvenskan" },
-    { sport: "soccer", league: "gre.1", name: "Greek Super League" },
-    { sport: "soccer", league: "chn.1", name: "Chinese Super League" },
-    { sport: "soccer", league: "ksa.1", name: "Saudi Pro League" },
-    { sport: "soccer", league: "eng.3", name: "EFL League One" },
-    { sport: "soccer", league: "uefa.europa.conf", name: "Conference League" },
-    { sport: "soccer", league: "ger.dfb_pokal", name: "DFB Pokal" },
-    { sport: "soccer", league: "esp.copa_del_rey", name: "Copa del Rey" },
-    { sport: "soccer", league: "ita.coppa_italia", name: "Coppa Italia" },
-    { sport: "soccer", league: "fra.coupe_de_france", name: "Coupe de France" },
-    { sport: "soccer", league: "eng.fa", name: "FA Cup" },
-    // US college + more sports
-    { sport: "football", league: "college-football", name: "NCAA Football" },
-    { sport: "basketball", league: "mens-college-basketball", name: "NCAA Basketball" },
-    { sport: "cricket", league: "8039", name: "Cricket" },
-    { sport: "rugby", league: "289234", name: "Rugby" },
-    // Tennis - FIXED to handle groupings structure
-    { sport: "tennis", league: "atp", name: "ATP Tennis" },
-    { sport: "tennis", league: "wta", name: "WTA Tennis" },
-    // MMA / UFC
-    { sport: "mma", league: "ufc", name: "UFC" },
-    // Golf
-    { sport: "golf", league: "pga", name: "PGA Golf" },
-  ];
+  const leagues = ESPN_LEAGUES;
   
   const games = [];
   const fetchBoard = async ({ sport, league, name }) => {
@@ -368,4 +370,27 @@ export async function fetchAllFreeSources() {
     }
   }
   return deduped.sort((a,b) => new Date(a.kickoff) - new Date(b.kickoff));
+}
+
+// Diagnostic: what does ESPN actually answer, from *this* runtime (prod included)?
+export async function diagnoseESPN() {
+  const probe = async ({ sport, league }) => {
+    const url = `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`;
+    const t0 = Date.now();
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+      const text = await res.text();
+      let events = null;
+      try { events = (JSON.parse(text).events || []).length; } catch {}
+      return { feed: `${sport}/${league}`, status: res.status, events, bytes: text.length, ms: Date.now() - t0 };
+    } catch (e) {
+      return { feed: `${sport}/${league}`, error: e.message, ms: Date.now() - t0 };
+    }
+  };
+  const feeds = [];
+  for (let i = 0; i < ESPN_LEAGUES.length; i += 6) {
+    feeds.push(...await Promise.all(ESPN_LEAGUES.slice(i, i + 6).map(probe)));
+  }
+  const worldwide = await probe({ sport: "soccer", league: "all" });
+  return { worldwide, feeds };
 }
