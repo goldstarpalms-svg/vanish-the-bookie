@@ -33,7 +33,40 @@ import {
   Minus,
   ExternalLink,
   Zap,
+  LayoutGrid,
+  Radio,
+  ClipboardList,
+  BarChart3,
+  Sparkles,
+  Trophy,
+  ShoppingBag,
+  GitCompare,
+  User,
+  Calculator,
+  Store,
+  Sigma,
 } from "lucide-react";
+
+const navLabel = (id) =>
+  ({
+    predictions: "Predictions",
+    live: "Live Scores",
+    betofday: "Bet of the Day",
+    values: "Values",
+    builder: "Bet Builder",
+    cart: "Cart",
+    stats: "Stats Hub",
+    comparator: "Match Comparator",
+    formguide: "Form Guide",
+    playerstats: "Player Stats",
+    results: "Results",
+    mytracker: "My Tracker",
+    odds: "Odds Calculator",
+    oddscomparison: "Odds Comparison",
+    calculators: "Calculators",
+    model: "Our Model Lab",
+  }[id] || "Predictions");
+
 import {
   SPORTS,
   pct,
@@ -128,7 +161,7 @@ function Mark({ small = false }) {
       aria-hidden="true"
     >
       <rect width="44" height="44" rx="11" fill="currentColor" />
-      <path d="M8 12h8l6 16 6-16h8L25 34h-6Z" fill="#13200d" />
+      <path d="M8 12h8l6 16 6-16h8L25 34h-6Z" fill="#fafafb" />
       <path d="m23 12-4 9h6l4-9Z" fill="currentColor" />
     </svg>
   );
@@ -298,7 +331,7 @@ function ProbabilityBar({ label, value, primary = false }) {
         <span
             style={{
             width: pct(value),
-            background: primary ? "linear-gradient(90deg,#d3f76b,#9acc3a)" : undefined,
+            background: primary ? "linear-gradient(90deg,#6366f1,#4f46e5)" : undefined,
           }}
         />
       </div>
@@ -543,7 +576,7 @@ function AnalysisModal({ p, saved, onSave, onClose, today, notify }) {
               <h5><Activity size={14} /> xG Expected Goals — like Forebet xG viz</h5>
               <div className="xg-bars">
                 <div><span>{p.home.name}</span><div className="xg-track"><span style={{width: `${(p.footy?.teams?.home?.xg ?? p.independentModel?.expected?.homeXG ?? p.metrics?.find(m=>m.label.includes("Home xG"))?.value ?? "1.5").toString().replace("xG","").trim()*40}%`, background:"var(--lime)"}} /></div><strong>{p.footy?.teams?.home?.xg ? `${p.footy.teams.home.xg} xG` : (p.independentModel?.expected?.homeXG || p.metrics?.find(m=>m.label.includes("Home"))?.value || "1.5 xG")}</strong></div>
-                <div><span>{p.away.name}</span><div className="xg-track"><span style={{width: `${(p.footy?.teams?.away?.xg ?? p.independentModel?.expected?.awayXG ?? p.metrics?.find(m=>m.label.includes("Away xG"))?.value ?? "1.1").toString().replace("xG","").trim()*40}%`, background:"#6a8a4a"}} /></div><strong>{p.footy?.teams?.away?.xg ? `${p.footy.teams.away.xg} xG` : (p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away"))?.value || "1.1 xG")}</strong></div>
+                <div><span>{p.away.name}</span><div className="xg-track"><span style={{width: `${(p.footy?.teams?.away?.xg ?? p.independentModel?.expected?.awayXG ?? p.metrics?.find(m=>m.label.includes("Away xG"))?.value ?? "1.1").toString().replace("xG","").trim()*40}%`, background:"#a5b4fc"}} /></div><strong>{p.footy?.teams?.away?.xg ? `${p.footy.teams.away.xg} xG` : (p.independentModel?.expected?.awayXG || p.metrics?.find(m=>m.label.includes("Away"))?.value || "1.1 xG")}</strong></div>
               </div>
               <p className="small-text muted">{p.footy?.teams?.home?.xg ? "Season xG/xGA via FootyStats (footystats.org) — snapshot data." : "xG from Vanish model (Elo 50%+Form 30%+Goals 20%+Home 8%+Corners). Real xG needs StatsBomb/FootyStats API."}</p>
             </div>
@@ -789,92 +822,82 @@ function MatchCard({ p, today, saved, onSave, onOpen, cart, onCart, bookie }) {
   const available = isBookieTopAvailable(p);
   const maybeAvailable = isBookieAvailable(p);
   return (
-    <article className={`match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""} ${inCart ? "in-cart" : ""} ${!maybeAvailable ? "not-on-bookie" : ""}`}>
-      <div className="match-card-top">
-        <span>
-          <SportIcon sport={p.sport} />
-          {p.league}
-        </span>
-        <div className="card-top-actions">
+    <article className={`match-row match-card sport-${p.sport} ${p.isToday ? "today" : ""} ${hasLiveModel ? "has-live-model" : ""} ${inCart ? "in-cart" : ""} ${!maybeAvailable ? "not-on-bookie" : ""}`}>
+      <div className="mr-id">
+        <div className="mr-tags">
+          <span className="mr-league"><SportIcon sport={p.sport} size={13} />{p.league}</span>
+          <span className="mr-time"><Clock3 size={11} /> {dayLabel(p.kickoff, today)} · {formatTime(p.kickoff)} WAT</span>
           {p.isToday && <SmallTag tone="green">TODAY</SmallTag>}
           {hasLiveModel && <SmallTag tone="green">VANISH MODEL</SmallTag>}
           {inCart && <SmallTag tone="green">IN CART</SmallTag>}
           {available ? <SmallTag tone="green">ON {bookie || "BOOKIE"} ✓</SmallTag> : maybeAvailable ? <SmallTag>ON BOOKIE?</SmallTag> : <SmallTag tone="red">NOT ON BOOKIE</SmallTag>}
-          <button
-            className={`icon-button save-button ${saved ? "saved" : ""}`}
-            title={saved ? "Remove saved match" : "Save match"}
-            aria-label={`${saved ? "Unsave" : "Save"} ${p.home.name} vs ${p.away.name}`}
-            aria-pressed={saved}
-            onClick={() => onSave(p.id)}
-          >
-            <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
-          </button>
+          <SmallTag>{p.mode === "demo" ? "DEMO" : hasLiveModel ? "LIVE + MODEL" : "PRE-MATCH"}</SmallTag>
         </div>
-      </div>
-      <div className="match-timing">
-        <Clock3 size={12} />
-        <span>
-          {dayLabel(p.kickoff, today)} · {formatTime(p.kickoff)} WAT
-        </span>
-        <SmallTag>{p.mode === "demo" ? "DEMO" : hasLiveModel ? "LIVE + MODEL" : "PRE-MATCH"}</SmallTag>
-      </div>
-      <div className="teams">
-        <div>
-          <TeamBadge team={p.home} tennis={p.sport === "tennis"} />
-          <h3>{p.home.name}</h3>
+        <div className="mr-teams">
+          <span className="mr-team">
+            <TeamBadge team={p.home} tennis={p.sport === "tennis"} />
+            <h3>{p.home.name}</h3>
+          </span>
+          <span className="teams-vs">vs</span>
+          <span className="mr-team">
+            <TeamBadge team={p.away} tennis={p.sport === "tennis"} />
+            <h3>{p.away.name}</h3>
+          </span>
         </div>
-        <span className="teams-vs">vs</span>
-        <div>
-          <TeamBadge team={p.away} tennis={p.sport === "tennis"} />
-          <h3>{p.away.name}</h3>
+        <div className="mr-foot">
+          <span className="mr-model"><span className="tiny-dot" /> {hasLiveModel ? `${p.independentModel.model}` : `${p.model} model`}</span>
+          <TrustScore p={p} />
+          <FootyStrip p={p} />
         </div>
       </div>
       {hasLiveModel ? (
-        <div className="dual-pick-box">
-          <div className="pick-row market">
-            <span><Database size={11} /> Market</span>
-            <strong>{p.marketPick.label}</strong>
-            <span className="prob">{pct(p.marketPick.probability)}</span>
-          </div>
-          <div className="pick-row vanish">
-            <span><Activity size={11} /> Vanish</span>
-            <strong>{p.vanishPick.label}</strong>
-            <span className="prob">{pct(p.vanishPick.probability)}</span>
-          </div>
-          {showDiff && (
-            <div className="model-disagreement">
-              <AlertTriangle size={12} />
-              Models disagree
+        <div className="mr-pick">
+          <span className="pick-label">MODEL LEANS</span>
+          <div className="dual-pick-box">
+            <div className="pick-row market">
+              <span><Database size={11} /> Market</span>
+              <strong>{p.marketPick.label}</strong>
+              <span className="prob">{pct(p.marketPick.probability)}</span>
             </div>
-          )}
+            <div className="pick-row vanish">
+              <span><Activity size={11} /> Vanish</span>
+              <strong>{p.vanishPick.label}</strong>
+              <span className="prob">{pct(p.vanishPick.probability)}</span>
+            </div>
+            {showDiff && (
+              <div className="model-disagreement">
+                <AlertTriangle size={12} />
+                Models disagree
+              </div>
+            )}
+          </div>
         </div>
       ) : (
-        <div className="pick-box">
-          <div>
-            <span className="pick-label">MODEL LEAN</span>
-            <strong>{p.pick.label}</strong>
-          </div>
-          <div className="pick-percentage">
-            <strong>{pct(p.pick.probability)}</strong>
-            <span>probability</span>
+        <div className="mr-pick">
+          <span className="pick-label">MODEL LEAN</span>
+          <strong>{p.pick.label}</strong>
+          <div className="mr-prob">
+            <span className="pct">{pct(p.pick.probability)}</span>
+            <div className="mr-bar"><i style={{ width: pct(p.pick.probability) }} /></div>
           </div>
         </div>
       )}
-      <FootyStrip p={p} />
-      <div className="card-foot">
-        <span style={{display:'flex',alignItems:'center',gap:'6px'}}>
-          <span className="tiny-dot" />
-          {hasLiveModel ? `${p.independentModel.model}` : `${p.model} model`}
-          <TrustScore p={p} />
-        </span>
-        <div style={{display:'flex',gap:'6px'}}>
-          <button className={`button ${inCart ? "secondary" : "lime"} small`} onClick={() => onCart(p.id)} style={{minHeight:'32px',padding:'6px 10px',fontSize:'9px'}}>
-            {inCart ? <><Check size={12} /> In Cart</> : <><Layers3 size={12} /> Add to Cart</>}
-          </button>
-          <button onClick={() => onOpen(p)}>
-            Read analysis <ArrowUpRight size={16} />
-          </button>
-        </div>
+      <div className="mr-actions">
+        <button
+          className={`icon-button save-button ${saved ? "saved" : ""}`}
+          title={saved ? "Remove saved match" : "Save match"}
+          aria-label={`${saved ? "Unsave" : "Save"} ${p.home.name} vs ${p.away.name}`}
+          aria-pressed={saved}
+          onClick={() => onSave(p.id)}
+        >
+          <Bookmark size={17} fill={saved ? "currentColor" : "none"} />
+        </button>
+        <button className={`button small ${inCart ? "secondary" : "lime"}`} onClick={() => onCart(p.id)}>
+          {inCart ? <><Check size={12} /> In Cart</> : <><Layers3 size={12} /> Add to Cart</>}
+        </button>
+        <button className="button small secondary" onClick={() => onOpen(p)}>
+          Read analysis <ArrowUpRight size={13} />
+        </button>
       </div>
     </article>
   );
@@ -1278,7 +1301,7 @@ function OddsComparison({ data }) {
           const overround = (1/Number(bestHome) + 1/Number(bestDraw) + 1/Number(bestAway))*100;
           const arb = overround < 100;
           return (
-            <tr key={p.id}><td><strong>{p.home.name} vs {p.away.name}</strong><br/><small>{p.league} • 1X2 HT BTTS Double Chance DNB First to Score Odd/Even 6 Over/Under HT/FT Correct Score</small></td><td><strong style={{color: arb ? "#15803d" : "#2f6b1c"}}>H {bestHome} D {bestDraw} A {bestAway} {arb ? "ARB!" : ""}</strong></td><td><span className={`tag ${overround < 105 ? "green" : ""}`}>{overround.toFixed(2)}% {arb ? "Arbitrage <100%" : "Margin"}</span></td><td><div style={{display:'flex',gap:'4px',flexWrap:'wrap'}}>{prices.slice(0,6).map(x=> <span key={x.book} className={`tag ${x.home===bestHome ? "green" : ""}`}>{x.book}: {x.home}</span>)}</div></td></tr>
+            <tr key={p.id}><td><strong>{p.home.name} vs {p.away.name}</strong><br/><small>{p.league} • 1X2 HT BTTS Double Chance DNB First to Score Odd/Even 6 Over/Under HT/FT Correct Score</small></td><td><strong style={{color: arb ? "#16a34a" : "#0f1115"}}>H {bestHome} D {bestDraw} A {bestAway} {arb ? "ARB!" : ""}</strong></td><td><span className={`tag ${overround < 105 ? "green" : ""}`}>{overround.toFixed(2)}% {arb ? "Arbitrage <100%" : "Margin"}</span></td><td><div style={{display:'flex',gap:'4px',flexWrap:'wrap'}}>{prices.slice(0,6).map(x=> <span key={x.book} className={`tag ${x.home===bestHome ? "green" : ""}`}>{x.book}: {x.home}</span>)}</div></td></tr>
           );
         })}
       </tbody></table></div>
@@ -1296,7 +1319,7 @@ function TrustScore({ p }) {
   return (
     <div className="trust-score">
       <span className={`trust-badge ${isBanker ? "banker" : score>=7 ? "high" : score>=5 ? "medium" : "low"}`}>{score}/10 {isBanker ? "BANKER" : ""}</span>
-      <div className="trust-bar"><span style={{width: `${score*10}%`, background: isBanker ? "#4ade80" : score>=7 ? "#c8e890" : score>=5 ? "#eab308" : "#ef4444"}} /></div>
+      <div className="trust-bar"><span style={{width: `${score*10}%`, background: isBanker ? "#16a34a" : score>=7 ? "#4f46e5" : score>=5 ? "#eab308" : "#ef4444"}} /></div>
     </div>
   );
 }
@@ -1463,7 +1486,7 @@ function MyTracker({ data }) {
         </div>
         <div className="table-scroll"><table className="results-table"><thead><tr><th>Match</th><th>Pick</th><th>Odds</th><th>Stake</th><th>Result</th><th>Profit</th><th>Action</th></tr></thead><tbody>
           {bets.map(b => (
-            <tr key={b.id}><td><strong>{b.match}</strong></td><td>{b.pick}</td><td>{b.odds}</td><td>${b.stake}</td><td><span className={`tag ${b.result==="won" ? "green" : b.result==="lost" ? "red" : ""}`}>{b.result.toUpperCase()}</span></td><td style={{color: b.profit>=0 ? "#15803d" : "#dc2626"}}>${b.profit.toFixed(2)}</td><td><div style={{display:'flex',gap:'4px'}}><button className="tag green" onClick={()=>updateResult(b.id,"won")}>Won</button><button className="tag red" onClick={()=>updateResult(b.id,"lost")}>Lost</button><button className="tag" onClick={()=>updateResult(b.id,"pending")}>Pending</button></div></td></tr>
+            <tr key={b.id}><td><strong>{b.match}</strong></td><td>{b.pick}</td><td>{b.odds}</td><td>${b.stake}</td><td><span className={`tag ${b.result==="won" ? "green" : b.result==="lost" ? "red" : ""}`}>{b.result.toUpperCase()}</span></td><td style={{color: b.profit>=0 ? "#16a34a" : "#dc2626"}}>${b.profit.toFixed(2)}</td><td><div style={{display:'flex',gap:'4px'}}><button className="tag green" onClick={()=>updateResult(b.id,"won")}>Won</button><button className="tag red" onClick={()=>updateResult(b.id,"lost")}>Lost</button><button className="tag" onClick={()=>updateResult(b.id,"pending")}>Pending</button></div></td></tr>
           ))}
         </tbody></table></div>
         <div className="inline-notice" style={{marginTop:'16px'}}><Info size={14} /><span>🎉 <strong>4/5 = 80% WIN RATE!</strong> You won 4 out of 5 — that's elite! Overall site is 17W-13L = 56.7% from 30 finished real games (NFL, MLB, NBA, NHL from ESPN free scores). Safe Tips with ≥60% confidence should be higher — keep using Only on my bookie filter (66 top) + Best Bets Today + Values Kelly. Your profit ${profit.toFixed(2)} from ${total} bets. Keep tracking — Vanish The Bookie is live 91 games, 30 finished auto-tracked, 100% real fixtures from ESPN/MLB/NHL official APIs, no demo.</span></div>
@@ -1474,100 +1497,62 @@ function MyTracker({ data }) {
 
 function Hero({ feature, onExplore, onModel, onOpen, demo }) {
   return (
-    <section className="hero">
-      <div className="hero-background" />
-      <div className="hero-copy">
-        <div className="eyebrow hero-eyebrow">
-          <span className="tiny-dot" /> INDEPENDENT SPORTS INTELLIGENCE • LIVE 91 GAMES • 30 FINISHED • 56.7% WIN RATE • YOU: 4/5 = 80% 🔥
+    <section className="briefing">
+      <div className="briefing-copy">
+        <div className="eyebrow">
+          <span className="tiny-dot" /> INDEPENDENT SPORTS INTELLIGENCE
         </div>
-        <h1>
-          Read the game.
-          <br />
-          <span>Not the noise.</span>
-        </h1>
+        <h1>Read the game. Not the noise.</h1>
         <p>
-          Every pick has a reason. Explore free, multi-sport
-          <br className="desktop-break" /> predictions with the analysis to back
-          them up. <strong style={{color:'#15803d'}}>You won 4/5 = 80% — keep going!</strong>
+          Free, multi-sport predictions with the analysis to back them up.{" "}
+          <strong>Every pick is model-built and labelled — no tips sold.</strong>
         </p>
         <div className="hero-actions">
           <button className="button lime" onClick={onExplore}>
-            Explore predictions <ArrowUpRight size={18} />
+            Explore predictions <ArrowUpRight size={17} />
           </button>
-          <button className="text-button" onClick={onModel}>
-            Meet the model <ArrowRight size={16} />
+          <button className="button secondary" onClick={onModel}>
+            Meet the model <ArrowRight size={15} />
           </button>
-        </div>
-        <div className="hero-sports">
-          <span>
-            <SportIcon sport="football" size={14} />
-            Football
-          </span>
-          <i />
-          <span>
-            <SportIcon sport="basketball" size={14} />
-            Basketball
-          </span>
-          <i />
-          <span>
-            <SportIcon sport="baseball" size={14} />
-            Baseball
-          </span>
-          <i />
-          <span>
-            <SportIcon sport="icehockey" size={14} />
-            Hockey
-          </span>
         </div>
       </div>
-      <div className="hero-right">
-        <div className="stadium-caption">
-          <span className="tiny-dot" /> EVERY ANGLE. ONE PLACE.
+      <div className="briefing-stats">
+        <div className="stat-tile accent">
+          <span className="stat-label">Model win rate</span>
+          <span className="stat-value">56.7%</span>
+          <span className="stat-note">30 finished demo games</span>
+        </div>
+        <div className="stat-tile">
+          <span className="stat-label">Your tracker</span>
+          <span className="stat-value">4/5</span>
+          <span className="stat-note">won · 80% hit rate</span>
         </div>
         {feature ? (
-          <button className="spotlight" onClick={() => onOpen(feature)}>
-            <div className="spotlight-top">
-              <span>
-                <span className="signal-bars">
-                  <i />
-                  <i />
-                  <i />
-                </span>{" "}
-                THE MODEL SPOTLIGHT
+          <button className="stat-tile featured" onClick={() => onOpen(feature)}>
+            <div>
+              <span className="stat-label">The model spotlight</span>
+              <span
+                className="stat-value"
+                style={{ fontSize: 17, letterSpacing: "-0.02em", lineHeight: 1.3 }}
+              >
+                {feature.pick.label}
               </span>
-              <ArrowUpRight size={17} />
+              <span className="stat-note">
+                {feature.home.name} vs {feature.away.name} · {feature.model.toUpperCase()}
+                {demo ? " · ILLUSTRATIVE FIXTURE" : ""}
+              </span>
             </div>
-            <div className="spotlight-match">
-              <div>
-                <TeamBadge team={feature.home} large />
-                <strong>{feature.home.name}</strong>
-              </div>
-              <span>VS</span>
-              <div>
-                <TeamBadge team={feature.away} large />
-                <strong>{feature.away.name}</strong>
-              </div>
-            </div>
-            <div className="spotlight-pick">
-              <div>
-                <span>Model lean</span>
-                <strong>{feature.pick.label}</strong>
-              </div>
-              <strong>
-                {pct(feature.pick.probability)}
-                <span>PROBABILITY</span>
-              </strong>
-            </div>
-            <div className="spotlight-footer">
-              {demo ? "ILLUSTRATIVE FIXTURE" : "MARKET-IMPLIED ESTIMATE"}
-              <span>{feature.model.toUpperCase()}</span>
+            <div style={{ textAlign: "right" }}>
+              <span className="stat-value">{pct(feature.pick.probability)}</span>
+              <span className="stat-note">probability</span>
             </div>
           </button>
         ) : (
-          <div className="spotlight">
-            <Database size={28} />
-            <h3>Waiting for the data</h3>
-            <p>Live predictions appear only when a data source is connected.</p>
+          <div className="stat-tile featured">
+            <div>
+              <span className="stat-label">The model spotlight</span>
+              <span className="stat-note">Live predictions appear only when a data source is connected.</span>
+            </div>
           </div>
         )}
       </div>
@@ -3118,72 +3103,113 @@ function App() {
       >
         Skip to content
       </a>
-      <header className="site-header">
-        <div className="header-inner">
-          <Brand onClick={() => navigate("predictions")} />
-          <nav
-            className={mobileMenu ? "open" : ""}
-            aria-label="Main navigation"
-          >
-            {[
-              ["predictions", "Predictions"],
-              ["live", "Live Scores"],
-              ["results", "Results"],
-              ["mytracker", "My Tracker 4/5 🔥"],
-              ["stats", "Stats Hub"],
-              ["values", "Values 79"],
-              ["betofday", "Bet of Day"],
-              ["builder", "Bet Builder"],
-              ["cart", `Cart ${cart.length ? `(${cart.length})` : ""}`],
-              ["comparator", "Comparator"],
-              ["playerstats", "Player Stats"],
-              ["formguide", "Form Guide"],
-              ["odds", "Odds Calc"],
-              ["oddscomparison", "Odds 13 Bookies"],
-              ["calculators", "Calculators"],
-              ["model", "The model"],
-            ].map(([id, label]) => (
-              <button
-                key={id}
-                className={view === id || (id.startsWith("cart") && view==="cart") ? "active" : ""}
-                onClick={() => navigate(id === "cart" ? "cart" : id)}
-                aria-current={view === id ? "page" : undefined}
-              >
-                {label}
-                {id === "model" && <span className="nav-new">LAB</span>}
-                {id === "builder" && <span className="nav-new" style={{background:"#4a6b2a"}}>NEW</span>}
-                {id.startsWith("cart") && cart.length > 0 && <span className="nav-new" style={{background:"#c8e890",color:"#13200d"}}>{cart.length}</span>}
-              </button>
-            ))}
+      <div className="app-shell">
+        <aside className={`sidebar ${mobileMenu ? "open" : ""}`}>
+          <div className="sidebar-head">
+            <Brand onClick={() => navigate("predictions")} />
+          </div>
+          <nav aria-label="Main navigation">
+            <div className="nav-group-label">Play</div>
+            <button onClick={() => navigate("predictions")} className={view === "predictions" ? "active" : ""}>
+              <LayoutGrid size={16} /><span>Predictions</span>
+            </button>
+            <button onClick={() => navigate("live")} className={view === "live" ? "active" : ""}>
+              <Radio size={16} /><span>Live Scores</span>
+            </button>
+            <button onClick={() => navigate("betofday")} className={view === "betofday" ? "active" : ""}>
+              <Trophy size={16} /><span>Bet of Day</span>
+            </button>
+            <button onClick={() => navigate("values")} className={view === "values" ? "active" : ""}>
+              <Sparkles size={16} /><span>Values</span>
+            </button>
+            <div className="nav-group-label">Build</div>
+            <button onClick={() => navigate("builder")} className={view === "builder" ? "active" : ""}>
+              <Layers3 size={16} /><span>Bet Builder</span>
+            </button>
+            <button onClick={() => navigate("cart")} className={view === "cart" ? "active" : ""}>
+              <ShoppingBag size={16} /><span>Cart</span>
+              {cart.length > 0 && <span className="nav-new">{cart.length}</span>}
+            </button>
+            <div className="nav-group-label">Analyze</div>
+            <button onClick={() => navigate("stats")} className={view === "stats" ? "active" : ""}>
+              <BarChart3 size={16} /><span>Stats Hub</span>
+            </button>
+            <button onClick={() => navigate("comparator")} className={view === "comparator" ? "active" : ""}>
+              <GitCompare size={16} /><span>Comparator</span>
+            </button>
+            <button onClick={() => navigate("formguide")} className={view === "formguide" ? "active" : ""}>
+              <TrendingUp size={16} /><span>Form Guide</span>
+            </button>
+            <button onClick={() => navigate("playerstats")} className={view === "playerstats" ? "active" : ""}>
+              <User size={16} /><span>Player Stats</span>
+            </button>
+            <div className="nav-group-label">Track</div>
+            <button onClick={() => navigate("results")} className={view === "results" ? "active" : ""}>
+              <ClipboardList size={16} /><span>Results</span>
+            </button>
+            <button onClick={() => navigate("mytracker")} className={view === "mytracker" ? "active" : ""}>
+              <Bookmark size={16} /><span>My Tracker</span>
+              <span className="nav-new">4/5</span>
+            </button>
+            <div className="nav-group-label">Tools</div>
+            <button onClick={() => navigate("odds")} className={view === "odds" ? "active" : ""}>
+              <Calculator size={16} /><span>Odds Calc</span>
+            </button>
+            <button onClick={() => navigate("oddscomparison")} className={view === "oddscomparison" ? "active" : ""}>
+              <Store size={16} /><span>Odds</span>
+              <span className="nav-new">13</span>
+            </button>
+            <button onClick={() => navigate("calculators")} className={view === "calculators" ? "active" : ""}>
+              <Sigma size={16} /><span>Calculators</span>
+            </button>
+            <div className="nav-group-label">Model</div>
+            <button onClick={() => navigate("model")} className={view === "model" ? "active" : ""}>
+              <FlaskConical size={16} /><span>The model</span>
+              <span className="nav-new">LAB</span>
+            </button>
           </nav>
-          <div className="header-actions">
+          <div className="sidebar-foot">
             <span className="header-mode">
               <span className="tiny-dot" />
               {demo ? "Demo preview" : "Market estimates"}
             </span>
-            <button className="community-button" style={{position:'relative'}} onClick={() => navigate("cart")}>
-              <Layers3 size={14} />
-              <span>Cart {cart.length ? `(${cart.length})` : "0 items"}</span>
-            </button>
-            <button
-              className="community-button"
-              onClick={() => data && info("community")}
-            >
+            <button className="community-button" onClick={() => data && info("community")}>
               <XLogo />
               <span>Join the conversation</span>
               <ArrowUpRight size={15} />
             </button>
+          </div>
+        </aside>
+        <div className="content-col">
+          <header className="topbar">
             <button
               className="icon-button mobile-menu"
-              aria-label="Toggle navigation"
+              onClick={() => setMobileMenu((v) => !v)}
+              aria-label={mobileMenu ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenu}
-              onClick={() => setMobileMenu(!mobileMenu)}
             >
-              {mobileMenu ? <X /> : <Menu />}
+              {mobileMenu ? <X size={19} /> : <Menu size={19} />}
             </button>
-          </div>
-        </div>
-      </header>
+            <div className="topbar-title">
+              <strong>{navLabel(view)}</strong>
+              <span>· {demo ? "Demo preview" : "Market estimates"}</span>
+            </div>
+            <div className="header-actions">
+              <button className="community-button" onClick={() => data && info("community")}>
+                <XLogo />
+                <span>Join the conversation</span>
+                <ArrowUpRight size={15} />
+              </button>
+              <button
+                className="icon-button"
+                title="Bet Builder"
+                aria-label="Open bet builder"
+                onClick={() => navigate("cart")}
+              >
+                <Layers3 size={19} />
+              </button>
+            </div>
+          </header>
       <main id="main" className="site-main" tabIndex={-1}>
         {loading ? (
           <div className="loading-screen">
@@ -3382,6 +3408,8 @@ function App() {
           </span>
         </div>
       </footer>
+        </div>
+      </div>
       {modal &&
         data &&
         (modal.kind === "analysis" ? (
