@@ -87,61 +87,119 @@ function prettyLeague(raw) {
   return s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
 }
 
+// ESPN's soccer scoreboards label many events with the *round* ("Regular
+// Season", "League Stage", "Clausura") instead of the competition, which is why
+// whole leagues used to vanish from the board. The event uid carries the league
+// id (s:600~l:730~e:...), and the core API resolves that id to a real name.
+const ESPN_LEAGUE_NAMES = new Map(); // "730" -> "Italian Serie A"
+
+async function resolveEspnLeagueName(id) {
+  if (!id) return null;
+  if (ESPN_LEAGUE_NAMES.has(id)) return ESPN_LEAGUE_NAMES.get(id);
+  try {
+    const res = await fetch(`https://sports.core.api.espn.com/v2/sports/soccer/leagues/${id}?lang=en`, { signal: AbortSignal.timeout(6000) });
+    if (!res.ok) { ESPN_LEAGUE_NAMES.set(id, null); return null; }
+    const j = await res.json();
+    const name = j.name || j.abbreviation || null;
+    ESPN_LEAGUE_NAMES.set(id, name);
+    return name;
+  } catch {
+    ESPN_LEAGUE_NAMES.set(id, null);
+    return null;
+  }
+}
+
 export async function fetchESPNAllWorldwide() {
   const cacheKey = "espn_all_worldwide";
-  let cachedData = getCached(cacheKey);
+  const cachedData = getCached(cacheKey);
   if (cachedData) return cachedData;
-  // Only top leagues available on Bet9ja/SportyBet etc — block obscure second-preliminary, Derde Divisie etc
-  const TOP_LEAGUES = ["Premier League","LaLiga","La Liga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","La Liga 2","Serie B","Bundesliga 2","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","EFL Trophy","MLB","NBA","WNBA","NHL","NFL","Liga MX","Brazil","Argentine","Turkish","A-League","J1 League","Swiss Super League","Austrian Bundesliga","Danish Superliga","Allsvenskan","Greek Super League","Chinese Super League","Saudi Pro League","Coupe de France","Russian Premier League"];
+
+  const TOP_LEAGUES = ["Premier League","LaLiga","Bundesliga","Serie A","Ligue 1","Eredivisie","Primeira Liga","Championship","Serie B","Ligue 2","Belgian Pro League","Scottish Premiership","Super Lig","Champions League","Europa League","Conference League","MLS","Major League Soccer","FA Cup","Copa del Rey","DFB Pokal","Coppa Italia","KNVB Cup","World Cup","Euro","AFCON","Copa America","League One","League Two","Liga MX","Brazil","Argentine","Turkish","A-League","J1 League","Swiss Super League","Austrian Bundesliga","Danish Superliga","Allsvenskan","Greek Super League","Chinese Super League","Saudi Pro League","Coupe de France","Russian Premier League","Keuken Kampioen","Brasileirao","Chilean","Bolivian","Peruvian","Colombian","Uruguayan","Paraguayan","Ecuadorian","Venezuelan","Egyptian","Moroccan","Tunisian","Algerian","South African","Israeli","Polish","Czech","Croatian","Serbian","Romanian","Bulgarian","Slovak","Slovenian","Hungarian","Ukrainian","Norwegian","Finnish","Icelandic","Irish","Welsh","Segunda"];
   const normKey = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-  const BLOCKED = ["second-preliminary","first preliminary","preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","southern football","northern premier","professional development","u21","u19","u23","women","reserve","youth","academy","amateur","county","southern league","group-stage","second-round-qualifying","first round qualifying","qualifying","acv","hoogeveen","b team","c team"];
-  try {
-    const res = await fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard", { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return [];
-    const data = await res.json();
-    const games = [];
-    for (const ev of (data.events || []).slice(0, 400)) {
-      const comp = ev.competitions?.[0];
-      if (!comp) continue;
-      const home = comp.competitors?.find(c => c.homeAway === "home");
-      const away = comp.competitors?.find(c => c.homeAway === "away");
-      if (!home || !away) continue;
-      const dt = new Date(ev.date);
-      if (dt < new Date(Date.now() - 12*3600000)) continue;
-      if (dt - Date.now() > 7*24*3600000) continue;
-      let leagueName = "Football";
-      if (ev.leagues && ev.leagues[0]?.name) leagueName = prettyLeague(ev.leagues[0].name);
-      else if (comp.league?.name) leagueName = prettyLeague(comp.league.name);
-      else if (ev.season?.slug) leagueName = prettyLeague(ev.season.slug);
-      const lowLeague = leagueName.toLowerCase();
-      const homeLower = home.team.displayName.toLowerCase();
-      const awayLower = away.team.displayName.toLowerCase();
-      const lowCombined = `${lowLeague} ${homeLower} ${awayLower}`;
-      if (BLOCKED.some(kw => lowCombined.includes(kw))) continue;
-      // Block B teams like Hibernian B, Aberdeen B, Rangers B — not on Bet9ja
-      const isBTeam = (name) => name.endsWith(" b") || name.includes(" b ") || /\b[abc] team\b/.test(name) || name.match(/\b\w+ [abc]$/);
-      if (isBTeam(homeLower) || isBTeam(awayLower)) continue;
-      // Block obscure Scottish low leagues
-      const obscureScottish = ["alloa","banks o'dee","berwick","bonnyrigg","clydebank","dumbarton","east kilbride","edinburgh city","elgin city","hibernian b","aberdeen b","rangers b","celtic b","dundee b","kilmanrock b","st mirren b","ncaa","ncaa division","fighting camels","blue hens","buccaneers","jaguars","leathernecks","greyhounds","monarchs","bonnies","seawolves","huskies","terriers","bulldogs"];
-      if (obscureScottish.some(kw => lowCombined.includes(kw))) continue;
-      // STRICT: Only allow top leagues — Premier League, LaLiga, Bundesliga, Serie A, Ligue 1, Eredivisie, Primeira, Championship, Champions League, Europa, Conference, MLS, FA Cup, etc, MLB, NBA, NHL, NFL, MLS, Liga MX, Brazil, Argentine, Turkish, Scottish Prem, etc
-      const isTop = TOP_LEAGUES.some(t => normKey(lowLeague).includes(normKey(t)));
-      // For worldwide, require top league — block generic league-phase, group-stage, qualifying, round-of-16, ncaa unless top
-      if (!isTop) {
-        // Allow league-phase only if it's Champions League with top clubs
-        const isChampionsTop = lowLeague.includes("league-phase") && (lowCombined.includes("bayern") || lowCombined.includes("manchester") || lowCombined.includes("real madrid") || lowCombined.includes("barcelona") || lowCombined.includes("psg") || lowCombined.includes("inter") || lowCombined.includes("arsenal") || lowCombined.includes("liverpool") || lowCombined.includes("chelsea") || lowCombined.includes("dortmund"));
-        if (!isChampionsTop) continue;
-      }
-      games.push({
-        id: `espn_world_${ev.id}`, sport: "football",
-        sportKey: `soccer_world_${leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'_').slice(0,30)}`,
-        league: leagueName, home: home.team.displayName, away: away.team.displayName,
-        kickoff: ev.date, source: "ESPN Worldwide",
-      });
-    }
-    cached(cacheKey, games);
-    return games;
-  } catch { return []; }
+  const ROUND_SLUG = /^(regular[- ]?season|league[- ]?stage|clausura|apertura|torneo.*|quarter[- ]?finals?|semi[- ]?finals?|final|final[- ]?stage|group[- ]?stage|playoffs?|round.*|matchday.*|postseason|preseason|.*conference.*)$/i;
+  const BLOCKED = ["second-preliminary","first preliminary","preliminary","derde divisie","vierde divisie","regionalliga","oberliga","isthmian","southern football","northern premier","professional development","u21","u19","u23","women"," w ","ladies","reserve","youth","academy","amateur","county","southern league","second-round-qualifying","first round qualifying","qualifying","acv","hoogeveen","b team","c team","ncaa","college"];
+
+  const now = new Date();
+  const ymd = `${now.getUTCFullYear()}${String(now.getUTCMonth() + 1).padStart(2, "0")}${String(now.getUTCDate()).padStart(2, "0")}`;
+  const urls = [
+    // rolling window plus an explicit today slate, so a quiet morning request
+    // still sees every fixture scheduled for today
+    "https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?limit=500",
+    `https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates=${ymd}&limit=500`,
+  ];
+
+  const events = new Map();
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+      if (!res.ok) continue;
+      const data = await res.json();
+      for (const ev of (data.events || [])) events.set(ev.id, ev);
+    } catch {}
+  }
+
+  // first pass: keep playable events and collect the league ids we must resolve
+  const rows = [];
+  const leagueIds = new Set();
+  for (const ev of events.values()) {
+    const comp = ev.competitions?.[0];
+    if (!comp) continue;
+    const home = comp.competitors?.find((c) => c.homeAway === "home");
+    const away = comp.competitors?.find((c) => c.homeAway === "away");
+    if (!home || !away) continue;
+    const dt = new Date(ev.date);
+    if (dt < new Date(Date.now() - 12 * 3600000)) continue;
+    if (dt - Date.now() > 7 * 24 * 3600000) continue;
+    const homeName = home.team?.displayName || home.team?.name;
+    const awayName = away.team?.displayName || away.team?.name;
+    if (!homeName || !awayName) continue;
+    if (/\bTBC\b|\bTBA\b|\bTBD\b/i.test(`${homeName} ${awayName}`)) continue;
+    const leagueId = (String(ev.uid || "").match(/~l:(\d+)/) || [])[1] || null;
+    if (leagueId) leagueIds.add(leagueId);
+    rows.push({ ev, comp, homeName, awayName, leagueId });
+  }
+
+  // resolve distinct league ids in small waves (one cold start ≈ 25 short calls)
+  const ids = [...leagueIds];
+  for (let k = 0; k < ids.length; k += 6) {
+    await Promise.all(ids.slice(k, k + 6).map(resolveEspnLeagueName));
+  }
+
+  const games = [];
+  for (const { ev, comp, homeName, awayName, leagueId } of rows) {
+    const candidates = [ev.leagues?.[0]?.name, ev.season?.slug, comp.league?.name]
+      .filter(Boolean)
+      .map(String);
+    const roundFree = candidates.find((s) => {
+      const stripped = s.replace(/^\d{4}(-\d{2})?-/, "");
+      return !ROUND_SLUG.test(stripped) && !/^\d{4}(-\d{2})?$/.test(s);
+    });
+    if (leagueId && ESPN_BLOCKED_LEAGUE_IDS.has(Number(leagueId))) continue;
+    const resolved = leagueId
+      ? (ESPN_LEAGUE_BY_ID.get(String(leagueId)) || ESPN_LEAGUE_NAME_FALLBACK[leagueId] || null)
+      : null;
+    const leagueName = prettyLeague(resolved || roundFree || candidates[0] || "Football");
+
+    const lowCombined = `${leagueName} ${homeName} ${awayName}`.toLowerCase();
+    if (BLOCKED.some((kw) => lowCombined.includes(kw))) continue;
+    const isBTeam = (name) => /\s+b$/.test(name) || /\s+b\s/.test(name) || /\b[abc] team\b/.test(name);
+    if (isBTeam(homeName.toLowerCase()) || isBTeam(awayName.toLowerCase())) continue;
+
+    games.push({
+      id: `espn_world_${ev.id}`,
+      sport: "football",
+      sportKey: `soccer_world_${normKey(leagueName).slice(0, 30)}`,
+      league: leagueName,
+      leagueId,
+      topLeague: TOP_LEAGUES.some((t) => normKey(leagueName).includes(normKey(t))),
+      home: homeName,
+      away: awayName,
+      kickoff: ev.date,
+      source: "ESPN Worldwide",
+    });
+  }
+  cached(cacheKey, games);
+  return games;
 }
 
 // ESPN's sport keys -> the labels the app uses. Anything unknown keeps its own
@@ -158,6 +216,38 @@ const ESPN_SPORT_MAP = {
   cricket: "cricket",
   rugby: "rugby",
 };
+
+// ESPN labels many scoreboard events with the round ("Regular Season") rather
+// than the competition. Every per-league board we fetch tells us the real
+// id -> name pair, so remember them and reuse it for the worldwide feed.
+// ESPN league ids we see in the worldwide feed but do not fetch per-league
+// boards for (so the id -> name map never learns them). Kept explicit so no
+// fixture ever reaches the board labelled "Regular Season".
+const ESPN_LEAGUE_NAME_FALLBACK = {
+  3902: "AFC Champions League Elite",
+  3903: "Argentine Primera Nacional",
+  3904: "Argentine Primera B Metropolitana",
+  3928: "Guatemalan Liga Nacional",
+  3929: "Honduran Liga Nacional",
+  3931: "Italian Serie B",
+  3934: "Paraguayan Primera División",
+  3943: "Salvadoran Primera División",
+  3949: "Venezuelan Primera División",
+  660: "Ecuadorian Liga Pro",
+  650: "Colombian Primera A",
+  670: "Peruvian Primera División",
+  680: "Uruguayan Primera División",
+  4002: "USL Championship",
+  8306: "Copa do Brasil",
+  8312: "Copa Chile",
+  8313: "Copa Colombia",
+  19915: "USL League One",
+  23541: "Mexican Liga de Expansión",
+};
+// women's competitions ESPN surfaces in the same feed
+const ESPN_BLOCKED_LEAGUE_IDS = new Set([8301, 23286, 20956]); // NWSL, Northern SL, Liga F — women's competitions
+
+const ESPN_LEAGUE_BY_ID = new Map(); // "770" -> "MLS"
 
 const ESPN_LEAGUES = [
   { sport: "baseball", league: "mlb", name: "MLB" },
@@ -227,12 +317,16 @@ export async function fetchESPNFree() {
       const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`, { signal: AbortSignal.timeout(8000) });
       if (!res.ok) return null;
       const data = await res.json();
+      const lg = data.leagues?.[0];
+      if (lg?.id && (lg.name || lg.abbreviation)) {
+        ESPN_LEAGUE_BY_ID.set(String(lg.id), lg.name || lg.abbreviation);
+      }
       cached(cacheKey, data);
       return { sport, league, name, data };
     } catch { return null; }
   };
   const boards = [];
-  const WAVE = 6;
+  const WAVE = 10;
   for (let i = 0; i < leagues.length; i += WAVE) {
     const batch = await Promise.all(leagues.slice(i, i + WAVE).map(fetchBoard));
     boards.push(...batch);
@@ -371,9 +465,11 @@ export async function fetchTheSportsDB() {
 
 export async function fetchAllFreeSources() {
   const { fetchAllFootballFree } = await import("./football-data.js");
-  const [espnAll, espn, tsdb, football, mlb, nhl] = await Promise.all([
+  // per-league boards first: they teach the worldwide feed what each league id
+  // is called (ESPN labels many events with the round instead of the competition)
+  const espn = await fetchESPNFree().catch(()=>[]);
+  const [espnAll, tsdb, football, mlb, nhl] = await Promise.all([
     fetchESPNAllWorldwide().catch(()=>[]),
-    fetchESPNFree().catch(()=>[]),
     fetchTheSportsDB().catch(()=>[]),
     fetchAllFootballFree().catch(()=>[]),
     fetchMLBStats().catch(()=>[]),
