@@ -339,6 +339,20 @@ export default async function handler(req, res) {
     const d = await getDashboard(url.searchParams.get("refresh") === "1");
     return res.json({ ok: !d.meta.error, mode: d.meta.mode, generatedAt: d.meta.generatedAt, modelVersion: MODEL_VERSION, games: d.predictions.length, finished: d.finishedGames.length, error: d.meta.error, warnings: d.meta.warnings });
   }
+  if (path === "/api/pipeline" && url.searchParams.get("full") === "1") {
+    res.setHeader("Cache-Control", "no-store");
+    const out = { keyPresent: Boolean(config.key && config.key !== "FREE_MODE_NO_KEY") };
+    const t = async (name, fn) => {
+      const t0 = Date.now();
+      try { const v = await fn(); out[name] = { ok: true, n: Array.isArray(v) ? v.length : v, ms: Date.now() - t0 }; }
+      catch (e) { out[name] = { ok: false, error: e.message, ms: Date.now() - t0 }; }
+    };
+    await t("odds", () => fetchLivePredictions(config));
+    await t("free", () => fetchAllFreeSources());
+    await t("fallback", () => fetchFreeFallback());
+    await t("multi", () => fetchMultiSourcePredictions(config));
+    return res.json(out);
+  }
   if (path === "/api/pipeline") {
     res.setHeader("Cache-Control", "no-store");
     const t0 = Date.now();
