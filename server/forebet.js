@@ -137,30 +137,34 @@ function tokens(name) {
     .filter((t) => t.length > 1 && !STOPWORDS.has(t));
 }
 
-// Find Forebet's numbers for one of our fixtures. Matched on the URL slug (the
-// feed gives us a clean slug even when the visible team names are concatenated),
-// and never across a 36-hour window, so a repeat fixture cannot leak in.
+// Find Forebet's numbers for one of our fixtures. Matching is deliberately
+// conservative: whole slug segments only (never substrings — "la" inside
+// "mladost" once attached a La Liga game to a Montenegrin one), each side needs
+// a distinctive segment, and home must come before away in the slug. A miss is
+// fine; a wrong match is not.
 export function forebetFor(home, away, kickoff) {
   const { matches } = loadForebetSnapshot();
   if (!matches.length) return null;
   const kick = kickoff ? new Date(kickoff).getTime() : null;
-  const homeSlug = slugify(home);
-  const awaySlug = slugify(away);
   const homeToks = tokens(home);
   const awayToks = tokens(away);
+  if (!homeToks.length || !awayToks.length) return null;
+
   let best = null;
   let bestScore = 0;
   for (const m of matches) {
     const slug = m.slug || "";
+    if (!slug) continue;
     if (kick && m.kickoff && Math.abs(new Date(m.kickoff).getTime() - kick) > 36 * 3600000) continue;
-    let score = 0;
-    if (homeSlug && awaySlug && slug.includes(`${homeSlug}-${awaySlug}`)) score = 10;
-    else {
-      const hitHome = homeToks.filter((t) => slug.includes(t)).length;
-      const hitAway = awayToks.filter((t) => slug.includes(t)).length;
-      const all = hitHome + hitAway;
-      if (all >= 2 && hitHome >= 1 && hitAway >= 1) score = all;
-    }
+    const parts = slug.replace(/-\d+$/, "").split("-");
+    const homeHits = homeToks.filter((t) => t.length >= 4 && parts.includes(t));
+    const awayHits = awayToks.filter((t) => t.length >= 4 && parts.includes(t));
+    if (!homeHits.length || !awayHits.length) continue;
+    // home must appear before away, otherwise it is a different fixture
+    const lastHome = Math.max(...homeHits.map((t) => parts.indexOf(t)));
+    const firstAway = Math.min(...awayHits.map((t) => parts.indexOf(t)));
+    if (lastHome > firstAway) continue;
+    const score = homeHits.join("").length + awayHits.join("").length;
     if (score > bestScore) { best = m; bestScore = score; }
   }
   if (!best) return null;

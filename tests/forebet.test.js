@@ -38,6 +38,10 @@ test("lookup refuses a fixture outside the 36h window", () => {
   assert.equal(forebetFor("Tenerife", "FC Andorra", "2026-11-05T12:00:00Z"), null);
 });
 
+test("short slug fragments never match a different fixture", () => {
+  assert.equal(forebetFor("RC Deportivo La Coruña", "CA Osasuna", "2026-11-02T20:00:00Z"), null);
+});
+
 test("lookup refuses teams that are not in the snapshot", () => {
   assert.equal(forebetFor("Real Madrid", "Barcelona", "2026-11-02T19:45:00Z"), null);
 });
