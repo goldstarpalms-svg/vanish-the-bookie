@@ -76,7 +76,7 @@ export async function fetchESPNAllWorldwide() {
     if (!res.ok) return [];
     const data = await res.json();
     const games = [];
-    for (const ev of (data.events || []).slice(0, 150)) {
+    for (const ev of (data.events || []).slice(0, 400)) {
       const comp = ev.competitions?.[0];
       if (!comp) continue;
       const home = comp.competitors?.find(c => c.homeAway === "home");
@@ -147,6 +147,27 @@ export async function fetchESPNFree() {
     { sport: "soccer", league: "sco.1", name: "Scottish Prem" },
     { sport: "soccer", league: "jpn.1", name: "J1 League" },
     { sport: "soccer", league: "aus.1", name: "A-League" },
+    // Expanded worldwide coverage (client request: more games, more leagues)
+    { sport: "soccer", league: "bel.1", name: "Belgian Pro League" },
+    { sport: "soccer", league: "sui.1", name: "Swiss Super League" },
+    { sport: "soccer", league: "aut.1", name: "Austrian Bundesliga" },
+    { sport: "soccer", league: "den.1", name: "Danish Superliga" },
+    { sport: "soccer", league: "swe.1", name: "Allsvenskan" },
+    { sport: "soccer", league: "gre.1", name: "Greek Super League" },
+    { sport: "soccer", league: "chn.1", name: "Chinese Super League" },
+    { sport: "soccer", league: "ksa.1", name: "Saudi Pro League" },
+    { sport: "soccer", league: "eng.3", name: "EFL League One" },
+    { sport: "soccer", league: "uefa.europa.conf", name: "Conference League" },
+    { sport: "soccer", league: "ger.dfb_pokal", name: "DFB Pokal" },
+    { sport: "soccer", league: "esp.copa_del_rey", name: "Copa del Rey" },
+    { sport: "soccer", league: "ita.coppa_italia", name: "Coppa Italia" },
+    { sport: "soccer", league: "fra.coupe_de_france", name: "Coupe de France" },
+    { sport: "soccer", league: "eng.fa", name: "FA Cup" },
+    // US college + more sports
+    { sport: "football", league: "college-football", name: "NCAA Football" },
+    { sport: "basketball", league: "mens-college-basketball", name: "NCAA Basketball" },
+    { sport: "cricket", league: "8039", name: "Cricket" },
+    { sport: "rugby", league: "289234", name: "Rugby" },
     // Tennis - FIXED to handle groupings structure
     { sport: "tennis", league: "atp", name: "ATP Tennis" },
     { sport: "tennis", league: "wta", name: "WTA Tennis" },
@@ -157,17 +178,23 @@ export async function fetchESPNFree() {
   ];
   
   const games = [];
-  for (const { sport, league, name } of leagues) {
-    const cacheKey = `espn_${sport}_${league}`;
-    let data = getCached(cacheKey);
-    if (!data) {
+  const boards = await Promise.all(
+    leagues.map(async ({ sport, league, name }) => {
+      const cacheKey = `espn_${sport}_${league}`;
+      const cachedBoard = getCached(cacheKey);
+      if (cachedBoard) return { sport, league, name, data: cachedBoard };
       try {
-        const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`, { signal: AbortSignal.timeout(6000) });
-        if (!res.ok) continue;
-        data = await res.json();
+        const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard`, { signal: AbortSignal.timeout(8000) });
+        if (!res.ok) return null;
+        const data = await res.json();
         cached(cacheKey, data);
-      } catch { continue; }
-    }
+        return { sport, league, name, data };
+      } catch { return null; }
+    })
+  );
+  for (const board of boards) {
+    if (!board) continue;
+    const { sport, league, name, data } = board;
     
     // Special handling for tennis: events are tournaments, matches in groupings[].competitions[]
     if (sport === "tennis") {
