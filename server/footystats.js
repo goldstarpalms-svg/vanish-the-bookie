@@ -58,6 +58,17 @@ const ALIASES = {
   "inter milan": "inter",
   "internazionale": "inter",
   "fc internazionale milano": "inter",
+  "atalanta bc": "atalanta",
+  "atalanta bergamasca calcio": "atalanta",
+  "sport lisboa e benfica": "benfica",
+  "sl benfica": "benfica",
+  "rc deportivo la coruna": "deportivocoruna",
+  "real club deportivo de la coruna": "deportivocoruna",
+  "clube atletico bragantino": "bragantino",
+  "santos fc sao paulo": "santos",
+  "santos fc": "santos",
+  "vitoria sc": "vitoriaguimaraes",
+  "vitoria guimaraes sc": "vitoriaguimaraes",
   "parma calcio 1913": "parma",
   "genoa cfc": "genoa",
   "juventus fc": "juventus",
@@ -117,6 +128,8 @@ function pairKey(home, away) {
 /**
  * Find a FootyStats match record for a fixture, trying both name orders
  * (FootyStats sometimes lists the away side first in the URL/title).
+ * Date-aware: entries carrying `kickoff` only bind to fixtures within ±5 days,
+ * so a stale record can never leak stats into a future meeting of the same teams.
  */
 export function findFootyMatch(game) {
   const snap = loadFootySnapshot();
@@ -126,12 +139,21 @@ export function findFootyMatch(game) {
 
   const nh = normalizeName(h);
   const na = normalizeName(a);
+  const kickoff = game?.kickoff ? new Date(game.kickoff).getTime() : null;
+  const close = (rec) => {
+    if (!rec.kickoff || kickoff == null) return true; // legacy entries: name-match only
+    const t = new Date(rec.kickoff).getTime();
+    return Number.isFinite(t) && Math.abs(t - kickoff) <= 5 * 86400000;
+  };
+  let loose = null;
   for (const rec of Object.values(snap.matches)) {
     const rh = normalizeName(rec.home);
     const ra = normalizeName(rec.away);
-    if ((rh === nh && ra === na) || (rh === na && ra === nh)) return rec;
+    if (!((rh === nh && ra === na) || (rh === na && ra === nh))) continue;
+    if (rec.kickoff && close(rec)) return rec;
+    if (!loose && !rec.kickoff) loose = rec;
   }
-  return null;
+  return loose;
 }
 
 /** Board-level signal (BTTS / Over 2.5 boards) keyed by either team name. */

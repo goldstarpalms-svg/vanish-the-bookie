@@ -3,6 +3,64 @@ import { predict, gradePrediction, MODEL_VERSION } from "../server/model.js";
 import { fetchLivePredictions, fetchMultiSourcePredictions, fetchFreeFallback } from "../server/live-provider.js";
 import { fetchESPNScores } from "../server/free-scores.js";
 import { enrichMany, getFootyBoards, tryLiveRefresh } from "../server/footystats.js";
+import { readFileSync } from "node:fs";
+
+/** Strip source-tag junk from league labels — shared helper. */
+import { cleanLeagueName } from "../server/live-provider.js";
+
+/**
+ * A finished game with a REAL score but no published pick.
+ * Score-only: status "unpicked", no fabricated pick/probabilities — honest record.
+ */
+function scoreOnlyRow(score, extra = {}) {
+  return {
+    id: extra.id || `score_${score.homeTeam}_${score.awayTeam}_${score.kickoff}`.replace(/\s+/g, "_"),
+    sport: extra.sport || "football",
+    sportKey: extra.sportKey || `football_${String(score.league || "").toLowerCase().replace(/[^a-z0-9]+/g, "_")}`,
+    league: cleanLeagueName(score.league),
+    home: { name: score.homeTeam, short: score.homeTeam.slice(0, 3).toUpperCase(), initials: score.homeTeam.slice(0, 2), color: "#6da4d9" },
+    away: { name: score.awayTeam, short: score.awayTeam.slice(0, 3).toUpperCase(), initials: score.awayTeam.slice(0, 2), color: "#bb9ae3" },
+    kickoff: score.kickoff,
+    result: { home: score.homeScore, away: score.awayScore },
+    status: "unpicked",
+    settledAt: new Date().toISOString(),
+    scoreSource: "ESPN — Real Score",
+    pick: null,
+    probabilities: null,
+    independentProbabilities: null,
+    independentModel: null,
+    isFinished: true,
+    isToday: extra.isToday ?? true,
+    model: null,
+  };
+}
+
+/** Publisher-side frozen pick log (GitHub-tracked; see scripts/results-log.mjs).
+ *  Shares data/live-records.json with server/index.js — one honest records store. */
+function loadRealLogRecords() {
+  try {
+    const raw = JSON.parse(readFileSync(new URL("../data/live-records.json", import.meta.url), "utf8"));
+    return Array.isArray(raw) ? raw : Array.isArray(raw.records) ? raw.records : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Drop cross-feed duplicates (ESPN + football-data list the same fixture, e.g. Brazil).
+ *  Keeps the first — richest — occurrence per team pair + kickoff window. */
+function dedupeGames(games) {
+  const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const seen = new Map();
+  return games.filter((g) => {
+    const k = `${norm(g.home?.name)}|${norm(g.away?.name)}`;
+    const t = new Date(g.kickoff).getTime();
+    for (const [k2, t2] of seen) {
+      if (k2 === k && Math.abs(t2 - t) <= 6 * 3600000) return false;
+    }
+    seen.set(k, t);
+    return true;
+  });
+}
 
 const MODE = process.env.DATA_MODE || "live"; // FORCE LIVE TOTALLY — user requested everything live
 const LIVE_REFRESH_MINUTES = Math.min(1440, Math.max(15, Number(process.env.LIVE_REFRESH_MINUTES || 60)));
@@ -68,12 +126,13 @@ async function getDashboard() {
         
         // Get finished scores from ESPN free (no quota) — UPDATED: 100 finished, only top leagues, accurate grading
         let finishedGames = [];
+        let sampleFinished = [];
         try {
           const espnScores = await fetchESPNScores();
           console.log(`ESPN Scores: ${espnScores.finished.length} finished, ${espnScores.live.length} live`);
           
           // Create finished games from ESPN — 50 max, only top leagues, accurate grading with Vanish model
-          const sampleFinished = [];
+          sampleFinished = [];
           const seen = new Set();
           for (const score of espnScores.finished.slice(0, 100)) {
             const key = `${score.homeTeam}-${score.awayTeam}-${score.kickoff}`;
@@ -91,6 +150,7 @@ async function getDashboard() {
             });
             
             if (mockPred) {
+              // GENUINE grade: this pick was published on today's board before the game finished.
               const result = { home: score.homeScore, away: score.awayScore };
               const status = gradePrediction(mockPred.pick, result);
               sampleFinished.push({
@@ -99,7 +159,7 @@ async function getDashboard() {
                 status,
                 settledAt: new Date().toISOString(),
                 scoreSource: "ESPN Free — Real Score",
-                league: `${score.league} (Finished)`,
+                league: cleanLeagueName(score.league),
                 isFinished: true,
                 kickoff: score.kickoff,
                 sport: score.sport || mockPred.sport,
@@ -109,48 +169,11 @@ async function getDashboard() {
                 independentModel: mockPred.independentModel,
               });
             } else {
-              // Create realistic finished with Vanish model grading — not generic home win
-              // Use actual score to determine winner, and create pick that would have been predicted
-              const isHomeWin = score.homeScore > score.awayScore;
-              const isDraw = score.homeScore === score.awayScore;
-              const isAwayWin = score.awayScore > score.homeScore;
-              const winningSide = isHomeWin ? "home" : isAwayWin ? "away" : "draw";
-              // Simulate Vanish model would have picked correctly 60% of time for safe tips
-              const shouldBeCorrect = Math.random() < 0.6; // 60% accuracy for finished to show realistic tracking
-              const pickSide = shouldBeCorrect ? winningSide : (winningSide === "home" ? "away" : winningSide === "away" ? "home" : "home");
-              const status = pickSide === winningSide ? "won" : "lost";
-              const sportMap = { baseball: "baseball", basketball: "basketball", hockey: "icehockey", football: "americanfootball", soccer: "football", tennis: "tennis" };
-              const sportId = sportMap[score.sport] || "football";
-              
-              sampleFinished.push({
-                id: `finished_${score.homeTeam}_${score.awayTeam}_${Date.now()}_${Math.random().toString(36).slice(2,6)}`.replace(/\s+/g,'_'),
-                sport: sportId,
-                sportKey: `${sportId}_${score.league.toLowerCase().replace(/[^a-z0-9]+/g,'_')}`,
-                league: `${score.league} (Finished)`,
-                home: { name: score.homeTeam, short: score.homeTeam.slice(0,3).toUpperCase(), initials: score.homeTeam.slice(0,2), color: "#6da4d9" },
-                away: { name: score.awayTeam, short: score.awayTeam.slice(0,3).toUpperCase(), initials: score.awayTeam.slice(0,2), color: "#bb9ae3" },
-                kickoff: score.kickoff,
-                result: { home: score.homeScore, away: score.awayScore },
-                status,
-                settledAt: new Date().toISOString(),
-                scoreSource: "ESPN Free — Real Score + Vanish Model",
-                pick: { 
-                  side: pickSide, 
-                  probability: 0.55 + Math.random()*0.25, 
-                  label: pickSide === "home" ? `${score.homeTeam} to win` : pickSide === "away" ? `${score.awayTeam} to win` : "Draw",
-                  fairOdds: Number((1/(0.55 + Math.random()*0.25)).toFixed(2))
-                },
-                probabilities: { home: isHomeWin ? 0.55 : 0.22, draw: isDraw ? 0.5 : 0.2, away: isAwayWin ? 0.55 : 0.22 },
-                independentProbabilities: { home: isHomeWin ? 0.6 : 0.2, draw: 0.2, away: isAwayWin ? 0.6 : 0.2 },
-                independentModel: {
-                  model: "Vanish Poisson Model (Accuracy Focused)",
-                  confidence: 0.6 + Math.random()*0.2,
-                  type: "independent"
-                },
-                isFinished: true,
-                isToday: false,
-                model: "Vanish Poisson Model",
-              });
+              // NO published pick → score-only row. Never fabricate picks or grades.
+              sampleFinished.push(scoreOnlyRow(score, {
+                sport: { baseball: "baseball", basketball: "basketball", hockey: "icehockey", football: "americanfootball", soccer: "football", tennis: "tennis" }[score.sport] || "football",
+                isToday: true,
+              }));
             }
             if (sampleFinished.length >= 50) break;
           }
@@ -200,27 +223,19 @@ async function getDashboard() {
               const awayScore = parseInt(away.score);
               if (isNaN(homeScore) || isNaN(awayScore)) continue;
               let leagueName = ev.leagues?.[0]?.name || comp.league?.name || "Football";
-              // Keep all leagues for finished — including obscure, so user sees a lot has finished
-              allFinishedToday.push({
-                id: `espn_all_${ev.id}`,
-                sport: "football",
-                sportKey: `soccer_${leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'_')}`,
-                league: leagueName,
-                home: { name: home.team.displayName, short: home.team.displayName.slice(0,3).toUpperCase(), initials: home.team.displayName.slice(0,2), color: "#6da4d9" },
-                away: { name: away.team.displayName, short: away.team.displayName.slice(0,3).toUpperCase(), initials: away.team.displayName.slice(0,2), color: "#bb9ae3" },
+              // Keep all leagues for finished — including obscure, so user sees a lot has finished.
+              // Score-only: no published pick exists for these → never fabricate one.
+              allFinishedToday.push(scoreOnlyRow({
+                homeTeam: home.team.displayName,
+                awayTeam: away.team.displayName,
+                homeScore,
+                awayScore,
                 kickoff: ev.date,
-                result: { home: homeScore, away: awayScore },
-                status: homeScore > awayScore ? "won" : homeScore < awayScore ? "lost" : "void",
-                settledAt: new Date().toISOString(),
-                scoreSource: "ESPN All — Real Score",
-                pick: { side: homeScore > awayScore ? "home" : homeScore < awayScore ? "away" : "draw", probability: 0.55, label: homeScore > awayScore ? `${home.team.displayName} to win` : homeScore < awayScore ? `${away.team.displayName} to win` : "Draw", fairOdds: 1.82 },
-                probabilities: { home: 0.5, draw: 0.2, away: 0.5 },
-                independentProbabilities: { home: 0.5, draw: 0.2, away: 0.5 },
-                independentModel: { model: "Vanish Model", confidence: 0.6, type: "independent" },
-                isFinished: true,
+                league: leagueName,
+              }, {
+                id: `espn_all_${ev.id}`,
                 isToday: true,
-                model: "Vanish",
-              });
+              }));
             }
           }
         } catch (e) {
@@ -241,8 +256,9 @@ async function getDashboard() {
         
         // FootyStats enrichment: form, H2H, BTTS/O2.5 %, xG + small confidence nudges.
         tryLiveRefresh().catch(() => {}); // best-effort, never blocks (Cloudflare usually blocks datacenter IPs)
-        cache.predictions = enrichMany(nowFiltered);
-        cache.records = [];
+        cache.predictions = enrichMany(dedupeGames(nowFiltered));
+        // REAL records: publisher-side frozen log (GitHub-tracked) + today's genuinely graded picks.
+        cache.records = [...loadRealLogRecords(), ...sampleFinished.filter(f => f.status === "won" || f.status === "lost")];
         cache.finishedGames = finalFinished;
         console.log(`Finished TODAY: ${finalFinished.length} (top filtered ${todayFinished.length} + all scoreboard ${allFinishedToday.length}) todayKey ${todayKey} — a lot has finished`);
         console.log(`FootyStats: enriched ${cache.predictions.filter(p => p.footy).length} of ${cache.predictions.length} football games`);
@@ -257,40 +273,15 @@ async function getDashboard() {
           cache.error = null;
         } else {
           try {
-            cache.predictions = enrichMany(await fetchFreeFallback());
+            cache.predictions = enrichMany(dedupeGames(await fetchFreeFallback()));
             cache.finishedGames = [];
             try {
-              const espnScores = await fetchESPNScores();
-              const finishedAll = [];
-              for (const score of espnScores.finished.slice(0,100)) {
-                const isHomeWin = score.homeScore > score.awayScore;
-                const isDraw = score.homeScore === score.awayScore;
-                const winningSide = isHomeWin ? "home" : isDraw ? "draw" : "away";
-                const shouldBeCorrect = Math.random() < 0.6;
-                const pickSide = shouldBeCorrect ? winningSide : (winningSide === "home" ? "away" : "home");
-                const status = pickSide === winningSide ? "won" : "lost";
-                const sportMap = { baseball: "baseball", basketball: "basketball", hockey: "icehockey", football: "americanfootball", soccer: "football", tennis: "tennis" };
-                finishedAll.push({
-                  id: `finished_${score.homeTeam}_${score.awayTeam}_${Date.now()}_${Math.random().toString(36).slice(2,6)}`.replace(/\s+/g,'_'),
-                  sport: sportMap[score.sport] || "football",
-                  sportKey: `${sportMap[score.sport] || "football"}_${score.league.toLowerCase().replace(/[^a-z0-9]+/g,'_')}`,
-                  league: `${score.league} (Finished)`,
-                  home: { name: score.homeTeam, short: score.homeTeam.slice(0,3).toUpperCase(), initials: score.homeTeam.slice(0,2), color: "#6da4d9" },
-                  away: { name: score.awayTeam, short: score.awayTeam.slice(0,3).toUpperCase(), initials: score.awayTeam.slice(0,2), color: "#bb9ae3" },
-                  kickoff: score.kickoff,
-                  result: { home: score.homeScore, away: score.awayScore },
-                  status,
-                  settledAt: new Date().toISOString(),
-                  scoreSource: "ESPN Free — Real Score",
-                  pick: { side: pickSide, probability: 0.6, label: pickSide === "home" ? `${score.homeTeam} to win` : pickSide === "away" ? `${score.awayTeam} to win` : "Draw", fairOdds: 1.67 },
-                  probabilities: { home: isHomeWin ? 0.6 : 0.2, draw: isDraw ? 0.6 : 0.2, away: !isHomeWin && !isDraw ? 0.6 : 0.2 },
-                  independentProbabilities: { home: isHomeWin ? 0.6 : 0.2, draw: 0.2, away: !isHomeWin && !isDraw ? 0.6 : 0.2 },
-                  independentModel: { model: "Vanish Poisson Model", confidence: 0.65, type: "independent" },
-                  isFinished: true,
-                  isToday: false,
-                  model: "Vanish Poisson Model",
-                });
-              }
+            const espnScores = await fetchESPNScores();
+            const finishedAll = [];
+            for (const score of espnScores.finished.slice(0,100)) {
+              // Score-only rows — no fabricated picks in the fallback path either.
+              finishedAll.push(scoreOnlyRow(score, { isToday: false }));
+            }
               // ONLY TODAY'S RESULTS ONLY — strict today by kickoff
               const todayKeyFallback = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Lagos", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
               const isTodayFallback = (dateStr) => {

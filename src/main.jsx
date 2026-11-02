@@ -1495,7 +1495,7 @@ function MyTracker({ data }) {
   );
 }
 
-function Hero({ feature, onExplore, onModel, onOpen, demo }) {
+function Hero({ feature, onExplore, onModel, onOpen, demo, stats = {} }) {
   return (
     <section className="briefing">
       <div className="briefing-copy">
@@ -1519,13 +1519,13 @@ function Hero({ feature, onExplore, onModel, onOpen, demo }) {
       <div className="briefing-stats">
         <div className="stat-tile accent">
           <span className="stat-label">Model win rate</span>
-          <span className="stat-value">56.7%</span>
-          <span className="stat-note">30 finished demo games</span>
+          <span className="stat-value">{stats.winRate ?? "—"}</span>
+          <span className="stat-note">{stats.winNote ?? "real scores only"}</span>
         </div>
         <div className="stat-tile">
-          <span className="stat-label">Your tracker</span>
-          <span className="stat-value">4/5</span>
-          <span className="stat-note">won · 80% hit rate</span>
+          <span className="stat-label">{stats.boardLabel ?? "On the board"}</span>
+          <span className="stat-value">{stats.boardValue ?? "—"}</span>
+          <span className="stat-note">{stats.boardNote ?? ""}</span>
         </div>
         {feature ? (
           <button className="stat-tile featured" onClick={() => onOpen(feature)}>
@@ -2134,7 +2134,7 @@ function FinishedMatchCard({ p, today, onOpen }) {
         </div>
         <div className="result-pick">
           <span>Pick: {p.pick.label}</span>
-          <span className={`outcome ${p.status}`}>{isWon ? <CheckCircle2 size={14} /> : <CircleX size={14} />}{p.status.toUpperCase()}</span>
+          <span className={`outcome ${p.status}`}>{isWon ? <CheckCircle2 size={14} /> : p.status === "lost" ? <CircleX size={14} /> : <Minus size={14} />}{p.status === "unpicked" ? "NO PICK" : p.status.toUpperCase()}</span>
         </div>
       </div>
       <div className="card-foot">
@@ -2309,6 +2309,9 @@ function Results({ data, onOpen, notify }) {
               <strong className="outcome-counts">
                 <i>{won}</i> / {lost} / {voids} / {pending}
               </strong>
+              <span className="side-note">
+                {records.filter((p) => p.status === "unpicked").length} games score-only · no published pick, no verdict
+              </span>
             </div>
             <div>
               <span>{demo ? "Demo hit rate" : "Settled hit rate (90min)"}</span>
@@ -2368,7 +2371,7 @@ function Results({ data, onOpen, notify }) {
                 "won",
                 "lost",
                 "void",
-                ...(!demo ? ["pending"] : []),
+                ...(!demo ? ["pending", "unpicked"] : []),
               ].map((f) => (
                 <button
                   key={f}
@@ -3090,6 +3093,31 @@ function App() {
     }
   };
   const demo = data?.meta.mode !== "live";
+  // REAL statistics for the briefing strip — computed from the live payload +
+  // the GitHub-tracked record store. Demo mode keeps its labelled demo numbers.
+  const settledRecords = (data?.records || []).filter(
+    (r) => r.status === "won" || r.status === "lost"
+  );
+  const realWon = settledRecords.filter((r) => r.status === "won").length;
+  const heroStats = demo
+    ? {
+        winRate: "56.7%",
+        winNote: "30 finished demo games",
+        boardLabel: "Your tracker",
+        boardValue: "4/5",
+        boardNote: "won · 80% hit rate",
+      }
+    : {
+        winRate: settledRecords.length
+          ? `${Math.round((100 * realWon) / settledRecords.length)}%`
+          : "—",
+        winNote: settledRecords.length
+          ? `${realWon}W-${settledRecords.length - realWon}L settled · real scores`
+          : "no settled picks yet — the record starts now",
+        boardLabel: "On the board",
+        boardValue: String(data?.predictions?.length ?? 0),
+        boardNote: `${data?.finishedGames?.length ?? 0} finished today · ${data?.meta?.snapshotDate || ""}`,
+      };
   return (
     <>
       <a
@@ -3260,6 +3288,7 @@ function App() {
                   onModel={() => navigate("model")}
                   onOpen={onOpen}
                   demo={demo}
+                  stats={heroStats}
                 />
                 <div className="facts-strip">
                   <div>

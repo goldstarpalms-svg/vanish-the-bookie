@@ -1,0 +1,34 @@
+name: results-log
+
+# Publisher-side record: freeze published picks before kickoff, settle them
+# with real ESPN scores after final whistle, commit to data/live-records.json.
+# This makes "frozen snapshot before kickoff, GitHub tracked" real.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  freeze-and-grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Freeze picks and grade with real scores
+        run: node scripts/results-log.mjs
+      - name: Commit records [skip ci]
+        run: |
+          git config user.name "results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/live-records.json
+          if git diff --cached --quiet; then
+            echo "no record changes"
+          else
+            git commit -m "results: freeze/grade real scores [skip ci] [vercel skip]"
+            git push
+          fi

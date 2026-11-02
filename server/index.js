@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import { demoFixtures, demoArchive } from "./fixtures.js";
 import { predict, gradePrediction, MODEL_VERSION } from "./model.js";
-import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions, fetchFreeFallback } from "./live-provider.js";
+import { fetchLivePredictions, fetchLiveScores, fetchMultiSourcePredictions, fetchFreeFallback, cleanLeagueName } from "./live-provider.js";
 import { fetchESPNScores, gradeWithESPNScores } from "./free-scores.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -172,7 +172,7 @@ async function refresh() {
                 status,
                 settledAt: new Date().toISOString(),
                 scoreSource: "ESPN Free",
-                league: `${score.league} (Finished)`,
+                league: cleanLeagueName(score.league),
               });
             }
           }

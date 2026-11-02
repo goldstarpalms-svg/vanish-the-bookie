@@ -1,1302 +1,361 @@
 {
-  "generatedAt": "2026-10-28T21:30:00Z",
+  "generatedAt": "2026-11-02T16:20:00Z",
   "source": "FootyStats (footystats.org)",
   "fetchedVia": "browser-rendered fetch (Cloudflare-protected site)",
   "note": "FootyStats stats snapshot — team form, H2H, BTTS/Over2.5 percentages, xG season averages. Data labelled FootyStats throughout the UI.",
   "matches": {
-    "argentina|argentinos juniors|independiente rivadavia": {
-      "home": "Argentinos Juniors",
-      "away": "CS Independiente Rivadavia",
-      "league": "Argentina - Primera División",
-      "url": "https://footystats.org/argentina/argentinos-juniors-vs-cs-independiente-rivadavia-h2h-stats",
+    "x|Newcastle United|Everton": {
+      "home": "Newcastle United",
+      "away": "Everton",
+      "kickoff": "2026-11-02T20:00:00Z",
+      "url": "https://footystats.org/england/everton-fc-vs-newcastle-united-fc-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "DLWDW",
-        "away": "WWDLD",
-        "ppgHome": 1.91,
-        "ppgAway": 1.77
-      },
-      "h2h": {
-        "matches": 7,
-        "homeWins": 1,
-        "draws": 2,
-        "awayWins": 4,
-        "over15": 86,
-        "over25": 86,
-        "over35": 43,
-        "btts": 86,
-        "csHome": 14,
-        "csAway": 14
-      },
-      "prediction": {
-        "over25": 44,
-        "over25Avg": 38,
-        "over15": 72,
-        "over15Avg": 65,
-        "btts": 57,
-        "bttsAvg": 47,
-        "gpm": 2.4,
-        "gpmAvg": 2.16
-      },
-      "teams": {
-        "home": {
-          "winPct": 53,
-          "winPctHome": 71,
-          "winPctAway": 33,
-          "avgGoals": 1.97,
-          "scored": 1.19,
-          "scoredHome": 1.41,
-          "conceded": 0.78,
-          "concededHome": 0.53,
-          "btts": 47,
-          "cs": 44,
-          "xg": 1.62,
-          "xgHome": 2.03,
-          "xga": 1.19,
-          "ppg": 1.91,
-          "ppgHome": 2.41,
-          "ppgAway": 1.33
-        },
-        "away": {
-          "winPct": 50,
-          "winPctHome": 63,
-          "winPctAway": 36,
-          "avgGoals": 2.83,
-          "scored": 1.57,
-          "scoredAway": 0.93,
-          "conceded": 1.27,
-          "concededAway": 1.21,
-          "btts": 67,
-          "cs": 23,
-          "xg": 1.62,
-          "xgAway": 1.36,
-          "xga": 1.43,
-          "ppg": 1.77,
-          "ppgHome": 2.06,
-          "ppgAway": 1.43
-        }
-      }
-    },
-    "italy|genoa|juventus": {
-      "home": "Genoa CFC",
-      "away": "Juventus FC",
-      "league": "Italy - Serie A",
-      "url": "https://footystats.org/italy/juventus-fc-vs-genoa-cfc-h2h-stats",
-      "form": {
-        "home": "LLDWW",
-        "away": "WLDW",
-        "ppgHome": 1.4,
-        "ppgAway": 1.75
+        "home": "LWLLW",
+        "away": "DWDLL",
+        "ppgHome": 1.38,
+        "ppgAway": 1.25
       },
       "h2h": {
         "matches": 36,
-        "homeWins": 5,
+        "homeWins": 11,
         "draws": 7,
-        "awayWins": 24,
-        "over15": 75,
-        "over25": 47,
-        "over35": 39,
-        "btts": 50,
-        "csHome": 11,
-        "csAway": 44
-      },
-      "prediction": {
-        "over25": 33,
-        "over25Avg": 59,
-        "over15": 78,
-        "over15Avg": 85,
-        "btts": 55,
-        "bttsAvg": 56,
-        "gpm": 2.55,
-        "gpmAvg": 3.07
-      },
-      "teams": {
-        "home": {
-          "winPct": 25,
-          "winPctHome": 40,
-          "winPctAway": 0,
-          "avgGoals": 2.38,
-          "scored": 0.75,
-          "scoredHome": 1.0,
-          "conceded": 1.63,
-          "concededHome": 1.6,
-          "btts": 50,
-          "cs": 13,
-          "xg": 1.12,
-          "xgHome": 1.17,
-          "xga": 1.73,
-          "ppg": 0.88,
-          "ppgHome": 1.4
-        },
-        "away": {
-          "winPct": 55,
-          "winPctHome": 67,
-          "winPctAway": 43,
-          "avgGoals": 2.6,
-          "scored": 1.55,
-          "conceded": 1.05,
-          "btts": 48,
-          "cs": 38,
-          "xg": 1.55,
-          "xga": 1.15,
-          "ppg": 1.75
-        }
-      }
-    },
-    "italy|ac milan|bologna": {
-      "home": "AC Milan",
-      "away": "Bologna FC 1909",
-      "league": "Italy - Serie A",
-      "url": "https://footystats.org/italy/ac-milan-vs-bologna-fc-1909-h2h-stats",
-      "form": {
-        "home": "WWW",
-        "away": "LLWW",
-        "ppgHome": 3.0,
-        "ppgAway": 1.5
-      },
-      "h2h": {
-        "matches": 35,
-        "homeWins": 23,
-        "draws": 8,
-        "awayWins": 4,
-        "over15": 69,
-        "over25": 54,
-        "over35": 26,
-        "btts": 51,
-        "csHome": 43,
-        "csAway": 14
-      },
-      "prediction": {
-        "over25": 46,
-        "over25Avg": 59,
-        "over15": 75,
-        "over15Avg": 85,
-        "btts": 29,
-        "bttsAvg": 56,
-        "gpm": 2.54,
-        "gpmAvg": 3.07
-      },
-      "teams": {
-        "home": {
-          "winPct": 63,
-          "winPctHome": 100,
-          "winPctAway": 40,
-          "avgGoals": 2.88,
-          "scored": 2.0,
-          "scoredHome": 2.67,
-          "conceded": 0.88,
-          "concededHome": 0.67,
-          "btts": 63,
-          "cs": 38,
-          "xg": 1.95,
-          "xgHome": 2.35,
-          "xga": 1.05,
-          "ppg": 2.25,
-          "ppgHome": 3.0,
-          "ppgAway": 1.8
-        },
-        "away": {
-          "winPct": 33,
-          "winPctHome": 40,
-          "winPctAway": 25,
-          "avgGoals": 2.3,
-          "scored": 1.1,
-          "conceded": 1.2,
-          "btts": 45,
-          "cs": 30,
-          "xg": 1.25,
-          "xga": 1.35,
-          "ppg": 1.5
-        }
-      }
-    },
-    "usa|inter miami|fc cincinnati": {
-      "home": "Inter Miami",
-      "away": "FC Cincinnati",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/fc-cincinnati-vs-club-internacional-de-futbol-miami-h2h-stats",
-      "form": {
-        "home": "DDDWW",
-        "away": "LDLWW",
-        "ppgHome": 1.67,
-        "ppgAway": 0.94
-      },
-      "h2h": {
-        "matches": 15,
-        "homeWins": 7,
-        "draws": 3,
-        "awayWins": 5,
-        "over15": 73,
-        "over25": 67,
-        "over35": 53,
-        "btts": 53,
-        "csHome": 27,
-        "csAway": 27
-      },
-      "prediction": {
-        "over25": 78,
-        "over25Avg": 64,
-        "over15": 97,
-        "over15Avg": 83,
-        "btts": 78,
-        "bttsAvg": 64,
-        "gpm": 4.33,
-        "gpmAvg": 3.24
-      },
-      "teams": {
-        "home": {
-          "winPct": 48,
-          "winPctHome": 40,
-          "winPctAway": 56,
-          "avgGoals": 3.1,
-          "scored": 1.75,
-          "conceded": 1.35,
-          "btts": 62,
-          "cs": 24,
-          "xg": 1.7,
-          "xgHome": 1.85,
-          "xga": 1.3,
-          "ppg": 1.77,
-          "ppgHome": 1.67
-        },
-        "away": {
-          "winPct": 42,
-          "winPctHome": 50,
-          "winPctAway": 33,
-          "avgGoals": 3.0,
-          "scored": 1.35,
-          "conceded": 1.65,
-          "btts": 58,
-          "cs": 22,
-          "xg": 1.4,
-          "xga": 1.5,
-          "ppg": 1.4,
-          "ppgAway": 1.1
-        }
-      }
-    },
-    "scotland|celtic|dundee united": {
-      "home": "Celtic FC",
-      "away": "Dundee United FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/celtic-fc-vs-dundee-united-fc-h2h-stats",
-      "form": {
-        "home": "WLWWW",
-        "away": "DWWDW",
-        "ppgHome": 2.7,
-        "ppgAway": 1.5
-      },
-      "h2h": {
-        "matches": 35,
-        "homeWins": 26,
-        "draws": 6,
-        "awayWins": 3,
-        "over15": 86,
-        "over25": 63,
-        "over35": 40,
-        "btts": 34,
-        "csHome": 63,
-        "csAway": 9
-      },
-      "prediction": {
-        "over25": 55,
-        "over25Avg": 57,
-        "over15": 80,
-        "over15Avg": 78,
-        "btts": 45,
-        "bttsAvg": 55,
-        "gpm": 2.95,
-        "gpmAvg": 2.82
-      },
-      "teams": {
-        "home": {
-          "winPct": 80,
-          "winPctHome": 80,
-          "winPctAway": 100,
-          "avgGoals": 3.2,
-          "scored": 2.3,
-          "scoredHome": 2.2,
-          "conceded": 0.9,
-          "btts": 45,
-          "cs": 50,
-          "xg": 2.15,
-          "xgHome": 2.1,
-          "xga": 0.95,
-          "ppg": 2.7,
-          "ppgHome": 2.4,
-          "ppgAway": 3.0
-        },
-        "away": {
-          "winPct": 45,
-          "winPctHome": 55,
-          "winPctAway": 33,
-          "avgGoals": 2.6,
-          "scored": 1.4,
-          "conceded": 1.2,
-          "btts": 55,
-          "cs": 30,
-          "xg": 1.35,
-          "xga": 1.3,
-          "ppg": 1.5
-        }
-      }
-    },
-    "italy|parma|udinese": {
-      "home": "Parma Calcio 1913",
-      "away": "Udinese Calcio",
-      "league": "Italy - Serie A",
-      "url": "https://footystats.org/italy/udinese-calcio-vs-parma-calcio-1913-h2h-stats",
-      "form": {
-        "home": "LDWL",
-        "away": "WLL",
-        "ppgHome": 1.0,
-        "ppgAway": 1.0
-      },
-      "h2h": {
-        "matches": 22,
-        "homeWins": 9,
-        "draws": 5,
-        "awayWins": 8,
-        "over15": 77,
-        "over25": 59,
-        "over35": 45,
-        "btts": 55,
-        "csHome": 32,
-        "csAway": 18
-      },
-      "prediction": {
-        "over25": 75,
-        "over25Avg": 59,
-        "over15": 88,
-        "over15Avg": 85,
-        "btts": 75,
-        "bttsAvg": 56,
-        "gpm": 3.79,
-        "gpmAvg": 3.07
-      },
-      "teams": {
-        "home": {
-          "winPct": 13,
-          "winPctHome": 25,
-          "winPctAway": 0,
-          "avgGoals": 2.5,
-          "scored": 0.63,
-          "scoredHome": 0.75,
-          "conceded": 1.88,
-          "concededHome": 1.5,
-          "btts": 50,
-          "cs": 0,
-          "xg": 1.16,
-          "xgHome": 1.34,
-          "xga": 1.86,
-          "ppg": 0.5,
-          "ppgHome": 1.0,
-          "ppgAway": 0.0
-        },
-        "away": {
-          "winPct": 13,
-          "winPctHome": 0,
-          "winPctAway": 33,
-          "avgGoals": 3.38,
-          "scored": 1.13,
-          "scoredAway": 2.33,
-          "conceded": 2.25,
-          "concededAway": 3.0,
-          "btts": 63,
-          "cs": 0,
-          "xg": 1.45,
-          "xgAway": 1.21,
-          "xga": 1.8,
-          "ppg": 0.5,
-          "ppgHome": 0.2,
-          "ppgAway": 1.0
-        }
-      }
-    },
-    "italy|monza|napoli": {
-      "home": "SS Monza 1912",
-      "away": "SSC Napoli",
-      "league": "Italy - Serie A",
-      "url": "https://footystats.org/italy/ssc-napoli-vs-ss-monza-1912-h2h-stats",
-      "form": {
-        "home": "LWW",
-        "away": "WLDL",
-        "ppgHome": 2.0,
-        "ppgAway": 1.0
-      },
-      "h2h": {
-        "matches": 6,
-        "homeWins": 1,
-        "draws": 1,
-        "awayWins": 4,
-        "over15": 67,
-        "over25": 33,
-        "over35": 33,
-        "btts": 17,
-        "csHome": 33,
-        "csAway": 67
-      },
-      "prediction": {
-        "over25": 63,
-        "over25Avg": 59,
-        "over15": 88,
-        "over15Avg": 85,
-        "btts": 59,
-        "bttsAvg": 56,
-        "gpm": 3.25,
-        "gpmAvg": 3.07
-      },
-      "teams": {
-        "home": {
-          "winPct": 25,
-          "winPctHome": 67,
-          "winPctAway": 0,
-          "avgGoals": 4.13,
-          "scored": 1.88,
-          "scoredHome": 2.67,
-          "conceded": 2.25,
-          "concededHome": 1.33,
-          "btts": 88,
-          "cs": 13,
-          "xg": 1.54,
-          "xgHome": 1.62,
-          "xga": 1.54,
-          "ppg": 0.88,
-          "ppgHome": 2.0,
-          "ppgAway": 0.2
-        },
-        "away": {
-          "winPct": 38,
-          "winPctHome": 50,
-          "winPctAway": 25,
-          "avgGoals": 2.88,
-          "scored": 1.63,
-          "scoredAway": 1.25,
-          "conceded": 1.25,
-          "btts": 50,
-          "cs": 38,
-          "xg": 1.87,
-          "xgAway": 2.01,
-          "xga": 1.71,
-          "ppg": 1.38,
-          "ppgHome": 1.75,
-          "ppgAway": 1.0
-        }
-      }
-    },
-    "italy|venezia|inter": {
-      "home": "Venezia FC",
-      "away": "FC Internazionale Milano",
-      "league": "Italy - Serie A",
-      "url": "https://footystats.org/italy/fc-internazionale-milano-vs-venezia-fc-h2h-stats",
-      "form": {
-        "home": "LLLW",
-        "away": "WDW",
-        "ppgHome": 0.75,
-        "ppgAway": 2.33
-      },
-      "h2h": {
-        "matches": 5,
-        "homeWins": 0,
-        "draws": 0,
-        "awayWins": 5,
-        "over15": 60,
-        "over25": 40,
-        "over35": 20,
-        "btts": 40,
-        "csHome": 0,
-        "csAway": 60
-      },
-      "prediction": {
-        "over25": 46,
-        "over25Avg": 59,
-        "over15": 71,
-        "over15Avg": 85,
-        "btts": 46,
-        "bttsAvg": 56,
-        "gpm": 2.88,
-        "gpmAvg": 3.07
-      },
-      "teams": {
-        "home": {
-          "winPct": 13,
-          "winPctHome": 25,
-          "winPctAway": 0,
-          "avgGoals": 2.88,
-          "scored": 0.75,
-          "conceded": 2.13,
-          "btts": 38,
-          "cs": 13,
-          "xg": 1.61,
-          "xgHome": 1.6,
-          "xga": 1.81,
-          "ppg": 0.38,
-          "ppgHome": 0.75,
-          "ppgAway": 0.0
-        },
-        "away": {
-          "winPct": 88,
-          "winPctHome": 100,
-          "winPctAway": 67,
-          "avgGoals": 4.13,
-          "scored": 2.88,
-          "conceded": 1.25,
-          "btts": 75,
-          "cs": 25,
-          "xg": 2.45,
-          "xgHome": 2.61,
-          "xga": 1.13,
-          "ppg": 2.75,
-          "ppgHome": 3.0,
-          "ppgAway": 2.33
-        }
-      }
-    },
-    "scotland|hearts|rangers": {
-      "home": "Heart of Midlothian FC",
-      "away": "Rangers FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/rangers-fc-vs-heart-of-midlothian-fc-h2h-stats",
-      "form": {
-        "home": "LDWLW",
-        "away": "WWWDW",
-        "ppgHome": 1.9,
-        "ppgAway": 2.3
-      },
-      "h2h": {
-        "matches": 43,
-        "homeWins": 9,
-        "draws": 7,
-        "awayWins": 27,
-        "over15": 86,
-        "over25": 63,
-        "over35": 35,
-        "btts": 51,
-        "csHome": 14,
-        "csAway": 40
-      },
-      "prediction": {
-        "over25": 65,
-        "over25Avg": 57,
-        "over15": 80,
-        "over15Avg": 78,
-        "btts": 60,
-        "bttsAvg": 55,
-        "gpm": 3.05,
-        "gpmAvg": 2.82
-      },
-      "teams": {
-        "home": {
-          "ppg": 1.9
-        },
-        "away": {
-          "ppg": 2.3
-        }
-      }
-    },
-    "scotland|aberdeen|falkirk": {
-      "home": "Aberdeen FC",
-      "away": "Falkirk FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/aberdeen-fc-vs-falkirk-fc-h2h-stats",
-      "form": {
-        "home": "WDLWL",
-        "away": "WDLWW",
-        "ppgHome": 1.1,
-        "ppgAway": 1.2
-      },
-      "h2h": {
-        "matches": 3,
-        "homeWins": 0,
-        "draws": 1,
-        "awayWins": 2,
-        "over15": 33,
-        "over25": 0,
-        "over35": 0,
-        "btts": 33,
-        "csHome": 0,
-        "csAway": 67
-      },
-      "prediction": {
-        "over25": 55,
-        "over25Avg": 57,
-        "over15": 80,
-        "over15Avg": 78,
-        "btts": 55,
-        "bttsAvg": 55,
-        "gpm": 2.45,
-        "gpmAvg": 2.82
-      },
-      "teams": {
-        "home": {
-          "winPct": 30,
-          "winPctHome": 40,
-          "winPctAway": 20,
-          "avgGoals": 2.5,
-          "scored": 1.2,
-          "conceded": 1.3,
-          "btts": 40,
-          "cs": 20,
-          "xg": 1.36,
-          "xgHome": 1.53,
-          "xga": 1.7,
-          "ppg": 1.1,
-          "ppgHome": 1.4,
-          "ppgAway": 0.8
-        },
-        "away": {
-          "winPct": 30,
-          "winPctHome": 40,
-          "winPctAway": 20,
-          "avgGoals": 2.4,
-          "scored": 1.2,
-          "conceded": 1.2,
-          "btts": 70,
-          "cs": 20,
-          "xg": 1.38,
-          "xga": 1.62,
-          "ppg": 1.2
-        }
-      }
-    },
-    "scotland|dundee|kilmarnock": {
-      "home": "Dundee FC",
-      "away": "Kilmarnock FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/kilmarnock-fc-vs-dundee-fc-h2h-stats",
-      "form": {
-        "home": "LWWDL",
-        "away": "WDLWL",
-        "ppgHome": 1.4,
-        "ppgAway": 0.8
-      },
-      "h2h": {
-        "matches": 37,
-        "homeWins": 10,
-        "draws": 17,
-        "awayWins": 10,
-        "over15": 81,
-        "over25": 57,
-        "over35": 38,
-        "btts": 73,
-        "csHome": 22,
-        "csAway": 19
-      },
-      "prediction": {
-        "over25": 60,
-        "over25Avg": 57,
-        "over15": 80,
-        "over15Avg": 78,
-        "btts": 60,
-        "bttsAvg": 55,
-        "gpm": 2.95,
-        "gpmAvg": 2.82
-      },
-      "teams": {
-        "home": {
-          "ppg": 1.4,
-          "ppgHome": 1.6,
-          "ppgAway": 1.2
-        },
-        "away": {
-          "ppg": 0.8
-        }
-      }
-    },
-    "scotland|st johnstone|motherwell": {
-      "home": "Saint Johnstone FC",
-      "away": "Motherwell FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/saint-johnstone-fc-vs-motherwell-fc-h2h-stats",
-      "form": {
-        "home": "LDWDL",
-        "away": "LLLLL",
-        "ppgHome": 1.2,
-        "ppgAway": 0.8
-      },
-      "h2h": {
-        "matches": 50,
-        "homeWins": 23,
-        "draws": 10,
-        "awayWins": 17,
-        "over15": 86,
-        "over25": 54,
-        "over35": 16,
-        "btts": 60,
-        "csHome": 20,
-        "csAway": 22
-      },
-      "prediction": null,
-      "teams": {
-        "home": {
-          "ppg": 1.2
-        },
-        "away": {
-          "ppg": 0.8
-        }
-      }
-    },
-    "scotland|st mirren|hibernian": {
-      "home": "Saint Mirren FC",
-      "away": "Hibernian FC",
-      "league": "Scotland - Premiership",
-      "url": "https://footystats.org/scotland/hibernian-fc-vs-saint-mirren-fc-h2h-stats",
-      "form": {
-        "home": "LLLLW",
-        "away": "LDLLL",
-        "ppgHome": 1.3,
-        "ppgAway": 0.7
-      },
-      "h2h": {
-        "matches": 45,
-        "homeWins": 10,
-        "draws": 13,
-        "awayWins": 22,
-        "over15": 78,
-        "over25": 56,
-        "over35": 29,
-        "btts": 53,
-        "csHome": 18,
-        "csAway": 33
-      },
-      "prediction": {
-        "over25": 65,
-        "over25Avg": 57,
-        "over15": 75,
-        "over15Avg": 78,
-        "btts": 60,
-        "bttsAvg": 55,
-        "gpm": 2.75,
-        "gpmAvg": 2.82
-      },
-      "teams": {
-        "home": {
-          "ppg": 1.3
-        },
-        "away": {
-          "ppg": 0.7
-        }
-      }
-    },
-    "usa|charlotte|montreal": {
-      "home": "Charlotte FC",
-      "away": "Montreal Impact",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/montreal-impact-vs-charlotte-fc-h2h-stats",
-      "form": {
-        "home": "WWDLW",
-        "away": "LLLLD",
-        "ppgHome": 1.87,
-        "ppgAway": 0.53
-      },
-      "h2h": {
-        "matches": 9,
-        "homeWins": 3,
-        "draws": 1,
-        "awayWins": 5,
-        "over15": 78,
-        "over25": 44,
-        "over35": 11,
-        "btts": 44,
-        "csHome": 33,
-        "csAway": 33
-      },
-      "prediction": {
-        "over25": 70,
-        "over25Avg": 64,
-        "over15": 77,
-        "over15Avg": 83,
-        "btts": 60,
-        "bttsAvg": 64,
-        "gpm": 3.37,
-        "gpmAvg": 3.24
-      },
-      "teams": {
-        "home": {
-          "winPct": 42,
-          "winPctHome": 53,
-          "winPctAway": 31,
-          "avgGoals": 3.32,
-          "scored": 1.77,
-          "scoredHome": 1.93,
-          "conceded": 1.55,
-          "concededHome": 1.07,
-          "btts": 71,
-          "cs": 16,
-          "xg": 1.37,
-          "xgHome": 1.54,
-          "xga": 1.91,
-          "ppg": 1.52,
-          "ppgHome": 1.87,
-          "ppgAway": 1.19
-        },
-        "away": {
-          "winPct": 19,
-          "winPctHome": 25,
-          "winPctAway": 13,
-          "avgGoals": 3.16,
-          "scored": 1.16,
-          "conceded": 2.0,
-          "btts": 52,
-          "cs": 13,
-          "xg": 1.46,
-          "xga": 1.49,
-          "ppg": 0.81,
-          "ppgHome": 1.06,
-          "ppgAway": 0.53
-        }
-      }
-    },
-    "usa|toronto|dc united": {
-      "home": "Toronto FC",
-      "away": "DC United",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/toronto-fc-vs-dc-united-h2h-stats",
-      "form": {
-        "home": "DDWWD",
-        "away": "LDLLL",
-        "ppgHome": 1.5,
-        "ppgAway": 0.87
-      },
-      "h2h": {
-        "matches": 38,
-        "homeWins": 12,
-        "draws": 12,
-        "awayWins": 14,
-        "over15": 82,
-        "over25": 66,
-        "over35": 42,
-        "btts": 68,
-        "csHome": 16,
-        "csAway": 21
-      },
-      "prediction": {
-        "over25": 64,
-        "over25Avg": 64,
-        "over15": 87,
-        "over15Avg": 83,
-        "btts": 80,
-        "bttsAvg": 64,
-        "gpm": 3.57,
-        "gpmAvg": 3.24
-      },
-      "teams": {
-        "home": {
-          "ppg": 1.5,
-          "ppgHome": 1.5,
-          "ppgAway": 1.5
-        },
-        "away": {
-          "ppg": 0.87,
-          "ppgHome": 0.87,
-          "ppgAway": 0.87
-        }
-      }
-    },
-    "usa|new england revolution|new york red bulls": {
-      "home": "New England Revolution",
-      "away": "New York Red Bulls",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/new-york-red-bulls-vs-new-england-revolution-h2h-stats",
-      "form": {
-        "home": "LDWLW",
-        "away": "DLWWL",
-        "ppgHome": 2.13,
-        "ppgAway": 1.2
-      },
-      "h2h": {
-        "matches": 41,
-        "homeWins": 15,
-        "draws": 8,
         "awayWins": 18,
-        "over15": 76,
-        "over25": 56,
-        "over35": 32,
-        "btts": 66,
-        "csHome": 15,
-        "csAway": 22
-      },
-      "prediction": null,
-      "teams": {
-        "home": {
-          "ppg": 2.13,
-          "ppgHome": 2.13,
-          "ppgAway": 2.13
-        },
-        "away": {
-          "ppg": 1.2,
-          "ppgHome": 1.2,
-          "ppgAway": 1.2
-        }
-      }
-    },
-    "usa|austin|real salt lake": {
-      "home": "Austin FC",
-      "away": "Real Salt Lake",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/real-salt-lake-vs-austin-fc-h2h-stats",
-      "form": {
-        "home": "DDDLL",
-        "away": "LLLLW",
-        "ppgHome": 1.2,
-        "ppgAway": 0.6
-      },
-      "h2h": {
-        "matches": 12,
-        "homeWins": 3,
-        "draws": 3,
-        "awayWins": 6,
-        "over15": 92,
-        "over25": 83,
-        "over35": 33,
-        "btts": 83,
-        "csHome": 8,
-        "csAway": 8
+        "over15": 75,
+        "over25": 67,
+        "over35": 42,
+        "btts": 61,
+        "csHome": 14,
+        "csAway": 31
       },
       "prediction": {
-        "over25": 60,
-        "over25Avg": 64,
-        "over15": 87,
-        "over15Avg": 83,
-        "btts": 77,
-        "bttsAvg": 64,
-        "gpm": 2.87,
-        "gpmAvg": 3.24
+        "over25": 50,
+        "over25Avg": 47,
+        "over15": 75,
+        "over15Avg": 76,
+        "btts": 63,
+        "bttsAvg": 48,
+        "gpm": 2.5,
+        "gpmAvg": 2.72
       },
       "teams": {
         "home": {
-          "winPct": 26,
-          "winPctHome": 27,
-          "winPctAway": 25,
-          "avgGoals": 3.13,
-          "scored": 1.29,
-          "scoredHome": 1.4,
-          "conceded": 1.84,
-          "concededHome": 1.4,
-          "btts": 71,
-          "cs": 16,
-          "xg": 1.26,
-          "xgHome": 1.39,
-          "xga": 1.87,
-          "ppg": 1.1,
-          "ppgHome": 1.2,
-          "ppgAway": 1.0
+          "xg": 1.33,
+          "xga": 1.81
         },
         "away": {
-          "winPct": 35,
-          "winPctHome": 56,
-          "winPctAway": 13,
-          "avgGoals": 3.1,
-          "scored": 1.55,
-          "conceded": 1.55,
-          "btts": 68,
-          "cs": 13,
-          "xg": 1.58,
-          "xga": 1.45,
-          "ppg": 1.26,
-          "ppgHome": 1.88,
-          "ppgAway": 0.6
+          "xg": 1.57,
+          "xga": 1.57
         }
       }
     },
-    "usa|chicago fire|orlando city": {
-      "home": "Chicago Fire",
-      "away": "Orlando City SC",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/chicago-fire-vs-orlando-city-sc-h2h-stats",
+    "x|US Sassuolo Calcio|ACF Fiorentina": {
+      "home": "US Sassuolo Calcio",
+      "away": "ACF Fiorentina",
+      "kickoff": "2026-11-02T17:30:00Z",
+      "url": "https://footystats.org/italy/us-sassuolo-calcio-vs-acf-fiorentina-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "DLWWL",
-        "away": "DWLLD",
-        "ppgHome": 1.87,
-        "ppgAway": 0.8
+        "home": "LDLLL",
+        "away": "DLLLD",
+        "ppgHome": 0.89,
+        "ppgAway": 0.56
       },
       "h2h": {
         "matches": 24,
         "homeWins": 8,
-        "draws": 8,
-        "awayWins": 8,
+        "draws": 7,
+        "awayWins": 9,
         "over15": 75,
-        "over25": 58,
-        "over35": 50,
-        "btts": 67,
+        "over25": 67,
+        "over35": 46,
+        "btts": 71,
         "csHome": 21,
-        "csAway": 25
+        "csAway": 17
       },
       "prediction": {
-        "over25": 84,
-        "over25Avg": 64,
-        "over15": 94,
-        "over15Avg": 83,
-        "btts": 70,
-        "bttsAvg": 64,
-        "gpm": 4.17,
-        "gpmAvg": 3.24
+        "over25": 88,
+        "over25Avg": 60,
+        "over15": 100,
+        "over15Avg": 86,
+        "btts": 88,
+        "bttsAvg": 57,
+        "gpm": 4.25,
+        "gpmAvg": 3.15
       },
       "teams": {
         "home": {
-          "winPct": 48,
-          "winPctHome": 60,
-          "winPctAway": 38,
-          "avgGoals": 3.26,
-          "scored": 1.77,
-          "scoredHome": 1.87,
-          "conceded": 1.48,
-          "concededHome": 1.27,
-          "ppg": 1.65,
-          "ppgHome": 1.87,
-          "ppgAway": 1.44
+          "xg": 1.54,
+          "xga": 1.8
         },
         "away": {
-          "ppg": 0.8,
-          "ppgHome": 0.8,
-          "ppgAway": 0.8
+          "xg": 1.75,
+          "xga": 1.69
         }
       }
     },
-    "usa|new york city|atlanta united": {
-      "home": "New York City FC",
-      "away": "Atlanta United FC",
-      "league": "USA - MLS",
-      "url": "https://footystats.org/usa/new-york-city-fc-vs-atlanta-united-fc-h2h-stats",
+    "x|Atalanta Bergamasca Calcio|Parma Calcio 1913": {
+      "home": "Atalanta Bergamasca Calcio",
+      "away": "Parma Calcio 1913",
+      "kickoff": "2026-11-02T19:45:00Z",
+      "url": "https://footystats.org/italy/atalanta-bergamasca-calcio-vs-parma-calcio-1913-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "LDLLD",
-        "away": "WDDWW",
-        "ppgHome": 1.13,
-        "ppgAway": 1.07
+        "home": "LWLDD",
+        "away": "WLLLD",
+        "ppgHome": 1.22,
+        "ppgAway": 0.56
       },
       "h2h": {
-        "matches": 20,
-        "homeWins": 6,
-        "draws": 9,
-        "awayWins": 5,
-        "over15": 90,
-        "over25": 65,
-        "over35": 55,
-        "btts": 80,
-        "csHome": 15,
-        "csAway": 5
-      },
-      "prediction": {
-        "over25": 54,
-        "over25Avg": 64,
-        "over15": 80,
-        "over15Avg": 83,
+        "matches": 21,
+        "homeWins": 12,
+        "draws": 3,
+        "awayWins": 6,
+        "over15": 86,
+        "over25": 71,
+        "over35": 48,
         "btts": 57,
-        "bttsAvg": 64,
-        "gpm": 2.9,
-        "gpmAvg": 3.24
+        "csHome": 29,
+        "csAway": 19
+      },
+      "prediction": {
+        "over25": 78,
+        "over25Avg": 60,
+        "over15": 90,
+        "over15Avg": 86,
+        "btts": 65,
+        "bttsAvg": 57,
+        "gpm": 3.28,
+        "gpmAvg": 3.15
       },
       "teams": {
         "home": {
-          "winPct": 26,
-          "winPctHome": 27,
-          "winPctAway": 25,
-          "avgGoals": 2.84,
-          "ppg": 1.13,
-          "ppgHome": 1.13,
-          "ppgAway": 1.13
+          "xg": 1.53,
+          "xga": 2.07
         },
         "away": {
-          "ppg": 1.07,
-          "ppgHome": 1.07,
-          "ppgAway": 1.07
+          "xg": 1.13,
+          "xga": 1.87
         }
       }
     },
-    "brazil|fluminense|internacional": {
-      "home": "Fluminense FC",
-      "away": "SC Internacional",
-      "league": "Brazil - Serie A",
-      "url": "https://footystats.org/brazil/fluminense-fc-vs-sc-internacional-h2h-stats",
+    "x|FC Lorient|Stade Brestois 29": {
+      "home": "FC Lorient",
+      "away": "Stade Brestois 29",
+      "kickoff": "2026-11-02T19:45:00Z",
+      "url": "https://footystats.org/france/fc-lorient-vs-stade-brestois-29-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "WWWWL",
-        "away": "LWLDL",
-        "ppgHome": 2.25,
-        "ppgAway": 0.94
+        "home": "DLWWD",
+        "away": "LLWDL",
+        "ppgHome": 1.5,
+        "ppgAway": 1.13
       },
       "h2h": {
-        "matches": 29,
-        "homeWins": 9,
-        "draws": 8,
-        "awayWins": 12,
+        "matches": 24,
+        "homeWins": 10,
+        "draws": 4,
+        "awayWins": 10,
         "over15": 79,
-        "over25": 45,
-        "over35": 14,
-        "btts": 55,
-        "csHome": 17,
+        "over25": 58,
+        "over35": 29,
+        "btts": 50,
+        "csHome": 25,
+        "csAway": 29
+      },
+      "prediction": {
+        "over25": 63,
+        "over25Avg": 60,
+        "over15": 75,
+        "over15Avg": 80,
+        "btts": 75,
+        "bttsAvg": 61,
+        "gpm": 2.63,
+        "gpmAvg": 3.05
+      },
+      "teams": {
+        "home": {
+          "xg": 1.11,
+          "xga": 1.5
+        },
+        "away": {
+          "xg": 1.74,
+          "xga": 1.35
+        }
+      }
+    },
+    "x|Real Club Deportivo de La Coruña|CA Osasuna": {
+      "home": "Real Club Deportivo de La Coruña",
+      "away": "CA Osasuna",
+      "kickoff": "2026-11-02T20:00:00Z",
+      "url": "https://footystats.org/spain/real-club-deportivo-de-la-coruna-vs-ca-osasuna-h2h-stats",
+      "source": "FootyStats",
+      "form": {
+        "home": "LDLDL",
+        "away": "LDLWL",
+        "ppgHome": 1.1,
+        "ppgAway": 1.1
+      },
+      "h2h": {
+        "matches": 13,
+        "homeWins": 4,
+        "draws": 5,
+        "awayWins": 4,
+        "over15": 62,
+        "over25": 38,
+        "over35": 15,
+        "btts": 38,
+        "csHome": 62,
         "csAway": 31
       },
       "prediction": {
-        "over25": 54,
-        "over25Avg": 51,
-        "over15": 75,
-        "over15Avg": 78,
-        "btts": 63,
-        "bttsAvg": 59,
-        "gpm": 2.6,
-        "gpmAvg": 2.66
+        "over25": 50,
+        "over25Avg": 56,
+        "over15": 90,
+        "over15Avg": 77,
+        "btts": 70,
+        "bttsAvg": 56,
+        "gpm": 3.4,
+        "gpmAvg": 3.01
       },
       "teams": {
         "home": {
-          "winPct": 44,
-          "winPctHome": 69,
-          "winPctAway": 19,
-          "avgGoals": 2.84,
-          "scored": 1.56,
-          "scoredHome": 1.81,
-          "conceded": 1.28,
-          "concededHome": 1.0,
-          "btts": 72,
-          "cs": 19,
-          "xg": 1.67,
-          "xgHome": 1.94,
-          "xga": 1.44,
-          "ppg": 1.59,
-          "ppgHome": 2.25,
-          "ppgAway": 0.94
+          "xg": 1.37,
+          "xga": 1.49
         },
         "away": {
-          "ppg": 0.94,
-          "ppgHome": 0.94,
-          "ppgAway": 0.94
+          "xg": 1.26,
+          "xga": 1.5
         }
       }
     },
-    "brazil|bragantino|chapecoense": {
-      "home": "RB Bragantino",
-      "away": "Chapecoense AF",
-      "league": "Brazil - Serie A",
-      "url": "https://footystats.org/brazil/chapecoense-af-vs-clube-atletico-bragantino-h2h-stats",
+    "x|SL Benfica|Alverca": {
+      "home": "SL Benfica",
+      "away": "Alverca",
+      "kickoff": "2026-11-02T20:15:00Z",
+      "url": "https://footystats.org/portugal/sl-benfica-vs-alverca-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "LWLDW",
-        "away": "LWDLL",
-        "ppgHome": 1.6,
-        "ppgAway": 0.44
+        "home": "WWLWW",
+        "away": "LWWWL",
+        "ppgHome": 2.44,
+        "ppgAway": 1.22
       },
       "h2h": {
-        "matches": 5,
-        "homeWins": 3,
-        "draws": 1,
-        "awayWins": 1,
-        "over15": 80,
-        "over25": 60,
+        "matches": 2,
+        "homeWins": 2,
+        "draws": 0,
+        "awayWins": 0,
+        "over15": 100,
+        "over25": 100,
         "over35": 0,
-        "btts": 60,
-        "csHome": 40,
+        "btts": 100,
+        "csHome": 0,
         "csAway": 0
       },
       "prediction": {
-        "over25": 46,
-        "over25Avg": 51,
-        "over15": 81,
-        "over15Avg": 78,
-        "btts": 55,
-        "bttsAvg": 59,
-        "gpm": 2.62,
-        "gpmAvg": 2.66
+        "over25": 75,
+        "over25Avg": 56,
+        "over15": 100,
+        "over15Avg": 75,
+        "btts": 75,
+        "bttsAvg": 48,
+        "gpm": 3.5,
+        "gpmAvg": 2.73
       },
       "teams": {
         "home": {
-          "winPct": 34,
-          "winPctHome": 47,
-          "winPctAway": 24,
-          "avgGoals": 2.41,
-          "scored": 1.22,
-          "scoredHome": 1.6,
-          "conceded": 1.19,
-          "concededHome": 1.13,
-          "btts": 53,
-          "cs": 25,
-          "xg": 1.78,
-          "xgHome": 2.01,
-          "xga": 1.45,
-          "ppg": 1.28,
-          "ppgHome": 1.6,
-          "ppgAway": 1.0
+          "xg": 2.14,
+          "xga": 0.88
         },
         "away": {
-          "winPct": 13,
-          "winPctHome": 20,
-          "winPctAway": 6,
-          "avgGoals": 3.06,
-          "scored": 1.03,
-          "conceded": 2.03,
-          "btts": 65,
-          "cs": 6,
-          "xg": 1.3,
-          "xga": 1.87,
-          "ppg": 0.68,
-          "ppgHome": 0.93,
-          "ppgAway": 0.44
+          "xg": 1.25,
+          "xga": 1.41
         }
       }
     },
-    "brazil|santos|palmeiras": {
-      "home": "Santos",
-      "away": "Palmeiras",
-      "league": "Brazil - Serie A",
-      "url": "https://footystats.org/brazil/santos-fc-sao-paulo-vs-se-palmeiras-h2h-stats",
+    "x|Gil Vicente FC|Vitória Guimarães SC": {
+      "home": "Gil Vicente FC",
+      "away": "Vitória Guimarães SC",
+      "kickoff": "2026-11-02T20:15:00Z",
+      "url": "https://footystats.org/portugal/vitoria-guimaraes-sc-vs-gil-vicente-fc-h2h-stats",
+      "source": "FootyStats",
       "form": {
-        "home": "LDWDD",
-        "away": "LDDDW",
-        "ppgHome": 1.5,
-        "ppgAway": 1.88
+        "home": "LDWWL",
+        "away": "DLDLW",
+        "ppgHome": 1.56,
+        "ppgAway": 0.89
       },
       "h2h": {
-        "matches": 49,
-        "homeWins": 15,
-        "draws": 12,
-        "awayWins": 22,
-        "over15": 59,
-        "over25": 41,
-        "over35": 16,
-        "btts": 45,
-        "csHome": 29,
-        "csAway": 39
+        "matches": 23,
+        "homeWins": 7,
+        "draws": 6,
+        "awayWins": 10,
+        "over15": 65,
+        "over25": 61,
+        "over35": 43,
+        "btts": 57,
+        "csHome": 22,
+        "csAway": 35
       },
       "prediction": {
-        "over25": 50,
+        "over25": 25,
+        "over25Avg": 56,
+        "over15": 58,
+        "over15Avg": 75,
+        "btts": 35,
+        "bttsAvg": 48,
+        "gpm": 2.08,
+        "gpmAvg": 2.73
+      },
+      "teams": {
+        "home": {
+          "xg": 1.36,
+          "xga": 1.23
+        },
+        "away": {}
+      }
+    },
+    "x|Clube Atlético Bragantino|Santos FC Sao Paulo": {
+      "home": "Clube Atlético Bragantino",
+      "away": "Santos FC Sao Paulo",
+      "kickoff": "2026-11-02T23:00:00Z",
+      "url": "https://footystats.org/brazil/santos-fc-sao-paulo-vs-clube-atletico-bragantino-h2h-stats",
+      "source": "FootyStats",
+      "form": {
+        "home": "DWDLW",
+        "away": "DLWDD",
+        "ppgHome": 1.33,
+        "ppgAway": 1.42
+      },
+      "h2h": {
+        "matches": 23,
+        "homeWins": 7,
+        "draws": 9,
+        "awayWins": 7,
+        "over15": 83,
+        "over25": 48,
+        "over35": 35,
+        "btts": 57,
+        "csHome": 22,
+        "csAway": 30
+      },
+      "prediction": {
+        "over25": 66,
         "over25Avg": 51,
         "over15": 82,
         "over15Avg": 78,
-        "btts": 60,
+        "btts": 66,
         "bttsAvg": 59,
-        "gpm": 2.57,
+        "gpm": 3.0,
         "gpmAvg": 2.66
       },
       "teams": {
         "home": {
-          "winPct": 38,
-          "winPctHome": 38,
-          "winPctAway": 38,
-          "avgGoals": 3.0,
-          "scored": 1.53,
-          "scoredHome": 1.44,
-          "conceded": 1.47,
-          "concededHome": 1.31,
-          "btts": 75,
-          "cs": 19,
-          "xg": 1.48,
-          "xgHome": 1.6,
-          "xga": 1.46,
-          "ppg": 1.44,
-          "ppgHome": 1.5,
-          "ppgAway": 1.38
+          "xg": 1.81,
+          "xga": 1.44
         },
-        "away": {
-          "winPct": 63,
-          "winPctHome": 75,
-          "winPctAway": 50,
-          "avgGoals": 2.44,
-          "scored": 1.75,
-          "conceded": 0.69,
-          "btts": 53,
-          "cs": 47,
-          "xg": 1.67,
-          "xga": 1.43,
-          "ppg": 2.16,
-          "ppgHome": 2.44,
-          "ppgAway": 1.88
-        }
+        "away": {}
       }
     }
   },

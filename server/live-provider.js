@@ -3,6 +3,20 @@ import { liveIndependentModel } from "./live-model.js";
 import { fetchAllFreeSources } from "./free-sources.js";
 import { generateWorldwideMarkets } from "./worldwide-betting.js";
 
+/** Strip source-tag junk from league labels: "Serie A (football-data.org) (football-data.org)" → "Serie A". */
+export function cleanLeagueName(name) {
+  let s = String(name || "Football");
+  for (let i = 0; i < 3; i++) {
+    s = s
+      .replace(/\s*\((?:football-data\.org|ESPN|OpenLigaDB|API-Football|Finished)[^)]*\)/gi, "")
+      .replace(/\s*\([^)]*FREE[^)]*\)/gi, "")
+      .replace(/\s*-\s*FREE Trained\s*/gi, " ");
+  }
+  s = s.replace(/\s*\(\s*\)/g, "").replace(/\s{2,}/g, " ").trim();
+  return s || "Football";
+}
+
+
 const API_BASE = "https://api.the-odds-api.com/v4";
 const COLORS = ["#6da4d9", "#bb9ae3", "#e3aa7b", "#78b9a2", "#d9766d", "#a8d86e"];
 function person(name, index) {
@@ -160,8 +174,8 @@ export async function fetchFreeFallback() {
     }
     predictions.push({
       id: freeGame.id, sport: freeGame.sport, sportKey: freeGame.sportKey,
-      league: `${freeGame.league} (${freeGame.source} - FREE Trained)`,
-      region: `${freeGame.source} + Vanish Trained + Form + Corners (FREE)`,
+      league: cleanLeagueName(freeGame.league),
+      region: freeGame.source,
       kickoff: freeGame.kickoff, home, away,
       probabilities: { home: 0.5, away: 0.5 },
       independentProbabilities: independentModel?.probabilities || { home: 0.55, away: 0.45 },
@@ -170,9 +184,9 @@ export async function fetchFreeFallback() {
       marketPick: { side: "home", probability: 0.5, label: `${freeGame.home} to win`, fairOdds: 2.0 },
       vanishPick: independentModel ? { side: independentModel.probabilities.home > 0.5 ? "home" : "away", probability: Math.max(independentModel.probabilities.home, independentModel.probabilities.away), label: `${independentModel.probabilities.home > 0.5 ? freeGame.home : freeGame.away} to win`, fairOdds: 1/Math.max(independentModel.probabilities.home, independentModel.probabilities.away) } : { side: "home", probability: 0.55, label: `${freeGame.home} to win`, fairOdds: 1.82 },
       mode: "live", sample: false, calibrated: false,
-      model: independentModel ? `${independentModel.model} (${freeGame.source} FREE Trained)` : `Vanish Model (${freeGame.source} FREE)`,
+      model: independentModel ? independentModel.model : "Vanish Model",
       modelVersion: MODEL_VERSION, publishedAt: new Date().toISOString(),
-      sources: [{ name: `${freeGame.source} (FREE Trained + Form + Corners)`, updatedAt: null }],
+      sources: [{ name: freeGame.source, updatedAt: null }],
       isToday: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() || (new Date(freeGame.kickoff) - Date.now() < 48*3600000),
       hasLiveModel: true,
       explanation: [
@@ -238,7 +252,7 @@ export async function fetchMultiSourcePredictions({ key, sportKeys, regions = "u
           }
           allGames.push({
             id: freeGame.id, sport: freeGame.sport, sportKey: freeGame.sportKey,
-            league: `${freeGame.league} (${freeGame.source})`, region: `${freeGame.source} + Vanish Trained + Form + Corners`,
+            league: cleanLeagueName(freeGame.league), region: freeGame.source,
             kickoff: freeGame.kickoff, home, away,
             probabilities: { home: 0.5, away: 0.5 },
             independentProbabilities: independentModel?.probabilities || { home: 0.5, away: 0.5 },
@@ -247,7 +261,7 @@ export async function fetchMultiSourcePredictions({ key, sportKeys, regions = "u
             marketPick: { side: "home", probability: 0.5, label: `${freeGame.home} to win`, fairOdds: 2.0 },
             vanishPick: independentModel ? { side: independentModel.probabilities.home > 0.5 ? "home" : "away", probability: Math.max(independentModel.probabilities.home, independentModel.probabilities.away), label: `${independentModel.probabilities.home > 0.5 ? freeGame.home : freeGame.away} to win`, fairOdds: 1/Math.max(independentModel.probabilities.home, independentModel.probabilities.away) } : null,
             mode: "live", sample: false, calibrated: false,
-            model: independentModel ? `${independentModel.model} (${freeGame.source})` : `Vanish (${freeGame.source})`,
+            model: independentModel ? independentModel.model : "Vanish Model",
             modelVersion: MODEL_VERSION, publishedAt: new Date().toISOString(),
             sources: [{ name: freeGame.source, updatedAt: null }],
             isToday: new Date(freeGame.kickoff).toDateString() === new Date().toDateString() || (new Date(freeGame.kickoff) - Date.now() < 48*3600000),
