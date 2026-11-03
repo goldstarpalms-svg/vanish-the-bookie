@@ -91,6 +91,73 @@
     "scoreSource": null
   },
   {
+    "id": "cc67d1126281e6cf78f470ed4440055c",
+    "sport": "icehockey",
+    "sportKey": "icehockey_liiga",
+    "league": "Liiga",
+    "home": {
+      "name": "TPS",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "KalPa",
+      "short": "K",
+      "initials": "K",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T16:30:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5421109737058937,
+      "label": "TPS to win",
+      "fairOdds": 1.84
+    },
+    "probabilities": {
+      "home": 0.5949367088607596,
+      "away": 0.40506329113924056
+    },
+    "independentProbabilities": {
+      "home": 0.5421109737058937,
+      "away": 0.4578890262941063
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1487,
+        "awayElo": 1567,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5421109737058937,
+        "away": 0.4578890262941063
+      },
+      "expected": {
+        "winProb": "0.542",
+        "homeElo": 1487,
+        "awayElo": 1567
+      },
+      "pick": "home",
+      "confidence": 0.5421109737058937,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TPS 1487 (WWWWD 13pts) vs KalPa 1567 (WWWWD 13pts) → 38.7% home",
+        "PICK for correctness: HOME with 54.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form) + Market + Worldwide",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:40.483Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020282",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -1892,6 +1959,97 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "2bf110ae63e77d8bf2550215dd936dcd",
+    "sport": "football",
+    "sportKey": "soccer_fa_cup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Wimborne Town FC",
+      "short": "WTF",
+      "initials": "WT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Crawley Town",
+      "short": "CT",
+      "initials": "CT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T15:00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3868467140222177,
+      "label": "Wimborne Town FC to win",
+      "fairOdds": 2.59
+    },
+    "probabilities": {
+      "home": 0.15094593576035575,
+      "draw": 0.19276738702070614,
+      "away": 0.6562866772189382
+    },
+    "independentProbabilities": {
+      "home": 0.3868467140222177,
+      "draw": 0.2560724580846672,
+      "away": 0.35708082789311507
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1460",
+        "awayElo": "1583",
+        "homeForm": "WDLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 4,
+        "awayFormPoints": 7,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": false,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.3868467140222177,
+        "draw": 0.2560724580846672,
+        "away": 0.35708082789311507
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5200536631987547
+      },
+      "pick": "home",
+      "confidence": 0.4559414328697344,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Wimborne Town FC 1460 vs Crawley Town 1583 → 33.0% home",
+        "FORM last 5: Wimborne Town FC WDLLL 4pts (GF 1.6 GA 1.3) vs Crawley Town WWDLL 7pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.6% D25.9% A28.5%",
+        "CORRECT PICK: HOME with 45.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:40.482Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "openliga_83235",
@@ -18800,6 +18958,96 @@
     "scoreSource": null
   },
   {
+    "id": "fdorg_561933",
+    "sport": "football",
+    "sportKey": "soccer_elc",
+    "league": "Championship",
+    "home": {
+      "name": "Wrexham AFC",
+      "short": "WA",
+      "initials": "WA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wolverhampton Wanderers FC",
+      "short": "WWF",
+      "initials": "WW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T12:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5631817514211708,
+      "label": "Wrexham AFC to win",
+      "fairOdds": 1.7756257149251242
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5631817514211708,
+      "draw": 0.2531298438343548,
+      "away": 0.18368840474447445
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1516",
+        "awayElo": "1467",
+        "homeForm": "WWWDD",
+        "awayForm": "WLLLD",
+        "homeFormPoints": 11,
+        "awayFormPoints": 4,
+        "homeXG": "1.55",
+        "awayXG": "1.05",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5631817514211708,
+        "draw": 0.2531298438343548,
+        "away": 0.18368840474447445
+      },
+      "expected": {
+        "homeGoals": "1.55",
+        "awayGoals": "1.05",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5125789908554397
+      },
+      "pick": "home",
+      "confidence": 0.4870365581356394,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Wrexham AFC 1516 vs Wolverhampton Wanderers FC 1467 → 57.0% home",
+        "FORM last 5: Wrexham AFC WWWDD 11pts (GF 1.3 GA 1.0) vs Wolverhampton Wanderers FC WLLLD 4pts → Form gives 47% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.55 - 1.05 → Poisson H48.7% D25.4% A25.8%",
+        "CORRECT PICK: HOME with 48.7% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.476Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_83682",
     "sport": "football",
     "sportKey": "soccer_germany_bl2",
@@ -27484,6 +27732,96 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401841667",
+    "sport": "football",
+    "sportKey": "soccer_arg.1",
+    "league": "Argentine LPF",
+    "home": {
+      "name": "Gimnasia La Plata",
+      "short": "GLP",
+      "initials": "GL",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Belgrano (Córdoba)",
+      "short": "B(",
+      "initials": "B(",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T22:15Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4595230163934204,
+      "label": "Gimnasia La Plata to win",
+      "fairOdds": 2.1761695591409733
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4595230163934204,
+      "draw": 0.25619561222879184,
+      "away": 0.28428137137778775
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1434",
+        "awayElo": "1563",
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 7,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4595230163934204,
+        "draw": 0.25619561222879184,
+        "away": 0.28428137137778775
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5203639848034533
+      },
+      "pick": "home",
+      "confidence": 0.4544159863127865,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Gimnasia La Plata 1434 vs Belgrano (Córdoba) 1563 → 32.2% home",
+        "FORM last 5: Gimnasia La Plata WWWDL 10pts (GF 1.3 GA 1.0) vs Belgrano (Córdoba) WWDLL 7pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.4% D25.9% A28.7%",
+        "CORRECT PICK: HOME with 45.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.460Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401915824",
     "sport": "football",
     "sportKey": "soccer_uefa.europa.conf",
@@ -29885,6 +30223,96 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_401841659",
+    "sport": "football",
+    "sportKey": "soccer_arg.1",
+    "league": "Argentine LPF",
+    "home": {
+      "name": "Aldosivi",
+      "short": "A",
+      "initials": "A",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "River Plate",
+      "short": "RP",
+      "initials": "RP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T18:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4614266081946079,
+      "label": "Aldosivi to win",
+      "fairOdds": 2.167191883260983
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4614266081946079,
+      "draw": 0.2595585696020163,
+      "away": 0.2790148222033758
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1527",
+        "awayElo": "1474",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 10,
+        "homeXG": "1.34",
+        "awayXG": "1.26",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4614266081946079,
+        "draw": 0.2595585696020163,
+        "away": 0.2790148222033758
+      },
+      "expected": {
+        "homeGoals": "1.34",
+        "awayGoals": "1.26",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.52876158491881
+      },
+      "pick": "home",
+      "confidence": 0.38717217497382717,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Aldosivi 1527 vs River Plate 1474 → 57.6% home",
+        "FORM last 5: Aldosivi WWWWD 13pts (GF 1.0 GA 1.6) vs River Plate WWWDL 10pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.34 - 1.26 → Poisson H38.7% D26.4% A34.9%",
+        "CORRECT PICK: HOME with 38.7% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.456Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "espn_401915831",
@@ -40260,6 +40688,1145 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.687Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186476_karen_khachanov_nuno_borges",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Karen Khachanov",
+      "short": "KK",
+      "initials": "KK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Nuno Borges",
+      "short": "NB",
+      "initials": "NB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6138553852361779,
+      "label": "Karen Khachanov to win",
+      "fairOdds": 1.6290481830916166
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6138553852361779,
+      "away": 0.3861446147638221
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1474,
+        "awayElo": 1408,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6138553852361779,
+        "away": 0.3861446147638221
+      },
+      "expected": {
+        "winProb": "0.614",
+        "homeElo": 1474,
+        "awayElo": 1408
+      },
+      "pick": "home",
+      "confidence": 0.6138553852361779,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Karen Khachanov 1474 (WWWDL 10pts) vs Nuno Borges 1408 (WWWWD 13pts) → 59.4% home",
+        "PICK for correctness: HOME with 61.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.434Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186479_learner_tien_luca_van_assche",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Learner Tien",
+      "short": "LT",
+      "initials": "LT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luca Van Assche",
+      "short": "LVA",
+      "initials": "LV",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4268631798468569,
+      "label": "Learner Tien to win",
+      "fairOdds": 2.3426710178159755
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4268631798468569,
+      "away": 0.573136820153143
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1485,
+        "awayElo": 1565,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.4268631798468569,
+        "away": 0.573136820153143
+      },
+      "expected": {
+        "winProb": "0.427",
+        "homeElo": 1485,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.573136820153143,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Learner Tien 1485 (WWWDL 10pts) vs Luca Van Assche 1565 (WWWDL 10pts) → 38.7% home",
+        "PICK for correctness: AWAY with 57.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.434Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186481_alex_de_minaur_tomas_martin_etcheverry",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Alex de Minaur",
+      "short": "ADM",
+      "initials": "Ad",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tomas Martin Etcheverry",
+      "short": "TME",
+      "initials": "TM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5863847272177745,
+      "label": "Alex de Minaur to win",
+      "fairOdds": 1.7053650164879124
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5863847272177745,
+      "away": 0.41361527278222554
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1529,
+        "awayElo": 1506,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5863847272177745,
+        "away": 0.41361527278222554
+      },
+      "expected": {
+        "winProb": "0.586",
+        "homeElo": 1529,
+        "awayElo": 1506
+      },
+      "pick": "home",
+      "confidence": 0.5863847272177745,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alex de Minaur 1529 (WWWWD 13pts) vs Tomas Martin Etcheverry 1506 (WWWDD 11pts) → 53.3% home",
+        "PICK for correctness: HOME with 58.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.435Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186486_frances_tiafoe_quentin_halys",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Frances Tiafoe",
+      "short": "FT",
+      "initials": "FT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Quentin Halys",
+      "short": "QH",
+      "initials": "QH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5930513938844412,
+      "label": "Frances Tiafoe to win",
+      "fairOdds": 1.6861945023854958
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5930513938844412,
+      "away": 0.40694860611555883
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1448,
+        "awayElo": 1425,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5930513938844412,
+        "away": 0.40694860611555883
+      },
+      "expected": {
+        "winProb": "0.593",
+        "homeElo": 1448,
+        "awayElo": 1425
+      },
+      "pick": "home",
+      "confidence": 0.5930513938844412,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Frances Tiafoe 1448 (WWWWD 13pts) vs Quentin Halys 1425 (WWWDL 10pts) → 53.3% home",
+        "PICK for correctness: HOME with 59.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.436Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186488_arthur_rinderknech_mattia_bellucci",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Arthur Rinderknech",
+      "short": "AR",
+      "initials": "AR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Mattia Bellucci",
+      "short": "MB",
+      "initials": "MB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5772625244323762,
+      "label": "Arthur Rinderknech to win",
+      "fairOdds": 1.7323140818526244
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5772625244323762,
+      "away": 0.42273747556762375
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1575,
+        "awayElo": 1563,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5772625244323762,
+        "away": 0.42273747556762375
+      },
+      "expected": {
+        "winProb": "0.577",
+        "homeElo": 1575,
+        "awayElo": 1563
+      },
+      "pick": "home",
+      "confidence": 0.5772625244323762,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Arthur Rinderknech 1575 (WWWDL 10pts) vs Mattia Bellucci 1563 (WWDLL 7pts) → 51.7% home",
+        "PICK for correctness: HOME with 57.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.436Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186515_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.437Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186570_tbd_weronika_falkowska",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Weronika Falkowska",
+      "short": "WF",
+      "initials": "WF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.45096739659576046,
+      "label": "TBD to win",
+      "fairOdds": 2.2174552030784236
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45096739659576046,
+      "away": 0.5490326034042395
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1515,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.45096739659576046,
+        "away": 0.5490326034042395
+      },
+      "expected": {
+        "winProb": "0.451",
+        "homeElo": 1438,
+        "awayElo": 1515
+      },
+      "pick": "away",
+      "confidence": 0.5490326034042395,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Weronika Falkowska 1515 (WWWDL 10pts) → 39.1% home",
+        "PICK for correctness: AWAY with 54.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.437Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186572_jeline_vandromme_robin_montgomery",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Jeline Vandromme",
+      "short": "JV",
+      "initials": "JV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Robin Montgomery",
+      "short": "RM",
+      "initials": "RM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6111121277873282,
+      "label": "Jeline Vandromme to win",
+      "fairOdds": 1.636360914028543
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6111121277873282,
+      "away": 0.38888787221267185
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1421,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6111121277873282,
+        "away": 0.38888787221267185
+      },
+      "expected": {
+        "winProb": "0.611",
+        "homeElo": 1438,
+        "awayElo": 1421
+      },
+      "pick": "home",
+      "confidence": 0.6111121277873282,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Jeline Vandromme 1438 (WWWWD 13pts) vs Robin Montgomery 1421 (WWLLL 6pts) → 52.4% home",
+        "PICK for correctness: HOME with 61.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.441Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186574_polina_kudermetova_oksana_selekhmeteva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Polina Kudermetova",
+      "short": "PK",
+      "initials": "PK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Oksana Selekhmeteva",
+      "short": "OS",
+      "initials": "OS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.524175014735265,
+      "label": "Polina Kudermetova to win",
+      "fairOdds": 1.907759759409843
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.524175014735265,
+      "away": 0.47582498526473505
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1492,
+        "awayElo": 1503,
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.524175014735265,
+        "away": 0.47582498526473505
+      },
+      "expected": {
+        "winProb": "0.524",
+        "homeElo": 1492,
+        "awayElo": 1503
+      },
+      "pick": "home",
+      "confidence": 0.524175014735265,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Polina Kudermetova 1492 (WWDLL 7pts) vs Oksana Selekhmeteva 1503 (WWDLL 7pts) → 48.4% home",
+        "PICK for correctness: HOME with 52.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.442Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186576_joanna_garland_janice_tjen",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Joanna Garland",
+      "short": "JG",
+      "initials": "JG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Janice Tjen",
+      "short": "JT",
+      "initials": "JT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.524175014735265,
+      "label": "Joanna Garland to win",
+      "fairOdds": 1.907759759409843
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.524175014735265,
+      "away": 0.47582498526473505
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1408,
+        "awayElo": 1419,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.524175014735265,
+        "away": 0.47582498526473505
+      },
+      "expected": {
+        "winProb": "0.524",
+        "homeElo": 1408,
+        "awayElo": 1419
+      },
+      "pick": "home",
+      "confidence": 0.524175014735265,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Joanna Garland 1408 (WWWWD 13pts) vs Janice Tjen 1419 (WWWWD 13pts) → 48.4% home",
+        "PICK for correctness: HOME with 52.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.442Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186585_lucrezia_stefanini_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Lucrezia Stefanini",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5057562084111449,
+      "label": "Lucrezia Stefanini to win",
+      "fairOdds": 1.977237220955811
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5057562084111449,
+      "away": 0.4942437915888551
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1442,
+        "awayElo": 1438,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5057562084111449,
+        "away": 0.4942437915888551
+      },
+      "expected": {
+        "winProb": "0.506",
+        "homeElo": 1442,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.5057562084111449,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lucrezia Stefanini 1442 (WWDLL 7pts) vs TBD 1438 (WWWWD 13pts) → 50.6% home",
+        "PICK for correctness: HOME with 50.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.442Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186588_vaishnavi_adkar_anastasia_zakharova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Vaishnavi Adkar",
+      "short": "VA",
+      "initials": "VA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Anastasia Zakharova",
+      "short": "AZ",
+      "initials": "AZ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3513050436926683,
+      "label": "Vaishnavi Adkar to win",
+      "fairOdds": 2.846529015036939
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3513050436926683,
+      "away": 0.6486949563073316
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1442,
+        "awayElo": 1564,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3513050436926683,
+        "away": 0.6486949563073316
+      },
+      "expected": {
+        "winProb": "0.351",
+        "homeElo": 1442,
+        "awayElo": 1564
+      },
+      "pick": "away",
+      "confidence": 0.6486949563073316,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Vaishnavi Adkar 1442 (WWDLL 7pts) vs Anastasia Zakharova 1564 (WWWDL 10pts) → 33.1% home",
+        "PICK for correctness: AWAY with 64.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.442Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186590_tbd_moyuka_uchijima",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Moyuka Uchijima",
+      "short": "MU",
+      "initials": "MU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6030095872975624,
+      "label": "TBD to win",
+      "fairOdds": 1.6583484260699455
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6030095872975624,
+      "away": 0.3969904127024376
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1422,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6030095872975624,
+        "away": 0.3969904127024376
+      },
+      "expected": {
+        "winProb": "0.603",
+        "homeElo": 1438,
+        "awayElo": 1422
+      },
+      "pick": "home",
+      "confidence": 0.6030095872975624,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Moyuka Uchijima 1422 (WWDLL 7pts) → 52.3% home",
+        "PICK for correctness: HOME with 60.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.442Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186725_tbd_laura_samson",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Laura Samson",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.38678283278113024,
+      "label": "TBD to win",
+      "fairOdds": 2.58543015678742
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.38678283278113024,
+      "away": 0.6132171672188698
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1548,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.38678283278113024,
+        "away": 0.6132171672188698
+      },
+      "expected": {
+        "winProb": "0.387",
+        "homeElo": 1438,
+        "awayElo": 1548
+      },
+      "pick": "away",
+      "confidence": 0.6132171672188698,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Laura Samson 1548 (WWWWD 13pts) → 34.7% home",
+        "PICK for correctness: AWAY with 61.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.443Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186733_carolina_alves_leolia_jeanjean",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Carolina Alves",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Leolia Jeanjean",
+      "short": "LJ",
+      "initials": "LJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3897592352920378,
+      "label": "Carolina Alves to win",
+      "fairOdds": 2.5656864788610396
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3897592352920378,
+      "away": 0.6102407647079622
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1468,
+        "awayElo": 1586,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.3897592352920378,
+        "away": 0.6102407647079622
+      },
+      "expected": {
+        "winProb": "0.390",
+        "homeElo": 1468,
+        "awayElo": 1586
+      },
+      "pick": "away",
+      "confidence": 0.6102407647079622,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carolina Alves 1468 (WWWWD 13pts) vs Leolia Jeanjean 1586 (WWWDD 11pts) → 33.6% home",
+        "PICK for correctness: AWAY with 61.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.443Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186731_luisina_giovannini_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Luisina Giovannini",
+      "short": "LG",
+      "initials": "LG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6268950233791001,
+      "label": "Luisina Giovannini to win",
+      "fairOdds": 1.5951634048868073
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6268950233791001,
+      "away": 0.3731049766208999
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1499,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6268950233791001,
+        "away": 0.3731049766208999
+      },
+      "expected": {
+        "winProb": "0.627",
+        "homeElo": 1499,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.6268950233791001,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Luisina Giovannini 1499 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 58.7% home",
+        "PICK for correctness: HOME with 62.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.443Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186724_solana_sierra_leyre_romero_gormaz",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Solana Sierra",
+      "short": "SS",
+      "initials": "SS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Leyre Romero Gormaz",
+      "short": "LRG",
+      "initials": "LR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.48992755307256153,
+      "label": "Solana Sierra to win",
+      "fairOdds": 2.0411181076233396
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.48992755307256153,
+      "away": 0.5100724469274385
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1582,
+        "awayElo": 1589,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.48992755307256153,
+        "away": 0.5100724469274385
+      },
+      "expected": {
+        "winProb": "0.490",
+        "homeElo": 1582,
+        "awayElo": 1589
+      },
+      "pick": "away",
+      "confidence": 0.5100724469274385,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Solana Sierra 1582 (WWDLL 7pts) vs Leyre Romero Gormaz 1589 (WWWWD 13pts) → 49.0% home",
+        "PICK for correctness: AWAY with 51.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T15:15:43.443Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -54441,10 +56008,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.647Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T15:15:46.042Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912616",
@@ -54531,10 +56101,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.648Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 7,
+      "away": 4
+    },
+    "settledAt": "2026-11-03T15:15:46.043Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186668_maayan_laron_justina_mikulskyte",
@@ -54956,10 +56529,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.646Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T15:15:46.043Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912604",
@@ -55046,10 +56622,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.646Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T15:15:46.043Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912605",
@@ -55136,10 +56715,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.646Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-03T15:15:46.043Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186666_lamis_alhussein_abdel_aziz_tiphanie_lemaitre",
@@ -56261,10 +57843,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.645Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 4
+    },
+    "settledAt": "2026-11-03T15:15:46.043Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186584_polina_iatcenko_anastasia_zakharova",
