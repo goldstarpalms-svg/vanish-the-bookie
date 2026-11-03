@@ -1,5 +1,206 @@
 [
   {
+    "id": "nhl_2026020285",
+    "sport": "icehockey",
+    "sportKey": "icehockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "San Jose Sharks",
+      "short": "SJS",
+      "initials": "SJ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New York Islanders",
+      "short": "NYI",
+      "initials": "NY",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T03:00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5892242944501864,
+      "label": "San Jose Sharks to win",
+      "fairOdds": 1.6971465864847175
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5892242944501864,
+      "away": 0.4107757055498136
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1575,
+        "awayElo": 1536,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5892242944501864,
+        "away": 0.4107757055498136
+      },
+      "expected": {
+        "winProb": "0.589",
+        "homeElo": 1575,
+        "awayElo": 1536
+      },
+      "pick": "home",
+      "confidence": 0.5892242944501864,
+      "explanation": [
+        "ACCURACY FOCUS: Elo San Jose Sharks 1575 (WWWDL 10pts) vs New York Islanders 1536 (WWWDD 11pts) → 55.6% home",
+        "PICK for correctness: HOME with 58.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.767Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "nhl_2026020284",
+    "sport": "icehockey",
+    "sportKey": "icehockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Vancouver Canucks",
+      "short": "VC",
+      "initials": "VC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Philadelphia Flyers",
+      "short": "PF",
+      "initials": "PF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T02:30:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6444004902404213,
+      "label": "Vancouver Canucks to win",
+      "fairOdds": 1.5518299801834523
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6444004902404213,
+      "away": 0.35559950975957866
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1547,
+        "awayElo": 1502,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6444004902404213,
+        "away": 0.35559950975957866
+      },
+      "expected": {
+        "winProb": "0.644",
+        "homeElo": 1547,
+        "awayElo": 1502
+      },
+      "pick": "home",
+      "confidence": 0.6444004902404213,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Vancouver Canucks 1547 (WWWWD 13pts) vs Philadelphia Flyers 1502 (WWDLL 7pts) → 56.4% home",
+        "PICK for correctness: HOME with 64.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.767Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "nhl_2026020283",
+    "sport": "icehockey",
+    "sportKey": "icehockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Edmonton Oilers",
+      "short": "EO",
+      "initials": "EO",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New York Rangers",
+      "short": "NYR",
+      "initials": "NY",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T01:00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.42150324765525726,
+      "label": "Edmonton Oilers to win",
+      "fairOdds": 2.3724609610075618
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.42150324765525726,
+      "away": 0.5784967523447427
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1510,
+        "awayElo": 1565,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.42150324765525726,
+        "away": 0.5784967523447427
+      },
+      "expected": {
+        "winProb": "0.422",
+        "homeElo": 1510,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.5784967523447427,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Edmonton Oilers 1510 (WDLLL 4pts) vs New York Rangers 1565 (WWWDL 10pts) → 42.2% home",
+        "PICK for correctness: AWAY with 57.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.767Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "8b3289c2c6ddd9b85f95e1d569aea292",
     "sport": "football",
     "sportKey": "soccer_fa_cup",
@@ -5703,6 +5904,73 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186507_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.756Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "nhl_2026020276",
@@ -19849,6 +20117,73 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_186504_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.745Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401877557",
     "sport": "football",
     "sportKey": "soccer_jpn.1",
@@ -33761,6 +34096,743 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_186497_tbd_ben_shelton",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ben Shelton",
+      "short": "BS",
+      "initials": "BS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6316235473109606,
+      "label": "TBD to win",
+      "fairOdds": 1.5832215316502134
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6316235473109606,
+      "away": 0.3683764526890394
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1402,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6316235473109606,
+        "away": 0.3683764526890394
+      },
+      "expected": {
+        "winProb": "0.632",
+        "homeElo": 1438,
+        "awayElo": 1402
+      },
+      "pick": "home",
+      "confidence": 0.6316235473109606,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Ben Shelton 1402 (WWDLL 7pts) → 55.2% home",
+        "PICK for correctness: HOME with 63.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.721Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186640_alexandra_shubladze_elena_pridankina",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Alexandra Shubladze",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Elena Pridankina",
+      "short": "EP",
+      "initials": "EP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6482899718631628,
+      "label": "Alexandra Shubladze to win",
+      "fairOdds": 1.5425196183831669
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6482899718631628,
+      "away": 0.35171002813683716
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1504,
+        "awayElo": 1442,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6482899718631628,
+        "away": 0.35171002813683716
+      },
+      "expected": {
+        "winProb": "0.648",
+        "homeElo": 1504,
+        "awayElo": 1442
+      },
+      "pick": "home",
+      "confidence": 0.6482899718631628,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alexandra Shubladze 1504 (WWWDL 10pts) vs Elena Pridankina 1442 (WWDLL 7pts) → 58.8% home",
+        "PICK for correctness: HOME with 64.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186630_alexandra_eala_tereza_valentova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Alexandra Eala",
+      "short": "AE",
+      "initials": "AE",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tereza Valentova",
+      "short": "TV",
+      "initials": "TV",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6393967967092569,
+      "label": "Alexandra Eala to win",
+      "fairOdds": 1.563974053587126
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6393967967092569,
+      "away": 0.36060320329074314
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1545,
+        "awayElo": 1475,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6393967967092569,
+        "away": 0.36060320329074314
+      },
+      "expected": {
+        "winProb": "0.639",
+        "homeElo": 1545,
+        "awayElo": 1475
+      },
+      "pick": "home",
+      "confidence": 0.6393967967092569,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alexandra Eala 1545 (WWWDL 10pts) vs Tereza Valentova 1475 (WWWDL 10pts) → 59.9% home",
+        "PICK for correctness: HOME with 63.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186631_tbd_wang_xinyu",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wang Xinyu",
+      "short": "WX",
+      "initials": "WX",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.625880930891169,
+      "label": "TBD to win",
+      "fairOdds": 1.5977479911013368
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.625880930891169,
+      "away": 0.37411906910883097
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1420,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.625880930891169,
+        "away": 0.37411906910883097
+      },
+      "expected": {
+        "winProb": "0.626",
+        "homeElo": 1438,
+        "awayElo": 1420
+      },
+      "pick": "home",
+      "confidence": 0.625880930891169,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Wang Xinyu 1420 (WDLLL 4pts) → 52.6% home",
+        "PICK for correctness: HOME with 62.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186639_zeynep_sonmez_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Zeynep Sonmez",
+      "short": "ZS",
+      "initials": "ZS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5784967523447427,
+      "label": "Zeynep Sonmez to win",
+      "fairOdds": 1.7286181745132279
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5784967523447427,
+      "away": 0.42150324765525726
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1493,
+        "awayElo": 1438,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5784967523447427,
+        "away": 0.42150324765525726
+      },
+      "expected": {
+        "winProb": "0.578",
+        "homeElo": 1493,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.5784967523447427,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Zeynep Sonmez 1493 (WWDLL 7pts) vs TBD 1438 (WWWWD 13pts) → 57.8% home",
+        "PICK for correctness: HOME with 57.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186641_mary_stoiana_sorana_cirstea",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Mary Stoiana",
+      "short": "MS",
+      "initials": "MS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sorana Cirstea",
+      "short": "SC",
+      "initials": "SC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.621390111955618,
+      "label": "Mary Stoiana to win",
+      "fairOdds": 1.6092949996465726
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.621390111955618,
+      "away": 0.378609888044382
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1540,
+        "awayElo": 1439,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.621390111955618,
+        "away": 0.378609888044382
+      },
+      "expected": {
+        "winProb": "0.621",
+        "homeElo": 1540,
+        "awayElo": 1439
+      },
+      "pick": "home",
+      "confidence": 0.621390111955618,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Mary Stoiana 1540 (WDLLL 4pts) vs Sorana Cirstea 1439 (WWWWD 13pts) → 64.1% home",
+        "PICK for correctness: HOME with 62.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186585_lucrezia_stefanini_simona_waltert",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Lucrezia Stefanini",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Simona Waltert",
+      "short": "SW",
+      "initials": "SW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5506806504998262,
+      "label": "Lucrezia Stefanini to win",
+      "fairOdds": 1.815934515026719
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5506806504998262,
+      "away": 0.4493193495001738
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1442,
+        "awayElo": 1416,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5506806504998262,
+        "away": 0.4493193495001738
+      },
+      "expected": {
+        "winProb": "0.551",
+        "homeElo": 1442,
+        "awayElo": 1416
+      },
+      "pick": "home",
+      "confidence": 0.5506806504998262,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lucrezia Stefanini 1442 (WWDLL 7pts) vs Simona Waltert 1416 (WWWDD 11pts) → 53.7% home",
+        "PICK for correctness: HOME with 55.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186591_zhibek_kulambayeva_mai_hontama",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Zhibek Kulambayeva",
+      "short": "ZK",
+      "initials": "ZK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Mai Hontama",
+      "short": "MH",
+      "initials": "MH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.463370826694226,
+      "label": "Zhibek Kulambayeva to win",
+      "fairOdds": 2.1580987459529695
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.463370826694226,
+      "away": 0.536629173305774
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1505,
+        "awayElo": 1573,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.463370826694226,
+        "away": 0.536629173305774
+      },
+      "expected": {
+        "winProb": "0.463",
+        "homeElo": 1505,
+        "awayElo": 1573
+      },
+      "pick": "away",
+      "confidence": 0.536629173305774,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Zhibek Kulambayeva 1505 (WWWDL 10pts) vs Mai Hontama 1573 (WWDLL 7pts) → 40.3% home",
+        "PICK for correctness: AWAY with 53.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.722Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186590_magda_linette_moyuka_uchijima",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Magda Linette",
+      "short": "ML",
+      "initials": "ML",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Moyuka Uchijima",
+      "short": "MU",
+      "initials": "MU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6720710824450582,
+      "label": "Magda Linette to win",
+      "fairOdds": 1.4879378478269074
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6720710824450582,
+      "away": 0.3279289175549418
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1521,
+        "awayElo": 1422,
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6720710824450582,
+        "away": 0.3279289175549418
+      },
+      "expected": {
+        "winProb": "0.672",
+        "homeElo": 1521,
+        "awayElo": 1422
+      },
+      "pick": "home",
+      "confidence": 0.6720710824450582,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Magda Linette 1521 (WWLLL 6pts) vs Moyuka Uchijima 1422 (WWDLL 7pts) → 63.9% home",
+        "PICK for correctness: HOME with 67.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.723Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401850979",
+    "sport": "golf",
+    "sportKey": "golf_pga",
+    "league": "PGA Golf",
+    "home": {
+      "name": "Brice Garnett",
+      "short": "BG",
+      "initials": "BG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ben Martin",
+      "short": "BM",
+      "initials": "BM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T05:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7081663882812006,
+      "label": "Brice Garnett to win",
+      "fairOdds": 1.4120975190973302
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7081663882812006,
+      "away": 0.2918336117187994
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1562,
+        "awayElo": 1408,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7081663882812006,
+        "away": 0.2918336117187994
+      },
+      "expected": {
+        "winProb": "0.708",
+        "homeElo": 1562,
+        "awayElo": 1408
+      },
+      "pick": "home",
+      "confidence": 0.7081663882812006,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Brice Garnett 1562 (WWDLL 7pts) vs Ben Martin 1408 (WWWWD 13pts) → 70.8% home",
+        "PICK for correctness: HOME with 70.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.723Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909935",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "LA Clippers",
+      "short": "LC",
+      "initials": "LC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Miami Heat",
+      "short": "MH",
+      "initials": "MH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T03:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6805220519028445,
+      "label": "LA Clippers to win",
+      "fairOdds": 1.4694600964125202
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6805220519028445,
+      "away": 0.31947794809715546
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1497,
+        "awayElo": 1431,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6805220519028445,
+        "away": 0.31947794809715546
+      },
+      "expected": {
+        "winProb": "0.681",
+        "homeElo": 1497,
+        "awayElo": 1431
+      },
+      "pick": "home",
+      "confidence": 0.6805220519028445,
+      "explanation": [
+        "ACCURACY FOCUS: Elo LA Clippers 1497 (WWWWD 13pts) vs Miami Heat 1431 (WWLLL 6pts) → 59.4% home",
+        "PICK for correctness: HOME with 68.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.721Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020249",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -34243,6 +35315,542 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_401909934",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Sacramento Kings",
+      "short": "SK",
+      "initials": "SK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Los Angeles Lakers",
+      "short": "LAL",
+      "initials": "LA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T03:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7645382428425361,
+      "label": "Sacramento Kings to win",
+      "fairOdds": 1.3079790440331962
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7645382428425361,
+      "away": 0.23546175715746387
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1577,
+        "awayElo": 1409,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7645382428425361,
+        "away": 0.23546175715746387
+      },
+      "expected": {
+        "winProb": "0.765",
+        "homeElo": 1577,
+        "awayElo": 1409
+      },
+      "pick": "home",
+      "confidence": 0.7645382428425361,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Sacramento Kings 1577 (WWWWD 13pts) vs Los Angeles Lakers 1409 (WWWWD 13pts) → 72.5% home",
+        "PICK for correctness: HOME with 76.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.721Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909933",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "San Antonio Spurs",
+      "short": "SAS",
+      "initials": "SA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Dallas Mavericks",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T02:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5071950817090514,
+      "label": "San Antonio Spurs to win",
+      "fairOdds": 1.9716279515771062
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5071950817090514,
+      "away": 0.49280491829094863
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1573,
+        "awayElo": 1568,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5071950817090514,
+        "away": 0.49280491829094863
+      },
+      "expected": {
+        "winProb": "0.507",
+        "homeElo": 1573,
+        "awayElo": 1568
+      },
+      "pick": "home",
+      "confidence": 0.5071950817090514,
+      "explanation": [
+        "ACCURACY FOCUS: Elo San Antonio Spurs 1573 (WWDLL 7pts) vs Dallas Mavericks 1568 (WWWWD 13pts) → 50.7% home",
+        "PICK for correctness: HOME with 50.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909931",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Denver Nuggets",
+      "short": "DN",
+      "initials": "DN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Toronto Raptors",
+      "short": "TR",
+      "initials": "TR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4692323745196553,
+      "label": "Denver Nuggets to win",
+      "fairOdds": 2.131140250123794
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4692323745196553,
+      "away": 0.5307676254803446
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1467,
+        "awayElo": 1526,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.4692323745196553,
+        "away": 0.5307676254803446
+      },
+      "expected": {
+        "winProb": "0.469",
+        "homeElo": 1467,
+        "awayElo": 1526
+      },
+      "pick": "away",
+      "confidence": 0.5307676254803446,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Denver Nuggets 1467 (WWWWD 13pts) vs Toronto Raptors 1526 (WWWDD 11pts) → 41.6% home",
+        "PICK for correctness: AWAY with 53.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909932",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Phoenix Suns",
+      "short": "PS",
+      "initials": "PS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Portland Trail Blazers",
+      "short": "PTB",
+      "initials": "PT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6254447587238382,
+      "label": "Phoenix Suns to win",
+      "fairOdds": 1.598862227321893
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6254447587238382,
+      "away": 0.3745552412761618
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1528,
+        "awayElo": 1501,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6254447587238382,
+        "away": 0.3745552412761618
+      },
+      "expected": {
+        "winProb": "0.625",
+        "homeElo": 1528,
+        "awayElo": 1501
+      },
+      "pick": "home",
+      "confidence": 0.6254447587238382,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Phoenix Suns 1528 (WWWWD 13pts) vs Portland Trail Blazers 1501 (WWLLL 6pts) → 53.9% home",
+        "PICK for correctness: HOME with 62.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909930",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Houston Rockets",
+      "short": "HR",
+      "initials": "HR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Minnesota Timberwolves",
+      "short": "MT",
+      "initials": "MT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T01:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4740780772195163,
+      "label": "Houston Rockets to win",
+      "fairOdds": 2.1093571883033135
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4740780772195163,
+      "away": 0.5259219227804837
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1565,
+        "awayElo": 1597,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4740780772195163,
+        "away": 0.5259219227804837
+      },
+      "expected": {
+        "winProb": "0.474",
+        "homeElo": 1565,
+        "awayElo": 1597
+      },
+      "pick": "away",
+      "confidence": 0.5259219227804837,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Houston Rockets 1565 (WWWDL 10pts) vs Minnesota Timberwolves 1597 (WWWWD 13pts) → 45.4% home",
+        "PICK for correctness: AWAY with 52.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909927",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Memphis Grizzlies",
+      "short": "MG",
+      "initials": "MG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Indiana Pacers",
+      "short": "IP",
+      "initials": "IP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.654469374021676,
+      "label": "Memphis Grizzlies to win",
+      "fairOdds": 1.5279553783472837
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.654469374021676,
+      "away": 0.34553062597832396
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1488,
+        "awayElo": 1450,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.654469374021676,
+        "away": 0.34553062597832396
+      },
+      "expected": {
+        "winProb": "0.654",
+        "homeElo": 1488,
+        "awayElo": 1450
+      },
+      "pick": "home",
+      "confidence": 0.654469374021676,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Memphis Grizzlies 1488 (WWWWD 13pts) vs Indiana Pacers 1450 (WDLLL 4pts) → 55.4% home",
+        "PICK for correctness: HOME with 65.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.719Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909928",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "New Orleans Pelicans",
+      "short": "NOP",
+      "initials": "NO",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Utah Jazz",
+      "short": "UJ",
+      "initials": "UJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4388639593116572,
+      "label": "New Orleans Pelicans to win",
+      "fairOdds": 2.2786104413050117
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4388639593116572,
+      "away": 0.5611360406883428
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1411,
+        "awayElo": 1449,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4388639593116572,
+        "away": 0.5611360406883428
+      },
+      "expected": {
+        "winProb": "0.439",
+        "homeElo": 1411,
+        "awayElo": 1449
+      },
+      "pick": "away",
+      "confidence": 0.5611360406883428,
+      "explanation": [
+        "ACCURACY FOCUS: Elo New Orleans Pelicans 1411 (WWLLL 6pts) vs Utah Jazz 1449 (WWWWD 13pts) → 44.6% home",
+        "PICK for correctness: AWAY with 56.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909929",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Oklahoma City Thunder",
+      "short": "OCT",
+      "initials": "OC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Cleveland Cavaliers",
+      "short": "CC",
+      "initials": "CC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.455899041186322,
+      "label": "Oklahoma City Thunder to win",
+      "fairOdds": 2.1934680919658014
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.455899041186322,
+      "away": 0.544100958813678
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1475,
+        "awayElo": 1534,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.455899041186322,
+        "away": 0.544100958813678
+      },
+      "expected": {
+        "winProb": "0.456",
+        "homeElo": 1475,
+        "awayElo": 1534
+      },
+      "pick": "away",
+      "confidence": 0.544100958813678,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Oklahoma City Thunder 1475 (WWWDL 10pts) vs Cleveland Cavaliers 1534 (WWWDL 10pts) → 41.6% home",
+        "PICK for correctness: AWAY with 54.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.720Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "nhl_2026020247",
@@ -34903,6 +36511,341 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T16:08:18.846Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909924",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Boston Celtics",
+      "short": "BC",
+      "initials": "BC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Milwaukee Bucks",
+      "short": "MB",
+      "initials": "MB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.39233893587318014,
+      "label": "Boston Celtics to win",
+      "fairOdds": 2.5488166189124817
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.39233893587318014,
+      "away": 0.6076610641268199
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1492,
+        "awayElo": 1568,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.39233893587318014,
+        "away": 0.6076610641268199
+      },
+      "expected": {
+        "winProb": "0.392",
+        "homeElo": 1492,
+        "awayElo": 1568
+      },
+      "pick": "away",
+      "confidence": 0.6076610641268199,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Boston Celtics 1492 (WWDLL 7pts) vs Milwaukee Bucks 1568 (WWWWD 13pts) → 39.2% home",
+        "PICK for correctness: AWAY with 60.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.718Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909925",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Brooklyn Nets",
+      "short": "BN",
+      "initials": "BN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Charlotte Hornets",
+      "short": "CH",
+      "initials": "CH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.49280491829094863,
+      "label": "Brooklyn Nets to win",
+      "fairOdds": 2.029200527194428
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.49280491829094863,
+      "away": 0.5071950817090514
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1480,
+        "awayElo": 1485,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.49280491829094863,
+        "away": 0.5071950817090514
+      },
+      "expected": {
+        "winProb": "0.493",
+        "homeElo": 1480,
+        "awayElo": 1485
+      },
+      "pick": "away",
+      "confidence": 0.5071950817090514,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Brooklyn Nets 1480 (WDLLL 4pts) vs Charlotte Hornets 1485 (WWWDL 10pts) → 49.3% home",
+        "PICK for correctness: AWAY with 50.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.718Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909926",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "New York Knicks",
+      "short": "NYK",
+      "initials": "NY",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Chicago Bulls",
+      "short": "CB",
+      "initials": "CB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.40939537206612747,
+      "label": "New York Knicks to win",
+      "fairOdds": 2.4426265371619182
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.40939537206612747,
+      "away": 0.5906046279338726
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1454,
+        "awayElo": 1562,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.40939537206612747,
+        "away": 0.5906046279338726
+      },
+      "expected": {
+        "winProb": "0.409",
+        "homeElo": 1454,
+        "awayElo": 1562
+      },
+      "pick": "away",
+      "confidence": 0.5906046279338726,
+      "explanation": [
+        "ACCURACY FOCUS: Elo New York Knicks 1454 (WWWDL 10pts) vs Chicago Bulls 1562 (WWDLL 7pts) → 34.9% home",
+        "PICK for correctness: AWAY with 59.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.718Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909922",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Detroit Pistons",
+      "short": "DP",
+      "initials": "DP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Philadelphia 76ers",
+      "short": "P7",
+      "initials": "P7",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3849597989597013,
+      "label": "Detroit Pistons to win",
+      "fairOdds": 2.597673842054045
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3849597989597013,
+      "away": 0.6150402010402987
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1405,
+        "awayElo": 1532,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.3849597989597013,
+        "away": 0.6150402010402987
+      },
+      "expected": {
+        "winProb": "0.385",
+        "homeElo": 1405,
+        "awayElo": 1532
+      },
+      "pick": "away",
+      "confidence": 0.6150402010402987,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Detroit Pistons 1405 (WWWDL 10pts) vs Philadelphia 76ers 1532 (WWDLL 7pts) → 32.5% home",
+        "PICK for correctness: AWAY with 61.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.718Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909923",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Washington Wizards",
+      "short": "WW",
+      "initials": "WW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Atlanta Hawks",
+      "short": "AH",
+      "initials": "AH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.35924824479344364,
+      "label": "Washington Wizards to win",
+      "fairOdds": 2.78359049624576
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.35924824479344364,
+      "away": 0.6407517552065564
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1440,
+        "awayElo": 1561,
+        "homeForm": "WDLLL",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.35924824479344364,
+        "away": 0.6407517552065564
+      },
+      "expected": {
+        "winProb": "0.359",
+        "homeElo": 1440,
+        "awayElo": 1561
+      },
+      "pick": "away",
+      "confidence": 0.6407517552065564,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Washington Wizards 1440 (WDLLL 4pts) vs Atlanta Hawks 1561 (WWLLL 6pts) → 33.3% home",
+        "PICK for correctness: AWAY with 64.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.718Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -36256,6 +38199,73 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_186480_carlos_alcaraz_alex_michelsen",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Carlos Alcaraz",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alex Michelsen",
+      "short": "AM",
+      "initials": "AM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T18:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6800649998028852,
+      "label": "Carlos Alcaraz to win",
+      "fairOdds": 1.4704476782217097
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6800649998028852,
+      "away": 0.31993500019711485
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1566,
+        "awayElo": 1466,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6800649998028852,
+        "away": 0.31993500019711485
+      },
+      "expected": {
+        "winProb": "0.680",
+        "homeElo": 1566,
+        "awayElo": 1466
+      },
+      "pick": "home",
+      "confidence": 0.6800649998028852,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carlos Alcaraz 1566 (WWWDD 11pts) vs Alex Michelsen 1466 (WWWDD 11pts) → 64.0% home",
+        "PICK for correctness: HOME with 68.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.714Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "fdorg_575386",
     "sport": "football",
     "sportKey": "soccer_cl",
@@ -36430,6 +38440,230 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T16:08:18.834Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401933098",
+    "sport": "football",
+    "sportKey": "soccer_fra.coupe_de_france",
+    "league": "Coupe de France",
+    "home": {
+      "name": "Sporting Club Baie-Mahault",
+      "short": "SCB",
+      "initials": "SC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Siroco Les Abymes",
+      "short": "SLA",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5650347990874185,
+      "label": "Sporting Club Baie-Mahault to win",
+      "fairOdds": 1.76980249997892
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5650347990874185,
+      "draw": 0.25134214869977667,
+      "away": 0.18362305221280487
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1518",
+        "awayElo": "1458",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 13,
+        "homeXG": "1.58",
+        "awayXG": "1.02",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5650347990874185,
+        "draw": 0.25134214869977667,
+        "away": 0.18362305221280487
+      },
+      "expected": {
+        "homeGoals": "1.58",
+        "awayGoals": "1.02",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5079809378584953
+      },
+      "pick": "home",
+      "confidence": 0.5026931364083939,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Sporting Club Baie-Mahault 1518 vs Siroco Les Abymes 1458 → 58.5% home",
+        "FORM last 5: Sporting Club Baie-Mahault WWWWD 13pts (GF 1.6 GA 1.3) vs Siroco Les Abymes WWWWD 13pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.58 - 1.02 → Poisson H50.3% D25.2% A24.5%",
+        "CORRECT PICK: HOME with 50.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.705Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186485_jan_lennard_struff_thiago_agustin_tirante",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Jan-Lennard Struff",
+      "short": "JS",
+      "initials": "JS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Thiago Agustin Tirante",
+      "short": "TAT",
+      "initials": "TA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T16:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44170978602237276,
+      "label": "Jan-Lennard Struff to win",
+      "fairOdds": 2.2639299187936706
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44170978602237276,
+      "away": 0.5582902139776272
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1520,
+        "awayElo": 1556,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.44170978602237276,
+        "away": 0.5582902139776272
+      },
+      "expected": {
+        "winProb": "0.442",
+        "homeElo": 1520,
+        "awayElo": 1556
+      },
+      "pick": "away",
+      "confidence": 0.5582902139776272,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Jan-Lennard Struff 1520 (WDLLL 4pts) vs Thiago Agustin Tirante 1556 (WWWDD 11pts) → 44.8% home",
+        "PICK for correctness: AWAY with 55.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.705Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186489_ugo_humbert_matteo_berrettini",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Ugo Humbert",
+      "short": "UH",
+      "initials": "UH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Matteo Berrettini",
+      "short": "MB",
+      "initials": "MB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T16:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.31316992772326885,
+      "label": "Ugo Humbert to win",
+      "fairOdds": 3.1931546150358514
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.31316992772326885,
+      "away": 0.6868300722767311
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1418,
+        "awayElo": 1588,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.31316992772326885,
+        "away": 0.6868300722767311
+      },
+      "expected": {
+        "winProb": "0.313",
+        "homeElo": 1418,
+        "awayElo": 1588
+      },
+      "pick": "away",
+      "confidence": 0.6868300722767311,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Ugo Humbert 1418 (WWWWD 13pts) vs Matteo Berrettini 1588 (WWWWD 13pts) → 27.3% home",
+        "PICK for correctness: AWAY with 68.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.705Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -36701,6 +38935,877 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186682_yasmine_kabbaj_diana_martynov",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Yasmine Kabbaj",
+      "short": "YK",
+      "initials": "YK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Diana Martynov",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T15:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7012967231224546,
+      "label": "Yasmine Kabbaj to win",
+      "fairOdds": 1.4259299480932957
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7012967231224546,
+      "away": 0.2987032768775454
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1529,
+        "awayElo": 1443,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.7012967231224546,
+        "away": 0.2987032768775454
+      },
+      "expected": {
+        "winProb": "0.701",
+        "homeElo": 1529,
+        "awayElo": 1443
+      },
+      "pick": "home",
+      "confidence": 0.7012967231224546,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Yasmine Kabbaj 1529 (WWWWD 13pts) vs Diana Martynov 1443 (WWDLL 7pts) → 62.1% home",
+        "PICK for correctness: HOME with 70.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.704Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186490_taylor_fritz_alex_molcan",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Taylor Fritz",
+      "short": "TF",
+      "initials": "TF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alex Molcan",
+      "short": "AM",
+      "initials": "AM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T14:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5858152030692333,
+      "label": "Taylor Fritz to win",
+      "fairOdds": 1.7070229566606472
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5858152030692333,
+      "away": 0.4141847969307667
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1574,
+        "awayElo": 1528,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5858152030692333,
+        "away": 0.4141847969307667
+      },
+      "expected": {
+        "winProb": "0.586",
+        "homeElo": 1574,
+        "awayElo": 1528
+      },
+      "pick": "home",
+      "confidence": 0.5858152030692333,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Taylor Fritz 1574 (WWWDL 10pts) vs Alex Molcan 1528 (WWWWD 13pts) → 56.6% home",
+        "PICK for correctness: HOME with 58.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.704Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186482_rinky_hijikata_novak_djokovic",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Rinky Hijikata",
+      "short": "RH",
+      "initials": "RH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Novak Djokovic",
+      "short": "ND",
+      "initials": "ND",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T14:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6584145209169125,
+      "label": "Rinky Hijikata to win",
+      "fairOdds": 1.518800038928961
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6584145209169125,
+      "away": 0.34158547908308745
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1542,
+        "awayElo": 1428,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6584145209169125,
+        "away": 0.34158547908308745
+      },
+      "expected": {
+        "winProb": "0.658",
+        "homeElo": 1542,
+        "awayElo": 1428
+      },
+      "pick": "home",
+      "confidence": 0.6584145209169125,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Rinky Hijikata 1542 (WWDLL 7pts) vs Novak Djokovic 1428 (WWWWD 13pts) → 65.8% home",
+        "PICK for correctness: HOME with 65.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.704Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186678_martyna_kubka_franziska_sziedat",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Martyna Kubka",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Franziska Sziedat",
+      "short": "FS",
+      "initials": "FS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T12:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.43333115767438535,
+      "label": "Martyna Kubka to win",
+      "fairOdds": 2.3077038940999075
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.43333115767438535,
+      "away": 0.5666688423256147
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1428,
+        "awayElo": 1533,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.43333115767438535,
+        "away": 0.5666688423256147
+      },
+      "expected": {
+        "winProb": "0.433",
+        "homeElo": 1428,
+        "awayElo": 1533
+      },
+      "pick": "away",
+      "confidence": 0.5666688423256147,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Martyna Kubka 1428 (WWWWD 13pts) vs Franziska Sziedat 1533 (WWDLL 7pts) → 35.3% home",
+        "PICK for correctness: AWAY with 56.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186487_daniel_merida_tommy_paul",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Daniel Merida",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tommy Paul",
+      "short": "TP",
+      "initials": "TP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T11:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7197694032620582,
+      "label": "Daniel Merida to win",
+      "fairOdds": 1.3893338553541066
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7197694032620582,
+      "away": 0.2802305967379418
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1565,
+        "awayElo": 1418,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7197694032620582,
+        "away": 0.2802305967379418
+      },
+      "expected": {
+        "winProb": "0.720",
+        "homeElo": 1565,
+        "awayElo": 1418
+      },
+      "pick": "home",
+      "confidence": 0.7197694032620582,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Daniel Merida 1565 (WWWDL 10pts) vs Tommy Paul 1418 (WWWWD 13pts) → 70.0% home",
+        "PICK for correctness: HOME with 72.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186570_maaya_rajeshwaran_revathi_weronika_falkowska",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Maaya Rajeshwaran Revathi",
+      "short": "MRR",
+      "initials": "MR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Weronika Falkowska",
+      "short": "WF",
+      "initials": "WF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T11:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.47869852163108506,
+      "label": "Maaya Rajeshwaran Revathi to win",
+      "fairOdds": 2.0889974687882207
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.47869852163108506,
+      "away": 0.5213014783689149
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1458,
+        "awayElo": 1515,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.47869852163108506,
+        "away": 0.5213014783689149
+      },
+      "expected": {
+        "winProb": "0.479",
+        "homeElo": 1458,
+        "awayElo": 1515
+      },
+      "pick": "away",
+      "confidence": 0.5213014783689149,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Maaya Rajeshwaran Revathi 1458 (WWWWD 13pts) vs Weronika Falkowska 1515 (WWWDL 10pts) → 41.9% home",
+        "PICK for correctness: AWAY with 52.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186680_gina_feistel_isabella_shinikova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Gina Feistel",
+      "short": "GF",
+      "initials": "GF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Isabella Shinikova",
+      "short": "IS",
+      "initials": "IS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T11:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4962115329081443,
+      "label": "Gina Feistel to win",
+      "fairOdds": 2.0152695648553456
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4962115329081443,
+      "away": 0.5037884670918558
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1551,
+        "awayElo": 1549,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4962115329081443,
+        "away": 0.5037884670918558
+      },
+      "expected": {
+        "winProb": "0.496",
+        "homeElo": 1551,
+        "awayElo": 1549
+      },
+      "pick": "away",
+      "confidence": 0.5037884670918558,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Gina Feistel 1551 (WWLLL 6pts) vs Isabella Shinikova 1549 (WWWWD 13pts) → 50.3% home",
+        "PICK for correctness: AWAY with 50.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186632_maria_sakkari_maya_joint",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Maria Sakkari",
+      "short": "MS",
+      "initials": "MS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Maya Joint",
+      "short": "MJ",
+      "initials": "MJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T10:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5055306259783239,
+      "label": "Maria Sakkari to win",
+      "fairOdds": 1.9781195215715337
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5055306259783239,
+      "away": 0.4944693740216761
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1512,
+        "awayElo": 1550,
+        "homeForm": "WWDLL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.5055306259783239,
+        "away": 0.4944693740216761
+      },
+      "expected": {
+        "winProb": "0.506",
+        "homeElo": 1512,
+        "awayElo": 1550
+      },
+      "pick": "home",
+      "confidence": 0.5055306259783239,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Maria Sakkari 1512 (WWDLL 7pts) vs Maya Joint 1550 (WDLLL 4pts) → 44.6% home",
+        "PICK for correctness: HOME with 50.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186662_noma_noha_akugue_wozuko_mdlulwa",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Noma Noha Akugue",
+      "short": "NNA",
+      "initials": "NN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wozuko Mdlulwa",
+      "short": "WM",
+      "initials": "WM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T10:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6173473171664928,
+      "label": "Noma Noha Akugue to win",
+      "fairOdds": 1.6198337178977475
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6173473171664928,
+      "away": 0.3826526828335072
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1439,
+        "awayElo": 1413,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6173473171664928,
+        "away": 0.3826526828335072
+      },
+      "expected": {
+        "winProb": "0.617",
+        "homeElo": 1439,
+        "awayElo": 1413
+      },
+      "pick": "home",
+      "confidence": 0.6173473171664928,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Noma Noha Akugue 1439 (WWWWD 13pts) vs Wozuko Mdlulwa 1413 (WWDLL 7pts) → 53.7% home",
+        "PICK for correctness: HOME with 61.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186661_kristina_kroitor_suzan_lamens",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Kristina Kroitor",
+      "short": "KK",
+      "initials": "KK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Suzan Lamens",
+      "short": "SL",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T10:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4998632779641835,
+      "label": "Kristina Kroitor to win",
+      "fairOdds": 2.0005470377274897
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4998632779641835,
+      "away": 0.5001367220358165
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1535,
+        "awayElo": 1549,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4998632779641835,
+        "away": 0.5001367220358165
+      },
+      "expected": {
+        "winProb": "0.500",
+        "homeElo": 1535,
+        "awayElo": 1549
+      },
+      "pick": "away",
+      "confidence": 0.5001367220358165,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Kristina Kroitor 1535 (WWWDL 10pts) vs Suzan Lamens 1549 (WWWWD 13pts) → 48.0% home",
+        "PICK for correctness: AWAY with 50.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.703Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186679_kristina_novak_sofya_lansere",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Kristina Novak",
+      "short": "KN",
+      "initials": "KN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sofya Lansere",
+      "short": "SL",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T09:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5973116337622928,
+      "label": "Kristina Novak to win",
+      "fairOdds": 1.6741679610378422
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5973116337622928,
+      "away": 0.4026883662377072
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1440,
+        "awayElo": 1400,
+        "homeForm": "WDLLL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.5973116337622928,
+        "away": 0.4026883662377072
+      },
+      "expected": {
+        "winProb": "0.597",
+        "homeElo": 1440,
+        "awayElo": 1400
+      },
+      "pick": "home",
+      "confidence": 0.5973116337622928,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Kristina Novak 1440 (WDLLL 4pts) vs Sofya Lansere 1400 (WDLLL 4pts) → 55.7% home",
+        "PICK for correctness: HOME with 59.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.702Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186633_aliaksandra_sasnovich_talia_gibson",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Aliaksandra Sasnovich",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Talia Gibson",
+      "short": "TG",
+      "initials": "TG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T07:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7012967231224546,
+      "label": "Aliaksandra Sasnovich to win",
+      "fairOdds": 1.4259299480932957
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7012967231224546,
+      "away": 0.2987032768775454
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1529,
+        "awayElo": 1443,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.7012967231224546,
+        "away": 0.2987032768775454
+      },
+      "expected": {
+        "winProb": "0.701",
+        "homeElo": 1529,
+        "awayElo": 1443
+      },
+      "pick": "home",
+      "confidence": 0.7012967231224546,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Aliaksandra Sasnovich 1529 (WWWWD 13pts) vs Talia Gibson 1443 (WWDLL 7pts) → 62.1% home",
+        "PICK for correctness: HOME with 70.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.702Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186638_katie_boulter_claire_liu",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Katie Boulter",
+      "short": "KB",
+      "initials": "KB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Claire Liu",
+      "short": "CL",
+      "initials": "CL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T07:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7797694032620582,
+      "label": "Katie Boulter to win",
+      "fairOdds": 1.2824304157314166
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7797694032620582,
+      "away": 0.22023059673794176
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1559,
+        "awayElo": 1412,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.7797694032620582,
+        "away": 0.22023059673794176
+      },
+      "expected": {
+        "winProb": "0.780",
+        "homeElo": 1559,
+        "awayElo": 1412
+      },
+      "pick": "home",
+      "confidence": 0.7797694032620582,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Katie Boulter 1559 (WWWWD 13pts) vs Claire Liu 1412 (WWDLL 7pts) → 70.0% home",
+        "PICK for correctness: HOME with 78.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.702Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "espn_tennis_186476_tbd_tbd",
@@ -41833,6 +44938,408 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186722_renata_zarazua_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Renata Zarazua",
+      "short": "RZ",
+      "initials": "RZ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5126840269935071,
+      "label": "Renata Zarazua to win",
+      "fairOdds": 1.9505191255210774
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5126840269935071,
+      "away": 0.4873159730064929
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1419,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5126840269935071,
+        "away": 0.4873159730064929
+      },
+      "expected": {
+        "winProb": "0.513",
+        "homeElo": 1419,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.5126840269935071,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Renata Zarazua 1419 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 47.3% home",
+        "PICK for correctness: HOME with 51.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186732_tbd_alice_tubello",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alice Tubello",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44198623423065636,
+      "label": "TBD to win",
+      "fairOdds": 2.2625139032681654
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44198623423065636,
+      "away": 0.5580137657693436
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1507,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.44198623423065636,
+        "away": 0.5580137657693436
+      },
+      "expected": {
+        "winProb": "0.442",
+        "homeElo": 1438,
+        "awayElo": 1507
+      },
+      "pick": "away",
+      "confidence": 0.5580137657693436,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Alice Tubello 1507 (WWWWD 13pts) → 40.2% home",
+        "PICK for correctness: AWAY with 55.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186731_luisina_giovannini_irene_burillo",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Luisina Giovannini",
+      "short": "LG",
+      "initials": "LG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Irene Burillo",
+      "short": "IB",
+      "initials": "IB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7387377491117249,
+      "label": "Luisina Giovannini to win",
+      "fairOdds": 1.3536603499718578
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7387377491117249,
+      "away": 0.26126225088827515
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1499,
+        "awayElo": 1400,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.7387377491117249,
+        "away": 0.26126225088827515
+      },
+      "expected": {
+        "winProb": "0.739",
+        "homeElo": 1499,
+        "awayElo": 1400
+      },
+      "pick": "home",
+      "confidence": 0.7387377491117249,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Luisina Giovannini 1499 (WWWWD 13pts) vs Irene Burillo 1400 (WDLLL 4pts) → 63.9% home",
+        "PICK for correctness: HOME with 73.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186726_bianca_andreescu_jazmin_ortenzi",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Bianca Andreescu",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jazmin Ortenzi",
+      "short": "JO",
+      "initials": "JO",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6276135369878578,
+      "label": "Bianca Andreescu to win",
+      "fairOdds": 1.5933372068412646
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6276135369878578,
+      "away": 0.3723864630121422
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1548,
+        "awayElo": 1496,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6276135369878578,
+        "away": 0.3723864630121422
+      },
+      "expected": {
+        "winProb": "0.628",
+        "homeElo": 1548,
+        "awayElo": 1496
+      },
+      "pick": "home",
+      "confidence": 0.6276135369878578,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Bianca Andreescu 1548 (WWWWD 13pts) vs Jazmin Ortenzi 1496 (WWWDD 11pts) → 57.4% home",
+        "PICK for correctness: HOME with 62.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186725_carole_monnet_laura_samson",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Carole Monnet",
+      "short": "CM",
+      "initials": "CM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Laura Samson",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3759661461777073,
+      "label": "Carole Monnet to win",
+      "fairOdds": 2.659813949119056
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3759661461777073,
+      "away": 0.6240338538222927
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1445,
+        "awayElo": 1548,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.3759661461777073,
+        "away": 0.6240338538222927
+      },
+      "expected": {
+        "winProb": "0.376",
+        "homeElo": 1445,
+        "awayElo": 1548
+      },
+      "pick": "away",
+      "confidence": 0.6240338538222927,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carole Monnet 1445 (WWWDL 10pts) vs Laura Samson 1548 (WWWWD 13pts) → 35.6% home",
+        "PICK for correctness: AWAY with 62.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186723_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.702Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020246",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -42073,6 +45580,73 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_401892643",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Vancouver Canucks",
+      "short": "VC",
+      "initials": "VC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Anaheim Ducks",
+      "short": "AD",
+      "initials": "AD",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5227374755676238,
+      "label": "Vancouver Canucks to win",
+      "fairOdds": 1.9130061392941689
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5227374755676238,
+      "away": 0.47726252443237616
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1547,
+        "awayElo": 1559,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5227374755676238,
+        "away": 0.47726252443237616
+      },
+      "expected": {
+        "winProb": "0.523",
+        "homeElo": 1547,
+        "awayElo": 1559
+      },
+      "pick": "home",
+      "confidence": 0.5227374755676238,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Vancouver Canucks 1547 (WWWWD 13pts) vs Anaheim Ducks 1559 (WWWWD 13pts) → 48.3% home",
+        "PICK for correctness: HOME with 52.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.701Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "nhl_2026020245",
@@ -42497,6 +46071,140 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401892642",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Nashville Predators",
+      "short": "NP",
+      "initials": "NP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Carolina Hurricanes",
+      "short": "CH",
+      "initials": "CH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.48126863067523895,
+      "label": "Nashville Predators to win",
+      "fairOdds": 2.07784163824881
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.48126863067523895,
+      "away": 0.518731369324761
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1454,
+        "awayElo": 1495,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.48126863067523895,
+        "away": 0.518731369324761
+      },
+      "expected": {
+        "winProb": "0.481",
+        "homeElo": 1454,
+        "awayElo": 1495
+      },
+      "pick": "away",
+      "confidence": 0.518731369324761,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Nashville Predators 1454 (WWWDL 10pts) vs Carolina Hurricanes 1495 (WWWDL 10pts) → 44.1% home",
+        "PICK for correctness: AWAY with 51.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.700Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401929372",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Arkansas Razorbacks",
+      "short": "AR",
+      "initials": "AR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Arkansas-Pine Bluff Golden Lions",
+      "short": "ABG",
+      "initials": "AB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4587032768775454,
+      "label": "Arkansas Razorbacks to win",
+      "fairOdds": 2.1800585485395567
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4587032768775454,
+      "away": 0.5412967231224546
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1424,
+        "awayElo": 1510,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.4587032768775454,
+        "away": 0.5412967231224546
+      },
+      "expected": {
+        "winProb": "0.459",
+        "homeElo": 1424,
+        "awayElo": 1510
+      },
+      "pick": "away",
+      "confidence": 0.5412967231224546,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Arkansas Razorbacks 1424 (WWWDL 10pts) vs Arkansas-Pine Bluff Golden Lions 1510 (WDLLL 4pts) → 37.9% home",
+        "PICK for correctness: AWAY with 54.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.700Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020239",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -42913,6 +46621,207 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.683Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892636",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "New Jersey Devils",
+      "short": "NJD",
+      "initials": "NJ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Edmonton Oilers",
+      "short": "EO",
+      "initials": "EO",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6356869523764297,
+      "label": "New Jersey Devils to win",
+      "fairOdds": 1.5731013453424445
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6356869523764297,
+      "away": 0.3643130476235703
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1563,
+        "awayElo": 1510,
+        "homeForm": "WWDLL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.6356869523764297,
+        "away": 0.3643130476235703
+      },
+      "expected": {
+        "winProb": "0.636",
+        "homeElo": 1563,
+        "awayElo": 1510
+      },
+      "pick": "home",
+      "confidence": 0.6356869523764297,
+      "explanation": [
+        "ACCURACY FOCUS: Elo New Jersey Devils 1563 (WWDLL 7pts) vs Edmonton Oilers 1510 (WDLLL 4pts) → 57.6% home",
+        "PICK for correctness: HOME with 63.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.699Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401920422",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Virginia Cavaliers",
+      "short": "VC",
+      "initials": "VC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Drexel Dragons",
+      "short": "DD",
+      "initials": "DD",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5756827602449403,
+      "label": "Virginia Cavaliers to win",
+      "fairOdds": 1.7370678246027764
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5756827602449403,
+      "away": 0.42431723975505975
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1469,
+        "awayElo": 1472,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5756827602449403,
+        "away": 0.42431723975505975
+      },
+      "expected": {
+        "winProb": "0.576",
+        "homeElo": 1469,
+        "awayElo": 1472
+      },
+      "pick": "home",
+      "confidence": 0.5756827602449403,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Virginia Cavaliers 1469 (WWWWD 13pts) vs Drexel Dragons 1472 (WWDLL 7pts) → 49.6% home",
+        "PICK for correctness: HOME with 57.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.699Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401906757",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Alabama Crimson Tide",
+      "short": "ACT",
+      "initials": "AC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sam Houston Bearkats",
+      "short": "SHB",
+      "initials": "SH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6640750434111512,
+      "label": "Alabama Crimson Tide to win",
+      "fairOdds": 1.5058539090150183
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6640750434111512,
+      "away": 0.3359249565888488
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1566,
+        "awayElo": 1468,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6640750434111512,
+        "away": 0.3359249565888488
+      },
+      "expected": {
+        "winProb": "0.664",
+        "homeElo": 1566,
+        "awayElo": 1468
+      },
+      "pick": "home",
+      "confidence": 0.6640750434111512,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alabama Crimson Tide 1566 (WWWDD 11pts) vs Sam Houston Bearkats 1468 (WWWWD 13pts) → 63.7% home",
+        "PICK for correctness: HOME with 66.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.699Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -44855,6 +48764,609 @@
     "status": "pending"
   },
   {
+    "id": "espn_401892633",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Toronto Maple Leafs",
+      "short": "TML",
+      "initials": "TM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Utah Mammoth",
+      "short": "UM",
+      "initials": "UM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.413300918333268,
+      "label": "Toronto Maple Leafs to win",
+      "fairOdds": 2.4195445875918504
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.413300918333268,
+      "away": 0.586699081666732
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1427,
+        "awayElo": 1517,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.413300918333268,
+        "away": 0.586699081666732
+      },
+      "expected": {
+        "winProb": "0.413",
+        "homeElo": 1427,
+        "awayElo": 1517
+      },
+      "pick": "away",
+      "confidence": 0.586699081666732,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Toronto Maple Leafs 1427 (WWWWD 13pts) vs Utah Mammoth 1517 (WWWWD 13pts) → 37.3% home",
+        "PICK for correctness: AWAY with 58.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892634",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Montreal Canadiens",
+      "short": "MC",
+      "initials": "MC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Winnipeg Jets",
+      "short": "WJ",
+      "initials": "WJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5679668887371081,
+      "label": "Montreal Canadiens to win",
+      "fairOdds": 1.7606660173862085
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5679668887371081,
+      "away": 0.4320331112628919
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1418,
+        "awayElo": 1431,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.5679668887371081,
+        "away": 0.4320331112628919
+      },
+      "expected": {
+        "winProb": "0.568",
+        "homeElo": 1418,
+        "awayElo": 1431
+      },
+      "pick": "home",
+      "confidence": 0.5679668887371081,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Montreal Canadiens 1418 (WWWWD 13pts) vs Winnipeg Jets 1431 (WWLLL 6pts) → 48.1% home",
+        "PICK for correctness: HOME with 56.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892635",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Tampa Bay Lightning",
+      "short": "TBL",
+      "initials": "TB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Detroit Red Wings",
+      "short": "DRW",
+      "initials": "DR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.42822949921893566,
+      "label": "Tampa Bay Lightning to win",
+      "fairOdds": 2.33519643514503
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.42822949921893566,
+      "away": 0.5717705007810643
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1509,
+        "awayElo": 1588,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.42822949921893566,
+        "away": 0.5717705007810643
+      },
+      "expected": {
+        "winProb": "0.428",
+        "homeElo": 1509,
+        "awayElo": 1588
+      },
+      "pick": "away",
+      "confidence": 0.5717705007810643,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Tampa Bay Lightning 1509 (WWWWD 13pts) vs Detroit Red Wings 1588 (WWWWD 13pts) → 38.8% home",
+        "PICK for correctness: AWAY with 57.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892637",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "New York Rangers",
+      "short": "NYR",
+      "initials": "NY",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "St. Louis Blues",
+      "short": "SLB",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7397079941447482,
+      "label": "New York Rangers to win",
+      "fairOdds": 1.3518848084860864
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7397079941447482,
+      "away": 0.2602920058552518
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1565,
+        "awayElo": 1450,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.7397079941447482,
+        "away": 0.2602920058552518
+      },
+      "expected": {
+        "winProb": "0.740",
+        "homeElo": 1565,
+        "awayElo": 1450
+      },
+      "pick": "home",
+      "confidence": 0.7397079941447482,
+      "explanation": [
+        "ACCURACY FOCUS: Elo New York Rangers 1565 (WWWDL 10pts) vs St. Louis Blues 1450 (WDLLL 4pts) → 66.0% home",
+        "PICK for correctness: HOME with 74.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892638",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Philadelphia Flyers",
+      "short": "PF",
+      "initials": "PF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Minnesota Wild",
+      "short": "MW",
+      "initials": "MW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6304024220946891,
+      "label": "Philadelphia Flyers to win",
+      "fairOdds": 1.5862883214776033
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6304024220946891,
+      "away": 0.3695975779053109
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1502,
+        "awayElo": 1424,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6304024220946891,
+        "away": 0.3695975779053109
+      },
+      "expected": {
+        "winProb": "0.630",
+        "homeElo": 1502,
+        "awayElo": 1424
+      },
+      "pick": "home",
+      "confidence": 0.6304024220946891,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Philadelphia Flyers 1502 (WWDLL 7pts) vs Minnesota Wild 1424 (WWWDL 10pts) → 61.0% home",
+        "PICK for correctness: HOME with 63.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892639",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Pittsburgh Penguins",
+      "short": "PP",
+      "initials": "PP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Vegas Golden Knights",
+      "short": "VGK",
+      "initials": "VG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7238733457031712,
+      "label": "Pittsburgh Penguins to win",
+      "fairOdds": 1.3814571374065434
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7238733457031712,
+      "away": 0.2761266542968288
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1561,
+        "awayElo": 1405,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.7238733457031712,
+        "away": 0.2761266542968288
+      },
+      "expected": {
+        "winProb": "0.724",
+        "homeElo": 1561,
+        "awayElo": 1405
+      },
+      "pick": "home",
+      "confidence": 0.7238733457031712,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Pittsburgh Penguins 1561 (WWLLL 6pts) vs Vegas Golden Knights 1405 (WWWDL 10pts) → 71.1% home",
+        "PICK for correctness: HOME with 72.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892640",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Washington Capitals",
+      "short": "WC",
+      "initials": "WC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Dallas Stars",
+      "short": "DS",
+      "initials": "DS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5243130476235704,
+      "label": "Washington Capitals to win",
+      "fairOdds": 1.907257514441922
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5243130476235704,
+      "away": 0.47568695237642955
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1427,
+        "awayElo": 1480,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.5243130476235704,
+        "away": 0.47568695237642955
+      },
+      "expected": {
+        "winProb": "0.524",
+        "homeElo": 1427,
+        "awayElo": 1480
+      },
+      "pick": "home",
+      "confidence": 0.5243130476235704,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Washington Capitals 1427 (WWWWD 13pts) vs Dallas Stars 1480 (WDLLL 4pts) → 42.4% home",
+        "PICK for correctness: HOME with 52.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892641",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Columbus Blue Jackets",
+      "short": "CBJ",
+      "initials": "CB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Colorado Avalanche",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4174296145252281,
+      "label": "Columbus Blue Jackets to win",
+      "fairOdds": 2.3956134524316632
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4174296145252281,
+      "away": 0.5825703854747719
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1447,
+        "awayElo": 1580,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.4174296145252281,
+        "away": 0.5825703854747719
+      },
+      "expected": {
+        "winProb": "0.417",
+        "homeElo": 1447,
+        "awayElo": 1580
+      },
+      "pick": "away",
+      "confidence": 0.5825703854747719,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Columbus Blue Jackets 1447 (WWWWD 13pts) vs Colorado Avalanche 1580 (WDLLL 4pts) → 31.7% home",
+        "PICK for correctness: AWAY with 58.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401921801",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Kentucky Wildcats",
+      "short": "KW",
+      "initials": "KW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Manhattan Jaspers",
+      "short": "MJ",
+      "initials": "MJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-04T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.42822949921893566,
+      "label": "Kentucky Wildcats to win",
+      "fairOdds": 2.33519643514503
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.42822949921893566,
+      "away": 0.5717705007810643
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1515,
+        "awayElo": 1594,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.42822949921893566,
+        "away": 0.5717705007810643
+      },
+      "expected": {
+        "winProb": "0.428",
+        "homeElo": 1515,
+        "awayElo": 1594
+      },
+      "pick": "away",
+      "confidence": 0.5717705007810643,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Kentucky Wildcats 1515 (WWWDL 10pts) vs Manhattan Jaspers 1594 (WWWDL 10pts) → 38.8% home",
+        "PICK for correctness: AWAY with 57.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401930971",
     "sport": "football",
     "sportKey": "soccer_world_venezuelanprimeradivisin",
@@ -45119,6 +49631,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.672Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401906848",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Tennessee Volunteers",
+      "short": "TV",
+      "initials": "TV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wofford Terriers",
+      "short": "WT",
+      "initials": "WT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-03T23:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5859219227804837,
+      "label": "Tennessee Volunteers to win",
+      "fairOdds": 1.7067120398132827
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5859219227804837,
+      "away": 0.4140780772195163
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1549,
+        "awayElo": 1517,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5859219227804837,
+        "away": 0.4140780772195163
+      },
+      "expected": {
+        "winProb": "0.586",
+        "homeElo": 1549,
+        "awayElo": 1517
+      },
+      "pick": "home",
+      "confidence": 0.5859219227804837,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Tennessee Volunteers 1549 (WWWWD 13pts) vs Wofford Terriers 1517 (WWWWD 13pts) → 54.6% home",
+        "PICK for correctness: HOME with 58.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-03T21:06:38.696Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -53682,10 +58261,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.651Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 4
+    },
+    "settledAt": "2026-11-03T21:06:41.979Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912603",
@@ -53772,10 +58354,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.651Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T21:06:41.979Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401928514",
@@ -54643,10 +59228,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.651Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T21:06:41.979Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401915311",
@@ -54913,7 +59501,13 @@
         "value": "WDLLL vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401915310",
@@ -55180,7 +59774,13 @@
         "value": "WWDLL vs WWDLL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915311",
@@ -55267,10 +59867,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.650Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915310",
@@ -55357,10 +59960,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.650Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401928542",
@@ -55604,10 +60210,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.648Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912770",
@@ -55694,10 +60303,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.649Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 3
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186669_farah_heddar_anna_blinkova",
@@ -55851,10 +60463,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.648Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-03T21:06:41.980Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186667_ana_sofia_sanchez_li_zongyu",
