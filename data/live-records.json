@@ -29960,6 +29960,207 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186689_martyna_kubka_sofya_lansere",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Martyna Kubka",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sofya Lansere",
+      "short": "SL",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-06T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6402082283237456,
+      "label": "Martyna Kubka to win",
+      "fairOdds": 1.561991795416775
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6402082283237456,
+      "away": 0.3597917716762544
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1428,
+        "awayElo": 1400,
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.6402082283237456,
+        "away": 0.3597917716762544
+      },
+      "expected": {
+        "winProb": "0.640",
+        "homeElo": 1428,
+        "awayElo": 1400
+      },
+      "pick": "home",
+      "confidence": 0.6402082283237456,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Martyna Kubka 1428 (WWWWD 13pts) vs Sofya Lansere 1400 (WDLLL 4pts) → 54.0% home",
+        "PICK for correctness: HOME with 64.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.605Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186688_yasmine_kabbaj_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Yasmine Kabbaj",
+      "short": "YK",
+      "initials": "YK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-06T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6680448056219418,
+      "label": "Yasmine Kabbaj to win",
+      "fairOdds": 1.4969055841531644
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6680448056219418,
+      "away": 0.3319551943780582
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1529,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6680448056219418,
+        "away": 0.3319551943780582
+      },
+      "expected": {
+        "winProb": "0.668",
+        "homeElo": 1529,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.6680448056219418,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Yasmine Kabbaj 1529 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 62.8% home",
+        "PICK for correctness: HOME with 66.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.605Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186687_gina_feistel_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Gina Feistel",
+      "short": "GF",
+      "initials": "GF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-06T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.650452019820412,
+      "label": "Gina Feistel to win",
+      "fairOdds": 1.5373924125504248
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.650452019820412,
+      "away": 0.349547980179588
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1551,
+        "awayElo": 1438,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.650452019820412,
+        "away": 0.349547980179588
+      },
+      "expected": {
+        "winProb": "0.650",
+        "homeElo": 1551,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.650452019820412,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Gina Feistel 1551 (WWLLL 6pts) vs TBD 1438 (WWWWD 13pts) → 65.7% home",
+        "PICK for correctness: HOME with 65.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.605Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020261",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -35362,6 +35563,207 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_186503_taylor_fritz_arthur_fils",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Taylor Fritz",
+      "short": "TF",
+      "initials": "TF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Arthur Fils",
+      "short": "AF",
+      "initials": "AF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T19:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6001367220358166,
+      "label": "Taylor Fritz to win",
+      "fairOdds": 1.6662869697554006
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6001367220358166,
+      "away": 0.3998632779641834
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1574,
+        "awayElo": 1560,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.6001367220358166,
+        "away": 0.3998632779641834
+      },
+      "expected": {
+        "winProb": "0.600",
+        "homeElo": 1574,
+        "awayElo": 1560
+      },
+      "pick": "home",
+      "confidence": 0.6001367220358166,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Taylor Fritz 1574 (WWWDL 10pts) vs Arthur Fils 1560 (WDLLL 4pts) → 52.0% home",
+        "PICK for correctness: HOME with 60.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.592Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186729_bianca_andreescu_luisina_giovannini",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Bianca Andreescu",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luisina Giovannini",
+      "short": "LG",
+      "initials": "LG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T19:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6100528235839883,
+      "label": "Bianca Andreescu to win",
+      "fairOdds": 1.6392023138670486
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6100528235839883,
+      "away": 0.38994717641601173
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1548,
+        "awayElo": 1499,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6100528235839883,
+        "away": 0.38994717641601173
+      },
+      "expected": {
+        "winProb": "0.610",
+        "homeElo": 1548,
+        "awayElo": 1499
+      },
+      "pick": "home",
+      "confidence": 0.6100528235839883,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Bianca Andreescu 1548 (WWWWD 13pts) vs Luisina Giovannini 1499 (WWWWD 13pts) → 57.0% home",
+        "PICK for correctness: HOME with 61.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.592Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186730_alice_tubello_leolia_jeanjean",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Alice Tubello",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Leolia Jeanjean",
+      "short": "LJ",
+      "initials": "LJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T18:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44156283255226897,
+      "label": "Alice Tubello to win",
+      "fairOdds": 2.2646833616405595
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44156283255226897,
+      "away": 0.5584371674477311
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1507,
+        "awayElo": 1586,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.44156283255226897,
+        "away": 0.5584371674477311
+      },
+      "expected": {
+        "winProb": "0.442",
+        "homeElo": 1507,
+        "awayElo": 1586
+      },
+      "pick": "away",
+      "confidence": 0.5584371674477311,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alice Tubello 1507 (WWWWD 13pts) vs Leolia Jeanjean 1586 (WWWDD 11pts) → 38.8% home",
+        "PICK for correctness: AWAY with 55.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.592Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401841659",
     "sport": "football",
     "sportKey": "soccer_arg.1",
@@ -35446,6 +35848,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T15:15:43.456Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186502_carlos_alcaraz_matteo_berrettini",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Carlos Alcaraz",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Matteo Berrettini",
+      "short": "MB",
+      "initials": "MB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T18:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4950483688385594,
+      "label": "Carlos Alcaraz to win",
+      "fairOdds": 2.020004635801781
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4950483688385594,
+      "away": 0.5049516311614406
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1566,
+        "awayElo": 1588,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4950483688385594,
+        "away": 0.5049516311614406
+      },
+      "expected": {
+        "winProb": "0.495",
+        "homeElo": 1566,
+        "awayElo": 1588
+      },
+      "pick": "away",
+      "confidence": 0.5049516311614406,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carlos Alcaraz 1566 (WWWDD 11pts) vs Matteo Berrettini 1588 (WWWWD 13pts) → 46.8% home",
+        "PICK for correctness: AWAY with 50.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.592Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -38120,6 +38589,207 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_tennis_186728_leyre_romero_gormaz_carole_monnet",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Leyre Romero Gormaz",
+      "short": "LRG",
+      "initials": "LR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Carole Monnet",
+      "short": "CM",
+      "initials": "CM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T17:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7561287704295998,
+      "label": "Leyre Romero Gormaz to win",
+      "fairOdds": 1.3225260552271316
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7561287704295998,
+      "away": 0.2438712295704002
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1589,
+        "awayElo": 1445,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.7561287704295998,
+        "away": 0.2438712295704002
+      },
+      "expected": {
+        "winProb": "0.756",
+        "homeElo": 1589,
+        "awayElo": 1445
+      },
+      "pick": "home",
+      "confidence": 0.7561287704295998,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Leyre Romero Gormaz 1589 (WWWWD 13pts) vs Carole Monnet 1445 (WWWDL 10pts) → 69.6% home",
+        "PICK for correctness: HOME with 75.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.582Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186727_renata_zarazua_julia_riera",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Renata Zarazua",
+      "short": "RZ",
+      "initials": "RZ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Julia Riera",
+      "short": "JR",
+      "initials": "JR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T17:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5756827602449403,
+      "label": "Renata Zarazua to win",
+      "fairOdds": 1.7370678246027764
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5756827602449403,
+      "away": 0.42431723975505975
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1419,
+        "awayElo": 1422,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5756827602449403,
+        "away": 0.42431723975505975
+      },
+      "expected": {
+        "winProb": "0.576",
+        "homeElo": 1419,
+        "awayElo": 1422
+      },
+      "pick": "home",
+      "confidence": 0.5756827602449403,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Renata Zarazua 1419 (WWWWD 13pts) vs Julia Riera 1422 (WWDLL 7pts) → 49.6% home",
+        "PICK for correctness: HOME with 57.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.583Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186495_casper_ruud_jan_lennard_struff",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Casper Ruud",
+      "short": "CR",
+      "initials": "CR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jan-Lennard Struff",
+      "short": "JS",
+      "initials": "JS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-05T16:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.684912902007957,
+      "label": "Casper Ruud to win",
+      "fairOdds": 1.4600396591571034
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.684912902007957,
+      "away": 0.31508709799204304
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1594,
+        "awayElo": 1520,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.684912902007957,
+        "away": 0.31508709799204304
+      },
+      "expected": {
+        "winProb": "0.685",
+        "homeElo": 1594,
+        "awayElo": 1520
+      },
+      "pick": "home",
+      "confidence": 0.684912902007957,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Casper Ruud 1594 (WWWDL 10pts) vs Jan-Lennard Struff 1520 (WDLLL 4pts) → 60.5% home",
+        "PICK for correctness: HOME with 68.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-04T23:44:36.582Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "espn_401900443",
@@ -46802,10 +47472,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.327Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "fdorg_575392",
@@ -47072,10 +47745,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T16:08:18.844Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "fdorg_575390",
@@ -47612,10 +48288,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.314Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915301",
@@ -47702,10 +48381,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.314Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915305",
@@ -47792,10 +48474,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.314Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 9
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915303",
@@ -47882,10 +48567,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.314Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915306",
@@ -47972,10 +48660,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.315Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915381",
@@ -48062,10 +48753,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.315Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915302",
@@ -48152,10 +48846,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.316Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880176",
@@ -48242,10 +48939,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.316Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401928558",
@@ -48692,10 +49392,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.312Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-04T23:44:39.030Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880891",
@@ -48782,10 +49485,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.313Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401878967",
@@ -49052,7 +49758,13 @@
         "value": "WWLLL vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401928524",
@@ -49409,10 +50121,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.311Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401928519",
@@ -49679,10 +50394,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.306Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401912763",
@@ -49769,10 +50487,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.307Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186480_carlos_alcaraz_alex_michelsen",
@@ -50106,10 +50827,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.306Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186723_julia_riera_julia_grabher",
@@ -50510,10 +51234,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.295Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401915382",
@@ -50600,10 +51327,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T01:27:07.295Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-04T23:44:39.031Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401902013",
