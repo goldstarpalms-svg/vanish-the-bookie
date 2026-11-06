@@ -27188,6 +27188,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186644_claire_liu_alexandra_shubladze",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Claire Liu",
+      "short": "CL",
+      "initials": "CL",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alexandra Shubladze",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3906114527824977,
+      "label": "Claire Liu to win",
+      "fairOdds": 2.5600887861238038
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3906114527824977,
+      "away": 0.6093885472175022
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1412,
+        "awayElo": 1504,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3906114527824977,
+        "away": 0.6093885472175022
+      },
+      "expected": {
+        "winProb": "0.391",
+        "homeElo": 1412,
+        "awayElo": 1504
+      },
+      "pick": "away",
+      "confidence": 0.6093885472175022,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Claire Liu 1412 (WWDLL 7pts) vs Alexandra Shubladze 1504 (WWWDL 10pts) → 37.1% home",
+        "PICK for correctness: AWAY with 60.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-06T11:01:35.014Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401877557",
     "sport": "football",
     "sportKey": "soccer_jpn.1",
@@ -39105,10 +39172,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.708Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.866Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401892144",
@@ -39195,10 +39265,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.804Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.866Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186637_alexandra_shubladze_sorana_cirstea",
@@ -39352,10 +39425,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.803Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.866Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186636_claire_liu_zeynep_sonmez",
@@ -40648,10 +40724,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.417Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401931854",
@@ -40738,10 +40817,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.416Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909937",
@@ -40805,10 +40887,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.988Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 120,
+      "away": 100
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020261",
@@ -41050,7 +41135,13 @@
         "value": "WDLLL vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892658",
@@ -41114,10 +41205,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.988Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876827",
@@ -41204,10 +41298,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.416Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909936",
@@ -41271,10 +41368,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.987Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 117,
+      "away": 104
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401921133",
@@ -41428,10 +41528,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.415Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401913526",
@@ -41562,10 +41665,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.822Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 10,
+      "away": 33
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401924360",
@@ -41652,10 +41758,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.415Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020260",
@@ -41897,7 +42006,13 @@
         "value": "WDLLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 5
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401931917",
@@ -41984,10 +42099,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.414Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892656",
@@ -42051,10 +42169,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.980Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 6,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892657",
@@ -42118,10 +42239,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.980Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 5
+    },
+    "settledAt": "2026-11-06T11:01:36.868Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401906770",
@@ -43056,7 +43180,13 @@
         "value": "WWWWD vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020253",
@@ -43298,7 +43428,13 @@
         "value": "WWWWD vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020254",
@@ -43540,7 +43676,13 @@
         "value": "WWDLL vs WDLLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 4
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020255",
@@ -43782,7 +43924,13 @@
         "value": "WWWDD vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 5
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020256",
@@ -44024,7 +44172,13 @@
         "value": "WWWDL vs WWDLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020257",
@@ -44514,7 +44668,13 @@
         "value": "WWWWD vs WDLLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020259",
@@ -44756,7 +44916,13 @@
         "value": "WWLLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 6,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892648",
@@ -44820,10 +44986,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.977Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 4
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892649",
@@ -44887,10 +45056,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.977Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.869Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892650",
@@ -44954,10 +45126,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.977Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.870Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892651",
@@ -45021,10 +45196,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.978Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 4
+    },
+    "settledAt": "2026-11-06T11:01:36.870Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892652",
@@ -45088,10 +45266,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.978Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 5
+    },
+    "settledAt": "2026-11-06T11:01:36.870Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892653",
@@ -45155,10 +45336,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.978Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T11:01:36.870Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892654",
@@ -45292,10 +45476,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T22:05:01.978Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T11:01:36.870Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401926715",
