@@ -19586,6 +19586,140 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186741_leyre_romero_gormaz_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Leyre Romero Gormaz",
+      "short": "LRG",
+      "initials": "LR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T16:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.744584592662721,
+      "label": "Leyre Romero Gormaz to win",
+      "fairOdds": 1.343030744732286
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.744584592662721,
+      "away": 0.25541540733727897
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1589,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.744584592662721,
+        "away": 0.25541540733727897
+      },
+      "expected": {
+        "winProb": "0.745",
+        "homeElo": 1589,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.744584592662721,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Leyre Romero Gormaz 1589 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 70.5% home",
+        "PICK for correctness: HOME with 74.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-06T23:14:42.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186505_carlos_alcaraz_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Carlos Alcaraz",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T16:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7029683361594037,
+      "label": "Carlos Alcaraz to win",
+      "fairOdds": 1.4225391793084148
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7029683361594037,
+      "away": 0.2970316638405963
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1566,
+        "awayElo": 1438,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7029683361594037,
+        "away": 0.2970316638405963
+      },
+      "expected": {
+        "winProb": "0.703",
+        "homeElo": 1566,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.7029683361594037,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carlos Alcaraz 1566 (WWWDD 11pts) vs TBD 1438 (WWWWD 13pts) → 67.6% home",
+        "PICK for correctness: HOME with 70.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-06T23:14:42.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_84865",
     "sport": "football",
     "sportKey": "soccer_germany_bl3",
@@ -25400,6 +25534,140 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T18:04:14.527Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186593_anastasia_zakharova_magda_linette",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Anastasia Zakharova",
+      "short": "AZ",
+      "initials": "AZ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Magda Linette",
+      "short": "ML",
+      "initials": "ML",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T14:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6282346056403127,
+      "label": "Anastasia Zakharova to win",
+      "fairOdds": 1.591762044022988
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6282346056403127,
+      "away": 0.37176539435968725
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1564,
+        "awayElo": 1521,
+        "homeForm": "WWWDL",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6282346056403127,
+        "away": 0.37176539435968725
+      },
+      "expected": {
+        "winProb": "0.628",
+        "homeElo": 1564,
+        "awayElo": 1521
+      },
+      "pick": "home",
+      "confidence": 0.6282346056403127,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Anastasia Zakharova 1564 (WWWDL 10pts) vs Magda Linette 1521 (WWLLL 6pts) → 56.2% home",
+        "PICK for correctness: HOME with 62.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-06T23:14:42.489Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186504_ben_shelton_luca_van_assche",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "Ben Shelton",
+      "short": "BS",
+      "initials": "BS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luca Van Assche",
+      "short": "LVA",
+      "initials": "LV",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T13:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.30124317010121804,
+      "label": "Ben Shelton to win",
+      "fairOdds": 3.319577335691956
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.30124317010121804,
+      "away": 0.698756829898782
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1402,
+        "awayElo": 1565,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.30124317010121804,
+        "away": 0.698756829898782
+      },
+      "expected": {
+        "winProb": "0.301",
+        "homeElo": 1402,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.698756829898782,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Ben Shelton 1402 (WWDLL 7pts) vs Luca Van Assche 1565 (WWWDL 10pts) → 28.1% home",
+        "PICK for correctness: AWAY with 69.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-06T23:14:42.489Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -33952,10 +34220,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.724Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401885399",
@@ -34042,10 +34313,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.835Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401879242",
@@ -34132,10 +34406,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.723Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401882809",
@@ -34222,10 +34499,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.724Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "fdorg_561932",
@@ -34402,10 +34682,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.426Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401879242",
@@ -34492,10 +34775,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.830Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401882809",
@@ -34582,10 +34868,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.831Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401885648",
@@ -34672,10 +34961,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.831Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401900874",
@@ -35032,10 +35324,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.833Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "11047b1cde59d964057561511e731859",
@@ -35393,7 +35688,13 @@
         "value": "WWWWD vs LWDWL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 4
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "fdorg_558537",
@@ -35660,10 +35961,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.722Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401876405",
@@ -35750,10 +36054,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.723Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401878951",
@@ -35840,10 +36147,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-05T06:56:16.425Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401874815",
@@ -35930,10 +36240,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.828Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876405",
@@ -36020,10 +36333,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.828Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401878951",
@@ -36110,10 +36426,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.829Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "a2cfd69166c7d4c8f255ab28fc38afb9",
@@ -36201,10 +36520,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T04:54:59.605Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401931085",
@@ -36471,7 +36793,13 @@
         "value": "WWWWD vs WWDLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "openliga_83234",
@@ -36915,10 +37243,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.722Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186493_nuno_borges_casper_ruud",
@@ -37072,10 +37403,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.826Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401883120",
@@ -37252,10 +37586,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.827Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401878527",
@@ -37342,10 +37679,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.827Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "fdorg_558845",
@@ -37522,10 +37862,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.721Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401933097",
@@ -37792,10 +38135,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.818Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876692",
@@ -37882,10 +38228,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.818Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876700",
@@ -37972,10 +38321,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.819Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876698",
@@ -38062,10 +38414,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.822Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876697",
@@ -38152,10 +38507,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.822Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876696",
@@ -38242,10 +38600,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.823Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876695",
@@ -38332,10 +38693,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.823Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875864",
@@ -38422,10 +38786,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.824Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875863",
@@ -38512,10 +38879,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.824Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875862",
@@ -38602,10 +38972,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.824Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875861",
@@ -38692,10 +39065,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.825Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875860",
@@ -38782,10 +39158,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.825Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 3
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875859",
@@ -38872,10 +39251,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.825Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401875858",
@@ -38962,10 +39344,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.826Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401881754",
@@ -39052,10 +39437,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.710Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 6,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401881754",
@@ -39142,10 +39530,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.817Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 6,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.087Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186735_bianca_andreescu_alice_tubello",
@@ -39566,10 +39957,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.709Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401842876",
@@ -39656,10 +40050,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.824Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186492_carlos_alcaraz_taylor_fritz",
@@ -39813,10 +40210,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.812Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401885647",
@@ -39903,10 +40303,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.813Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401842876",
@@ -39993,10 +40396,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.814Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401874537",
@@ -40083,10 +40489,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.815Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401841670",
@@ -40173,10 +40582,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.815Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "openliga_83684",
@@ -40443,7 +40855,13 @@
         "value": "WWWWD vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "openliga_83687",
@@ -40797,10 +41215,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.810Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401885058",
@@ -40887,10 +41308,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.811Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401888256",
@@ -40977,10 +41401,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T06:55:39.709Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401888256",
@@ -41067,10 +41494,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.809Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401879812",
@@ -41157,10 +41587,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T02:32:24.809Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-06T23:14:45.088Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186501_rinky_hijikata_luca_van_assche",
