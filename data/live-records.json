@@ -1,5 +1,139 @@
 [
   {
+    "id": "espn_tennis_186552_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-14T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.532Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186547_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-13T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.532Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020308",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -731,6 +865,73 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-06T18:04:14.564Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186548_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-12T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.530Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -2437,6 +2638,274 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186539_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.525Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186538_casper_ruud_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Casper Ruud",
+      "short": "CR",
+      "initials": "CR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7305400123698378,
+      "label": "Casper Ruud to win",
+      "fairOdds": 1.368850416222989
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7305400123698378,
+      "away": 0.2694599876301622
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1594,
+        "awayElo": 1438,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7305400123698378,
+        "away": 0.2694599876301622
+      },
+      "expected": {
+        "winProb": "0.731",
+        "homeElo": 1594,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.7305400123698378,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Casper Ruud 1594 (WWWDL 10pts) vs TBD 1438 (WWWWD 13pts) → 71.1% home",
+        "PICK for correctness: HOME with 73.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.525Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186540_alejandro_tabilo_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Alejandro Tabilo",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6919120398746637,
+      "label": "Alejandro Tabilo to win",
+      "fairOdds": 1.445270413535722
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6919120398746637,
+      "away": 0.30808796012533635
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1547,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6919120398746637,
+        "away": 0.30808796012533635
+      },
+      "expected": {
+        "winProb": "0.692",
+        "homeElo": 1547,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.6919120398746637,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alejandro Tabilo 1547 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 65.2% home",
+        "PICK for correctness: HOME with 69.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.526Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186543_tbd_lorenzo_musetti",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Lorenzo Musetti",
+      "short": "LM",
+      "initials": "LM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5513661641789174,
+      "label": "TBD to win",
+      "fairOdds": 1.8136767632253576
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5513661641789174,
+      "away": 0.4486338358210826
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1444,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5513661641789174,
+        "away": 0.4486338358210826
+      },
+      "expected": {
+        "winProb": "0.551",
+        "homeElo": 1438,
+        "awayElo": 1444
+      },
+      "pick": "home",
+      "confidence": 0.5513661641789174,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Lorenzo Musetti 1444 (WWWDL 10pts) → 49.1% home",
+        "PICK for correctness: HOME with 55.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.526Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020285",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -2857,6 +3326,609 @@
     "model": "Vanish Model (Accuracy Focused + Form) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T15:15:40.483Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186522_tbd_leo_borg",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Leo Borg",
+      "short": "LB",
+      "initials": "LB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.38622381211167783,
+      "label": "TBD to win",
+      "fairOdds": 2.589172310563925
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.38622381211167783,
+      "away": 0.6137761878883221
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1564,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.38622381211167783,
+        "away": 0.6137761878883221
+      },
+      "expected": {
+        "winProb": "0.386",
+        "homeElo": 1438,
+        "awayElo": 1564
+      },
+      "pick": "away",
+      "confidence": 0.6137761878883221,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Leo Borg 1564 (WWWDL 10pts) → 32.6% home",
+        "PICK for correctness: AWAY with 61.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.523Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186537_tbd_tomas_machac",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tomas Machac",
+      "short": "TM",
+      "initials": "TM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4831303481404886,
+      "label": "TBD to win",
+      "fairOdds": 2.0698347844404337
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4831303481404886,
+      "away": 0.5168696518595114
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1511,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.4831303481404886,
+        "away": 0.5168696518595114
+      },
+      "expected": {
+        "winProb": "0.483",
+        "homeElo": 1438,
+        "awayElo": 1511
+      },
+      "pick": "away",
+      "confidence": 0.5168696518595114,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Tomas Machac 1511 (WWLLL 6pts) → 39.6% home",
+        "PICK for correctness: AWAY with 51.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.523Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186536_ugo_humbert_adolfo_daniel_vallejo",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Ugo Humbert",
+      "short": "UH",
+      "initials": "UH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Adolfo Daniel Vallejo",
+      "short": "ADV",
+      "initials": "AD",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5126840269935071,
+      "label": "Ugo Humbert to win",
+      "fairOdds": 1.9505191255210774
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5126840269935071,
+      "away": 0.4873159730064929
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1418,
+        "awayElo": 1437,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5126840269935071,
+        "away": 0.4873159730064929
+      },
+      "expected": {
+        "winProb": "0.513",
+        "homeElo": 1418,
+        "awayElo": 1437
+      },
+      "pick": "home",
+      "confidence": 0.5126840269935071,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Ugo Humbert 1418 (WWWWD 13pts) vs Adolfo Daniel Vallejo 1437 (WWWWD 13pts) → 47.3% home",
+        "PICK for correctness: HOME with 51.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.523Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186535_yannick_hanfmann_alex_michelsen",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Yannick Hanfmann",
+      "short": "YH",
+      "initials": "YH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alex Michelsen",
+      "short": "AM",
+      "initials": "AM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6114631174083814,
+      "label": "Yannick Hanfmann to win",
+      "fairOdds": 1.635421616660035
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6114631174083814,
+      "away": 0.38853688259161856
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1516,
+        "awayElo": 1466,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6114631174083814,
+        "away": 0.38853688259161856
+      },
+      "expected": {
+        "winProb": "0.611",
+        "homeElo": 1516,
+        "awayElo": 1466
+      },
+      "pick": "home",
+      "confidence": 0.6114631174083814,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Yannick Hanfmann 1516 (WWWDD 11pts) vs Alex Michelsen 1466 (WWWDD 11pts) → 57.1% home",
+        "PICK for correctness: HOME with 61.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186533_quentin_halys_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Quentin Halys",
+      "short": "QH",
+      "initials": "QH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5013002220704414,
+      "label": "Quentin Halys to win",
+      "fairOdds": 1.994812601258897
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5013002220704414,
+      "away": 0.49869977792955855
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1425,
+        "awayElo": 1438,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5013002220704414,
+        "away": 0.49869977792955855
+      },
+      "expected": {
+        "winProb": "0.501",
+        "homeElo": 1425,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.5013002220704414,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Quentin Halys 1425 (WWWDL 10pts) vs TBD 1438 (WWWWD 13pts) → 48.1% home",
+        "PICK for correctness: HOME with 50.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186530_max_dahlin_tomas_martin_etcheverry",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Max Dahlin",
+      "short": "MD",
+      "initials": "MD",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tomas Martin Etcheverry",
+      "short": "TME",
+      "initials": "TM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6554914265080503,
+      "label": "Max Dahlin to win",
+      "fairOdds": 1.5255729664188349
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6554914265080503,
+      "away": 0.34450857349194974
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1578,
+        "awayElo": 1506,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6554914265080503,
+        "away": 0.34450857349194974
+      },
+      "expected": {
+        "winProb": "0.655",
+        "homeElo": 1578,
+        "awayElo": 1506
+      },
+      "pick": "home",
+      "confidence": 0.6554914265080503,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Max Dahlin 1578 (WWWWD 13pts) vs Tomas Martin Etcheverry 1506 (WWWDD 11pts) → 60.2% home",
+        "PICK for correctness: HOME with 65.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186527_miomir_kecmanovic_arthur_rinderknech",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Miomir Kecmanovic",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Arthur Rinderknech",
+      "short": "AR",
+      "initials": "AR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.33546175715746396,
+      "label": "Miomir Kecmanovic to win",
+      "fairOdds": 2.980965724598543
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.33546175715746396,
+      "away": 0.664538242842536
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1407,
+        "awayElo": 1575,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.33546175715746396,
+        "away": 0.664538242842536
+      },
+      "expected": {
+        "winProb": "0.335",
+        "homeElo": 1407,
+        "awayElo": 1575
+      },
+      "pick": "away",
+      "confidence": 0.664538242842536,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Miomir Kecmanovic 1407 (WWWWD 13pts) vs Arthur Rinderknech 1575 (WWWDL 10pts) → 27.5% home",
+        "PICK for correctness: AWAY with 66.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186526_tbd_luca_van_assche",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luca Van Assche",
+      "short": "LVA",
+      "initials": "LV",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3849597989597013,
+      "label": "TBD to win",
+      "fairOdds": 2.597673842054045
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3849597989597013,
+      "away": 0.6150402010402987
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1565,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3849597989597013,
+        "away": 0.6150402010402987
+      },
+      "expected": {
+        "winProb": "0.385",
+        "homeElo": 1438,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.6150402010402987,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Luca Van Assche 1565 (WWWDL 10pts) → 32.5% home",
+        "PICK for correctness: AWAY with 61.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186525_zizou_bergs_holger_rune",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Zizou Bergs",
+      "short": "ZB",
+      "initials": "ZB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Holger Rune",
+      "short": "HR",
+      "initials": "HR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6092492602784356,
+      "label": "Zizou Bergs to win",
+      "fairOdds": 1.6413643235988267
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6092492602784356,
+      "away": 0.3907507397215644
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1516,
+        "awayElo": 1491,
+        "homeForm": "WWWDD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6092492602784356,
+        "away": 0.3907507397215644
+      },
+      "expected": {
+        "winProb": "0.609",
+        "homeElo": 1516,
+        "awayElo": 1491
+      },
+      "pick": "home",
+      "confidence": 0.6092492602784356,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Zizou Bergs 1516 (WWWDD 11pts) vs Holger Rune 1491 (WWLLL 6pts) → 53.6% home",
+        "PICK for correctness: HOME with 60.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.524Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -5203,6 +6275,73 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_186528_jaume_munar_thiago_agustin_tirante",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Jaume Munar",
+      "short": "JM",
+      "initials": "JM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Thiago Agustin Tirante",
+      "short": "TAT",
+      "initials": "TA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T16:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.546282478226197,
+      "label": "Jaume Munar to win",
+      "fairOdds": 1.8305547768016348
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.546282478226197,
+      "away": 0.453717521773803
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1565,
+        "awayElo": 1556,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.546282478226197,
+        "away": 0.453717521773803
+      },
+      "expected": {
+        "winProb": "0.546",
+        "homeElo": 1565,
+        "awayElo": 1556
+      },
+      "pick": "home",
+      "confidence": 0.546282478226197,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Jaume Munar 1565 (WWWDL 10pts) vs Thiago Agustin Tirante 1556 (WWWDD 11pts) → 51.3% home",
+        "PICK for correctness: HOME with 54.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.519Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_84872",
     "sport": "football",
     "sportKey": "soccer_germany_bl3",
@@ -5735,6 +6874,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T15:15:40.482Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186534_juan_manuel_cerundolo_elias_ymer",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Juan Manuel Cerundolo",
+      "short": "JMC",
+      "initials": "JM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Elias Ymer",
+      "short": "EY",
+      "initials": "EY",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T15:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5105958577657096,
+      "label": "Juan Manuel Cerundolo to win",
+      "fairOdds": 1.9584961076179683
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5105958577657096,
+      "away": 0.4894041422342904
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1481,
+        "awayElo": 1469,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5105958577657096,
+        "away": 0.4894041422342904
+      },
+      "expected": {
+        "winProb": "0.511",
+        "homeElo": 1481,
+        "awayElo": 1469
+      },
+      "pick": "home",
+      "confidence": 0.5105958577657096,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Juan Manuel Cerundolo 1481 (WWLLL 6pts) vs Elias Ymer 1469 (WWWWD 13pts) → 51.7% home",
+        "PICK for correctness: HOME with 51.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.518Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -6976,6 +8182,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186598_magda_linette_janice_tjen",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Chennai Open",
+    "home": {
+      "name": "Magda Linette",
+      "short": "ML",
+      "initials": "ML",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Janice Tjen",
+      "short": "JT",
+      "initials": "JT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6360464021659538,
+      "label": "Magda Linette to win",
+      "fairOdds": 1.5722123363871894
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6360464021659538,
+      "away": 0.36395359783404624
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1521,
+        "awayElo": 1419,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6360464021659538,
+        "away": 0.36395359783404624
+      },
+      "expected": {
+        "winProb": "0.636",
+        "homeElo": 1521,
+        "awayElo": 1419
+      },
+      "pick": "home",
+      "confidence": 0.6360464021659538,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Magda Linette 1521 (WWLLL 6pts) vs Janice Tjen 1419 (WWWWD 13pts) → 64.3% home",
+        "PICK for correctness: HOME with 63.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.515Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_83678",
     "sport": "football",
     "sportKey": "soccer_germany_bl2",
@@ -8044,6 +9317,140 @@
     "status": "pending"
   },
   {
+    "id": "espn_tennis_187455_toby_samuel_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Toby Samuel",
+      "short": "TS",
+      "initials": "TS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T12:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6759037188081053,
+      "label": "Toby Samuel to win",
+      "fairOdds": 1.4795006628509295
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6759037188081053,
+      "away": 0.3240962811918947
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1571,
+        "awayElo": 1438,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6759037188081053,
+        "away": 0.3240962811918947
+      },
+      "expected": {
+        "winProb": "0.676",
+        "homeElo": 1571,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.6759037188081053,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Toby Samuel 1571 (WWLLL 6pts) vs TBD 1438 (WWWWD 13pts) → 68.3% home",
+        "PICK for correctness: HOME with 67.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.514Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187454_aleksandr_shevchenko_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Aleksandr Shevchenko",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T12:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7421826020905208,
+      "label": "Aleksandr Shevchenko to win",
+      "fairOdds": 1.3473773127843198
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7421826020905208,
+      "away": 0.2578173979094792
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1587,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7421826020905208,
+        "away": 0.2578173979094792
+      },
+      "expected": {
+        "winProb": "0.742",
+        "homeElo": 1587,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.7421826020905208,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Aleksandr Shevchenko 1587 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 70.2% home",
+        "PICK for correctness: HOME with 74.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.514Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "c9e63cacd0dd6905393db92fe2a98672",
     "sport": "football",
     "sportKey": "soccer_fa_cup",
@@ -8315,6 +9722,207 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_187457_lorenzo_sonego_inaki_montes_de_la_torre",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Lorenzo Sonego",
+      "short": "LS",
+      "initials": "LS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Inaki Montes-De La Torre",
+      "short": "IML",
+      "initials": "IM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T11:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4369831635267166,
+      "label": "Lorenzo Sonego to win",
+      "fairOdds": 2.28841768623166
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4369831635267166,
+      "away": 0.5630168364732834
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1486,
+        "awayElo": 1549,
+        "homeForm": "WWWDD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4369831635267166,
+        "away": 0.5630168364732834
+      },
+      "expected": {
+        "winProb": "0.437",
+        "homeElo": 1486,
+        "awayElo": 1549
+      },
+      "pick": "away",
+      "confidence": 0.5630168364732834,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Lorenzo Sonego 1486 (WWWDD 11pts) vs Inaki Montes-De La Torre 1549 (WWWWD 13pts) → 41.0% home",
+        "PICK for correctness: AWAY with 56.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.513Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187456_borna_gojo_nikoloz_basilashvili",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Borna Gojo",
+      "short": "BG",
+      "initials": "BG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Nikoloz Basilashvili",
+      "short": "NB",
+      "initials": "NB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T11:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7336879164219654,
+      "label": "Borna Gojo to win",
+      "fairOdds": 1.3629773335736264
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7336879164219654,
+      "away": 0.2663120835780346
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1549,
+        "awayElo": 1407,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7336879164219654,
+        "away": 0.2663120835780346
+      },
+      "expected": {
+        "winProb": "0.734",
+        "homeElo": 1549,
+        "awayElo": 1407
+      },
+      "pick": "home",
+      "confidence": 0.7336879164219654,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Borna Gojo 1549 (WWWWD 13pts) vs Nikoloz Basilashvili 1407 (WWWWD 13pts) → 69.4% home",
+        "PICK for correctness: HOME with 73.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.513Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186690_sofya_lansere_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Sofya Lansere",
+      "short": "SL",
+      "initials": "SL",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T10:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4255306259783239,
+      "label": "Sofya Lansere to win",
+      "fairOdds": 2.3500071180562663
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4255306259783239,
+      "away": 0.5744693740216761
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1400,
+        "awayElo": 1438,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4255306259783239,
+        "away": 0.5744693740216761
+      },
+      "expected": {
+        "winProb": "0.426",
+        "homeElo": 1400,
+        "awayElo": 1438
+      },
+      "pick": "away",
+      "confidence": 0.5744693740216761,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Sofya Lansere 1400 (WDLLL 4pts) vs TBD 1438 (WWWWD 13pts) → 44.6% home",
+        "PICK for correctness: AWAY with 57.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.513Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401877577",
     "sport": "football",
     "sportKey": "soccer_jpn.1",
@@ -8399,6 +10007,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T10:22:08.918Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186642_alexandra_eala_claire_liu",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Prudential Hong Kong Tennis Open",
+    "home": {
+      "name": "Alexandra Eala",
+      "short": "AE",
+      "initials": "AE",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Claire Liu",
+      "short": "CL",
+      "initials": "CL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T08:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7425703854747719,
+      "label": "Alexandra Eala to win",
+      "fairOdds": 1.346673688529387
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7425703854747719,
+      "away": 0.25742961452522806
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1545,
+        "awayElo": 1412,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.7425703854747719,
+        "away": 0.25742961452522806
+      },
+      "expected": {
+        "winProb": "0.743",
+        "homeElo": 1545,
+        "awayElo": 1412
+      },
+      "pick": "home",
+      "confidence": 0.7425703854747719,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alexandra Eala 1545 (WWWDL 10pts) vs Claire Liu 1412 (WWDLL 7pts) → 68.3% home",
+        "PICK for correctness: HOME with 74.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.513Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -11012,6 +12687,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186507_tbd_ben_shelton",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Rolex Paris Masters",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ben Shelton",
+      "short": "BS",
+      "initials": "BS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6316235473109606,
+      "label": "TBD to win",
+      "fairOdds": 1.5832215316502134
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6316235473109606,
+      "away": 0.3683764526890394
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1402,
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6316235473109606,
+        "away": 0.3683764526890394
+      },
+      "expected": {
+        "winProb": "0.632",
+        "homeElo": 1438,
+        "awayElo": 1402
+      },
+      "pick": "home",
+      "confidence": 0.6316235473109606,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs Ben Shelton 1402 (WWDLL 7pts) → 55.2% home",
+        "PICK for correctness: HOME with 63.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.510Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401892140",
     "sport": "football",
     "sportKey": "soccer_world_australianaleaguemen",
@@ -11608,6 +13350,140 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.916Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909944",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Portland Trail Blazers",
+      "short": "PTB",
+      "initials": "PT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "San Antonio Spurs",
+      "short": "SAS",
+      "initials": "SA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T03:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.43117524015861636,
+      "label": "Portland Trail Blazers to win",
+      "fairOdds": 2.319242634693333
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.43117524015861636,
+      "away": 0.5688247598413836
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1501,
+        "awayElo": 1573,
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.43117524015861636,
+        "away": 0.5688247598413836
+      },
+      "expected": {
+        "winProb": "0.431",
+        "homeElo": 1501,
+        "awayElo": 1573
+      },
+      "pick": "away",
+      "confidence": 0.5688247598413836,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Portland Trail Blazers 1501 (WWLLL 6pts) vs San Antonio Spurs 1573 (WWDLL 7pts) → 39.8% home",
+        "PICK for correctness: AWAY with 56.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.508Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892673",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Edmonton Oilers",
+      "short": "EO",
+      "initials": "EO",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Vancouver Canucks",
+      "short": "VC",
+      "initials": "VC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T03:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4269531048305375,
+      "label": "Edmonton Oilers to win",
+      "fairOdds": 2.342177603783702
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4269531048305375,
+      "away": 0.5730468951694625
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1510,
+        "awayElo": 1547,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4269531048305375,
+        "away": 0.5730468951694625
+      },
+      "expected": {
+        "winProb": "0.427",
+        "homeElo": 1510,
+        "awayElo": 1547
+      },
+      "pick": "away",
+      "confidence": 0.5730468951694625,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Edmonton Oilers 1510 (WDLLL 4pts) vs Vancouver Canucks 1547 (WWWWD 13pts) → 44.7% home",
+        "PICK for correctness: AWAY with 57.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.508Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -12790,6 +14666,207 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401909943",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Phoenix Suns",
+      "short": "PS",
+      "initials": "PS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Houston Rockets",
+      "short": "HR",
+      "initials": "HR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5069531048305375,
+      "label": "Phoenix Suns to win",
+      "fairOdds": 1.972569041340178
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5069531048305375,
+      "away": 0.49304689516946254
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1528,
+        "awayElo": 1565,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5069531048305375,
+        "away": 0.49304689516946254
+      },
+      "expected": {
+        "winProb": "0.507",
+        "homeElo": 1528,
+        "awayElo": 1565
+      },
+      "pick": "home",
+      "confidence": 0.5069531048305375,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Phoenix Suns 1528 (WWWWD 13pts) vs Houston Rockets 1565 (WWWDL 10pts) → 44.7% home",
+        "PICK for correctness: HOME with 50.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.507Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892671",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Colorado Avalanche",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Detroit Red Wings",
+      "short": "DRW",
+      "initials": "DR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.46848910878220834,
+      "label": "Colorado Avalanche to win",
+      "fairOdds": 2.1345213394595284
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.46848910878220834,
+      "away": 0.5315108912177917
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1580,
+        "awayElo": 1588,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.46848910878220834,
+        "away": 0.5315108912177917
+      },
+      "expected": {
+        "winProb": "0.468",
+        "homeElo": 1580,
+        "awayElo": 1588
+      },
+      "pick": "away",
+      "confidence": 0.5315108912177917,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Colorado Avalanche 1580 (WDLLL 4pts) vs Detroit Red Wings 1588 (WWWWD 13pts) → 48.8% home",
+        "PICK for correctness: AWAY with 53.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.507Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892672",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Los Angeles Kings",
+      "short": "LAK",
+      "initials": "LA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Pittsburgh Penguins",
+      "short": "PP",
+      "initials": "PP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.40285035247300804,
+      "label": "Los Angeles Kings to win",
+      "fairOdds": 2.4823113443024787
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.40285035247300804,
+      "away": 0.597149647526992
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1427,
+        "awayElo": 1561,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.40285035247300804,
+        "away": 0.597149647526992
+      },
+      "expected": {
+        "winProb": "0.403",
+        "homeElo": 1427,
+        "awayElo": 1561
+      },
+      "pick": "away",
+      "confidence": 0.597149647526992,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Los Angeles Kings 1427 (WWWWD 13pts) vs Pittsburgh Penguins 1561 (WWLLL 6pts) → 31.6% home",
+        "PICK for correctness: AWAY with 59.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.507Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401886142",
     "sport": "football",
     "sportKey": "soccer_world_peruvianprimeradivisin",
@@ -12964,6 +15041,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.915Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909942",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Golden State Warriors",
+      "short": "GSW",
+      "initials": "GS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Orlando Magic",
+      "short": "OM",
+      "initials": "OM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7171186864870787,
+      "label": "Golden State Warriors to win",
+      "fairOdds": 1.3944693100923935
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7171186864870787,
+      "away": 0.28288131351292134
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1575,
+        "awayElo": 1462,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.7171186864870787,
+        "away": 0.28288131351292134
+      },
+      "expected": {
+        "winProb": "0.717",
+        "homeElo": 1575,
+        "awayElo": 1462
+      },
+      "pick": "home",
+      "confidence": 0.7171186864870787,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Golden State Warriors 1575 (WWWDL 10pts) vs Orlando Magic 1462 (WWDLL 7pts) → 65.7% home",
+        "PICK for correctness: HOME with 71.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.506Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -14146,6 +16290,341 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401909940",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Cleveland Cavaliers",
+      "short": "CC",
+      "initials": "CC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New York Knicks",
+      "short": "NYK",
+      "initials": "NY",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6531368201531431,
+      "label": "Cleveland Cavaliers to win",
+      "fairOdds": 1.5310727693556256
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6531368201531431,
+      "away": 0.3468631798468569
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1534,
+        "awayElo": 1454,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6531368201531431,
+        "away": 0.3468631798468569
+      },
+      "expected": {
+        "winProb": "0.653",
+        "homeElo": 1534,
+        "awayElo": 1454
+      },
+      "pick": "home",
+      "confidence": 0.6531368201531431,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Cleveland Cavaliers 1534 (WWWDL 10pts) vs New York Knicks 1454 (WWWDL 10pts) → 61.3% home",
+        "PICK for correctness: HOME with 65.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.504Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909941",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Oklahoma City Thunder",
+      "short": "OCT",
+      "initials": "OC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Washington Wizards",
+      "short": "WW",
+      "initials": "WW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.630199353253537,
+      "label": "Oklahoma City Thunder to win",
+      "fairOdds": 1.5867994704172403
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.630199353253537,
+      "away": 0.36980064674646296
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1475,
+        "awayElo": 1440,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.630199353253537,
+        "away": 0.36980064674646296
+      },
+      "expected": {
+        "winProb": "0.630",
+        "homeElo": 1475,
+        "awayElo": 1440
+      },
+      "pick": "home",
+      "confidence": 0.630199353253537,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Oklahoma City Thunder 1475 (WWWDL 10pts) vs Washington Wizards 1440 (WDLLL 4pts) → 55.0% home",
+        "PICK for correctness: HOME with 63.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892668",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Carolina Hurricanes",
+      "short": "CH",
+      "initials": "CH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Chicago Blackhawks",
+      "short": "CB",
+      "initials": "CB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6027018849642302,
+      "label": "Carolina Hurricanes to win",
+      "fairOdds": 1.6591950762844372
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6027018849642302,
+      "away": 0.39729811503576984
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1495,
+        "awayElo": 1437,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6027018849642302,
+        "away": 0.39729811503576984
+      },
+      "expected": {
+        "winProb": "0.603",
+        "homeElo": 1495,
+        "awayElo": 1437
+      },
+      "pick": "home",
+      "confidence": 0.6027018849642302,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Carolina Hurricanes 1495 (WWWDL 10pts) vs Chicago Blackhawks 1437 (WWWWD 13pts) → 58.3% home",
+        "PICK for correctness: HOME with 60.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892669",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Dallas Stars",
+      "short": "DS",
+      "initials": "DS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "San Jose Sharks",
+      "short": "SJS",
+      "initials": "SJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.36659229992883235,
+      "label": "Dallas Stars to win",
+      "fairOdds": 2.727825980507864
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.36659229992883235,
+      "away": 0.6334077000711676
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1480,
+        "awayElo": 1575,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.36659229992883235,
+        "away": 0.6334077000711676
+      },
+      "expected": {
+        "winProb": "0.367",
+        "homeElo": 1480,
+        "awayElo": 1575
+      },
+      "pick": "away",
+      "confidence": 0.6334077000711676,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Dallas Stars 1480 (WDLLL 4pts) vs San Jose Sharks 1575 (WWWDL 10pts) → 36.7% home",
+        "PICK for correctness: AWAY with 63.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892670",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Minnesota Wild",
+      "short": "MW",
+      "initials": "MW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tampa Bay Lightning",
+      "short": "TBL",
+      "initials": "TB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.40005864095547666,
+      "label": "Minnesota Wild to win",
+      "fairOdds": 2.499633547751046
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.40005864095547666,
+      "away": 0.5999413590445233
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1424,
+        "awayElo": 1509,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.40005864095547666,
+        "away": 0.5999413590445233
+      },
+      "expected": {
+        "winProb": "0.400",
+        "homeElo": 1424,
+        "awayElo": 1509
+      },
+      "pick": "away",
+      "confidence": 0.5999413590445233,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Minnesota Wild 1424 (WWWDL 10pts) vs Tampa Bay Lightning 1509 (WWWWD 13pts) → 38.0% home",
+        "PICK for correctness: AWAY with 60.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.505Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401856739",
     "sport": "americanfootball",
     "sportKey": "football_college-football",
@@ -15288,6 +17767,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.913Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401909939",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Atlanta Hawks",
+      "short": "AH",
+      "initials": "AH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Brooklyn Nets",
+      "short": "BN",
+      "initials": "BN",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6678346943418911,
+      "label": "Atlanta Hawks to win",
+      "fairOdds": 1.4973765341518184
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6678346943418911,
+      "away": 0.33216530565810887
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1561,
+        "awayElo": 1480,
+        "homeForm": "WWLLL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.6678346943418911,
+        "away": 0.33216530565810887
+      },
+      "expected": {
+        "winProb": "0.668",
+        "homeElo": 1561,
+        "awayElo": 1480
+      },
+      "pick": "home",
+      "confidence": 0.6678346943418911,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Atlanta Hawks 1561 (WWLLL 6pts) vs Brooklyn Nets 1480 (WDLLL 4pts) → 61.5% home",
+        "PICK for correctness: HOME with 66.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.503Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -17550,6 +20096,207 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401892665",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Toronto Maple Leafs",
+      "short": "TML",
+      "initials": "TM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Montreal Canadiens",
+      "short": "MC",
+      "initials": "MC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5529491448928637,
+      "label": "Toronto Maple Leafs to win",
+      "fairOdds": 1.8084845762692232
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5529491448928637,
+      "away": 0.44705085510713627
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1427,
+        "awayElo": 1418,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5529491448928637,
+        "away": 0.44705085510713627
+      },
+      "expected": {
+        "winProb": "0.553",
+        "homeElo": 1427,
+        "awayElo": 1418
+      },
+      "pick": "home",
+      "confidence": 0.5529491448928637,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Toronto Maple Leafs 1427 (WWWWD 13pts) vs Montreal Canadiens 1418 (WWWWD 13pts) → 51.3% home",
+        "PICK for correctness: HOME with 55.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.501Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892666",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Ottawa Senators",
+      "short": "OS",
+      "initials": "OS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Utah Mammoth",
+      "short": "UM",
+      "initials": "UM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5230095872975623,
+      "label": "Ottawa Senators to win",
+      "fairOdds": 1.9120108393559097
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5230095872975623,
+      "away": 0.4769904127024377
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1533,
+        "awayElo": 1517,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5230095872975623,
+        "away": 0.4769904127024377
+      },
+      "expected": {
+        "winProb": "0.523",
+        "homeElo": 1533,
+        "awayElo": 1517
+      },
+      "pick": "home",
+      "confidence": 0.5230095872975623,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Ottawa Senators 1533 (WWDLL 7pts) vs Utah Mammoth 1517 (WWWWD 13pts) → 52.3% home",
+        "PICK for correctness: HOME with 52.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.502Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892667",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "New York Islanders",
+      "short": "NYI",
+      "initials": "NY",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New Jersey Devils",
+      "short": "NJD",
+      "initials": "NJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5278885746094951,
+      "label": "New York Islanders to win",
+      "fairOdds": 1.8943391618955736
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5278885746094951,
+      "away": 0.4721114253905049
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1536,
+        "awayElo": 1563,
+        "homeForm": "WWWDD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5278885746094951,
+        "away": 0.4721114253905049
+      },
+      "expected": {
+        "winProb": "0.528",
+        "homeElo": 1536,
+        "awayElo": 1563
+      },
+      "pick": "home",
+      "confidence": 0.5278885746094951,
+      "explanation": [
+        "ACCURACY FOCUS: Elo New York Islanders 1536 (WWWDD 11pts) vs New Jersey Devils 1563 (WWDLL 7pts) → 46.1% home",
+        "PICK for correctness: HOME with 52.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.502Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401930018",
     "sport": "football",
     "sportKey": "soccer_world_bolivianligaprofesional",
@@ -19236,6 +21983,207 @@
       }
     ],
     "status": "pending"
+  },
+  {
+    "id": "espn_401909938",
+    "sport": "basketball",
+    "sportKey": "basketball_nba",
+    "league": "NBA",
+    "home": {
+      "name": "Indiana Pacers",
+      "short": "IP",
+      "initials": "IP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Denver Nuggets",
+      "short": "DN",
+      "initials": "DN",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T22:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.45555453887933867,
+      "label": "Indiana Pacers to win",
+      "fairOdds": 2.195126850146184
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45555453887933867,
+      "away": 0.5444454611206613
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1450,
+        "awayElo": 1467,
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.45555453887933867,
+        "away": 0.5444454611206613
+      },
+      "expected": {
+        "winProb": "0.456",
+        "homeElo": 1450,
+        "awayElo": 1467
+      },
+      "pick": "away",
+      "confidence": 0.5444454611206613,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Indiana Pacers 1450 (WDLLL 4pts) vs Denver Nuggets 1467 (WWWWD 13pts) → 47.6% home",
+        "PICK for correctness: AWAY with 54.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.496Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401892664",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Seattle Kraken",
+      "short": "SK",
+      "initials": "SK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New York Rangers",
+      "short": "NYR",
+      "initials": "NY",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T22:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3602305967379419,
+      "label": "Seattle Kraken to win",
+      "fairOdds": 2.7759996209524456
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3602305967379419,
+      "away": 0.6397694032620581
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1418,
+        "awayElo": 1565,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3602305967379419,
+        "away": 0.6397694032620581
+      },
+      "expected": {
+        "winProb": "0.360",
+        "homeElo": 1418,
+        "awayElo": 1565
+      },
+      "pick": "away",
+      "confidence": 0.6397694032620581,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Seattle Kraken 1418 (WWWWD 13pts) vs New York Rangers 1565 (WWWDL 10pts) → 30.0% home",
+        "PICK for correctness: AWAY with 64.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.496Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401928788",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Gonzaga Bulldogs",
+      "short": "GB",
+      "initials": "GB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "New Mexico State Aggies",
+      "short": "NMS",
+      "initials": "NM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T22:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5031486533294313,
+      "label": "Gonzaga Bulldogs to win",
+      "fairOdds": 1.9874842024972301
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5031486533294313,
+      "away": 0.49685134667056874
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1571,
+        "awayElo": 1592,
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5031486533294313,
+        "away": 0.49685134667056874
+      },
+      "expected": {
+        "winProb": "0.503",
+        "homeElo": 1571,
+        "awayElo": 1592
+      },
+      "pick": "home",
+      "confidence": 0.5031486533294313,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Gonzaga Bulldogs 1571 (WWLLL 6pts) vs New Mexico State Aggies 1592 (WWDLL 7pts) → 47.0% home",
+        "PICK for correctness: HOME with 50.3% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.496Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
   },
   {
     "id": "espn_world_401921366",
@@ -27078,6 +30026,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401892663",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Nashville Predators",
+      "short": "NP",
+      "initials": "NP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "St. Louis Blues",
+      "short": "SLB",
+      "initials": "SL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T18:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.585756208411145,
+      "label": "Nashville Predators to win",
+      "fairOdds": 1.7071948801233967
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.585756208411145,
+      "away": 0.41424379158885505
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1454,
+        "awayElo": 1450,
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL"
+      },
+      "probabilities": {
+        "home": 0.585756208411145,
+        "away": 0.41424379158885505
+      },
+      "expected": {
+        "winProb": "0.586",
+        "homeElo": 1454,
+        "awayElo": 1450
+      },
+      "pick": "home",
+      "confidence": 0.585756208411145,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Nashville Predators 1454 (WWWDL 10pts) vs St. Louis Blues 1450 (WDLLL 4pts) → 50.6% home",
+        "PICK for correctness: HOME with 58.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.479Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401878344",
     "sport": "football",
     "sportKey": "soccer_sco.1",
@@ -28848,6 +31863,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401892662",
+    "sport": "icehockey",
+    "sportKey": "hockey_nhl",
+    "league": "NHL",
+    "home": {
+      "name": "Washington Capitals",
+      "short": "WC",
+      "initials": "WC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Florida Panthers",
+      "short": "FP",
+      "initials": "FP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T17:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.45096739659576046,
+      "label": "Washington Capitals to win",
+      "fairOdds": 2.2174552030784236
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45096739659576046,
+      "away": 0.5490326034042395
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1427,
+        "awayElo": 1504,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.45096739659576046,
+        "away": 0.5490326034042395
+      },
+      "expected": {
+        "winProb": "0.451",
+        "homeElo": 1427,
+        "awayElo": 1504
+      },
+      "pick": "away",
+      "confidence": 0.5490326034042395,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Washington Capitals 1427 (WWWWD 13pts) vs Florida Panthers 1504 (WWWDL 10pts) → 39.1% home",
+        "PICK for correctness: AWAY with 54.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.476Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401878949",
     "sport": "football",
     "sportKey": "soccer_world_belgianproleague",
@@ -30198,6 +33280,140 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.862Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401918948",
+    "sport": "basketball",
+    "sportKey": "basketball_mens-college-basketball",
+    "league": "NCAA Basketball",
+    "home": {
+      "name": "Louisville Cardinals",
+      "short": "LC",
+      "initials": "LC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Morehead State Eagles",
+      "short": "MSE",
+      "initials": "MS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5369904127024377,
+      "label": "Louisville Cardinals to win",
+      "fairOdds": 1.8622306401476287
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5369904127024377,
+      "away": 0.46300958729756225
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1489,
+        "awayElo": 1505,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5369904127024377,
+        "away": 0.46300958729756225
+      },
+      "expected": {
+        "winProb": "0.537",
+        "homeElo": 1489,
+        "awayElo": 1505
+      },
+      "pick": "home",
+      "confidence": 0.5369904127024377,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Louisville Cardinals 1489 (WWWWD 13pts) vs Morehead State Eagles 1505 (WWWDL 10pts) → 47.7% home",
+        "PICK for correctness: HOME with 53.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.473Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186741_leyre_romero_gormaz_bianca_andreescu",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Reto Win Tennis Cali Open",
+    "home": {
+      "name": "Leyre Romero Gormaz",
+      "short": "LRG",
+      "initials": "LR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Bianca Andreescu",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T16:35:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.598731369324761,
+      "label": "Leyre Romero Gormaz to win",
+      "fairOdds": 1.6701981075883545
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.598731369324761,
+      "away": 0.401268630675239
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1589,
+        "awayElo": 1548,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.598731369324761,
+        "away": 0.401268630675239
+      },
+      "expected": {
+        "winProb": "0.599",
+        "homeElo": 1589,
+        "awayElo": 1548
+      },
+      "pick": "home",
+      "confidence": 0.598731369324761,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Leyre Romero Gormaz 1589 (WWWWD 13pts) vs Bianca Andreescu 1548 (WWWWD 13pts) → 55.9% home",
+        "PICK for correctness: HOME with 59.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.471Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -32022,6 +35238,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186685_gina_feistel_anna_blinkova",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "Angola Ladies Open",
+    "home": {
+      "name": "Gina Feistel",
+      "short": "GF",
+      "initials": "GF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Anna Blinkova",
+      "short": "AB",
+      "initials": "AB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:05:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5991328972509985,
+      "label": "Gina Feistel to win",
+      "fairOdds": 1.6690787713181834
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5991328972509985,
+      "away": 0.4008671027490015
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1551,
+        "awayElo": 1486,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5991328972509985,
+        "away": 0.4008671027490015
+      },
+      "expected": {
+        "winProb": "0.599",
+        "homeElo": 1551,
+        "awayElo": 1486
+      },
+      "pick": "home",
+      "confidence": 0.5991328972509985,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Gina Feistel 1551 (WWLLL 6pts) vs Anna Blinkova 1486 (WWWDD 11pts) → 59.2% home",
+        "PICK for correctness: HOME with 59.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.458Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "4ef5e708a61c4776165a19afbbf6386a",
     "sport": "football",
     "sportKey": "soccer_fa_cup",
@@ -32289,10 +35572,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T04:54:59.612Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.448Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "6f1692ae95ae69b37f077a96bbb90c04",
@@ -33654,10 +36940,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T04:54:59.618Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.450Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "0f385a5872fb59900213de6415b79b50",
@@ -34473,10 +37762,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners) + Market + Worldwide",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-02T04:54:59.620Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.451Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "7260ba7fdba6afb8cfdf17e1d9ee7acf",
@@ -36187,10 +39479,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.835Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.453Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880171",
@@ -36817,10 +40112,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.838Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.453Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401878342",
@@ -37723,6 +41021,2637 @@
     "scoreSource": null
   },
   {
+    "id": "espn_world_401931119",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Accrington Stanley",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wycombe Wanderers",
+      "short": "WW",
+      "initials": "WW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4013973098708594,
+      "label": "Accrington Stanley to win",
+      "fairOdds": 2.491297214527241
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4013973098708594,
+      "draw": 0.2589492483171483,
+      "away": 0.3396534418119923
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1420",
+        "awayElo": "1507",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.38",
+        "awayXG": "1.22",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4013973098708594,
+        "draw": 0.2589492483171483,
+        "away": 0.3396534418119923
+      },
+      "expected": {
+        "homeGoals": "1.38",
+        "awayGoals": "1.22",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5272508810656061
+      },
+      "pick": "home",
+      "confidence": 0.4082748122957687,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Accrington Stanley 1420 vs Wycombe Wanderers 1507 → 37.7% home",
+        "FORM last 5: Accrington Stanley WDLLL 4pts (GF 1.6 GA 1.3) vs Wycombe Wanderers WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.38 - 1.22 → Poisson H40.8% D26.3% A32.9%",
+        "CORRECT PICK: HOME with 40.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.409Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931116",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "AFC Hornchurch",
+      "short": "AH",
+      "initials": "AH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Blackpool",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4757417739810692,
+      "label": "AFC Hornchurch to win",
+      "fairOdds": 2.101980643053204
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4757417739810692,
+      "draw": 0.2581784136899782,
+      "away": 0.2660798123289526
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1513",
+        "awayElo": "1459",
+        "homeForm": "DWLLW",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 13,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4757417739810692,
+        "draw": 0.2581784136899782,
+        "away": 0.2660798123289526
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.525332912186791
+      },
+      "pick": "home",
+      "confidence": 0.42487779485255567,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo AFC Hornchurch 1513 vs Blackpool 1459 → 57.7% home",
+        "FORM last 5: AFC Hornchurch DWLLW 7pts (GF 1.2 GA 1.2) vs Blackpool WWWWD 13pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.5% D26.2% A31.3%",
+        "CORRECT PICK: HOME with 42.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.410Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931103",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Barnet",
+      "short": "B",
+      "initials": "B",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Tranmere Rovers",
+      "short": "TR",
+      "initials": "TR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4485803574847076,
+      "label": "Barnet to win",
+      "fairOdds": 2.229254989244799
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4485803574847076,
+      "draw": 0.2565912131915717,
+      "away": 0.2948284293237207
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1434",
+        "awayElo": "1583",
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 7,
+        "homeXG": "1.47",
+        "awayXG": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4485803574847076,
+        "draw": 0.2565912131915717,
+        "away": 0.2948284293237207
+      },
+      "expected": {
+        "homeGoals": "1.47",
+        "awayGoals": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5213594646364181
+      },
+      "pick": "home",
+      "confidence": 0.4493359115883769,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Barnet 1434 vs Tranmere Rovers 1583 → 29.8% home",
+        "FORM last 5: Barnet WWWDL 10pts (GF 1.3 GA 1.0) vs Tranmere Rovers WWDLL 7pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.47 - 1.13 → Poisson H44.9% D25.9% A29.1%",
+        "CORRECT PICK: HOME with 44.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.411Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931089",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Barnsley",
+      "short": "B",
+      "initials": "B",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Aldershot Town",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4667632013133732,
+      "label": "Barnsley to win",
+      "fairOdds": 2.142413963196351
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4667632013133732,
+      "draw": 0.25951435319426386,
+      "away": 0.273722445492363
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1512",
+        "awayElo": "1450",
+        "homeForm": "WWDLL",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 4,
+        "homeXG": "1.35",
+        "awayXG": "1.25",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4667632013133732,
+        "draw": 0.25951435319426386,
+        "away": 0.273722445492363
+      },
+      "expected": {
+        "homeGoals": "1.35",
+        "awayGoals": "1.25",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5286521177424326
+      },
+      "pick": "home",
+      "confidence": 0.38939458536346344,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Barnsley 1512 vs Aldershot Town 1450 → 58.8% home",
+        "FORM last 5: Barnsley WWDLL 7pts (GF 1.0 GA 1.6) vs Aldershot Town WDLLL 4pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.35 - 1.25 → Poisson H38.9% D26.4% A34.7%",
+        "CORRECT PICK: HOME with 38.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.411Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931083",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Boreham Wood",
+      "short": "BW",
+      "initials": "BW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wigan Athletic",
+      "short": "WA",
+      "initials": "WA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5827649909323832,
+      "label": "Boreham Wood to win",
+      "fairOdds": 1.7159575739099735
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5827649909323832,
+      "draw": 0.2495609279088092,
+      "away": 0.16767408115880758
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1553",
+        "awayElo": "1438",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 13,
+        "homeXG": "1.61",
+        "awayXG": "0.99",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5827649909323832,
+        "draw": 0.2495609279088092,
+        "away": 0.16767408115880758
+      },
+      "expected": {
+        "homeGoals": "1.61",
+        "awayGoals": "0.99",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5033557532012867
+      },
+      "pick": "home",
+      "confidence": 0.516789418127084,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Boreham Wood 1553 vs Wigan Athletic 1438 → 66.0% home",
+        "FORM last 5: Boreham Wood WWDLL 7pts (GF 1.3 GA 1.0) vs Wigan Athletic WWWWD 13pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.61 - 0.99 → Poisson H51.7% D24.9% A23.4%",
+        "CORRECT PICK: HOME with 51.7% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.412Z",
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 3
+    },
+    "settledAt": "2026-11-07T16:53:14.503Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931118",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Bradford City",
+      "short": "BC",
+      "initials": "BC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Marine",
+      "short": "M",
+      "initials": "M",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4335377042085298,
+      "label": "Bradford City to win",
+      "fairOdds": 2.306604455143316
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4335377042085298,
+      "draw": 0.2587653346973392,
+      "away": 0.307696961094131
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1485",
+        "awayElo": "1554",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 10,
+        "homeXG": "1.39",
+        "awayXG": "1.21",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4335377042085298,
+        "draw": 0.2587653346973392,
+        "away": 0.307696961094131
+      },
+      "expected": {
+        "homeGoals": "1.39",
+        "awayGoals": "1.21",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5267939662256098
+      },
+      "pick": "home",
+      "confidence": 0.41277404848476124,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Bradford City 1485 vs Marine 1554 → 40.2% home",
+        "FORM last 5: Bradford City WWWDL 10pts (GF 1.3 GA 1.0) vs Marine WWWDL 10pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.39 - 1.21 → Poisson H41.3% D26.3% A32.5%",
+        "CORRECT PICK: HOME with 41.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.413Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931091",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Bromley",
+      "short": "B",
+      "initials": "B",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Rotherham United",
+      "short": "RU",
+      "initials": "RU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4131192875961438,
+      "label": "Bromley to win",
+      "fairOdds": 2.4206083570166728
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4131192875961438,
+      "draw": 0.25874371988159156,
+      "away": 0.32813699252226464
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1450",
+        "awayElo": "1517",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.40",
+        "awayXG": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4131192875961438,
+        "draw": 0.25874371988159156,
+        "away": 0.32813699252226464
+      },
+      "expected": {
+        "homeGoals": "1.40",
+        "awayGoals": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5267402378913996
+      },
+      "pick": "home",
+      "confidence": 0.4132745707023077,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Bromley 1450 vs Rotherham United 1517 → 40.5% home",
+        "FORM last 5: Bromley WDLLL 4pts (GF 1.3 GA 1.0) vs Rotherham United WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.40 - 1.20 → Poisson H41.3% D26.2% A32.4%",
+        "CORRECT PICK: HOME with 41.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.413Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931082",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Burton Albion",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "AFC Rushden & Diamonds",
+      "short": "AR&",
+      "initials": "AR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4330134690693449,
+      "label": "Burton Albion to win",
+      "fairOdds": 2.309396985154416
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4330134690693449,
+      "draw": 0.25823858173363795,
+      "away": 0.30874794919701715
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1413",
+        "awayElo": "1513",
+        "homeForm": "WWDLL",
+        "awayForm": "DWLLW",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4330134690693449,
+        "draw": 0.25823858173363795,
+        "away": 0.30874794919701715
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5254828959010608
+      },
+      "pick": "home",
+      "confidence": 0.42375279490571444,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Burton Albion 1413 vs AFC Rushden & Diamonds 1513 → 36.0% home",
+        "FORM last 5: Burton Albion WWDLL 7pts (GF 1.3 GA 1.0) vs AFC Rushden & Diamonds DWLLW 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.4% D26.2% A31.4%",
+        "CORRECT PICK: HOME with 42.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.414Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931090",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Carlisle United",
+      "short": "CU",
+      "initials": "CU",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Salford City",
+      "short": "SC",
+      "initials": "SC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4665677055264762,
+      "label": "Carlisle United to win",
+      "fairOdds": 2.1433116526391327
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4665677055264762,
+      "draw": 0.2594238582709184,
+      "away": 0.2740084362026054
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1544",
+        "awayElo": "1466",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 10,
+        "awayFormPoints": 11,
+        "homeXG": "1.35",
+        "awayXG": "1.25",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4665677055264762,
+        "draw": 0.2594238582709184,
+        "away": 0.2740084362026054
+      },
+      "expected": {
+        "homeGoals": "1.35",
+        "awayGoals": "1.25",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5284280004733761
+      },
+      "pick": "home",
+      "confidence": 0.39335282699724217,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Carlisle United 1544 vs Salford City 1466 → 61.0% home",
+        "FORM last 5: Carlisle United WWWDL 10pts (GF 1.0 GA 1.6) vs Salford City WWWDD 11pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.35 - 1.25 → Poisson H39.3% D26.3% A34.3%",
+        "CORRECT PICK: HOME with 39.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.414Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931088",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Cheltenham Town",
+      "short": "CT",
+      "initials": "CT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "FC Halifax Town",
+      "short": "FHT",
+      "initials": "FH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4230528776459653,
+      "label": "Cheltenham Town to win",
+      "fairOdds": 2.3637707077290155
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4230528776459653,
+      "draw": 0.25968723957295503,
+      "away": 0.31725988278107975
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1423",
+        "awayElo": "1406",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 11,
+        "homeXG": "1.32",
+        "awayXG": "1.28",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4230528776459653,
+        "draw": 0.25968723957295503,
+        "away": 0.31725988278107975
+      },
+      "expected": {
+        "homeGoals": "1.32",
+        "awayGoals": "1.28",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5290799932383119
+      },
+      "pick": "home",
+      "confidence": 0.3783131990139527,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Cheltenham Town 1423 vs FC Halifax Town 1406 → 52.4% home",
+        "FORM last 5: Cheltenham Town WWDLL 7pts (GF 1.0 GA 1.6) vs FC Halifax Town WWWDD 11pts → Form gives -27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.32 - 1.28 → Poisson H37.8% D26.4% A35.8%",
+        "CORRECT PICK: HOME with 37.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.415Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931081",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Chesterfield",
+      "short": "C",
+      "initials": "C",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Yeovil Town",
+      "short": "YT",
+      "initials": "YT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4292952254043174,
+      "label": "Chesterfield to win",
+      "fairOdds": 2.3293993057066573
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4292952254043174,
+      "draw": 0.2587108555645304,
+      "away": 0.3119939190311522
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1444",
+        "awayElo": "1508",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 10,
+        "awayFormPoints": 13,
+        "homeXG": "1.40",
+        "awayXG": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4292952254043174,
+        "draw": 0.2587108555645304,
+        "away": 0.3119939190311522
+      },
+      "expected": {
+        "homeGoals": "1.40",
+        "awayGoals": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5266585349740347
+      },
+      "pick": "home",
+      "confidence": 0.4140255775697149,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Chesterfield 1444 vs Yeovil Town 1508 → 40.9% home",
+        "FORM last 5: Chesterfield WWWDL 10pts (GF 1.6 GA 1.3) vs Yeovil Town WWWWD 13pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.40 - 1.20 → Poisson H41.4% D26.2% A32.4%",
+        "CORRECT PICK: HOME with 41.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.416Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931120",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Crewe Alexandra",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "AFC Wimbledon",
+      "short": "AW",
+      "initials": "AW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4559736245697362,
+      "label": "Crewe Alexandra to win",
+      "fairOdds": 2.1931093074596486
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4559736245697362,
+      "draw": 0.2579166967778216,
+      "away": 0.2861096786524422
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1436",
+        "awayElo": "1513",
+        "homeForm": "WWWDD",
+        "awayForm": "DWLLW",
+        "homeFormPoints": 11,
+        "awayFormPoints": 7,
+        "homeXG": "1.43",
+        "awayXG": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4559736245697362,
+        "draw": 0.2579166967778216,
+        "away": 0.2861096786524422
+      },
+      "expected": {
+        "homeGoals": "1.43",
+        "awayGoals": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5246799740075637
+      },
+      "pick": "home",
+      "confidence": 0.4295436438760116,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Crewe Alexandra 1436 vs AFC Wimbledon 1513 → 39.1% home",
+        "FORM last 5: Crewe Alexandra WWWDD 11pts (GF 1.6 GA 1.3) vs AFC Wimbledon DWLLW 7pts → Form gives 27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.43 - 1.17 → Poisson H43.0% D26.1% A30.9%",
+        "CORRECT PICK: HOME with 43.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.417Z",
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.503Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931107",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Dover Athletic",
+      "short": "DA",
+      "initials": "DA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wealdstone",
+      "short": "W",
+      "initials": "W",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.49824224720531396,
+      "label": "Dover Athletic to win",
+      "fairOdds": 2.0070558159391156
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.49824224720531396,
+      "draw": 0.25460689564986383,
+      "away": 0.24715085714482224
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1528",
+        "awayElo": "1586",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 11,
+        "homeXG": "1.52",
+        "awayXG": "1.08",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.49824224720531396,
+        "draw": 0.25460689564986383,
+        "away": 0.24715085714482224
+      },
+      "expected": {
+        "homeGoals": "1.52",
+        "awayGoals": "1.08",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5163453710316172
+      },
+      "pick": "home",
+      "confidence": 0.4725040181351186,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Dover Athletic 1528 vs Wealdstone 1586 → 41.7% home",
+        "FORM last 5: Dover Athletic WWWWD 13pts (GF 1.6 GA 1.3) vs Wealdstone WWWDD 11pts → Form gives 13% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.52 - 1.08 → Poisson H47.3% D25.7% A27.1%",
+        "CORRECT PICK: HOME with 47.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.417Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931099",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Eastleigh",
+      "short": "E",
+      "initials": "E",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Shrewsbury Town",
+      "short": "ST",
+      "initials": "ST",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5527993411077871,
+      "label": "Eastleigh to win",
+      "fairOdds": 1.8089746597672156
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5527993411077871,
+      "draw": 0.2526493382067245,
+      "away": 0.1945513206854884
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1588",
+        "awayElo": "1572",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.56",
+        "awayXG": "1.04",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5527993411077871,
+        "draw": 0.2526493382067245,
+        "away": 0.1945513206854884
+      },
+      "expected": {
+        "homeGoals": "1.56",
+        "awayGoals": "1.04",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5113473865952549
+      },
+      "pick": "home",
+      "confidence": 0.49142352131216904,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Eastleigh 1588 vs Shrewsbury Town 1572 → 52.3% home",
+        "FORM last 5: Eastleigh WWWWD 13pts (GF 1.3 GA 1.0) vs Shrewsbury Town WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.56 - 1.04 → Poisson H49.1% D25.4% A25.5%",
+        "CORRECT PICK: HOME with 49.1% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.418Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931105",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Fleetwood Town",
+      "short": "FT",
+      "initials": "FT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Rochdale",
+      "short": "R",
+      "initials": "R",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.36967203377673474,
+      "label": "Fleetwood Town to win",
+      "fairOdds": 2.705100490787883
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.36967203377673474,
+      "draw": 0.2596177741432097,
+      "away": 0.37071019208005557
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1503",
+        "awayElo": "1592",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.27",
+        "awayXG": "1.33",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.36967203377673474,
+        "draw": 0.2596177741432097,
+        "away": 0.37071019208005557
+      },
+      "expected": {
+        "homeGoals": "1.27",
+        "awayGoals": "1.33",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5289081194094025
+      },
+      "pick": "away",
+      "confidence": 0.3837211058397065,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Fleetwood Town 1503 vs Rochdale 1592 → 37.5% home",
+        "FORM last 5: Fleetwood Town WWDLL 7pts (GF 1.0 GA 1.6) vs Rochdale WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.27 - 1.33 → Poisson H35.3% D26.4% A38.4%",
+        "CORRECT PICK: AWAY with 38.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.418Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931101",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Gillingham",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Barrow",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.41097331803934467,
+      "label": "Gillingham to win",
+      "fairOdds": 2.433247989847031
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.41097331803934467,
+      "draw": 0.2597339568909044,
+      "away": 0.32929272506975094
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1580",
+        "awayElo": "1591",
+        "homeForm": "WDLLL",
+        "awayForm": "WWLLL",
+        "homeFormPoints": 4,
+        "awayFormPoints": 6,
+        "homeXG": "1.31",
+        "awayXG": "1.29",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.41097331803934467,
+        "draw": 0.2597339568909044,
+        "away": 0.32929272506975094
+      },
+      "expected": {
+        "homeGoals": "1.31",
+        "awayGoals": "1.29",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5291955483335372
+      },
+      "pick": "home",
+      "confidence": 0.37145830516966466,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Gillingham 1580 vs Barrow 1591 → 48.4% home",
+        "FORM last 5: Gillingham WDLLL 4pts (GF 1.0 GA 1.6) vs Barrow WWLLL 6pts → Form gives -13% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.31 - 1.29 → Poisson H37.1% D26.4% A36.5%",
+        "CORRECT PICK: HOME with 37.1% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.419Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931092",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Guiseley",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sutton United",
+      "short": "SU",
+      "initials": "SU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5239523557803154,
+      "label": "Guiseley to win",
+      "fairOdds": 1.9085704815864661
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5239523557803154,
+      "draw": 0.2569457127769316,
+      "away": 0.21910193144275297
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1459",
+        "awayElo": "1402",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.46",
+        "awayXG": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5239523557803154,
+        "draw": 0.2569457127769316,
+        "away": 0.21910193144275297
+      },
+      "expected": {
+        "homeGoals": "1.46",
+        "awayGoals": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5222497756847199
+      },
+      "pick": "home",
+      "confidence": 0.44451701752805856,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Guiseley 1459 vs Sutton United 1402 → 58.1% home",
+        "FORM last 5: Guiseley WWWWD 13pts (GF 1.3 GA 1.0) vs Sutton United WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.46 - 1.14 → Poisson H44.5% D26.0% A29.6%",
+        "CORRECT PICK: HOME with 44.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.419Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931096",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Harrogate Town",
+      "short": "HT",
+      "initials": "HT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "AFC Fylde",
+      "short": "AF",
+      "initials": "AF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4421244742421042,
+      "label": "Harrogate Town to win",
+      "fairOdds": 2.261806478173853
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4421244742421042,
+      "draw": 0.25939397709944884,
+      "away": 0.29848154865844706
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1521",
+        "awayElo": "1513",
+        "homeForm": "WWLLL",
+        "awayForm": "DWLLW",
+        "homeFormPoints": 6,
+        "awayFormPoints": 7,
+        "homeXG": "1.36",
+        "awayXG": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4421244742421042,
+        "draw": 0.25939397709944884,
+        "away": 0.29848154865844706
+      },
+      "expected": {
+        "homeGoals": "1.36",
+        "awayGoals": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5283539746299392
+      },
+      "pick": "home",
+      "confidence": 0.39453309253931024,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Harrogate Town 1521 vs AFC Fylde 1513 → 51.1% home",
+        "FORM last 5: Harrogate Town WWLLL 6pts (GF 1.0 GA 1.6) vs AFC Fylde DWLLW 7pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.36 - 1.24 → Poisson H39.5% D26.3% A34.2%",
+        "CORRECT PICK: HOME with 39.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.420Z",
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 4
+    },
+    "settledAt": "2026-11-07T16:53:14.504Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931094",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Huddersfield Town",
+      "short": "HT",
+      "initials": "HT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Exeter City",
+      "short": "EC",
+      "initials": "EC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.47154772005923495,
+      "label": "Huddersfield Town to win",
+      "fairOdds": 2.1206761425426506
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.47154772005923495,
+      "draw": 0.2553809203533268,
+      "away": 0.2730713595874382
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1401",
+        "awayElo": "1492",
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 6,
+        "awayFormPoints": 7,
+        "homeXG": "1.50",
+        "awayXG": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.47154772005923495,
+        "draw": 0.2553809203533268,
+        "away": 0.2730713595874382
+      },
+      "expected": {
+        "homeGoals": "1.50",
+        "awayGoals": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5183074229966959
+      },
+      "pick": "home",
+      "confidence": 0.46408737392259647,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Huddersfield Town 1401 vs Exeter City 1492 → 37.2% home",
+        "FORM last 5: Huddersfield Town WWLLL 6pts (GF 1.3 GA 1.0) vs Exeter City WWDLL 7pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.50 - 1.10 → Poisson H46.4% D25.8% A27.8%",
+        "CORRECT PICK: HOME with 46.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.421Z",
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.504Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931106",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Kidderminster Harriers",
+      "short": "KH",
+      "initials": "KH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Doncaster Rovers",
+      "short": "DR",
+      "initials": "DR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5035224679021935,
+      "label": "Kidderminster Harriers to win",
+      "fairOdds": 1.9860086962281187
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5035224679021935,
+      "draw": 0.2573301214224828,
+      "away": 0.23914741067532372
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1489",
+        "awayElo": "1454",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 10,
+        "homeXG": "1.45",
+        "awayXG": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5035224679021935,
+        "draw": 0.2573301214224828,
+        "away": 0.23914741067532372
+      },
+      "expected": {
+        "homeGoals": "1.45",
+        "awayGoals": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5232133475318909
+      },
+      "pick": "home",
+      "confidence": 0.43894665989447484,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Kidderminster Harriers 1489 vs Doncaster Rovers 1454 → 55.0% home",
+        "FORM last 5: Kidderminster Harriers WWWWD 13pts (GF 1.6 GA 1.3) vs Doncaster Rovers WWWDL 10pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.45 - 1.15 → Poisson H43.9% D26.0% A30.1%",
+        "CORRECT PICK: HOME with 43.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.421Z",
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.504Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931110",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Leyton Orient",
+      "short": "LO",
+      "initials": "LO",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Harborough Town",
+      "short": "HT",
+      "initials": "HT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.48192246790219345,
+      "label": "Leyton Orient to win",
+      "fairOdds": 2.0750225743842075
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.48192246790219345,
+      "draw": 0.25733012142248285,
+      "away": 0.26074741067532375
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1442",
+        "awayElo": "1407",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 13,
+        "homeXG": "1.45",
+        "awayXG": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.48192246790219345,
+        "draw": 0.25733012142248285,
+        "away": 0.26074741067532375
+      },
+      "expected": {
+        "homeGoals": "1.45",
+        "awayGoals": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5232133475318909
+      },
+      "pick": "home",
+      "confidence": 0.43894665989447484,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Leyton Orient 1442 vs Harborough Town 1407 → 55.0% home",
+        "FORM last 5: Leyton Orient WWDLL 7pts (GF 1.3 GA 1.0) vs Harborough Town WWWWD 13pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.45 - 1.15 → Poisson H43.9% D26.0% A30.1%",
+        "CORRECT PICK: HOME with 43.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.422Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931100",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Luton Town",
+      "short": "LT",
+      "initials": "LT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Forest Green Rovers",
+      "short": "FGR",
+      "initials": "FG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3922055109347843,
+      "label": "Luton Town to win",
+      "fairOdds": 2.5496837043839484
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3922055109347843,
+      "draw": 0.25933220299417525,
+      "away": 0.34846228607104046
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1456",
+        "awayElo": "1589",
+        "homeForm": "WWWDD",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 11,
+        "awayFormPoints": 13,
+        "homeXG": "1.36",
+        "awayXG": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.3922055109347843,
+        "draw": 0.25933220299417525,
+        "away": 0.34846228607104046
+      },
+      "expected": {
+        "homeGoals": "1.36",
+        "awayGoals": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5282009029833815
+      },
+      "pick": "home",
+      "confidence": 0.3968237522531656,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Luton Town 1456 vs Forest Green Rovers 1589 → 31.7% home",
+        "FORM last 5: Luton Town WWWDD 11pts (GF 1.3 GA 1.0) vs Forest Green Rovers WWWWD 13pts → Form gives -13% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.36 - 1.24 → Poisson H39.7% D26.3% A34.0%",
+        "CORRECT PICK: HOME with 39.7% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.422Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931122",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Milton Keynes Dons",
+      "short": "MKD",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Swindon Town",
+      "short": "ST",
+      "initials": "ST",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5199709260444035,
+      "label": "Milton Keynes Dons to win",
+      "fairOdds": 1.9231844511141067
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5199709260444035,
+      "draw": 0.2537978046690287,
+      "away": 0.22623126928656778
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1518",
+        "awayElo": "1544",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 10,
+        "homeXG": "1.53",
+        "awayXG": "1.07",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5199709260444035,
+        "draw": 0.2537978046690287,
+        "away": 0.22623126928656778
+      },
+      "expected": {
+        "homeGoals": "1.53",
+        "awayGoals": "1.07",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5142858789175462
+      },
+      "pick": "home",
+      "confidence": 0.48067874456335913,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Milton Keynes Dons 1518 vs Swindon Town 1544 → 46.3% home",
+        "FORM last 5: Milton Keynes Dons WWWWD 13pts (GF 1.3 GA 1.0) vs Swindon Town WWWDL 10pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.53 - 1.07 → Poisson H48.1% D25.5% A26.4%",
+        "CORRECT PICK: HOME with 48.1% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.424Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931121",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Oxford United",
+      "short": "OU",
+      "initials": "OU",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Stevenage",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5346438217410322,
+      "label": "Oxford United to win",
+      "fairOdds": 1.8704041070624668
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5346438217410322,
+      "draw": 0.2566103897751485,
+      "away": 0.20874578848381928
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1495",
+        "awayElo": "1420",
+        "homeForm": "WWWDL",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 4,
+        "homeXG": "1.47",
+        "awayXG": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5346438217410322,
+        "draw": 0.2566103897751485,
+        "away": 0.20874578848381928
+      },
+      "expected": {
+        "homeGoals": "1.47",
+        "awayGoals": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5214076679127168
+      },
+      "pick": "home",
+      "confidence": 0.44908210657914827,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Oxford United 1495 vs Stevenage 1420 → 60.6% home",
+        "FORM last 5: Oxford United WWWDL 10pts (GF 1.6 GA 1.3) vs Stevenage WDLLL 4pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.47 - 1.13 → Poisson H44.9% D25.9% A29.1%",
+        "CORRECT PICK: HOME with 44.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.424Z",
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.504Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401931275",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Plymouth Argyle",
+      "short": "PA",
+      "initials": "PA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alvechurch",
+      "short": "A",
+      "initials": "A",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.429838615737199,
+      "label": "Plymouth Argyle to win",
+      "fairOdds": 2.3264545422121743
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.429838615737199,
+      "draw": 0.2584163808739355,
+      "away": 0.31174500338886557
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1490",
+        "awayElo": "1529",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.429838615737199,
+        "draw": 0.2584163808739355,
+        "away": 0.31174500338886557
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5259258313331779
+      },
+      "pick": "home",
+      "confidence": 0.42029414867465,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Plymouth Argyle 1490 vs Alvechurch 1529 → 44.4% home",
+        "FORM last 5: Plymouth Argyle WDLLL 4pts (GF 1.3 GA 1.0) vs Alvechurch WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.0% D26.2% A31.8%",
+        "CORRECT PICK: HOME with 42.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.425Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931086",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Port Vale",
+      "short": "PV",
+      "initials": "PV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Scunthorpe United",
+      "short": "SU",
+      "initials": "SU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5142959113229151,
+      "label": "Port Vale to win",
+      "fairOdds": 1.9444058915959805
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5142959113229151,
+      "draw": 0.25672423997554916,
+      "away": 0.2289798487015358
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1515",
+        "awayElo": "1446",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 10,
+        "awayFormPoints": 11,
+        "homeXG": "1.47",
+        "awayXG": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5142959113229151,
+        "draw": 0.25672423997554916,
+        "away": 0.2289798487015358
+      },
+      "expected": {
+        "homeGoals": "1.47",
+        "awayGoals": "1.13",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5216937486300195
+      },
+      "pick": "home",
+      "confidence": 0.4475596879887316,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Port Vale 1515 vs Scunthorpe United 1446 → 59.8% home",
+        "FORM last 5: Port Vale WWWDL 10pts (GF 1.3 GA 1.0) vs Scunthorpe United WWWDD 11pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.47 - 1.13 → Poisson H44.8% D26.0% A29.3%",
+        "CORRECT PICK: HOME with 44.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.425Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931087",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "Salisbury FC",
+      "short": "SF",
+      "initials": "SF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Sholing",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4840999052160022,
+      "label": "Salisbury FC to win",
+      "fairOdds": 2.0656893117006634
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4840999052160022,
+      "draw": 0.2578390928067143,
+      "away": 0.2580610019772835
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1507",
+        "awayElo": "1504",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 10,
+        "homeXG": "1.43",
+        "awayXG": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4840999052160022,
+        "draw": 0.2578390928067143,
+        "away": 0.2580610019772835
+      },
+      "expected": {
+        "homeGoals": "1.43",
+        "awayGoals": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5244861953047331
+      },
+      "pick": "home",
+      "confidence": 0.4308639046992633,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Salisbury FC 1507 vs Sholing 1504 → 50.4% home",
+        "FORM last 5: Salisbury FC WWWWD 13pts (GF 1.6 GA 1.3) vs Sholing WWWDL 10pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.43 - 1.17 → Poisson H43.1% D26.1% A30.8%",
+        "CORRECT PICK: HOME with 43.1% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.426Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401931084",
+    "sport": "football",
+    "sportKey": "soccer_world_facup",
+    "league": "FA Cup",
+    "home": {
+      "name": "York City",
+      "short": "YC",
+      "initials": "YC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Northampton Town",
+      "short": "NT",
+      "initials": "NT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44902852797513026,
+      "label": "York City to win",
+      "fairOdds": 2.2270299940839964
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44902852797513026,
+      "draw": 0.25605173205714216,
+      "away": 0.2949197399677276
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1452",
+        "awayElo": "1574",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 10,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.44902852797513026,
+        "draw": 0.25605173205714216,
+        "away": 0.2949197399677276
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5200014184995001
+      },
+      "pick": "home",
+      "confidence": 0.4561957355247568,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo York City 1452 vs Northampton Town 1574 → 33.1% home",
+        "FORM last 5: York City WWDLL 7pts (GF 1.3 GA 1.0) vs Northampton Town WWWDL 10pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.6% D25.9% A28.5%",
+        "CORRECT PICK: HOME with 45.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.426Z",
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.504Z",
+    "scoreSource": "ESPN — Real Score"
+  },
+  {
+    "id": "espn_world_401880172",
+    "sport": "football",
+    "sportKey": "soccer_world_eflchampionship",
+    "league": "Championship",
+    "home": {
+      "name": "Birmingham City",
+      "short": "BC",
+      "initials": "BC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Swansea City",
+      "short": "SC",
+      "initials": "SC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-07T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.40981325756982556,
+      "label": "Birmingham City to win",
+      "fairOdds": 2.4401357972896136
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.40981325756982556,
+      "draw": 0.25915638783192674,
+      "away": 0.3310303545982477
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1463",
+        "awayElo": "1573",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.37",
+        "awayXG": "1.23",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.40981325756982556,
+        "draw": 0.25915638783192674,
+        "away": 0.3310303545982477
+      },
+      "expected": {
+        "homeGoals": "1.37",
+        "awayGoals": "1.23",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5277649792226218
+      },
+      "pick": "home",
+      "confidence": 0.40254058247926644,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Birmingham City 1463 vs Swansea City 1573 → 34.7% home",
+        "FORM last 5: Birmingham City WWDLL 7pts (GF 1.6 GA 1.3) vs Swansea City WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.37 - 1.23 → Poisson H40.3% D26.3% A33.4%",
+        "CORRECT PICK: HOME with 40.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-07T16:53:11.427Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_83228",
     "sport": "football",
     "sportKey": "soccer_germany_bl1",
@@ -38254,7 +44183,13 @@
         "value": "WWWDL vs WWLLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "openliga_83233",
@@ -38788,7 +44723,13 @@
         "value": "WWDLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401884745",
@@ -38875,10 +44816,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.815Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401884740",
@@ -38965,10 +44909,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.816Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401884744",
@@ -39055,10 +45002,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.816Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 5,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401884737",
@@ -39145,10 +45095,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.816Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.454Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_187450_jan_simonsson_adrian_mannarino",
@@ -39750,10 +45703,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.811Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.455Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401874811",
@@ -39840,10 +45796,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.811Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.455Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401899556",
@@ -41962,10 +47921,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.797Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.457Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401888250",
@@ -43040,10 +49002,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.794Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-07T16:53:14.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880170",
@@ -43130,10 +49095,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.795Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 5
+    },
+    "settledAt": "2026-11-07T16:53:14.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880166",
@@ -43220,10 +49188,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.795Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 2
+    },
+    "settledAt": "2026-11-07T16:53:14.459Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401880161",
@@ -43310,10 +49281,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.795Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-07T16:53:14.459Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "openliga_83682",
