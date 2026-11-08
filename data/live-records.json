@@ -1989,6 +1989,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186760_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-11T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.568Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020292",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -3220,6 +3287,542 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_187372_jessica_pegula_marta_kostyuk",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Jessica Pegula",
+      "short": "JP",
+      "initials": "JP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Marta Kostyuk",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5385608882908471,
+      "label": "Jessica Pegula to win",
+      "fairOdds": 1.8568002648197413
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5385608882908471,
+      "away": 0.46143911170915286
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1404,
+        "awayElo": 1405,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5385608882908471,
+        "away": 0.46143911170915286
+      },
+      "expected": {
+        "winProb": "0.539",
+        "homeElo": 1404,
+        "awayElo": 1405
+      },
+      "pick": "home",
+      "confidence": 0.5385608882908471,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Jessica Pegula 1404 (WWWDL 10pts) vs Marta Kostyuk 1405 (WWWDL 10pts) → 49.9% home",
+        "PICK for correctness: HOME with 53.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.560Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187385_karolina_muchova_elina_svitolina",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Karolina Muchova",
+      "short": "KM",
+      "initials": "KM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Elina Svitolina",
+      "short": "ES",
+      "initials": "ES",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5458809308911691,
+      "label": "Karolina Muchova to win",
+      "fairOdds": 1.831901323915943
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5458809308911691,
+      "away": 0.45411906910883093
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1472,
+        "awayElo": 1454,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5458809308911691,
+        "away": 0.45411906910883093
+      },
+      "expected": {
+        "winProb": "0.546",
+        "homeElo": 1472,
+        "awayElo": 1454
+      },
+      "pick": "home",
+      "confidence": 0.5458809308911691,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Karolina Muchova 1472 (WWDLL 7pts) vs Elina Svitolina 1454 (WWWDL 10pts) → 52.6% home",
+        "PICK for correctness: HOME with 54.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.560Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187384_karolina_muchova_mirra_andreeva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Karolina Muchova",
+      "short": "KM",
+      "initials": "KM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Mirra Andreeva",
+      "short": "MA",
+      "initials": "MA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3628813135129214,
+      "label": "Karolina Muchova to win",
+      "fairOdds": 2.7557219475408234
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3628813135129214,
+      "away": 0.6371186864870786
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1472,
+        "awayElo": 1585,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3628813135129214,
+        "away": 0.6371186864870786
+      },
+      "expected": {
+        "winProb": "0.363",
+        "homeElo": 1472,
+        "awayElo": 1585
+      },
+      "pick": "away",
+      "confidence": 0.6371186864870786,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Karolina Muchova 1472 (WWDLL 7pts) vs Mirra Andreeva 1585 (WWWDL 10pts) → 34.3% home",
+        "PICK for correctness: AWAY with 63.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.560Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187379_elina_svitolina_aryna_sabalenka",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Elina Svitolina",
+      "short": "ES",
+      "initials": "ES",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Aryna Sabalenka",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4027749690950536,
+      "label": "Elina Svitolina to win",
+      "fairOdds": 2.4827759337845126
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4027749690950536,
+      "away": 0.5972250309049464
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1454,
+        "awayElo": 1537,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4027749690950536,
+        "away": 0.5972250309049464
+      },
+      "expected": {
+        "winProb": "0.403",
+        "homeElo": 1454,
+        "awayElo": 1537
+      },
+      "pick": "away",
+      "confidence": 0.5972250309049464,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Elina Svitolina 1454 (WWWDL 10pts) vs Aryna Sabalenka 1537 (WWWWD 13pts) → 38.3% home",
+        "PICK for correctness: AWAY with 59.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.564Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187378_mirra_andreeva_aryna_sabalenka",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Mirra Andreeva",
+      "short": "MA",
+      "initials": "MA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Aryna Sabalenka",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5886413918836677,
+      "label": "Mirra Andreeva to win",
+      "fairOdds": 1.6988271871265697
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5886413918836677,
+      "away": 0.4113586081163323
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1585,
+        "awayElo": 1537,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5886413918836677,
+        "away": 0.4113586081163323
+      },
+      "expected": {
+        "winProb": "0.589",
+        "homeElo": 1585,
+        "awayElo": 1537
+      },
+      "pick": "home",
+      "confidence": 0.5886413918836677,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Mirra Andreeva 1585 (WWWDL 10pts) vs Aryna Sabalenka 1537 (WWWWD 13pts) → 56.9% home",
+        "PICK for correctness: HOME with 58.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.564Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187376_linda_noskova_jessica_pegula",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Linda Noskova",
+      "short": "LN",
+      "initials": "LN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Jessica Pegula",
+      "short": "JP",
+      "initials": "JP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6772250309049463,
+      "label": "Linda Noskova to win",
+      "fairOdds": 1.476614056429284
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6772250309049463,
+      "away": 0.32277496909505365
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1487,
+        "awayElo": 1404,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6772250309049463,
+        "away": 0.32277496909505365
+      },
+      "expected": {
+        "winProb": "0.677",
+        "homeElo": 1487,
+        "awayElo": 1404
+      },
+      "pick": "home",
+      "confidence": 0.6772250309049463,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Linda Noskova 1487 (WWWWD 13pts) vs Jessica Pegula 1404 (WWWDL 10pts) → 61.7% home",
+        "PICK for correctness: HOME with 67.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.565Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187375_linda_noskova_coco_gauff",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Linda Noskova",
+      "short": "LN",
+      "initials": "LN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Coco Gauff",
+      "short": "CG",
+      "initials": "CG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4657197963454756,
+      "label": "Linda Noskova to win",
+      "fairOdds": 2.1472138565872556
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4657197963454756,
+      "away": 0.5342802036545244
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1487,
+        "awayElo": 1539,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4657197963454756,
+        "away": 0.5342802036545244
+      },
+      "expected": {
+        "winProb": "0.466",
+        "homeElo": 1487,
+        "awayElo": 1539
+      },
+      "pick": "away",
+      "confidence": 0.5342802036545244,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Linda Noskova 1487 (WWWWD 13pts) vs Coco Gauff 1539 (WWWWD 13pts) → 42.6% home",
+        "PICK for correctness: AWAY with 53.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.565Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187371_coco_gauff_marta_kostyuk",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Coco Gauff",
+      "short": "CG",
+      "initials": "CG",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Marta Kostyuk",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-10T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7438163141936587,
+      "label": "Coco Gauff to win",
+      "fairOdds": 1.344417944212557
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7438163141936587,
+      "away": 0.2561836858063413
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1539,
+        "awayElo": 1405,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.7438163141936587,
+        "away": 0.2561836858063413
+      },
+      "expected": {
+        "winProb": "0.744",
+        "homeElo": 1539,
+        "awayElo": 1405
+      },
+      "pick": "home",
+      "confidence": 0.7438163141936587,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Coco Gauff 1539 (WWWWD 13pts) vs Marta Kostyuk 1405 (WWWDL 10pts) → 68.4% home",
+        "PICK for correctness: HOME with 74.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.565Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020285",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -3482,6 +4085,140 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-03T21:06:38.767Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187382_elina_svitolina_mirra_andreeva",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Elina Svitolina",
+      "short": "ES",
+      "initials": "ES",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Mirra Andreeva",
+      "short": "MA",
+      "initials": "MA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T21:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3599293242627785,
+      "label": "Elina Svitolina to win",
+      "fairOdds": 2.778323222338829
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3599293242627785,
+      "away": 0.6400706757372214
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1454,
+        "awayElo": 1585,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.3599293242627785,
+        "away": 0.6400706757372214
+      },
+      "expected": {
+        "winProb": "0.360",
+        "homeElo": 1454,
+        "awayElo": 1585
+      },
+      "pick": "away",
+      "confidence": 0.6400706757372214,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Elina Svitolina 1454 (WWWDL 10pts) vs Mirra Andreeva 1585 (WWWDL 10pts) → 32.0% home",
+        "PICK for correctness: AWAY with 64.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.558Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187381_karolina_muchova_aryna_sabalenka",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Karolina Muchova",
+      "short": "KM",
+      "initials": "KM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Aryna Sabalenka",
+      "short": "AS",
+      "initials": "AS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T20:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4075337694156682,
+      "label": "Karolina Muchova to win",
+      "fairOdds": 2.453784385607662
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4075337694156682,
+      "away": 0.5924662305843318
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1472,
+        "awayElo": 1537,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4075337694156682,
+        "away": 0.5924662305843318
+      },
+      "expected": {
+        "winProb": "0.408",
+        "homeElo": 1472,
+        "awayElo": 1537
+      },
+      "pick": "away",
+      "confidence": 0.5924662305843318,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Karolina Muchova 1472 (WWDLL 7pts) vs Aryna Sabalenka 1537 (WWWWD 13pts) → 40.8% home",
+        "PICK for correctness: AWAY with 59.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.558Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -4243,6 +4980,73 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_186745_tbd_tbd",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "TBD",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-09T05:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "TBD to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1438,
+        "awayElo": 1438,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1438,
+        "awayElo": 1438
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TBD 1438 (WWWWD 13pts) vs TBD 1438 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.558Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -6986,6 +7790,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_187374_jessica_pegula_coco_gauff",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Jessica Pegula",
+      "short": "JP",
+      "initials": "JP",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Coco Gauff",
+      "short": "CG",
+      "initials": "CG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T21:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3349403910066497,
+      "label": "Jessica Pegula to win",
+      "fairOdds": 2.9856058774952188
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3349403910066497,
+      "away": 0.6650596089933503
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1404,
+        "awayElo": 1539,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.3349403910066497,
+        "away": 0.6650596089933503
+      },
+      "expected": {
+        "winProb": "0.335",
+        "homeElo": 1404,
+        "awayElo": 1539
+      },
+      "pick": "away",
+      "confidence": 0.6650596089933503,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Jessica Pegula 1404 (WWWDL 10pts) vs Coco Gauff 1539 (WWWWD 13pts) → 31.5% home",
+        "PICK for correctness: AWAY with 66.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.547Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401873049",
     "sport": "americanfootball",
     "sportKey": "football_nfl",
@@ -9295,6 +10166,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-08T00:43:10.088Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187373_linda_noskova_marta_kostyuk",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "FAGE WTA Finals Indian Wells",
+    "home": {
+      "name": "Linda Noskova",
+      "short": "LN",
+      "initials": "LN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Marta Kostyuk",
+      "short": "MK",
+      "initials": "MK",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T20:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6758641042537561,
+      "label": "Linda Noskova to win",
+      "fairOdds": 1.4795873811113744
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6758641042537561,
+      "away": 0.3241358957462439
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1487,
+        "awayElo": 1405,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6758641042537561,
+        "away": 0.3241358957462439
+      },
+      "expected": {
+        "winProb": "0.676",
+        "homeElo": 1487,
+        "awayElo": 1405
+      },
+      "pick": "home",
+      "confidence": 0.6758641042537561,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Linda Noskova 1487 (WWWWD 13pts) vs Marta Kostyuk 1405 (WWWDL 10pts) → 61.6% home",
+        "PICK for correctness: HOME with 67.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.537Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -13586,6 +14524,140 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_187461_maria_jose_sanchez_uribe_maria_herazo_gonzalez",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "Maria Jose Sanchez Uribe",
+      "short": "MJS",
+      "initials": "MJ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Maria Herazo Gonzalez",
+      "short": "MHG",
+      "initials": "MH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T16:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5565942197392282,
+      "label": "Maria Jose Sanchez Uribe to win",
+      "fairOdds": 1.7966410080013289
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5565942197392282,
+      "away": 0.4434057802607718
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1466,
+        "awayElo": 1473,
+        "homeForm": "WWWDD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5565942197392282,
+        "away": 0.4434057802607718
+      },
+      "expected": {
+        "winProb": "0.557",
+        "homeElo": 1466,
+        "awayElo": 1473
+      },
+      "pick": "home",
+      "confidence": 0.5565942197392282,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Maria Jose Sanchez Uribe 1466 (WWWDD 11pts) vs Maria Herazo Gonzalez 1473 (WWDLL 7pts) → 49.0% home",
+        "PICK for correctness: HOME with 55.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187460_isabella_collazos_dalila_jakupovic",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "Isabella Collazos",
+      "short": "IC",
+      "initials": "IC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Dalila Jakupovic",
+      "short": "DJ",
+      "initials": "DJ",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T16:30:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6772250309049463,
+      "label": "Isabella Collazos to win",
+      "fairOdds": 1.476614056429284
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6772250309049463,
+      "away": 0.32277496909505365
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1578,
+        "awayElo": 1495,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6772250309049463,
+        "away": 0.32277496909505365
+      },
+      "expected": {
+        "winProb": "0.677",
+        "homeElo": 1578,
+        "awayElo": 1495
+      },
+      "pick": "home",
+      "confidence": 0.6772250309049463,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Isabella Collazos 1578 (WWWWD 13pts) vs Dalila Jakupovic 1495 (WWWDL 10pts) → 61.7% home",
+        "PICK for correctness: HOME with 67.7% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.524Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_world_401876412",
     "sport": "football",
     "sportKey": "soccer_world_ligue1",
@@ -17245,6 +18317,140 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-08T00:43:10.061Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187459_maria_camila_torres_murcia_katrina_scott",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "Maria Camila Torres Murcia",
+      "short": "MCT",
+      "initials": "MC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Katrina Scott",
+      "short": "KS",
+      "initials": "KS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T15:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6805220519028445,
+      "label": "Maria Camila Torres Murcia to win",
+      "fairOdds": 1.4694600964125202
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6805220519028445,
+      "away": 0.31947794809715546
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1497,
+        "awayElo": 1431,
+        "homeForm": "WWWWD",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.6805220519028445,
+        "away": 0.31947794809715546
+      },
+      "expected": {
+        "winProb": "0.681",
+        "homeElo": 1497,
+        "awayElo": 1431
+      },
+      "pick": "home",
+      "confidence": 0.6805220519028445,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Maria Camila Torres Murcia 1497 (WWWWD 13pts) vs Katrina Scott 1431 (WWLLL 6pts) → 59.4% home",
+        "PICK for correctness: HOME with 68.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.511Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_tennis_187458_sara_alejandra_lozano_avellaneda_carolina_alves",
+    "sport": "tennis",
+    "sportKey": "tennis_wta",
+    "league": "DIRECTV Open Presentado por Compesar",
+    "home": {
+      "name": "Sara Alejandra Lozano Avellaneda",
+      "short": "SAL",
+      "initials": "SA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Carolina Alves",
+      "short": "CA",
+      "initials": "CA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-08T15:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.7175605800851006,
+      "label": "Sara Alejandra Lozano Avellaneda to win",
+      "fairOdds": 1.3936105574269464
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.7175605800851006,
+      "away": 0.2824394199148994
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1597,
+        "awayElo": 1468,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.7175605800851006,
+        "away": 0.2824394199148994
+      },
+      "expected": {
+        "winProb": "0.718",
+        "homeElo": 1597,
+        "awayElo": 1468
+      },
+      "pick": "home",
+      "confidence": 0.7175605800851006,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Sara Alejandra Lozano Avellaneda 1597 (WWWWD 13pts) vs Carolina Alves 1468 (WWWWD 13pts) → 67.8% home",
+        "PICK for correctness: HOME with 71.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-08T07:27:10.511Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -27640,10 +28846,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.917Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.218Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401931919",
@@ -27975,7 +29184,13 @@
         "value": "WDLLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.218Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933015",
@@ -28129,10 +29344,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.508Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 103,
+      "away": 125
+    },
+    "settledAt": "2026-11-08T07:27:12.218Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892673",
@@ -28196,10 +29414,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.508Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.218Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401856856",
@@ -28773,7 +29994,13 @@
         "value": "WDLLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-08T07:27:12.218Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020275",
@@ -29015,7 +30242,13 @@
         "value": "WWWWD vs WWLLL"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 5
+    },
+    "settledAt": "2026-11-08T07:27:12.219Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933018",
@@ -29439,10 +30672,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.507Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 102,
+      "away": 99
+    },
+    "settledAt": "2026-11-08T07:27:12.219Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892671",
@@ -29506,10 +30742,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.507Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-08T07:27:12.219Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892672",
@@ -29573,10 +30812,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.507Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 5
+    },
+    "settledAt": "2026-11-08T07:27:12.219Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401886142",
@@ -29820,10 +31062,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.506Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 126,
+      "away": 119
+    },
+    "settledAt": "2026-11-08T07:27:12.219Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401877908",
@@ -30155,7 +31400,13 @@
         "value": "WWWDL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 9,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020272",
@@ -30397,7 +31648,13 @@
         "value": "WDLLL vs WWWDL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 3
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020273",
@@ -30639,7 +31896,13 @@
         "value": "WWWDL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 4
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876906",
@@ -30726,10 +31989,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.914Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 3
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401876905",
@@ -30816,10 +32082,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.914Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401931920",
@@ -31063,10 +32332,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.504Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 97,
+      "away": 109
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909941",
@@ -31130,10 +32402,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.505Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 114,
+      "away": 75
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892668",
@@ -31197,10 +32472,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.505Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 9,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892669",
@@ -31264,10 +32542,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.505Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 3
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892670",
@@ -31331,10 +32612,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.505Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 4
+    },
+    "settledAt": "2026-11-08T07:27:12.220Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401856739",
@@ -32546,10 +33830,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.503Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 124,
+      "away": 121
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020268",
@@ -33033,7 +34320,13 @@
         "value": "WWDLL vs WWWWD"
       }
     ],
-    "status": "pending"
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020270",
@@ -33275,7 +34568,13 @@
         "value": "WWWDD vs WWDLL"
       }
     ],
-    "status": "pending"
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 5
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761942",
@@ -33362,10 +34661,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.849Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761943",
@@ -33452,10 +34754,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.849Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761944",
@@ -33542,10 +34847,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.850Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761945",
@@ -33632,10 +34940,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.850Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761946",
@@ -33722,10 +35033,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.850Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761947",
@@ -33812,10 +35126,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.851Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_761948",
@@ -33902,10 +35219,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-04T09:24:30.851Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761942",
@@ -33992,10 +35312,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.911Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761943",
@@ -34082,10 +35405,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.911Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761944",
@@ -34172,10 +35498,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.911Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761945",
@@ -34262,10 +35591,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.912Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761946",
@@ -34352,10 +35684,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.912Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761947",
@@ -34442,10 +35777,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.912Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.221Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_761948",
@@ -34532,10 +35870,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.912Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-08T07:27:12.222Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933016",
@@ -34869,10 +36210,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.501Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 4
+    },
+    "settledAt": "2026-11-08T07:27:12.222Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892666",
@@ -34936,10 +36280,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.502Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-08T07:27:12.222Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892667",
@@ -35003,10 +36350,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T16:53:11.502Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 4,
+      "away": 5
+    },
+    "settledAt": "2026-11-08T07:27:12.222Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401930018",
@@ -35847,10 +37197,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-07T02:54:39.897Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 4
+    },
+    "settledAt": "2026-11-08T07:27:12.223Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401860429",
