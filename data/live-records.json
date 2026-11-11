@@ -6938,6 +6938,73 @@
     "scoreSource": null
   },
   {
+    "id": "espn_tennis_186549_alejandro_tabilo_alex_michelsen",
+    "sport": "tennis",
+    "sportKey": "tennis_atp",
+    "league": "Bybit Stockholm Open",
+    "home": {
+      "name": "Alejandro Tabilo",
+      "short": "AT",
+      "initials": "AT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alex Michelsen",
+      "short": "AM",
+      "initials": "AM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-12T12:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6678346943418911,
+      "label": "Alejandro Tabilo to win",
+      "fairOdds": 1.4973765341518184
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6678346943418911,
+      "away": 0.33216530565810887
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1547,
+        "awayElo": 1466,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.6678346943418911,
+        "away": 0.33216530565810887
+      },
+      "expected": {
+        "winProb": "0.668",
+        "homeElo": 1547,
+        "awayElo": 1466
+      },
+      "pick": "home",
+      "confidence": 0.6678346943418911,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alejandro Tabilo 1547 (WWWWD 13pts) vs Alex Michelsen 1466 (WWWDD 11pts) → 61.5% home",
+        "PICK for correctness: HOME with 66.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-11T15:19:51.147Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_tennis_186548_tbd_tbd",
     "sport": "tennis",
     "sportKey": "tennis_atp",
@@ -11420,10 +11487,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.799Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-11T15:19:56.919Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401932726",
@@ -11510,10 +11580,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.798Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 1,
+      "away": 0
+    },
+    "settledAt": "2026-11-11T15:19:56.919Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186760_tbd_tbd",
