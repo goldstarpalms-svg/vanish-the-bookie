@@ -1,5 +1,995 @@
 [
   {
+    "id": "openliga_84875",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl3",
+    "league": "3. Liga",
+    "home": {
+      "name": "SC Verl",
+      "short": "SV",
+      "initials": "SV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Rot-Weiss Essen",
+      "short": "RE",
+      "initials": "RE",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4530903185291145,
+      "label": "SC Verl to win",
+      "fairOdds": 2.207065477025288
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4530903185291145,
+      "draw": 0.255537177775117,
+      "away": 0.2913725036957685
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1441",
+        "awayElo": "1539",
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 6,
+        "awayFormPoints": 13,
+        "homeXG": "1.50",
+        "awayXG": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4530903185291145,
+        "draw": 0.255537177775117,
+        "away": 0.2913725036957685
+      },
+      "expected": {
+        "homeGoals": "1.50",
+        "awayGoals": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.518702550060635
+      },
+      "pick": "home",
+      "confidence": 0.4623040450749427,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo SC Verl 1441 vs Rot-Weiss Essen 1539 → 36.3% home",
+        "FORM last 5: SC Verl WWLLL 6pts (GF 1.6 GA 1.3) vs Rot-Weiss Essen WWWWD 13pts → Form gives -47% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.50 - 1.10 → Poisson H46.2% D25.8% A28.0%",
+        "CORRECT PICK: HOME with 46.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.655Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_84876",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl3",
+    "league": "3. Liga",
+    "home": {
+      "name": "Fortuna Düsseldorf",
+      "short": "FD",
+      "initials": "FD",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "SG Sonnenhof Großaspach",
+      "short": "SSG",
+      "initials": "SS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.462923795345895,
+      "label": "Fortuna Düsseldorf to win",
+      "fairOdds": 2.160182755895716
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.462923795345895,
+      "draw": 0.2581680224356572,
+      "away": 0.2789081822184478
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1473",
+        "awayElo": "1493",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.462923795345895,
+        "draw": 0.2581680224356572,
+        "away": 0.2789081822184478
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5253070046861262
+      },
+      "pick": "home",
+      "confidence": 0.425069949305108,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Fortuna Düsseldorf 1473 vs SG Sonnenhof Großaspach 1493 → 47.1% home",
+        "FORM last 5: Fortuna Düsseldorf WWDLL 7pts (GF 1.3 GA 1.0) vs SG Sonnenhof Großaspach WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.5% D26.2% A31.3%",
+        "CORRECT PICK: HOME with 42.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.656Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_84879",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl3",
+    "league": "3. Liga",
+    "home": {
+      "name": "Jahn Regensburg",
+      "short": "JR",
+      "initials": "JR",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Würzburger Kickers",
+      "short": "WK",
+      "initials": "WK",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5763918082593498,
+      "label": "Jahn Regensburg to win",
+      "fairOdds": 1.7349309717289494
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5763918082593498,
+      "draw": 0.25099890276256553,
+      "away": 0.17260928897808472
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1561",
+        "awayElo": "1490",
+        "homeForm": "WWLLL",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 6,
+        "awayFormPoints": 4,
+        "homeXG": "1.58",
+        "awayXG": "1.02",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5763918082593498,
+        "draw": 0.25099890276256553,
+        "away": 0.17260928897808472
+      },
+      "expected": {
+        "homeGoals": "1.58",
+        "awayGoals": "1.02",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5070930754270749
+      },
+      "pick": "home",
+      "confidence": 0.5055119064176379,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Jahn Regensburg 1561 vs Würzburger Kickers 1490 → 60.1% home",
+        "FORM last 5: Jahn Regensburg WWLLL 6pts (GF 1.6 GA 1.3) vs Würzburger Kickers WDLLL 4pts → Form gives 13% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.58 - 1.02 → Poisson H50.6% D25.1% A24.3%",
+        "CORRECT PICK: HOME with 50.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.656Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_84882",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl3",
+    "league": "3. Liga",
+    "home": {
+      "name": "TSG 1899 Hoffenheim II",
+      "short": "T1H",
+      "initials": "T1",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Preußen Münster",
+      "short": "PM",
+      "initials": "PM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.46224341164891647,
+      "label": "TSG 1899 Hoffenheim II to win",
+      "fairOdds": 2.1633623645014133
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.46224341164891647,
+      "draw": 0.25839123540135,
+      "away": 0.2793653529497335
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1446",
+        "awayElo": "1483",
+        "homeForm": "WWWDD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 7,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.46224341164891647,
+        "draw": 0.25839123540135,
+        "away": 0.2793653529497335
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5258632133566143
+      },
+      "pick": "home",
+      "confidence": 0.42079640028536464,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo TSG 1899 Hoffenheim II 1446 vs Preußen Münster 1483 → 44.7% home",
+        "FORM last 5: TSG 1899 Hoffenheim II WWWDD 11pts (GF 1.3 GA 1.0) vs Preußen Münster WWDLL 7pts → Form gives 27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.1% D26.2% A31.7%",
+        "CORRECT PICK: HOME with 42.1% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.656Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_84884",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl3",
+    "league": "3. Liga",
+    "home": {
+      "name": "Fortuna Köln",
+      "short": "FK",
+      "initials": "FK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "SV Meppen",
+      "short": "SM",
+      "initials": "SM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T13:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5804909458238664,
+      "label": "Fortuna Köln to win",
+      "fairOdds": 1.7226797544288
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5804909458238664,
+      "draw": 0.25064913019183055,
+      "away": 0.16885992398430308
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1536",
+        "awayElo": "1454",
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 10,
+        "homeXG": "1.59",
+        "awayXG": "1.01",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5804909458238664,
+        "draw": 0.25064913019183055,
+        "away": 0.16885992398430308
+      },
+      "expected": {
+        "homeGoals": "1.59",
+        "awayGoals": "1.01",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5061866557064951
+      },
+      "pick": "home",
+      "confidence": 0.5083310207824852,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Fortuna Köln 1536 vs SV Meppen 1454 → 61.6% home",
+        "FORM last 5: Fortuna Köln WWWDD 11pts (GF 1.3 GA 1.0) vs SV Meppen WWWDL 10pts → Form gives 7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.59 - 1.01 → Poisson H50.8% D25.1% A24.1%",
+        "CORRECT PICK: HOME with 50.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.657Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880156",
+    "sport": "football",
+    "sportKey": "soccer_eng.2",
+    "league": "Championship",
+    "home": {
+      "name": "Millwall",
+      "short": "M",
+      "initials": "M",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Queens Park Rangers",
+      "short": "QPR",
+      "initials": "QP",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.43072301639342037,
+      "label": "Millwall to win",
+      "fairOdds": 2.321677648836404
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.43072301639342037,
+      "draw": 0.2561956122287919,
+      "away": 0.31308137137778774
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1430",
+        "awayElo": "1559",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.43072301639342037,
+        "draw": 0.2561956122287919,
+        "away": 0.31308137137778774
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5203639848034533
+      },
+      "pick": "home",
+      "confidence": 0.4544159863127865,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Millwall 1430 vs Queens Park Rangers 1559 → 32.2% home",
+        "FORM last 5: Millwall WDLLL 4pts (GF 1.3 GA 1.0) vs Queens Park Rangers WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.4% D25.9% A28.7%",
+        "CORRECT PICK: HOME with 45.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.654Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880155",
+    "sport": "football",
+    "sportKey": "soccer_eng.2",
+    "league": "Championship",
+    "home": {
+      "name": "Norwich City",
+      "short": "NC",
+      "initials": "NC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Cardiff City",
+      "short": "CC",
+      "initials": "CC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4013831947308931,
+      "label": "Norwich City to win",
+      "fairOdds": 2.491384824096706
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4013831947308931,
+      "draw": 0.2597301429350975,
+      "away": 0.3388866623340094
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1571",
+        "awayElo": "1578",
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 6,
+        "awayFormPoints": 13,
+        "homeXG": "1.31",
+        "awayXG": "1.29",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4013831947308931,
+        "draw": 0.2597301429350975,
+        "away": 0.3388866623340094
+      },
+      "expected": {
+        "homeGoals": "1.31",
+        "awayGoals": "1.29",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5291861155706165
+      },
+      "pick": "home",
+      "confidence": 0.3724356125844638,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Norwich City 1571 vs Cardiff City 1578 → 49.0% home",
+        "FORM last 5: Norwich City WWLLL 6pts (GF 1.0 GA 1.6) vs Cardiff City WWWWD 13pts → Form gives -47% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.31 - 1.29 → Poisson H37.2% D26.4% A36.4%",
+        "CORRECT PICK: HOME with 37.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.655Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880153",
+    "sport": "football",
+    "sportKey": "soccer_eng.2",
+    "league": "Championship",
+    "home": {
+      "name": "Southampton",
+      "short": "S",
+      "initials": "S",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Derby County",
+      "short": "DC",
+      "initials": "DC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.2849569532264046,
+      "label": "Southampton to win",
+      "fairOdds": 3.5093019793957367
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.2849569532264046,
+      "draw": 0.25769072877470467,
+      "away": 0.45735231799889076
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1328",
+        "awayElo": "1466",
+        "homeForm": "LLDLL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 1,
+        "awayFormPoints": 11,
+        "homeXG": "1.16",
+        "awayXG": "1.44",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.2849569532264046,
+        "draw": 0.25769072877470467,
+        "away": 0.45735231799889076
+      },
+      "expected": {
+        "homeGoals": "1.16",
+        "awayGoals": "1.44",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5241155101457189
+      },
+      "pick": "away",
+      "confidence": 0.43331757940902216,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Southampton 1328 vs Derby County 1466 → 31.2% home",
+        "FORM last 5: Southampton LLDLL 1pts (GF 0.4 GA 1.6) vs Derby County WWWDD 11pts → Form gives -67% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.16 - 1.44 → Poisson H30.6% D26.1% A43.3%",
+        "CORRECT PICK: AWAY with 43.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.655Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_83689",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl2",
+    "league": "2. Bundesliga",
+    "home": {
+      "name": "VfL Wolfsburg",
+      "short": "VW",
+      "initials": "VW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Holstein Kiel",
+      "short": "HK",
+      "initials": "HK",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44127805720419366,
+      "label": "VfL Wolfsburg to win",
+      "fairOdds": 2.26614485736205
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44127805720419366,
+      "draw": 0.25827517511689624,
+      "away": 0.3004467676789101
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1501",
+        "awayElo": "1529",
+        "homeForm": "WWLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 6,
+        "awayFormPoints": 13,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.44127805720419366,
+        "draw": 0.25827517511689624,
+        "away": 0.3004467676789101
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5255740911054955
+      },
+      "pick": "home",
+      "confidence": 0.42305789385902487,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo VfL Wolfsburg 1501 vs Holstein Kiel 1529 → 46.0% home",
+        "FORM last 5: VfL Wolfsburg WWLLL 6pts (GF 1.6 GA 1.3) vs Holstein Kiel WWWWD 13pts → Form gives -47% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.3% D26.2% A31.5%",
+        "CORRECT PICK: HOME with 42.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.653Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_83694",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl2",
+    "league": "2. Bundesliga",
+    "home": {
+      "name": "Hannover 96",
+      "short": "H9",
+      "initials": "H9",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "SpVgg Greuther Fürth",
+      "short": "SGF",
+      "initials": "SG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.39613289911461713,
+      "label": "Hannover 96 to win",
+      "fairOdds": 2.524405325170076
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.39613289911461713,
+      "draw": 0.25937290844815764,
+      "away": 0.34449419243722523
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1456",
+        "awayElo": "1595",
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 10,
+        "homeXG": "1.36",
+        "awayXG": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.39613289911461713,
+        "draw": 0.25937290844815764,
+        "away": 0.34449419243722523
+      },
+      "expected": {
+        "homeGoals": "1.36",
+        "awayGoals": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5283017735510505
+      },
+      "pick": "home",
+      "confidence": 0.3953353732838733,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Hannover 96 1456 vs SpVgg Greuther Fürth 1595 → 31.0% home",
+        "FORM last 5: Hannover 96 WWWDD 11pts (GF 1.3 GA 1.0) vs SpVgg Greuther Fürth WWWDL 10pts → Form gives 7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.36 - 1.24 → Poisson H39.5% D26.3% A34.1%",
+        "CORRECT PICK: HOME with 39.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.654Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "openliga_83699",
+    "sport": "football",
+    "sportKey": "soccer_germany_bl2",
+    "league": "2. Bundesliga",
+    "home": {
+      "name": "1. FC Nürnberg",
+      "short": "1FN",
+      "initials": "1F",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Eintracht Braunschweig",
+      "short": "EB",
+      "initials": "EB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T12:00:00.000Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5409563562683085,
+      "label": "1. FC Nürnberg to win",
+      "fairOdds": 1.8485779645853921
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5409563562683085,
+      "draw": 0.25623620537868486,
+      "away": 0.20280743835300666
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1506",
+        "awayElo": "1412",
+        "homeForm": "WWWDD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 7,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5409563562683085,
+        "draw": 0.25623620537868486,
+        "away": 0.20280743835300666
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5204662269724856
+      },
+      "pick": "home",
+      "confidence": 0.45390764662612354,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo 1. FC Nürnberg 1506 vs Eintracht Braunschweig 1412 → 63.2% home",
+        "FORM last 5: 1. FC Nürnberg WWWDD 11pts (GF 1.3 GA 1.0) vs Eintracht Braunschweig WWDLL 7pts → Form gives 27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.4% D25.9% A28.7%",
+        "CORRECT PICK: HOME with 45.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.654Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401892137",
     "sport": "football",
     "sportKey": "soccer_aus.1",
@@ -7323,6 +8313,96 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.394Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401934378",
+    "sport": "football",
+    "sportKey": "soccer_world_clubfriendly",
+    "league": "Club Friendly",
+    "home": {
+      "name": "Red Bull New York",
+      "short": "RBN",
+      "initials": "RB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "América",
+      "short": "A",
+      "initials": "A",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-15T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.36387815323385386,
+      "label": "Red Bull New York to win",
+      "fairOdds": 2.7481726811923473
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.36387815323385386,
+      "draw": 0.25944198463816615,
+      "away": 0.37667986212798
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1437",
+        "awayElo": "1562",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.25",
+        "awayXG": "1.35",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.36387815323385386,
+        "draw": 0.25944198463816615,
+        "away": 0.37667986212798
+      },
+      "expected": {
+        "homeGoals": "1.25",
+        "awayGoals": "1.35",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5284729001089922
+      },
+      "pick": "away",
+      "confidence": 0.3926099558964064,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Red Bull New York 1437 vs América 1562 → 32.7% home",
+        "FORM last 5: Red Bull New York WWWWD 13pts (GF 1.0 GA 1.6) vs América WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.25 - 1.35 → Poisson H34.4% D26.3% A39.3%",
+        "CORRECT PICK: AWAY with 39.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-14T14:14:13.636Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -24947,10 +26027,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.312Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-14T14:14:16.610Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401930243",
@@ -25037,10 +26120,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.313Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 0
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933775",
@@ -25847,10 +26933,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.308Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933655",
@@ -26207,10 +27296,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.305Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 1
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401934229",
@@ -26477,10 +27569,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.303Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 1
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401913233",
@@ -26567,10 +27662,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.304Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933864",
@@ -26657,10 +27755,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.302Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 0
+    },
+    "settledAt": "2026-11-14T14:14:16.611Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186552_tbd_tbd",
