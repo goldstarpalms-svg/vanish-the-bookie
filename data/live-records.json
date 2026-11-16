@@ -1055,6 +1055,274 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401856872",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "TCU Horned Frogs",
+      "short": "THF",
+      "initials": "TH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Utah Utes",
+      "short": "UU",
+      "initials": "UU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T02:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4545013213281905,
+      "label": "TCU Horned Frogs to win",
+      "fairOdds": 2.2002136255131166
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4545013213281905,
+      "away": 0.5454986786718095
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1491,
+        "awayElo": 1551,
+        "homeForm": "WWLLL",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.4545013213281905,
+        "away": 0.5454986786718095
+      },
+      "expected": {
+        "winProb": "0.455",
+        "homeElo": 1491,
+        "awayElo": 1551
+      },
+      "pick": "away",
+      "confidence": 0.5454986786718095,
+      "explanation": [
+        "ACCURACY FOCUS: Elo TCU Horned Frogs 1491 (WWLLL 6pts) vs Utah Utes 1551 (WWLLL 6pts) → 41.5% home",
+        "PICK for correctness: AWAY with 54.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.699Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856753",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "South Carolina Gamecocks",
+      "short": "SCG",
+      "initials": "SC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Georgia Bulldogs",
+      "short": "GB",
+      "initials": "GB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.640778245890011,
+      "label": "South Carolina Gamecocks to win",
+      "fairOdds": 1.5606022932489645
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.640778245890011,
+      "away": 0.359221754109989
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1523,
+        "awayElo": 1452,
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.640778245890011,
+        "away": 0.359221754109989
+      },
+      "expected": {
+        "winProb": "0.641",
+        "homeElo": 1523,
+        "awayElo": 1452
+      },
+      "pick": "home",
+      "confidence": 0.640778245890011,
+      "explanation": [
+        "ACCURACY FOCUS: Elo South Carolina Gamecocks 1523 (WWDLL 7pts) vs Georgia Bulldogs 1452 (WWDLL 7pts) → 60.1% home",
+        "PICK for correctness: HOME with 64.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858307",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Notre Dame Fighting Irish",
+      "short": "NDF",
+      "initials": "ND",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "SMU Mustangs",
+      "short": "SM",
+      "initials": "SM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3259210974146497,
+      "label": "Notre Dame Fighting Irish to win",
+      "fairOdds": 3.068227273203368
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3259210974146497,
+      "away": 0.6740789025853503
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1408,
+        "awayElo": 1567,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.3259210974146497,
+        "away": 0.6740789025853503
+      },
+      "expected": {
+        "winProb": "0.326",
+        "homeElo": 1408,
+        "awayElo": 1567
+      },
+      "pick": "away",
+      "confidence": 0.6740789025853503,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Notre Dame Fighting Irish 1408 (WWWWD 13pts) vs SMU Mustangs 1567 (WWWWD 13pts) → 28.6% home",
+        "PICK for correctness: AWAY with 67.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856751",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Missouri Tigers",
+      "short": "MT",
+      "initials": "MT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Kentucky Wildcats",
+      "short": "KW",
+      "initials": "KW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T00:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5886413918836677,
+      "label": "Missouri Tigers to win",
+      "fairOdds": 1.6988271871265697
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5886413918836677,
+      "away": 0.4113586081163323
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1563,
+        "awayElo": 1515,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5886413918836677,
+        "away": 0.4113586081163323
+      },
+      "expected": {
+        "winProb": "0.589",
+        "homeElo": 1563,
+        "awayElo": 1515
+      },
+      "pick": "home",
+      "confidence": 0.5886413918836677,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Missouri Tigers 1563 (WWDLL 7pts) vs Kentucky Wildcats 1515 (WWWDL 10pts) → 56.9% home",
+        "PICK for correctness: HOME with 58.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.699Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020363",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -1524,6 +1792,207 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401858302",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Miami Hurricanes",
+      "short": "MH",
+      "initials": "MH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Virginia Tech Hokies",
+      "short": "VTH",
+      "initials": "VT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3143143537282129,
+      "label": "Miami Hurricanes to win",
+      "fairOdds": 3.181528263468038
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3143143537282129,
+      "away": 0.6856856462717871
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1409,
+        "awayElo": 1578,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.3143143537282129,
+        "away": 0.6856856462717871
+      },
+      "expected": {
+        "winProb": "0.314",
+        "homeElo": 1409,
+        "awayElo": 1578
+      },
+      "pick": "away",
+      "confidence": 0.6856856462717871,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Miami Hurricanes 1409 (WWWWD 13pts) vs Virginia Tech Hokies 1578 (WWWWD 13pts) → 27.4% home",
+        "PICK for correctness: AWAY with 68.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856865",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Kansas State Wildcats",
+      "short": "KSW",
+      "initials": "KS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Arizona Wildcats",
+      "short": "AW",
+      "initials": "AW",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-22T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5543871841659987,
+      "label": "Kansas State Wildcats to win",
+      "fairOdds": 1.8037935012952473
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5543871841659987,
+      "away": 0.44561281583400125
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1473,
+        "awayElo": 1463,
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.5543871841659987,
+        "away": 0.44561281583400125
+      },
+      "expected": {
+        "winProb": "0.554",
+        "homeElo": 1473,
+        "awayElo": 1463
+      },
+      "pick": "home",
+      "confidence": 0.5543871841659987,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Kansas State Wildcats 1473 (WWDLL 7pts) vs Arizona Wildcats 1463 (WWDLL 7pts) → 51.4% home",
+        "PICK for correctness: HOME with 55.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.698Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858534",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "USC Trojans",
+      "short": "UT",
+      "initials": "UT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Maryland Terrapins",
+      "short": "MT",
+      "initials": "MT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T23:15Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4712256641402582,
+      "label": "USC Trojans to win",
+      "fairOdds": 2.12212550397585
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4712256641402582,
+      "away": 0.5287743358597419
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1514,
+        "awayElo": 1548,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4712256641402582,
+        "away": 0.5287743358597419
+      },
+      "expected": {
+        "winProb": "0.471",
+        "homeElo": 1514,
+        "awayElo": 1548
+      },
+      "pick": "away",
+      "confidence": 0.5287743358597419,
+      "explanation": [
+        "ACCURACY FOCUS: Elo USC Trojans 1514 (WWWDL 10pts) vs Maryland Terrapins 1548 (WWWWD 13pts) → 45.1% home",
+        "PICK for correctness: AWAY with 52.9% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020361",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -1719,6 +2188,341 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.397Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858528",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Michigan Wolverines",
+      "short": "MW",
+      "initials": "MW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "UCLA Bruins",
+      "short": "UB",
+      "initials": "UB",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T20:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.54,
+      "label": "Michigan Wolverines to win",
+      "fairOdds": 1.8518518518518516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.54,
+      "away": 0.45999999999999996
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1502,
+        "awayElo": 1502,
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.54,
+        "away": 0.45999999999999996
+      },
+      "expected": {
+        "winProb": "0.540",
+        "homeElo": 1502,
+        "awayElo": 1502
+      },
+      "pick": "home",
+      "confidence": 0.54,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Michigan Wolverines 1502 (WWDLL 7pts) vs UCLA Bruins 1502 (WWDLL 7pts) → 50.0% home",
+        "PICK for correctness: HOME with 54.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856755",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Texas Longhorns",
+      "short": "TL",
+      "initials": "TL",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Arkansas Razorbacks",
+      "short": "AR",
+      "initials": "AR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T20:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6719120398746636,
+      "label": "Texas Longhorns to win",
+      "fairOdds": 1.4882900449090581
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6719120398746636,
+      "away": 0.32808796012533636
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1533,
+        "awayElo": 1424,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6719120398746636,
+        "away": 0.32808796012533636
+      },
+      "expected": {
+        "winProb": "0.672",
+        "homeElo": 1533,
+        "awayElo": 1424
+      },
+      "pick": "home",
+      "confidence": 0.6719120398746636,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Texas Longhorns 1533 (WWDLL 7pts) vs Arkansas Razorbacks 1424 (WWWDL 10pts) → 65.2% home",
+        "PICK for correctness: HOME with 67.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856754",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Tennessee Volunteers",
+      "short": "TV",
+      "initials": "TV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "LSU Tigers",
+      "short": "LT",
+      "initials": "LT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T20:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.46994717641601175,
+      "label": "Tennessee Volunteers to win",
+      "fairOdds": 2.1278987302921237
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.46994717641601175,
+      "away": 0.5300528235839883
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1549,
+        "awayElo": 1598,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.46994717641601175,
+        "away": 0.5300528235839883
+      },
+      "expected": {
+        "winProb": "0.470",
+        "homeElo": 1549,
+        "awayElo": 1598
+      },
+      "pick": "away",
+      "confidence": 0.5300528235839883,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Tennessee Volunteers 1549 (WWWWD 13pts) vs LSU Tigers 1598 (WWWWD 13pts) → 43.0% home",
+        "PICK for correctness: AWAY with 53.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858535",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Washington Huskies",
+      "short": "WH",
+      "initials": "WH",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Indiana Hoosiers",
+      "short": "IH",
+      "initials": "IH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T20:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5057562084111449,
+      "label": "Washington Huskies to win",
+      "fairOdds": 1.977237220955811
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5057562084111449,
+      "away": 0.4942437915888551
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1482,
+        "awayElo": 1478,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5057562084111449,
+        "away": 0.4942437915888551
+      },
+      "expected": {
+        "winProb": "0.506",
+        "homeElo": 1482,
+        "awayElo": 1478
+      },
+      "pick": "home",
+      "confidence": 0.5057562084111449,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Washington Huskies 1482 (WWDLL 7pts) vs Indiana Hoosiers 1478 (WWWWD 13pts) → 50.6% home",
+        "PICK for correctness: HOME with 50.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856871",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Baylor Bears",
+      "short": "BB",
+      "initials": "BB",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Texas Tech Red Raiders",
+      "short": "TTR",
+      "initials": "TT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T20:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6049129020079569,
+      "label": "Baylor Bears to win",
+      "fairOdds": 1.6531305526474722
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6049129020079569,
+      "away": 0.3950870979920431
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1492,
+        "awayElo": 1418,
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.6049129020079569,
+        "away": 0.3950870979920431
+      },
+      "expected": {
+        "winProb": "0.605",
+        "homeElo": 1492,
+        "awayElo": 1418
+      },
+      "pick": "home",
+      "confidence": 0.6049129020079569,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Baylor Bears 1492 (WWDLL 7pts) vs Texas Tech Red Raiders 1418 (WWWWD 13pts) → 60.5% home",
+        "PICK for correctness: HOME with 60.5% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.697Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -2625,6 +3429,140 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401858527",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Illinois Fighting Illini",
+      "short": "IFI",
+      "initials": "IF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Iowa Hawkeyes",
+      "short": "IH",
+      "initials": "IH",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T19:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5816377027147634,
+      "label": "Illinois Fighting Illini to win",
+      "fairOdds": 1.71928331903615
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5816377027147634,
+      "away": 0.41836229728523655
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1524,
+        "awayElo": 1495,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.5816377027147634,
+        "away": 0.41836229728523655
+      },
+      "expected": {
+        "winProb": "0.582",
+        "homeElo": 1524,
+        "awayElo": 1495
+      },
+      "pick": "home",
+      "confidence": 0.5816377027147634,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Illinois Fighting Illini 1524 (WWWDL 10pts) vs Iowa Hawkeyes 1495 (WWWDL 10pts) → 54.2% home",
+        "PICK for correctness: HOME with 58.2% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.694Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856746",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Alabama Crimson Tide",
+      "short": "ACT",
+      "initials": "AC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Chattanooga Mocs",
+      "short": "CM",
+      "initials": "CM",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T19:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6563501698066168,
+      "label": "Alabama Crimson Tide to win",
+      "fairOdds": 1.523576965470481
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6563501698066168,
+      "away": 0.34364983019338324
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1566,
+        "awayElo": 1503,
+        "homeForm": "WWWDD",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.6563501698066168,
+        "away": 0.34364983019338324
+      },
+      "expected": {
+        "winProb": "0.656",
+        "homeElo": 1566,
+        "awayElo": 1503
+      },
+      "pick": "home",
+      "confidence": 0.6563501698066168,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Alabama Crimson Tide 1566 (WWWDD 11pts) vs Chattanooga Mocs 1503 (WWDLL 7pts) → 59.0% home",
+        "PICK for correctness: HOME with 65.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.694Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_401881746",
     "sport": "football",
     "sportKey": "soccer_aut.1",
@@ -2776,6 +3714,73 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.395Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856868",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "West Virginia Mountaineers",
+      "short": "WVM",
+      "initials": "WV",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Houston Cougars",
+      "short": "HC",
+      "initials": "HC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T18:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5002274396987634,
+      "label": "West Virginia Mountaineers to win",
+      "fairOdds": 1.9990906548473217
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5002274396987634,
+      "away": 0.4997725603012366
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1458.1580413007223,
+        "awayElo": 1458,
+        "homeForm": "LDWLW",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.5002274396987634,
+        "away": 0.4997725603012366
+      },
+      "expected": {
+        "winProb": "0.500",
+        "homeElo": 1458.1580413007223,
+        "awayElo": 1458
+      },
+      "pick": "home",
+      "confidence": 0.5002274396987634,
+      "explanation": [
+        "ACCURACY FOCUS: Elo West Virginia Mountaineers 1458 (LDWLW 7pts) vs Houston Cougars 1458 (WWWWD 13pts) → 50.0% home",
+        "PICK for correctness: HOME with 50.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.693Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -3856,6 +4861,274 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T11:05:35.457Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856866",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Kansas Jayhawks",
+      "short": "KJ",
+      "initials": "KJ",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "BYU Cougars",
+      "short": "BC",
+      "initials": "BC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5175083480685982,
+      "label": "Kansas Jayhawks to win",
+      "fairOdds": 1.9323359782158436
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5175083480685982,
+      "away": 0.48249165193140175
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1495,
+        "awayElo": 1506,
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5175083480685982,
+        "away": 0.48249165193140175
+      },
+      "expected": {
+        "winProb": "0.518",
+        "homeElo": 1495,
+        "awayElo": 1506
+      },
+      "pick": "home",
+      "confidence": 0.5175083480685982,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Kansas Jayhawks 1495 (WWWDL 10pts) vs BYU Cougars 1506 (WWWDD 11pts) → 48.4% home",
+        "PICK for correctness: HOME with 51.8% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.690Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858310",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Georgia Tech Yellow Jackets",
+      "short": "GTY",
+      "initials": "GT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wake Forest Demon Deacons",
+      "short": "WFD",
+      "initials": "WF",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.6209943974601532,
+      "label": "Georgia Tech Yellow Jackets to win",
+      "fairOdds": 1.6103204861267144
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.6209943974601532,
+      "away": 0.37900560253984683
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1521,
+        "awayElo": 1445,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDL"
+      },
+      "probabilities": {
+        "home": 0.6209943974601532,
+        "away": 0.37900560253984683
+      },
+      "expected": {
+        "winProb": "0.621",
+        "homeElo": 1521,
+        "awayElo": 1445
+      },
+      "pick": "home",
+      "confidence": 0.6209943974601532,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Georgia Tech Yellow Jackets 1521 (WWLLL 6pts) vs Wake Forest Demon Deacons 1445 (WWWDL 10pts) → 60.8% home",
+        "PICK for correctness: HOME with 62.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.690Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401856749",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Ole Miss Rebels",
+      "short": "OMR",
+      "initials": "OM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Wofford Terriers",
+      "short": "WT",
+      "initials": "WT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4997917716762543,
+      "label": "Ole Miss Rebels to win",
+      "fairOdds": 2.0008332603117784
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4997917716762543,
+      "away": 0.5002082283237457
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1489,
+        "awayElo": 1517,
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD"
+      },
+      "probabilities": {
+        "home": 0.4997917716762543,
+        "away": 0.5002082283237457
+      },
+      "expected": {
+        "winProb": "0.500",
+        "homeElo": 1489,
+        "awayElo": 1517
+      },
+      "pick": "away",
+      "confidence": 0.5002082283237457,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Ole Miss Rebels 1489 (WWWWD 13pts) vs Wofford Terriers 1517 (WWWWD 13pts) → 46.0% home",
+        "PICK for correctness: AWAY with 50.0% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.690Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858531",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Nebraska Cornhuskers",
+      "short": "NC",
+      "initials": "NC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ohio State Buckeyes",
+      "short": "OSB",
+      "initials": "OS",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.575824985264735,
+      "label": "Nebraska Cornhuskers to win",
+      "fairOdds": 1.736638780167295
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.575824985264735,
+      "away": 0.424175014735265
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1584,
+        "awayElo": 1573,
+        "homeForm": "WWWDL",
+        "awayForm": "WWDLL"
+      },
+      "probabilities": {
+        "home": 0.575824985264735,
+        "away": 0.424175014735265
+      },
+      "expected": {
+        "winProb": "0.576",
+        "homeElo": 1584,
+        "awayElo": 1573
+      },
+      "pick": "home",
+      "confidence": 0.575824985264735,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Nebraska Cornhuskers 1584 (WWWDL 10pts) vs Ohio State Buckeyes 1573 (WWDLL 7pts) → 51.6% home",
+        "PICK for correctness: HOME with 57.6% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.690Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -6556,6 +7829,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T11:05:35.439Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_600061665",
+    "sport": "mma",
+    "sportKey": "mma_ufc",
+    "league": "UFC",
+    "home": {
+      "name": "Diyar Nurgozhay",
+      "short": "DN",
+      "initials": "DN",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Alik Lorenz",
+      "short": "AL",
+      "initials": "AL",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4994378223237145,
+      "label": "Diyar Nurgozhay to win",
+      "fairOdds": 2.0022512419010234
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4994378223237145,
+      "away": 0.5005621776762855
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1534,
+        "awayElo": 1581,
+        "homeForm": "WWWDL",
+        "awayForm": "WWLLL"
+      },
+      "probabilities": {
+        "home": 0.4994378223237145,
+        "away": 0.5005621776762855
+      },
+      "expected": {
+        "winProb": "0.499",
+        "homeElo": 1534,
+        "awayElo": 1581
+      },
+      "pick": "away",
+      "confidence": 0.5005621776762855,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Diyar Nurgozhay 1534 (WWWDL 10pts) vs Alik Lorenz 1581 (WWLLL 6pts) → 43.3% home",
+        "PICK for correctness: AWAY with 50.1% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.680Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -9300,6 +10640,73 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-14T06:35:46.424Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401858529",
+    "sport": "americanfootball",
+    "sportKey": "football_college-football",
+    "league": "NCAA Football",
+    "home": {
+      "name": "Michigan State Spartans",
+      "short": "MSS",
+      "initials": "MS",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Oregon Ducks",
+      "short": "OD",
+      "initials": "OD",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-21T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5138617483757181,
+      "label": "Michigan State Spartans to win",
+      "fairOdds": 1.946048724507967
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5138617483757181,
+      "away": 0.4861382516242819
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Model (Accuracy Focused + Form)",
+      "method": "Elo + Form → Most likely winner",
+      "inputs": {
+        "homeElo": 1571,
+        "awayElo": 1566,
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDD"
+      },
+      "probabilities": {
+        "home": 0.5138617483757181,
+        "away": 0.4861382516242819
+      },
+      "expected": {
+        "winProb": "0.514",
+        "homeElo": 1571,
+        "awayElo": 1566
+      },
+      "pick": "home",
+      "confidence": 0.5138617483757181,
+      "explanation": [
+        "ACCURACY FOCUS: Elo Michigan State Spartans 1571 (WWLLL 6pts) vs Oregon Ducks 1566 (WWWDD 11pts) → 50.7% home",
+        "PICK for correctness: HOME with 51.4% confidence"
+      ],
+      "dataSource": "Elo + Form - Accuracy Focused"
+    },
+    "model": "Vanish Model (Accuracy Focused + Form)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T11:34:23.661Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -19953,10 +21360,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.841Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 3
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020329",
@@ -20020,10 +21430,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-09T18:53:14.819Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 6
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020330",
@@ -20087,10 +21500,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-09T18:53:14.819Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909993",
@@ -20154,10 +21570,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.310Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 103,
+      "away": 125
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892724",
@@ -20221,10 +21640,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.310Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 3,
+      "away": 6
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892725",
@@ -20288,10 +21710,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.310Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 4,
+      "away": 2
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401873064",
@@ -20355,10 +21780,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.865Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 38,
+      "away": 18
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020327",
@@ -20422,10 +21850,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-09T18:53:14.818Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020328",
@@ -20489,10 +21920,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-09T18:53:14.818Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 6,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401932064",
@@ -20579,10 +22013,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.840Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 3,
+      "away": 2
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909992",
@@ -20646,10 +22083,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.309Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 106,
+      "away": 113
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892722",
@@ -20713,10 +22153,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.309Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T11:34:26.458Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892723",
@@ -20780,10 +22223,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.309Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 6,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T11:34:26.459Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "nhl_2026020326",
@@ -20847,10 +22293,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-09T18:53:14.818Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 5
+    },
+    "settledAt": "2026-11-16T11:34:26.459Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401892721",
@@ -20914,10 +22363,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.309Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 2,
+      "away": 5
+    },
+    "settledAt": "2026-11-16T11:34:26.459Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933617",
