@@ -15808,6 +15808,96 @@
     "scoreSource": null
   },
   {
+    "id": "espn_world_401929770",
+    "sport": "football",
+    "sportKey": "soccer_world_quarterfinals",
+    "league": "Quarterfinals",
+    "home": {
+      "name": "Canada",
+      "short": "C",
+      "initials": "C",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Guatemala",
+      "short": "G",
+      "initials": "G",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-17T01:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.38064440054010884,
+      "label": "Canada to win",
+      "fairOdds": 2.6271238945878808
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.38064440054010884,
+      "draw": 0.25959382871993264,
+      "away": 0.3597617707399585
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1478",
+        "awayElo": "1573",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.26",
+        "awayXG": "1.34",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.38064440054010884,
+        "draw": 0.25959382871993264,
+        "away": 0.3597617707399585
+      },
+      "expected": {
+        "homeGoals": "1.26",
+        "awayGoals": "1.34",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5288488585504877
+      },
+      "pick": "away",
+      "confidence": 0.38519922959801184,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Canada 1478 vs Guatemala 1573 → 36.7% home",
+        "FORM last 5: Canada WWWWD 13pts (GF 1.0 GA 1.6) vs Guatemala WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.26 - 1.34 → Poisson H35.1% D26.4% A38.5%",
+        "CORRECT PICK: AWAY with 38.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.284Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020331",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -15869,6 +15959,276 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-10T17:55:13.373Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401929706",
+    "sport": "football",
+    "sportKey": "soccer_world_goldcupplayinprelims",
+    "league": "Gold Cup Play In Prelims",
+    "home": {
+      "name": "Martinique",
+      "short": "M",
+      "initials": "M",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Aruba",
+      "short": "A",
+      "initials": "A",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-17T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4992610345658828,
+      "label": "Martinique to win",
+      "fairOdds": 2.0029602367617563
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4992610345658828,
+      "draw": 0.2575118004958143,
+      "away": 0.24322716493830293
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1435",
+        "awayElo": "1411",
+        "homeForm": "WWWDL",
+        "awayForm": "WWLLL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 6,
+        "homeXG": "1.44",
+        "awayXG": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4992610345658828,
+        "draw": 0.2575118004958143,
+        "away": 0.24322716493830293
+      },
+      "expected": {
+        "homeGoals": "1.44",
+        "awayGoals": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.523668080934111
+      },
+      "pick": "home",
+      "confidence": 0.4361655016397619,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Martinique 1435 vs Aruba 1411 → 53.4% home",
+        "FORM last 5: Martinique WWWDL 10pts (GF 1.6 GA 1.3) vs Aruba WWLLL 6pts → Form gives 27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.44 - 1.16 → Poisson H43.6% D26.1% A30.3%",
+        "CORRECT PICK: HOME with 43.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.282Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401929705",
+    "sport": "football",
+    "sportKey": "soccer_world_goldcupplayinprelims",
+    "league": "Gold Cup Play In Prelims",
+    "home": {
+      "name": "Trinidad and Tobago",
+      "short": "TAT",
+      "initials": "Ta",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Antigua and Barbuda",
+      "short": "AAB",
+      "initials": "Aa",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-17T00:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44785630906614227,
+      "label": "Trinidad and Tobago to win",
+      "fairOdds": 2.2328590214240203
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44785630906614227,
+      "draw": 0.25834023988832494,
+      "away": 0.2938034510455328
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1410",
+        "awayElo": "1443",
+        "homeForm": "WDLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 4,
+        "awayFormPoints": 7,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.44785630906614227,
+        "draw": 0.25834023988832494,
+        "away": 0.2938034510455328
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5257361978530058
+      },
+      "pick": "home",
+      "confidence": 0.42180123497128813,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Trinidad and Tobago 1410 vs Antigua and Barbuda 1443 → 45.3% home",
+        "FORM last 5: Trinidad and Tobago WDLLL 4pts (GF 1.3 GA 1.0) vs Antigua and Barbuda WWDLL 7pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.2% D26.2% A31.6%",
+        "CORRECT PICK: HOME with 42.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.283Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401933375",
+    "sport": "football",
+    "sportKey": "soccer_world_uruguayanprimeradivisin",
+    "league": "Uruguayan Primera División",
+    "home": {
+      "name": "Montevideo Wanderers",
+      "short": "MW",
+      "initials": "MW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Juventud",
+      "short": "J",
+      "initials": "J",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T23:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4827046136688964,
+      "label": "Montevideo Wanderers to win",
+      "fairOdds": 2.0716603315623874
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4827046136688964,
+      "draw": 0.25494278565366185,
+      "away": 0.26235260067744176
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1471",
+        "awayElo": "1543",
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 6,
+        "awayFormPoints": 7,
+        "homeXG": "1.51",
+        "awayXG": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4827046136688964,
+        "draw": 0.25494278565366185,
+        "away": 0.26235260067744176
+      },
+      "expected": {
+        "homeGoals": "1.51",
+        "awayGoals": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5171977874869449
+      },
+      "pick": "home",
+      "confidence": 0.468931488030445,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Montevideo Wanderers 1471 vs Juventud 1543 → 39.8% home",
+        "FORM last 5: Montevideo Wanderers WWLLL 6pts (GF 1.6 GA 1.3) vs Juventud WWDLL 7pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.51 - 1.09 → Poisson H46.9% D25.7% A27.4%",
+        "CORRECT PICK: HOME with 46.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.282Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -16009,6 +16369,636 @@
     "scoreSource": null
   },
   {
+    "id": "espn_world_401886121",
+    "sport": "football",
+    "sportKey": "soccer_world_peruvianprimeradivisin",
+    "league": "Peruvian Primera División",
+    "home": {
+      "name": "Cusco FC",
+      "short": "CF",
+      "initials": "CF",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "ADT",
+      "short": "A",
+      "initials": "A",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T20:15Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5231334357988023,
+      "label": "Cusco FC to win",
+      "fairOdds": 1.9115581829959747
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5231334357988023,
+      "draw": 0.2533447227278225,
+      "away": 0.2235218414733752
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1448",
+        "awayElo": "1457",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 13,
+        "homeXG": "1.54",
+        "awayXG": "1.06",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5231334357988023,
+        "draw": 0.2533447227278225,
+        "away": 0.2235218414733752
+      },
+      "expected": {
+        "homeGoals": "1.54",
+        "awayGoals": "1.06",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5131287435327961
+      },
+      "pick": "home",
+      "confidence": 0.4850259703809449,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Cusco FC 1448 vs ADT 1457 → 48.7% home",
+        "FORM last 5: Cusco FC WWWWD 13pts (GF 1.6 GA 1.3) vs ADT WWWWD 13pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.54 - 1.06 → Poisson H48.5% D25.5% A26.0%",
+        "CORRECT PICK: HOME with 48.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.280Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401886119",
+    "sport": "football",
+    "sportKey": "soccer_world_peruvianprimeradivisin",
+    "league": "Peruvian Primera División",
+    "home": {
+      "name": "Deportivo Moquegua",
+      "short": "DM",
+      "initials": "DM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Atlético Grau",
+      "short": "AG",
+      "initials": "AG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T20:15Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4404745001984527,
+      "label": "Deportivo Moquegua to win",
+      "fairOdds": 2.2702789822099962
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4404745001984527,
+      "draw": 0.25964967482845025,
+      "away": 0.29987582497309706
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1444",
+        "awayElo": "1414",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 10,
+        "homeXG": "1.33",
+        "awayXG": "1.27",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4404745001984527,
+        "draw": 0.25964967482845025,
+        "away": 0.29987582497309706
+      },
+      "expected": {
+        "homeGoals": "1.33",
+        "awayGoals": "1.27",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.528987056845487
+      },
+      "pick": "home",
+      "confidence": 0.3815065037025559,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Deportivo Moquegua 1444 vs Atlético Grau 1414 → 54.3% home",
+        "FORM last 5: Deportivo Moquegua WWWDL 10pts (GF 1.0 GA 1.6) vs Atlético Grau WWWDL 10pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.33 - 1.27 → Poisson H38.2% D26.4% A35.5%",
+        "CORRECT PICK: HOME with 38.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.281Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861185",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Germany",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Netherlands",
+      "short": "N",
+      "initials": "N",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:45Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5270463657289117,
+      "label": "Germany to win",
+      "fairOdds": 1.8973662755780272
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5270463657289117,
+      "draw": 0.25613429281261757,
+      "away": 0.2168193414584707
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1563",
+        "awayElo": "1464",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 10,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5270463657289117,
+        "draw": 0.25613429281261757,
+        "away": 0.2168193414584707
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5202094981864133
+      },
+      "pick": "home",
+      "confidence": 0.4551786299934205,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Germany 1563 vs Netherlands 1464 → 63.9% home",
+        "FORM last 5: Germany WWDLL 7pts (GF 1.0 GA 1.6) vs Netherlands WWWDL 10pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.5% D25.9% A28.6%",
+        "CORRECT PICK: HOME with 45.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.278Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861179",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Gibraltar",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Malta",
+      "short": "M",
+      "initials": "M",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:45Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.3810048142327913,
+      "label": "Gibraltar to win",
+      "fairOdds": 2.624638751648442
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3810048142327913,
+      "draw": 0.2597278784238377,
+      "away": 0.359267307343371
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1480",
+        "awayElo": "1525",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 4,
+        "awayFormPoints": 10,
+        "homeXG": "1.29",
+        "awayXG": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.3810048142327913,
+        "draw": 0.2597278784238377,
+        "away": 0.359267307343371
+      },
+      "expected": {
+        "homeGoals": "1.29",
+        "awayGoals": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5291805148418869
+      },
+      "pick": "away",
+      "confidence": 0.3729245146732066,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Gibraltar 1480 vs Malta 1525 → 43.6% home",
+        "FORM last 5: Gibraltar WDLLL 4pts (GF 1.0 GA 1.6) vs Malta WWWDL 10pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.29 - 1.31 → Poisson H36.3% D26.4% A37.3%",
+        "CORRECT PICK: AWAY with 37.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.278Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861188",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Greece",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Serbia",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:45Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.46231744035180355,
+      "label": "Greece to win",
+      "fairOdds": 2.163015955528399
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.46231744035180355,
+      "draw": 0.25818162162430514,
+      "away": 0.2795009380238913
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1437",
+        "awayElo": "1458",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 13,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.46231744035180355,
+        "draw": 0.25818162162430514,
+        "away": 0.2795009380238913
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5253409099348926
+      },
+      "pick": "home",
+      "confidence": 0.42481834907567745,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Greece 1437 vs Serbia 1458 → 47.0% home",
+        "FORM last 5: Greece WWWWD 13pts (GF 1.0 GA 1.6) vs Serbia WWWWD 13pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.5% D26.2% A31.3%",
+        "CORRECT PICK: HOME with 42.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.279Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861187",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "North Macedonia",
+      "short": "NM",
+      "initials": "NM",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Slovenia",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:45Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.45626429989792694,
+      "label": "North Macedonia to win",
+      "fairOdds": 2.1917121287458055
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45626429989792694,
+      "draw": 0.2583143899801965,
+      "away": 0.28542131012187655
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1522",
+        "awayElo": "1553",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.45626429989792694,
+        "draw": 0.2583143899801965,
+        "away": 0.28542131012187655
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5256718001885808
+      },
+      "pick": "home",
+      "confidence": 0.42230381688975616,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo North Macedonia 1522 vs Slovenia 1553 → 45.6% home",
+        "FORM last 5: North Macedonia WWDLL 7pts (GF 1.3 GA 1.0) vs Slovenia WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.2% D26.2% A31.6%",
+        "CORRECT PICK: HOME with 42.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.279Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861186",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Switzerland",
+      "short": "S",
+      "initials": "S",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Scotland",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:45Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5353480312191551,
+      "label": "Switzerland to win",
+      "fairOdds": 1.8679437332060171
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5353480312191551,
+      "draw": 0.25279117439811777,
+      "away": 0.21186079438272715
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1595",
+        "awayElo": "1584",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 10,
+        "homeXG": "1.55",
+        "awayXG": "1.05",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5353480312191551,
+        "draw": 0.25279117439811777,
+        "away": 0.21186079438272715
+      },
+      "expected": {
+        "homeGoals": "1.55",
+        "awayGoals": "1.05",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5117112589871498
+      },
+      "pick": "home",
+      "confidence": 0.49014362234247805,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Switzerland 1595 vs Scotland 1584 → 51.6% home",
+        "FORM last 5: Switzerland WWWDL 10pts (GF 1.6 GA 1.3) vs Scotland WWWDL 10pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.55 - 1.05 → Poisson H49.0% D25.4% A25.6%",
+        "CORRECT PICK: HOME with 49.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.280Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_tennis_187512_flavio_cobolli_daniil_medvedev",
     "sport": "tennis",
     "sportKey": "tennis_atp",
@@ -16076,6 +17066,996 @@
     "scoreSource": null
   },
   {
+    "id": "espn_world_401883305",
+    "sport": "football",
+    "sportKey": "soccer_world_laliga2",
+    "league": "LaLiga 2",
+    "home": {
+      "name": "Albacete",
+      "short": "A",
+      "initials": "A",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "RC Celta Fortuna",
+      "short": "RCF",
+      "initials": "RC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.44404957937514494,
+      "label": "Albacete to win",
+      "fairOdds": 2.2520007820009065
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.44404957937514494,
+      "draw": 0.2595810527235662,
+      "away": 0.2963693679012889
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1565",
+        "awayElo": "1517",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 10,
+        "awayFormPoints": 13,
+        "homeXG": "1.34",
+        "awayXG": "1.26",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.44404957937514494,
+        "draw": 0.2595810527235662,
+        "away": 0.2963693679012889
+      },
+      "expected": {
+        "homeGoals": "1.34",
+        "awayGoals": "1.26",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5288172371390917
+      },
+      "pick": "home",
+      "confidence": 0.3859388025857782,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Albacete 1565 vs RC Celta Fortuna 1517 → 56.9% home",
+        "FORM last 5: Albacete WWWDL 10pts (GF 1.0 GA 1.6) vs RC Celta Fortuna WWWWD 13pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.34 - 1.26 → Poisson H38.6% D26.4% A35.0%",
+        "CORRECT PICK: HOME with 38.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.277Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401929707",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Cuba",
+      "short": "C",
+      "initials": "C",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Grenada",
+      "short": "G",
+      "initials": "G",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5843235796732034,
+      "label": "Cuba to win",
+      "fairOdds": 1.7113805343253021
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5843235796732034,
+      "draw": 0.2548001859910566,
+      "away": 0.16087623433574003
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1569",
+        "awayElo": "1410",
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 4,
+        "homeXG": "1.51",
+        "awayXG": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5843235796732034,
+        "draw": 0.2548001859910566,
+        "away": 0.16087623433574003
+      },
+      "expected": {
+        "homeGoals": "1.51",
+        "awayGoals": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5168360839623174
+      },
+      "pick": "home",
+      "confidence": 0.47046225667600483,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Cuba 1569 vs Grenada 1410 → 71.4% home",
+        "FORM last 5: Cuba WWWWD 13pts (GF 1.6 GA 1.3) vs Grenada WDLLL 4pts → Form gives 60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.51 - 1.09 → Poisson H47.0% D25.7% A27.3%",
+        "CORRECT PICK: HOME with 47.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.275Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401929771",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Guadeloupe",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Bermuda",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4696027531179496,
+      "label": "Guadeloupe to win",
+      "fairOdds": 2.1294594066164496
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4696027531179496,
+      "draw": 0.25801456739709083,
+      "away": 0.27238267948495953
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1435",
+        "awayElo": "1444",
+        "homeForm": "WWWDL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 10,
+        "awayFormPoints": 10,
+        "homeXG": "1.43",
+        "awayXG": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4696027531179496,
+        "draw": 0.25801456739709083,
+        "away": 0.27238267948495953
+      },
+      "expected": {
+        "homeGoals": "1.43",
+        "awayGoals": "1.17",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5249242478267601
+      },
+      "pick": "home",
+      "confidence": 0.42783928083686956,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Guadeloupe 1435 vs Bermuda 1444 → 48.7% home",
+        "FORM last 5: Guadeloupe WWWDL 10pts (GF 1.0 GA 1.6) vs Bermuda WWWDL 10pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.43 - 1.17 → Poisson H42.8% D26.1% A31.1%",
+        "CORRECT PICK: HOME with 42.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.276Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401929708",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Guyana",
+      "short": "G",
+      "initials": "G",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Puerto Rico",
+      "short": "PR",
+      "initials": "PR",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T19:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4334314975218338,
+      "label": "Guyana to win",
+      "fairOdds": 2.307169658221772
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4334314975218338,
+      "draw": 0.2584904073748741,
+      "away": 0.30807809510329204
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1513",
+        "awayElo": "1558",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 13,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4334314975218338,
+        "draw": 0.2584904073748741,
+        "away": 0.30807809510329204
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5261101269727126
+      },
+      "pick": "home",
+      "confidence": 0.41878806370565735,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Guyana 1513 vs Puerto Rico 1558 → 43.6% home",
+        "FORM last 5: Guyana WWDLL 7pts (GF 1.6 GA 1.3) vs Puerto Rico WWWWD 13pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H41.9% D26.2% A31.9%",
+        "CORRECT PICK: HOME with 41.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.276Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401914292",
+    "sport": "football",
+    "sportKey": "soccer_world_internationalfriendly",
+    "league": "International Friendly",
+    "home": {
+      "name": "Andorra",
+      "short": "A",
+      "initials": "A",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Azerbaijan",
+      "short": "A",
+      "initials": "A",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T18:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5399673982972147,
+      "label": "Andorra to win",
+      "fairOdds": 1.8519636614238126
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5399673982972147,
+      "draw": 0.2555592728973842,
+      "away": 0.20447332880540103
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1561",
+        "awayElo": "1435",
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 6,
+        "awayFormPoints": 10,
+        "homeXG": "1.50",
+        "awayXG": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5399673982972147,
+        "draw": 0.2555592728973842,
+        "away": 0.20447332880540103
+      },
+      "expected": {
+        "homeGoals": "1.50",
+        "awayGoals": "1.10",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5187583957568807
+      },
+      "pick": "home",
+      "confidence": 0.4620493456153116,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Andorra 1561 vs Azerbaijan 1435 → 67.4% home",
+        "FORM last 5: Andorra WWLLL 6pts (GF 1.3 GA 1.0) vs Azerbaijan WWWDL 10pts → Form gives -27% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.50 - 1.10 → Poisson H46.2% D25.8% A28.0%",
+        "CORRECT PICK: HOME with 46.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.274Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401886134",
+    "sport": "football",
+    "sportKey": "soccer_world_peruvianprimeradivisin",
+    "league": "Peruvian Primera División",
+    "home": {
+      "name": "UTC",
+      "short": "U",
+      "initials": "U",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Los Chankas",
+      "short": "LC",
+      "initials": "LC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T18:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5496937277504802,
+      "label": "UTC to win",
+      "fairOdds": 1.8191948525450978
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5496937277504802,
+      "draw": 0.2560101084052314,
+      "away": 0.19429616384428838
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1556",
+        "awayElo": "1451",
+        "homeForm": "WWWDD",
+        "awayForm": "WWLLL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 6,
+        "homeXG": "1.48",
+        "awayXG": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5496937277504802,
+        "draw": 0.2560101084052314,
+        "away": 0.19429616384428838
+      },
+      "expected": {
+        "homeGoals": "1.48",
+        "awayGoals": "1.12",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5198964794612374
+      },
+      "pick": "home",
+      "confidence": 0.4567043929325655,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo UTC 1556 vs Los Chankas 1451 → 64.7% home",
+        "FORM last 5: UTC WWWDD 11pts (GF 1.6 GA 1.3) vs Los Chankas WWLLL 6pts → Form gives 33% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.48 - 1.12 → Poisson H45.7% D25.9% A28.5%",
+        "CORRECT PICK: HOME with 45.7% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.275Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861183",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Estonia",
+      "short": "E",
+      "initials": "E",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Bulgaria",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4885559327379819,
+      "label": "Estonia to win",
+      "fairOdds": 2.046848544844734
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4885559327379819,
+      "draw": 0.2571414205841193,
+      "away": 0.25430264667789876
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1453",
+        "awayElo": "1407",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 7,
+        "awayFormPoints": 13,
+        "homeXG": "1.45",
+        "awayXG": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4885559327379819,
+        "draw": 0.2571414205841193,
+        "away": 0.25430264667789876
+      },
+      "expected": {
+        "homeGoals": "1.45",
+        "awayGoals": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5227405842714604
+      },
+      "pick": "home",
+      "confidence": 0.4417305311674457,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Estonia 1453 vs Bulgaria 1407 → 56.6% home",
+        "FORM last 5: Estonia WWDLL 7pts (GF 1.6 GA 1.3) vs Bulgaria WWWWD 13pts → Form gives -40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.45 - 1.15 → Poisson H44.2% D26.0% A29.8%",
+        "CORRECT PICK: HOME with 44.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.271Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861182",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Iceland",
+      "short": "I",
+      "initials": "I",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Luxembourg",
+      "short": "L",
+      "initials": "L",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.39842282394834594,
+      "label": "Iceland to win",
+      "fairOdds": 2.509896371121666
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.39842282394834594,
+      "draw": 0.25972403475657707,
+      "away": 0.341853141295077
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1438",
+        "awayElo": "1486",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 11,
+        "homeXG": "1.29",
+        "awayXG": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.39842282394834594,
+        "draw": 0.25972403475657707,
+        "away": 0.341853141295077
+      },
+      "expected": {
+        "homeGoals": "1.29",
+        "awayGoals": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5291710082978929
+      },
+      "pick": "away",
+      "confidence": 0.37365817675710966,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Iceland 1438 vs Luxembourg 1486 → 43.1% home",
+        "FORM last 5: Iceland WWWWD 13pts (GF 1.0 GA 1.6) vs Luxembourg WWWDD 11pts → Form gives 13% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.29 - 1.31 → Poisson H36.2% D26.4% A37.4%",
+        "CORRECT PICK: AWAY with 37.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.272Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861184",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Lithuania",
+      "short": "L",
+      "initials": "L",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Liechtenstein",
+      "short": "L",
+      "initials": "L",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.45566018175917444,
+      "label": "Lithuania to win",
+      "fairOdds": 2.1946179192996067
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45566018175917444,
+      "draw": 0.2583273442732821,
+      "away": 0.2860124739675435
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1417",
+        "awayElo": "1449",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 13,
+        "awayFormPoints": 13,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.45566018175917444,
+        "draw": 0.2583273442732821,
+        "away": 0.2860124739675435
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5257040731873921
+      },
+      "pick": "home",
+      "confidence": 0.4220525122761708,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Lithuania 1417 vs Liechtenstein 1449 → 45.4% home",
+        "FORM last 5: Lithuania WWWWD 13pts (GF 1.6 GA 1.3) vs Liechtenstein WWWWD 13pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.2% D26.2% A31.6%",
+        "CORRECT PICK: HOME with 42.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.272Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927176",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Eritrea",
+      "short": "E",
+      "initials": "E",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Guinea",
+      "short": "G",
+      "initials": "G",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T17:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.47189377171682434,
+      "label": "Eritrea to win",
+      "fairOdds": 2.1191209970028666
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.47189377171682434,
+      "draw": 0.25823543245597586,
+      "away": 0.2698707958271999
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1446",
+        "awayElo": "1471",
+        "homeForm": "WWWDD",
+        "awayForm": "WWLLL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 6,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.47189377171682434,
+        "draw": 0.25823543245597586,
+        "away": 0.2698707958271999
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5254750467070674
+      },
+      "pick": "home",
+      "confidence": 0.42381221400050717,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Eritrea 1446 vs Guinea 1471 → 46.4% home",
+        "FORM last 5: Eritrea WWWDD 11pts (GF 1.6 GA 1.3) vs Guinea WWLLL 6pts → Form gives 33% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.4% D26.2% A31.4%",
+        "CORRECT PICK: HOME with 42.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.273Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927172",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Central African Republic",
+      "short": "CAR",
+      "initials": "CA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Benin",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T16:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4842263753697996,
+      "label": "Central African Republic to win",
+      "fairOdds": 2.0651497953541016
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4842263753697996,
+      "draw": 0.2575920567742206,
+      "away": 0.2581815678559798
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1571",
+        "awayElo": "1552",
+        "homeForm": "WWLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 6,
+        "awayFormPoints": 7,
+        "homeXG": "1.44",
+        "awayXG": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4842263753697996,
+        "draw": 0.2575920567742206,
+        "away": 0.2581815678559798
+      },
+      "expected": {
+        "homeGoals": "1.44",
+        "awayGoals": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5238688216973125
+      },
+      "pick": "home",
+      "confidence": 0.434902262096931,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Central African Republic 1571 vs Benin 1552 → 52.7% home",
+        "FORM last 5: Central African Republic WWLLL 6pts (GF 1.6 GA 1.3) vs Benin WWDLL 7pts → Form gives -7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.44 - 1.16 → Poisson H43.5% D26.1% A30.4%",
+        "CORRECT PICK: HOME with 43.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.271Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "espn_tennis_186797_martina_trevisan_guiomar_maristany_zuleta_de_reales",
     "sport": "tennis",
     "sportKey": "tennis_wta",
@@ -16137,6 +18117,276 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T22:54:58.670Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861180",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Faroe Islands",
+      "short": "FI",
+      "initials": "FI",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Moldova",
+      "short": "M",
+      "initials": "M",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4574732446130718,
+      "label": "Faroe Islands to win",
+      "fairOdds": 2.1859201860991764
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4574732446130718,
+      "draw": 0.25828830539354375,
+      "away": 0.28423844999338443
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1563",
+        "awayElo": "1592",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4574732446130718,
+        "draw": 0.25828830539354375,
+        "away": 0.28423844999338443
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5256068091564192
+      },
+      "pick": "home",
+      "confidence": 0.42280650775357276,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Faroe Islands 1563 vs Moldova 1592 → 45.8% home",
+        "FORM last 5: Faroe Islands WWDLL 7pts (GF 1.3 GA 1.0) vs Moldova WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.3% D26.2% A31.5%",
+        "CORRECT PICK: HOME with 42.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.268Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401861181",
+    "sport": "football",
+    "sportKey": "soccer_world_leaguephase",
+    "league": "League Phase",
+    "home": {
+      "name": "Kazakhstan",
+      "short": "K",
+      "initials": "K",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Slovakia",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.39528072594764907,
+      "label": "Kazakhstan to win",
+      "fairOdds": 2.529847610461128
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.39528072594764907,
+      "draw": 0.25912261184978475,
+      "away": 0.3455966622025662
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1400",
+        "awayElo": "1506",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 11,
+        "homeXG": "1.37",
+        "awayXG": "1.23",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.39528072594764907,
+        "draw": 0.25912261184978475,
+        "away": 0.3455966622025662
+      },
+      "expected": {
+        "homeGoals": "1.37",
+        "awayGoals": "1.23",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5276811883231081
+      },
+      "pick": "home",
+      "confidence": 0.40353661417534403,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Kazakhstan 1400 vs Slovakia 1506 → 35.2% home",
+        "FORM last 5: Kazakhstan WDLLL 4pts (GF 1.0 GA 1.6) vs Slovakia WWWDD 11pts → Form gives -47% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.37 - 1.23 → Poisson H40.4% D26.3% A33.3%",
+        "CORRECT PICK: HOME with 40.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.269Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927177",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Somalia",
+      "short": "S",
+      "initials": "S",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Ghana",
+      "short": "G",
+      "initials": "G",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.429838615737199,
+      "label": "Somalia to win",
+      "fairOdds": 2.3264545422121743
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.429838615737199,
+      "draw": 0.2584163808739355,
+      "away": 0.31174500338886557
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1540",
+        "awayElo": "1579",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.429838615737199,
+        "draw": 0.2584163808739355,
+        "away": 0.31174500338886557
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5259258313331779
+      },
+      "pick": "home",
+      "confidence": 0.42029414867465,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Somalia 1540 vs Ghana 1579 → 44.4% home",
+        "FORM last 5: Somalia WDLLL 4pts (GF 1.3 GA 1.0) vs Ghana WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.0% D26.2% A31.8%",
+        "CORRECT PICK: HOME with 42.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.270Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -16271,6 +18521,276 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.313Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927170",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Namibia",
+      "short": "N",
+      "initials": "N",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Cameroon",
+      "short": "C",
+      "initials": "C",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T13:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4778642998979269,
+      "label": "Namibia to win",
+      "fairOdds": 2.0926442929794145
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4778642998979269,
+      "draw": 0.2583143899801965,
+      "away": 0.2638213101218766
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1539",
+        "awayElo": "1570",
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 4,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4778642998979269,
+        "draw": 0.2583143899801965,
+        "away": 0.2638213101218766
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5256718001885808
+      },
+      "pick": "home",
+      "confidence": 0.42230381688975616,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Namibia 1539 vs Cameroon 1570 → 45.6% home",
+        "FORM last 5: Namibia WWWWD 13pts (GF 1.3 GA 1.0) vs Cameroon WDLLL 4pts → Form gives 60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.2% D26.2% A31.6%",
+        "CORRECT PICK: HOME with 42.2% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.266Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927135",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Sudan",
+      "short": "S",
+      "initials": "S",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Senegal",
+      "short": "S",
+      "initials": "S",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T13:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.4497107980428374,
+      "label": "Sudan to win",
+      "fairOdds": 2.2236512984612493
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4497107980428374,
+      "draw": 0.2587328240479594,
+      "away": 0.2915563779092032
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1407",
+        "awayElo": "1473",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.40",
+        "awayXG": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4497107980428374,
+        "draw": 0.2587328240479594,
+        "away": 0.2915563779092032
+      },
+      "expected": {
+        "homeGoals": "1.40",
+        "awayGoals": "1.20",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5267131516484087
+      },
+      "pick": "home",
+      "confidence": 0.4135248765909869,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Sudan 1407 vs Senegal 1473 → 40.6% home",
+        "FORM last 5: Sudan WWWWD 13pts (GF 1.3 GA 1.0) vs Senegal WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.40 - 1.20 → Poisson H41.4% D26.2% A32.4%",
+        "CORRECT PICK: HOME with 41.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.267Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_world_401927173",
+    "sport": "football",
+    "sportKey": "soccer_world_groupstage",
+    "league": "Group Stage",
+    "home": {
+      "name": "Zimbabwe",
+      "short": "Z",
+      "initials": "Z",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Equatorial Guinea",
+      "short": "EG",
+      "initials": "EG",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-16T13:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5311523557803154,
+      "label": "Zimbabwe to win",
+      "fairOdds": 1.8826989829140472
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5311523557803154,
+      "draw": 0.2569457127769316,
+      "away": 0.211901931442753
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1507",
+        "awayElo": "1450",
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 4,
+        "homeXG": "1.46",
+        "awayXG": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5311523557803154,
+        "draw": 0.2569457127769316,
+        "away": 0.211901931442753
+      },
+      "expected": {
+        "homeGoals": "1.46",
+        "awayGoals": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5222497756847199
+      },
+      "pick": "home",
+      "confidence": 0.44451701752805856,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Zimbabwe 1507 vs Equatorial Guinea 1450 → 58.1% home",
+        "FORM last 5: Zimbabwe WWWWD 13pts (GF 1.6 GA 1.3) vs Equatorial Guinea WDLLL 4pts → Form gives 60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.46 - 1.14 → Poisson H44.5% D26.0% A29.6%",
+        "CORRECT PICK: HOME with 44.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-16T02:48:09.267Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -18551,10 +21071,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.308Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 119,
+      "away": 147
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401920681",
@@ -18775,10 +21298,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.839Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401879611",
@@ -18955,10 +21481,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.837Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401933376",
@@ -19045,10 +21574,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.837Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401899768",
@@ -19202,10 +21734,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.307Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 131,
+      "away": 94
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401909990",
@@ -19269,10 +21804,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.307Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 108,
+      "away": 112
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401878628",
@@ -19359,10 +21897,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T02:45:11.836Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 1,
+      "away": 1
+    },
+    "settledAt": "2026-11-16T02:48:11.809Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401878607",
@@ -19516,10 +22057,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.297Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 102,
+      "away": 110
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401930229",
@@ -19673,10 +22217,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.296Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 113,
+      "away": 105
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401873063",
@@ -19740,10 +22287,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.865Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 40,
+      "away": 46
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401873062",
@@ -19807,10 +22357,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.865Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 13,
+      "away": 21
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401873061",
@@ -19874,10 +22427,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-11T06:36:51.865Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 6,
+      "away": 34
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401879641",
@@ -20121,10 +22677,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-15T17:47:35.296Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 123,
+      "away": 131
+    },
+    "settledAt": "2026-11-16T02:48:11.810Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401886137",
