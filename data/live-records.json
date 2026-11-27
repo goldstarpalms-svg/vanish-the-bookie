@@ -7204,6 +7204,96 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401931996",
+    "sport": "football",
+    "sportKey": "soccer_mex.1",
+    "league": "Liga MX",
+    "home": {
+      "name": "América",
+      "short": "A",
+      "initials": "A",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Monterrey",
+      "short": "M",
+      "initials": "M",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-29T03:10Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5023523557803155,
+      "label": "América to win",
+      "fairOdds": 1.9906346382046463
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5023523557803155,
+      "draw": 0.25694571277693157,
+      "away": 0.24070193144275298
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1562",
+        "awayElo": "1505",
+        "homeForm": "WWDLL",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 10,
+        "homeXG": "1.46",
+        "awayXG": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5023523557803155,
+        "draw": 0.25694571277693157,
+        "away": 0.24070193144275298
+      },
+      "expected": {
+        "homeGoals": "1.46",
+        "awayGoals": "1.14",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5222497756847199
+      },
+      "pick": "home",
+      "confidence": 0.44451701752805856,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo América 1562 vs Monterrey 1505 → 58.1% home",
+        "FORM last 5: América WWDLL 7pts (GF 1.6 GA 1.3) vs Monterrey WWWDL 10pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.46 - 1.14 → Poisson H44.5% D26.0% A29.6%",
+        "CORRECT PICK: HOME with 44.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.035Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "nhl_2026020427",
     "sport": "icehockey",
     "sportKey": "icehockey_nhl",
@@ -7533,6 +7623,96 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-22T21:52:30.766Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401931997",
+    "sport": "football",
+    "sportKey": "soccer_mex.1",
+    "league": "Liga MX",
+    "home": {
+      "name": "Atlas",
+      "short": "A",
+      "initials": "A",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Toluca",
+      "short": "T",
+      "initials": "T",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-29T01:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.45395784199609546,
+      "label": "Toluca to win",
+      "fairOdds": 2.2028477261300425
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45395784199609546,
+      "draw": 0.25809914804948997,
+      "away": 0.2879430099544146
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1531",
+        "awayElo": "1546",
+        "homeForm": "WWLLL",
+        "awayForm": "WWWDD",
+        "homeFormPoints": 6,
+        "awayFormPoints": 11,
+        "homeXG": "1.42",
+        "awayXG": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.45395784199609546,
+        "draw": 0.25809914804948997,
+        "away": 0.2879430099544146
+      },
+      "expected": {
+        "homeGoals": "1.42",
+        "awayGoals": "1.18",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5251352516490575
+      },
+      "pick": "home",
+      "confidence": 0.4263283455877701,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Atlas 1531 vs Toluca 1546 → 47.8% home",
+        "FORM last 5: Atlas WWLLL 6pts (GF 1.0 GA 1.6) vs Toluca WWWDD 11pts → Form gives -33% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.42 - 1.18 → Poisson H42.6% D26.2% A31.2%",
+        "CORRECT PICK: HOME with 42.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.034Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -12724,6 +12904,816 @@
     "scoreSource": null
   },
   {
+    "id": "espn_401880730",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "AFC Wimbledon",
+      "short": "AW",
+      "initials": "AW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Barnsley",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.511470867252071,
+      "label": "AFC Wimbledon to win",
+      "fairOdds": 1.9551455694292055
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.511470867252071,
+      "draw": 0.25498431671065536,
+      "away": 0.23354481603727362
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1513",
+        "awayElo": "1512",
+        "homeForm": "DWLLW",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.51",
+        "awayXG": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.511470867252071,
+        "draw": 0.25498431671065536,
+        "away": 0.23354481603727362
+      },
+      "expected": {
+        "homeGoals": "1.51",
+        "awayGoals": "1.09",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5173030799584829
+      },
+      "pick": "home",
+      "confidence": 0.46848160630552044,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo AFC Wimbledon 1513 vs Barnsley 1512 → 50.2% home",
+        "FORM last 5: AFC Wimbledon DWLLW 7pts (GF 1.2 GA 1.2) vs Barnsley WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.51 - 1.09 → Poisson H46.8% D25.7% A27.4%",
+        "CORRECT PICK: HOME with 46.8% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.018Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880729",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Bromley",
+      "short": "B",
+      "initials": "B",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Burton Albion",
+      "short": "BA",
+      "initials": "BA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.49033090211648916,
+      "label": "Burton Albion to win",
+      "fairOdds": 2.039439072029826
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.49033090211648916,
+      "draw": 0.2572963340329352,
+      "away": 0.25237276385057555
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1450",
+        "awayElo": "1413",
+        "homeForm": "WDLLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 4,
+        "awayFormPoints": 7,
+        "homeXG": "1.45",
+        "awayXG": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.49033090211648916,
+        "draw": 0.2572963340329352,
+        "away": 0.25237276385057555
+      },
+      "expected": {
+        "homeGoals": "1.45",
+        "awayGoals": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5231287320846582
+      },
+      "pick": "home",
+      "confidence": 0.4394526193795007,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Bromley 1450 vs Burton Albion 1413 → 55.3% home",
+        "FORM last 5: Bromley WDLLL 4pts (GF 1.3 GA 1.0) vs Burton Albion WWDLL 7pts → Form gives -20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.45 - 1.15 → Poisson H43.9% D26.0% A30.0%",
+        "CORRECT PICK: HOME with 43.9% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.018Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880727",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Leicester City",
+      "short": "LC",
+      "initials": "LC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Mansfield Town",
+      "short": "MT",
+      "initials": "MT",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.4102122936062971,
+      "label": "Mansfield Town to win",
+      "fairOdds": 2.4377621431300986
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4102122936062971,
+      "draw": 0.2596255472277138,
+      "away": 0.3301621591659891
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1378",
+        "awayElo": "1441",
+        "homeForm": "LWDWL",
+        "awayForm": "WWLLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 6,
+        "homeXG": "1.33",
+        "awayXG": "1.27",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4102122936062971,
+        "draw": 0.2596255472277138,
+        "away": 0.3301621591659891
+      },
+      "expected": {
+        "homeGoals": "1.33",
+        "awayGoals": "1.27",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5289273549040693
+      },
+      "pick": "home",
+      "confidence": 0.3832108718987946,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Leicester City 1378 vs Mansfield Town 1441 → 41.0% home",
+        "FORM last 5: Leicester City LWDWL 7pts (GF 1.2 GA 1.4) vs Mansfield Town WWLLL 6pts → Form gives 7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.33 - 1.27 → Poisson H38.3% D26.4% A35.3%",
+        "CORRECT PICK: HOME with 38.3% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.018Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880726",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Luton Town",
+      "short": "LT",
+      "initials": "LT",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Oxford United",
+      "short": "OU",
+      "initials": "OU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.45383861573719897,
+      "label": "Oxford United to win",
+      "fairOdds": 2.203426428083111
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.45383861573719897,
+      "draw": 0.2584163808739355,
+      "away": 0.28774500338886555
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1456",
+        "awayElo": "1495",
+        "homeForm": "WWWDD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 11,
+        "awayFormPoints": 10,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.45383861573719897,
+        "draw": 0.2584163808739355,
+        "away": 0.28774500338886555
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5259258313331779
+      },
+      "pick": "home",
+      "confidence": 0.42029414867465,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Luton Town 1456 vs Oxford United 1495 → 44.4% home",
+        "FORM last 5: Luton Town WWWDD 11pts (GF 1.3 GA 1.0) vs Oxford United WWWDL 10pts → Form gives 7% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.0% D26.2% A31.8%",
+        "CORRECT PICK: HOME with 42.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.019Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880723",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Sheffield Wednesday",
+      "short": "SW",
+      "initials": "SW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Reading",
+      "short": "R",
+      "initials": "R",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.3726762740603755,
+      "label": "Reading to win",
+      "fairOdds": 2.6832939728220926
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.3726762740603755,
+      "draw": 0.25936627257176426,
+      "away": 0.36795745336786023
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1410",
+        "awayElo": "1548",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.36",
+        "awayXG": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.3726762740603755,
+        "draw": 0.25936627257176426,
+        "away": 0.36795745336786023
+      },
+      "expected": {
+        "homeGoals": "1.36",
+        "awayGoals": "1.24",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.528285330892889
+      },
+      "pick": "home",
+      "confidence": 0.39558334951569923,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Sheffield Wednesday 1410 vs Reading 1548 → 31.1% home",
+        "FORM last 5: Sheffield Wednesday WDLLL 4pts (GF 1.6 GA 1.3) vs Reading WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.36 - 1.24 → Poisson H39.6% D26.3% A34.1%",
+        "CORRECT PICK: HOME with 39.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.019Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880722",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Stevenage",
+      "short": "S",
+      "initials": "S",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Blackpool",
+      "short": "B",
+      "initials": "B",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.429838615737199,
+      "label": "Blackpool to win",
+      "fairOdds": 2.3264545422121743
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.429838615737199,
+      "draw": 0.2584163808739355,
+      "away": 0.31174500338886557
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1420",
+        "awayElo": "1459",
+        "homeForm": "WDLLL",
+        "awayForm": "WWWWD",
+        "homeFormPoints": 4,
+        "awayFormPoints": 13,
+        "homeXG": "1.41",
+        "awayXG": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.429838615737199,
+        "draw": 0.2584163808739355,
+        "away": 0.31174500338886557
+      },
+      "expected": {
+        "homeGoals": "1.41",
+        "awayGoals": "1.19",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5259258313331779
+      },
+      "pick": "home",
+      "confidence": 0.42029414867465,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Stevenage 1420 vs Blackpool 1459 → 44.4% home",
+        "FORM last 5: Stevenage WDLLL 4pts (GF 1.3 GA 1.0) vs Blackpool WWWWD 13pts → Form gives -60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.41 - 1.19 → Poisson H42.0% D26.2% A31.8%",
+        "CORRECT PICK: HOME with 42.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.019Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880721",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Stockport County",
+      "short": "SC",
+      "initials": "SC",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Leyton Orient",
+      "short": "LO",
+      "initials": "LO",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.49994477433839585,
+      "label": "Leyton Orient to win",
+      "fairOdds": 2.0002209270481015
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.49994477433839585,
+      "draw": 0.25722806322701147,
+      "away": 0.24282716243459274
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1483",
+        "awayElo": "1442",
+        "homeForm": "WWDLL",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 7,
+        "awayFormPoints": 7,
+        "homeXG": "1.45",
+        "awayXG": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.49994477433839585,
+        "draw": 0.25722806322701147,
+        "away": 0.24282716243459274
+      },
+      "expected": {
+        "homeGoals": "1.45",
+        "awayGoals": "1.15",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5229577127430699
+      },
+      "pick": "home",
+      "confidence": 0.4404648050585251,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Stockport County 1483 vs Leyton Orient 1442 → 55.9% home",
+        "FORM last 5: Stockport County WWDLL 7pts (GF 1.6 GA 1.3) vs Leyton Orient WWDLL 7pts → Form gives 0% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.45 - 1.15 → Poisson H44.0% D26.0% A29.9%",
+        "CORRECT PICK: HOME with 44.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.020Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880720",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Wigan Athletic",
+      "short": "WA",
+      "initials": "WA",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Plymouth Argyle",
+      "short": "PA",
+      "initials": "PA",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.4128519865074266,
+      "label": "Plymouth Argyle to win",
+      "fairOdds": 2.4221755803081537
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4128519865074266,
+      "draw": 0.2597180756886252,
+      "away": 0.3274299378039482
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1438",
+        "awayElo": "1490",
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 4,
+        "homeXG": "1.29",
+        "awayXG": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4128519865074266,
+        "draw": 0.2597180756886252,
+        "away": 0.3274299378039482
+      },
+      "expected": {
+        "homeGoals": "1.29",
+        "awayGoals": "1.31",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5291562693607302
+      },
+      "pick": "away",
+      "confidence": 0.37463696672512986,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Wigan Athletic 1438 vs Plymouth Argyle 1490 → 42.6% home",
+        "FORM last 5: Wigan Athletic WWWWD 13pts (GF 1.0 GA 1.6) vs Plymouth Argyle WDLLL 4pts → Form gives 60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.29 - 1.31 → Poisson H36.1% D26.4% A37.5%",
+        "CORRECT PICK: AWAY with 37.5% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.020Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880719",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Wycombe Wanderers",
+      "short": "WW",
+      "initials": "WW",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Bradford City",
+      "short": "BC",
+      "initials": "BC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T15:00Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.4956475842836642,
+      "label": "Bradford City to win",
+      "fairOdds": 2.017562541831516
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4956475842836642,
+      "draw": 0.25754407752803454,
+      "away": 0.24680833818830128
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1507",
+        "awayElo": "1485",
+        "homeForm": "WWWWD",
+        "awayForm": "WWWDL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 10,
+        "homeXG": "1.44",
+        "awayXG": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4956475842836642,
+        "draw": 0.25754407752803454,
+        "away": 0.24680833818830128
+      },
+      "expected": {
+        "homeGoals": "1.44",
+        "awayGoals": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5237488238142667
+      },
+      "pick": "home",
+      "confidence": 0.43566013562176,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Wycombe Wanderers 1507 vs Bradford City 1485 → 53.2% home",
+        "FORM last 5: Wycombe Wanderers WWWWD 13pts (GF 1.6 GA 1.3) vs Bradford City WWWDL 10pts → Form gives 20% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.44 - 1.16 → Poisson H43.6% D26.1% A30.4%",
+        "CORRECT PICK: HOME with 43.6% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.020Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
     "id": "openliga_83250",
     "sport": "football",
     "sportKey": "soccer_germany_bl1",
@@ -13978,6 +14968,186 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-24T00:58:33.196Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880725",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Milton Keynes Dons",
+      "short": "MKD",
+      "initials": "MK",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Notts County",
+      "short": "NC",
+      "initials": "NC",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T12:30Z",
+    "pick": {
+      "side": "home",
+      "probability": 0.5666808537790197,
+      "label": "Milton Keynes Dons to win",
+      "fairOdds": 1.7646617021402942
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.5666808537790197,
+      "draw": 0.25573398483307463,
+      "away": 0.17758516138790567
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1518",
+        "awayElo": "1400",
+        "homeForm": "WWWWD",
+        "awayForm": "WDLLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 4,
+        "homeXG": "1.49",
+        "awayXG": "1.11",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.5666808537790197,
+        "draw": 0.25573398483307463,
+        "away": 0.17758516138790567
+      },
+      "expected": {
+        "homeGoals": "1.49",
+        "awayGoals": "1.11",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5191997549796601
+      },
+      "pick": "home",
+      "confidence": 0.4600123205237587,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Milton Keynes Dons 1518 vs Notts County 1400 → 66.4% home",
+        "FORM last 5: Milton Keynes Dons WWWWD 13pts (GF 1.3 GA 1.0) vs Notts County WDLLL 4pts → Form gives 60% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.49 - 1.11 → Poisson H46.0% D25.8% A28.2%",
+        "CORRECT PICK: HOME with 46.0% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.000Z",
+    "status": "pending",
+    "result": null,
+    "settledAt": null,
+    "scoreSource": null
+  },
+  {
+    "id": "espn_401880724",
+    "sport": "football",
+    "sportKey": "soccer_eng.3",
+    "league": "EFL League One",
+    "home": {
+      "name": "Peterborough United",
+      "short": "PU",
+      "initials": "PU",
+      "color": "#6da4d9"
+    },
+    "away": {
+      "name": "Cambridge United",
+      "short": "CU",
+      "initials": "CU",
+      "color": "#bb9ae3"
+    },
+    "kickoff": "2026-11-28T12:30Z",
+    "pick": {
+      "side": "away",
+      "probability": 0.4992040968423136,
+      "label": "Cambridge United to win",
+      "fairOdds": 2.0031886884050865
+    },
+    "probabilities": {
+      "home": 0.5,
+      "away": 0.5
+    },
+    "independentProbabilities": {
+      "home": 0.4992040968423136,
+      "draw": 0.25763951220924963,
+      "away": 0.24315639094843675
+    },
+    "independentModel": {
+      "type": "independent",
+      "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+      "method": "Elo + Form (last 5) + Goals + Corners + Home Adv → Picks most likely winner for CORRECTNESS",
+      "inputs": {
+        "homeElo": "1539",
+        "awayElo": "1523",
+        "homeForm": "WWWWD",
+        "awayForm": "WWDLL",
+        "homeFormPoints": 13,
+        "awayFormPoints": 7,
+        "homeXG": "1.44",
+        "awayXG": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "isFreeMock": true,
+        "trainedOn": 380
+      },
+      "probabilities": {
+        "home": 0.4992040968423136,
+        "draw": 0.25763951220924963,
+        "away": 0.24315639094843675
+      },
+      "expected": {
+        "homeGoals": "1.44",
+        "awayGoals": "1.16",
+        "homeCorners": "5.0",
+        "awayCorners": "5.0",
+        "totalCorners": "10.0",
+        "over25": 0.48157042406394945,
+        "btts": 0.5239874801150715
+      },
+      "pick": "home",
+      "confidence": 0.43414460093292123,
+      "explanation": [
+        "ACCURACY FOCUS: Trained on 380 games - Elo Peterborough United 1539 vs Cambridge United 1523 → 52.3% home",
+        "FORM last 5: Peterborough United WWWWD 13pts (GF 1.0 GA 1.6) vs Cambridge United WWDLL 7pts → Form gives 40% edge",
+        "CORNERS: Total 10.0 (Home 5.0 + Away 5.0) → Over 9.5 60%",
+        "xG: 1.44 - 1.16 → Poisson H43.4% D26.1% A30.5%",
+        "CORRECT PICK: HOME with 43.4% confidence - Most likely outcome for accuracy, not odds value"
+      ],
+      "dataSource": "Trained on 380 games + Form + Corners - Accuracy Focused",
+      "corners": {
+        "home": 5,
+        "away": 5,
+        "total": 10
+      }
+    },
+    "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
+    "modelVersion": "0.1.0",
+    "publishedAt": "2026-11-27T12:36:49.000Z",
     "status": "pending",
     "result": null,
     "settledAt": null,
@@ -26910,10 +28080,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-24T11:02:20.101Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-27T12:36:51.635Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_world_401892133",
@@ -27000,10 +28173,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-27T02:55:20.702Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 0
+    },
+    "settledAt": "2026-11-27T12:36:51.635Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_tennis_186829_tbd_tbd",
@@ -27626,10 +28802,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-26T00:28:59.343Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "lost",
+    "result": {
+      "home": 0,
+      "away": 4
+    },
+    "settledAt": "2026-11-27T12:36:51.635Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401920530",
@@ -27827,10 +29006,13 @@
     "model": "Vanish Model (Accuracy Focused + Form)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-25T15:42:44.332Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 13,
+      "away": 10
+    },
+    "settledAt": "2026-11-27T12:36:51.635Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401856879",
@@ -27984,10 +29166,13 @@
     "model": "Vanish Poisson Model (Accuracy Focused - Trained on 380+ games + Form + Corners)",
     "modelVersion": "0.1.0",
     "publishedAt": "2026-11-26T00:28:59.343Z",
-    "status": "pending",
-    "result": null,
-    "settledAt": null,
-    "scoreSource": null
+    "status": "won",
+    "result": {
+      "home": 2,
+      "away": 1
+    },
+    "settledAt": "2026-11-27T12:36:51.635Z",
+    "scoreSource": "ESPN — Real Score"
   },
   {
     "id": "espn_401918972",
